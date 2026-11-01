@@ -8,7 +8,7 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 
 1. Install BNW and Community Patch **version 151**. Enable the standalone `(1) Community Patch`, without the Vox Populi balance components. The dependency deliberately rejects newer CP versions until separately audited.
 2. Copy this `Wacky3` folder to `Documents/My Games/Sid Meier's Civilization 5/MODS/Cool Wacky Civs 3 (v 1)`. The `.modinfo` must sit directly inside that folder. Alternatively, extract the optional install ZIP produced by `tools/build_mod.py --package` into `MODS`.
-3. Enable the patch and this pack in the Mods menu, then choose **The Ministry of Almost** as the human civilization. Start a **new single-player game**, with the human in the first player slot. More than twenty rival majors are supported by the algorithms, subject to the installed DLL's player limits.
+3. Enable the patch and this pack in the Mods menu, then choose **The Ministry of Almost** as the human civilization. Start a **new sequential single-player game**, with the human in player slot zero. The precise supported boundary requires the Ministry to be the **first living sequential player**, so an owner in a higher slot also qualifies after all earlier players are eliminated. The algorithms have mock coverage with 34 living major teams, subject to the installed DLL's player limits.
 4. Do not add the mod to an existing save or remove it from a Ministry save. Existing version 1 saves retain their snapshot. Check `Database.log` and `Lua.log` when doing the acceptance tests.
 
 ## Current civilization
@@ -29,9 +29,13 @@ See the [civilization guide](TheMinistryOfAlmost/README.md), [winning strategy](
 
 ## Verification status and limits
 
-The project provides executable SQLite checks against a real BNW cache with CP151 schema, Lua 5.1 syntax and mock-event behavior tests, source-hash audits, and DDS/manifest validation. **Mock tests are not Civilization V tests. No observed in-game pass is claimed.** See `tools/Validation.json` for the actual run results.
+**Statically verified but awaiting in-game acceptance.** Checks cover SQLite execution against a BNW cache with CP151 schema and an existing CP-schema cache, pristine and deliberately mutated source definitions, Lua 5.1 syntax, 25-slot and 34-living-major mock scenarios, 13 pinned source files, and DDS/manifest integrity. **Mocks do not demonstrate economic turn timing or an in-game pass.** See `tools/Validation.json` for the actual run results and database provenance.
 
-The DLL proves that `NewGameTurn` is published before first-player activation, while `PlayerDoTurn` follows city yields and research. Wacky3 therefore snapshots at `NewGameTurn` for the supported first-slot human setup. **Synchronous delivery of that UI notification before native yield collection still requires in-game acceptance.** A later-slot turn-status hook is present, but later-slot humans, hotseat, multiplayer and autoplay are not supported or certified. This timing uncertainty prevents treating the pack as engine-certified complete. It is not hidden behind a late `PlayerDoTurn` approximation.
+The DLL publishes `NewGameTurn` before first-player activation; `PlayerDoTurn` follows city yields and research. Wacky3 finds the actual Ministry owner and uses `NewGameTurn` **only when that owner is the first living sequential player**. **Synchronous UI dispatch before native yield collection still needs in-game acceptance.** An event observed after that owner's `PlayerDoTurn` or `ActivePlayerTurnStart` is rejected without resnapshotting. `AIProcessingStartedForPlayer` is diagnostic-only because its human-owner timing is unverified. An owner with earlier living players gets a one-time Lua.log warning; the previous saved tier is preserved and new snapshots are suspended. Such later-slot setups, hotseat, multiplayer and autoplay are unsupported. No instant-yield compensation is used.
+
+The hardening pass keeps the version 1 GUID and save record format. Reload repairs all four real/free dummy counts from the **saved tier**, without re-reading technologies. Ownership hooks cover conquest, gifts and peace-treaty cessions; watched city coordinates and one owner-local turn pass provide recovery. Guard veterans reconcile after promotion transfer through `UnitConverted`; unrelated units are not rescanned every turn. See [the corrective report](docs/ImplementationReport.md) for fixed defects and preventive changes.
+
+Optional read-only diagnostics can be enabled in the `CWC3_Almost` FireTuner context with `MapModData.CWC3_AlmostDiagnostics = true`. They log candidate snapshots, dummy counts and observed economic stores. The [testing guide](docs/Testing.md#optional-timing-diagnostics) explains how to collect controlled runtime evidence; log order alone is insufficient.
 
 Art includes original generated portraits and illustrations, retained PNG sources, DDS atlases and a deterministic compiler. Diplomacy uses a static illustrated scene and text, without animated custom models or recorded speech. The unit uses the native Spearman model/flag. The map panel shows the fictional capital rather than a geographical map.
 
@@ -46,9 +50,11 @@ python tools/generate_text.py
 python tools/build_art.py
 python tools/build_mod.py --package
 python tools/validate_mod.py
+# Also test an existing CP-schema database without overlaying its schema:
+python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My Games\Sid Meier's Civilization 5\cache\Civ5DebugDatabase.db"
 ```
 
-Validation reads game files **read-only** and works on an in-memory database. Set `CWC3_DATABASE` to a BNW debug database **without Wacky3**, and `CWC3_CP_DIR` to the installed `(1) Community Patch` folder. Defaults use the normal Documents game directory and `cache_backup/Civ5DebugDatabase.db`. A vanilla BNW snapshot receives the installed CP schema overlay in memory; an already active CP snapshot is preferred for final acceptance. This overlay does not claim to reproduce arbitrary mod-load data mutations.
+Validation reads game files **read-only** and works on in-memory copies. Set `CWC3_DATABASE` to a BNW debug database **without Wacky3**, and `CWC3_CP_DIR` to the installed `(1) Community Patch` folder. Defaults use the normal Documents game directory and `cache_backup/Civ5DebugDatabase.db`. A pre-CP snapshot receives the installed CP schema overlay; a snapshot already containing CP schema is tested **without** adding missing schema tables or overwriting its options. Neither supplied cache is certified as CP-only. A clean active BNW+CP151 cache is still required for final integration acceptance. Art does not need regeneration for gameplay or documentation edits; run its compiler only when rebuilding or changing assets.
 
 The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits the active definitions at load time, rather than freezing vanilla stats in generated columns. Companion tables are enumerated from the CP151 schema at generation time. Re-run the generator when changing the target schema; inspect the emitted inventory before supporting a new patch. No build tool imports or needs Wacky2.
 

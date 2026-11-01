@@ -5,8 +5,8 @@ GameInfoTypes = {
  BUILDING_CWC3_ALMOST_CULTURE=104,BUILDING_CWC3_ALMOST_ACADEMY_PRODUCTION=105,
  PROMOTION_CWC3_SECOND_WIND=106,PROMOTION_CWC3_HOME_DEFENSE=107}
 GameDefines={MAX_MAJOR_CIVS=25,MAX_CIV_PLAYERS=40}
-Turn=1; TechReads=0; BuildingWrites=0
-Game={GetGameTurn=function() return Turn end}
+Turn=1; TechReads=0; BuildingWrites=0; SaveWrites=0; ActivePlayer=0; PromotionWrites=0; UnitIterations=0
+Game={GetGameTurn=function() return Turn end,GetActivePlayer=function() return ActivePlayer end}
 GameInfo={Technologies=function()
  local n=-1; return function() n=n+1; if n<40 then return {ID=n} end end
 end}
@@ -23,9 +23,12 @@ for i=0,39 do
  function p:GetCivilizationType() return self.civ end
  function p:GetTeam() return self.team end
  function p:GetScriptData() return self.data end
- function p:SetScriptData(data) self.data=data end
+ function p:SetScriptData(data) self.data=data; SaveWrites=SaveWrites+1 end
+ function p:GetCurrentResearch() return self.research or -1 end
+ function p:GetResearchProgressTimes100(tech) return (self.progress or {})[tech] or 0 end
+ function p:GetJONSCultureEverGeneratedTimes100() return self.culture100 or 0 end
  function p:Cities() local i=0; return function() i=i+1; return self.cities[i] end end
- function p:Units() local i=0; return function() i=i+1; return self.units[i] end end
+ function p:Units() local i=0; UnitIterations=UnitIterations+1; return function() i=i+1; return self.units[i] end end
  function p:GetCityByID(id) for _,c in ipairs(self.cities) do if c.id==id then return c end end end
  function p:GetUnitByID(id) for _,u in ipairs(self.units) do if u.id==id then return u end end end
  Players[i]=p
@@ -44,12 +47,27 @@ function MakePlot(x,y,owner)
  Plots[x..','..y]=p; return p
 end
 function MakeCity(owner,id,academy)
- local c={owner=owner,id=id,buildings={[101]=academy and 1 or 0}}
+ local c={owner=owner,id=id,buildings={[101]=academy and 1 or 0},free={}}
+ function c:GetID() return self.id end
+ function c:GetX() return self.id end
+ function c:GetY() return 0 end
  function c:GetOwner() return self.owner end
  function c:GetNumRealBuilding(b) return self.buildings[b] or 0 end
- function c:GetNumBuilding(b) return self.buildings[b] or 0 end
- function c:SetNumRealBuilding(b,n)
+ function c:GetNumBuilding(b) return math.max(self.buildings[b] or 0,self.free[b] or 0) end
+ function c:GetNumFreeBuilding(b) return self.free[b] or 0 end
+ function c:SetNumFreeBuilding(b,n,refund,validate)
+  assert(n==0 and refund==false and validate==false,'unsafe free-building cleanup')
+  self.free[b]=n; BuildingWrites=BuildingWrites+1
+  if DirtyOnWrite then Events.SerialEventCityInfoDirty.Fire() end
+ end
+ function c:GetProductionTimes100() return self.production100 or 0 end
+ function c:GetProductionUnit() return self.queueUnit or -1 end
+ function c:GetProductionBuilding() return self.queueBuilding or -1 end
+ function c:GetProductionProject() return self.queueProject or -1 end
+ function c:SetNumRealBuilding(b,n,noBonus)
   assert(n==0 or n==1,'unbounded count'); self.buildings[b]=n; BuildingWrites=BuildingWrites+1
+  assert(noBonus==true,'must explicitly suppress construction rewards')
+  if DirtyOnWrite then Events.SerialEventCityInfoDirty.Fire() end
  end
  Players[owner].cities[#Players[owner].cities+1]=c
  local plot=MakePlot(id,0,owner); plot.city=c
@@ -64,9 +82,10 @@ end
 function MakeUnit(owner,id,plot,identity,defense)
  local u={owner=owner,id=id,plot=plot,promos={[106]=identity or false,[107]=defense or false}}
  function u:GetOwner() return self.owner end
+ function u:GetID() return self.id end
  function u:GetPlot() return self.plot end
  function u:IsHasPromotion(p) return self.promos[p] or false end
- function u:SetHasPromotion(p,value) self.promos[p]=value end
+ function u:SetHasPromotion(p,value) self.promos[p]=value; PromotionWrites=PromotionWrites+1 end
  Players[owner].units[#Players[owner].units+1]=u; plot.units[#plot.units+1]=u
  return u
 end

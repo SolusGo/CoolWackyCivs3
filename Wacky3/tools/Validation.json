@@ -1,7 +1,7 @@
 {
   "source_audit": {
     "commit": "44c1e14ff75d80c1dba5c8a71e8289439a53aafb",
-    "source_files_verified": 12,
+    "source_files_verified": 13,
     "checks": {
       "DLL identifies as v151": true,
       "Team:IsHasTech is registered": true,
@@ -12,13 +12,178 @@
       "Defense strength uses defense-only modifier": true,
       "Tile ownership callback occurs after ownership assignment": true,
       "Upgrade conversion preserves non-lost promotions": true,
+      "Free dummy cleanup bindings": true,
+      "Explicit construction reward suppression": true,
+      "Diagnostic player stores exposed": true,
+      "Diagnostic city stores exposed": true,
+      "Game turn and active player exposed": true,
+      "Melee attack excludes generic defense modifier": true,
+      "Ranged generic defense only in non-attacking branch": true,
+      "UnitUpgraded precedes normal conversion": true,
+      "UnitConverted follows all promotion transfer": true,
+      "UnitConverted exact argument order": true,
+      "UnitUpgraded exact argument order": true,
+      "UnitCreated exact argument order": true,
+      "UnitCreated follows initial free promotions": true,
+      "UnitSetXY argument order": true,
+      "TileOwnershipChanged exact argument order": true,
+      "All city acquisition modes share completion callback": true,
+      "Completion follows building copy and ownership changes": true,
+      "PlayerLiberated exact argument order": true,
+      "CityConstructed purchase flag contract": true,
+      "PlayerCityFounded coordinate contract": true,
+      "CitySoldBuilding follows sale": true,
       "PlayerDoTurn is after city yields and research": true,
-      "NewGameTurn precedes sequential player activation": true
+      "NewGameTurn precedes sequential player activation": true,
+      "TURN_START published before owner doTurn": true,
+      "GameCoreUpdateBegin is per update rather than per owner": true
     },
-    "ui_dispatch_synchrony": "NOT established by DLL source; manual in-game acceptance required"
+    "ui_dispatch_synchrony": "NOT established by DLL source; manual in-game acceptance required",
+    "ai_processing_human_boundary": "NOT established; diagnostic-only, never updates snapshots",
+    "supported_boundary": "NewGameTurn for actual Ministry owner only when first living sequential player",
+    "other_hooks_reviewed": "PlayerDoTurn and ActivePlayerTurnStart are post-economy; GameCoreUpdateBegin is per update and cannot identify each owner boundary without polling/approximating"
   },
-  "database": "PASS: real BNW cache + installed CP151 schema; active-definition mutation fixture, complete Spearman/Library inheritance, original rows unchanged, dummies, overrides, localization",
-  "lua": "PASS: 4 files parse under Lua 5.1; production gameplay executes in mock events across requested thresholds, teams, 25-major scenario, capture/liberation, construction/sale, reload, upgrades and territory changes",
-  "package": "PASS: 65 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
+  "database_evidence": {
+    "database": "cache_backup/Civ5DebugDatabase.db",
+    "installed_cp_version": 151,
+    "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+    "source_tables": 491,
+    "source_civilizations": 120,
+    "BUILDING_LIBRARY": {
+      "Cost": 75,
+      "GoldMaintenance": 1,
+      "PrereqTech": "TECH_WRITING",
+      "SpecialistType": null,
+      "SpecialistCount": 0
+    },
+    "UNIT_SPEARMAN": {
+      "Combat": 11,
+      "Moves": 2,
+      "Cost": 56,
+      "PrereqTech": "TECH_BRONZE_WORKING"
+    }
+  },
+  "inherited_selection_sound": {
+    "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
+    "SelectionSound": "AS2D_SELECT_PIKEMAN",
+    "FirstSelectionSound": "AS2D_BIRTH_PIKEMAN"
+  },
+  "database": "PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds",
+  "database_runs": [
+    {
+      "evidence": {
+        "database": "cache_backup/Civ5DebugDatabase.db",
+        "installed_cp_version": 151,
+        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+        "source_tables": 491,
+        "source_civilizations": 120,
+        "BUILDING_LIBRARY": {
+          "Cost": 75,
+          "GoldMaintenance": 1,
+          "PrereqTech": "TECH_WRITING",
+          "SpecialistType": null,
+          "SpecialistCount": 0
+        },
+        "UNIT_SPEARMAN": {
+          "Combat": 11,
+          "Moves": 2,
+          "Cost": 56,
+          "PrereqTech": "TECH_BRONZE_WORKING"
+        }
+      },
+      "fixture": "mutated stats and pre-existing Culture",
+      "result": "PASS"
+    },
+    {
+      "evidence": {
+        "database": "cache_backup/Civ5DebugDatabase.db",
+        "installed_cp_version": 151,
+        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+        "source_tables": 491,
+        "source_civilizations": 120,
+        "BUILDING_LIBRARY": {
+          "Cost": 75,
+          "GoldMaintenance": 1,
+          "PrereqTech": "TECH_WRITING",
+          "SpecialistType": null,
+          "SpecialistCount": 0
+        },
+        "UNIT_SPEARMAN": {
+          "Combat": 11,
+          "Moves": 2,
+          "Cost": 56,
+          "PrereqTech": "TECH_BRONZE_WORKING"
+        }
+      },
+      "fixture": "unaltered source definitions",
+      "result": "PASS"
+    },
+    {
+      "evidence": {
+        "database": "cache/Civ5DebugDatabase.db",
+        "installed_cp_version": 151,
+        "mode": "existing CP-schema snapshot (not certified CP-only)",
+        "source_tables": 959,
+        "source_civilizations": 194,
+        "BUILDING_LIBRARY": {
+          "Cost": 75,
+          "GoldMaintenance": 1,
+          "PrereqTech": "TECH_WRITING",
+          "SpecialistType": null,
+          "SpecialistCount": 0
+        },
+        "UNIT_SPEARMAN": {
+          "Combat": 11,
+          "Moves": 2,
+          "Cost": 56,
+          "PrereqTech": "TECH_BRONZE_WORKING"
+        }
+      },
+      "fixture": "unaltered source definitions",
+      "result": "PASS"
+    },
+    {
+      "evidence": {
+        "database": "cache/Civ5DebugDatabase.db",
+        "installed_cp_version": 151,
+        "mode": "existing CP-schema snapshot (not certified CP-only)",
+        "source_tables": 959,
+        "source_civilizations": 194,
+        "BUILDING_LIBRARY": {
+          "Cost": 75,
+          "GoldMaintenance": 1,
+          "PrereqTech": "TECH_WRITING",
+          "SpecialistType": null,
+          "SpecialistCount": 0
+        },
+        "UNIT_SPEARMAN": {
+          "Combat": 11,
+          "Moves": 2,
+          "Cost": 56,
+          "PrereqTech": "TECH_BRONZE_WORKING"
+        }
+      },
+      "fixture": "mutated stats and pre-existing Culture",
+      "result": "PASS"
+    }
+  ],
+  "lua_mock_suites": [
+    {
+      "file": "ministry_assertions.lua",
+      "result": [
+        "PASS 42 city yield assertions plus snapshot, ownership, reload, 25-major and veteran event scenarios (mock)"
+      ],
+      "diagnostic_lines_observed": 0
+    },
+    {
+      "file": "ministry_hardening.lua",
+      "result": [
+        "PASS 138 hardening assertions: saved-state repair, free counts, cession/gifts, exact upgrade order, 34 living majors/slot restrictions, late-event rejection and diagnostic invariants (mock)"
+      ],
+      "diagnostic_lines_observed": 286
+    }
+  ],
+  "lua": "PASS: 6 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "package": "PASS: 66 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance."
 }

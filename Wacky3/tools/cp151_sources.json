@@ -48,6 +48,10 @@
     "CvDllNetMessageHandler.cpp": {
       "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/CvDllNetMessageHandler.cpp",
       "sha256": "6f748a0f38b8a71b5e08258aed04adfe1420a6f537d5a3ccf1b5659f04be730d"
+    },
+    "CvLuaGame.cpp": {
+      "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/Lua/CvLuaGame.cpp",
+      "sha256": "a2bee0ef0210f71eae8e09f3209755f7bf64ee6177dc8f52ee01de8fa893655b"
     }
   }
 }

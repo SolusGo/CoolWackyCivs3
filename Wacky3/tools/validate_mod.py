@@ -1,22 +1,23 @@
 """Real SQLite/Lua51/source/texture/package checks; never claims in-game passes."""
-import hashlib, json, re, struct
+import argparse, hashlib, json, os, re, struct
 from collections import Counter
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from PIL import Image
 from lupa.lua51 import LuaRuntime
-from baseline import ROOT, database, quote
+from baseline import ROOT, database, quote, EVIDENCE
 from build_mod import NAME, MOD_ID, ORDER, ENTRY, files
 from audit_cp import audit
 
 RESULTS={}
-def sql_checks():
+def sql_checks(mutate=True):
     db=database()
     # Deliberately modify the active source definitions in memory. Generated SQL
     # must inherit these, proving it doesn't replace CP values with vanilla ones.
-    db.execute("UPDATE Units SET Combat=Combat+3,Cost=Cost+7,Moves=Moves+1 WHERE Type='UNIT_SPEARMAN'")
-    db.execute("UPDATE Buildings SET Cost=Cost+13,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_LIBRARY'")
-    db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_LIBRARY','YIELD_CULTURE',2)")
+    if mutate:
+        db.execute("UPDATE Units SET Combat=Combat+3,Cost=Cost+7,Moves=Moves+1 WHERE Type='UNIT_SPEARMAN'")
+        db.execute("UPDATE Buildings SET Cost=Cost+13,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_LIBRARY'")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_LIBRARY','YIELD_CULTURE',2)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
     civ=db.execute("SELECT * FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone()
@@ -31,7 +32,7 @@ def sql_checks():
         if table=='Units': assert b['Moves']==a['Moves']+1
         prefix,column=('Unit_','UnitType') if table=='Units' else ('Building_','BuildingType')
         for (companion,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
-            if not companion.startswith(prefix) or companion.endswith('_new'): continue
+            if not (companion.startswith(prefix) or (table=='Units' and companion=='UnitGameplay2DScripts')) or companion.endswith('_new'): continue
             cols=[r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')')]
             if column not in cols: continue
             fields=[c for c in cols if c not in [column,'ID']]
@@ -42,11 +43,14 @@ def sql_checks():
                 unique.subtract({('PROMOTION_CWC3_SECOND_WIND',):1}); unique=+unique
             if companion=='Building_YieldChanges':
                 expected=Counter((r[0],r[1]+1) if r[0]=='YIELD_CULTURE' else r for r in original.elements())
+                if not any(r[0]=='YIELD_CULTURE' for r in original): expected[('YIELD_CULTURE',1)]+=1
                 assert unique==expected,(companion,unique,expected)
             else: assert original==unique,(companion,original-unique,unique-original)
     for table,rows in baseline.items():
         existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not 'CWC3_' in str(r['Type'])]
         assert existing==rows,('changed native rows',table)
+    for table in ['Civilizations','Leaders','Traits','Units','Buildings','UnitPromotions']:
+        assert not db.execute('SELECT Type FROM '+quote(table)+" WHERE Type LIKE '%CWC3_%' GROUP BY Type HAVING COUNT(*)<>1").fetchone(),('duplicate identifier',table)
     for suffix,kind in [('SCIENCE_1','SCIENCE'),('SCIENCE_2','SCIENCE'),('CULTURE','CULTURE'),('ACADEMY_PRODUCTION','PRODUCTION')]:
         typ='BUILDING_CWC3_ALMOST_'+suffix
         row=db.execute('SELECT * FROM Buildings WHERE Type=?',(typ,)).fetchone()
@@ -68,29 +72,42 @@ def sql_checks():
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
     assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
-    RESULTS['database']='PASS: real BNW cache + installed CP151 schema; active-definition mutation fixture, complete Spearman/Library inheritance, original rows unchanged, dummies, overrides, localization'
+    RESULTS['database_evidence']=dict(EVIDENCE)
+    RESULTS['inherited_selection_sound']=dict(db.execute("SELECT * FROM UnitGameplay2DScripts WHERE UnitType='UNIT_CWC3_SECOND_WIND_GUARD'").fetchone())
+    assert not db.execute("SELECT name FROM sqlite_temp_master WHERE name LIKE 'CWC3_%'").fetchone(),'temporary clones must be dropped'
+    RESULTS['database']='PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds'
     return db
 
 def lua_checks():
-    lua=LuaRuntime()
-    syntax=lua.eval('function(s,n) local f,e=loadstring(s,n); assert(f,e) end')
+    syntax=LuaRuntime().eval('function(s,n) local f,e=loadstring(s,n); assert(f,e) end')
     paths=list(ROOT.rglob('*.lua'))
     for path in paths: syntax(path.read_text(encoding='utf-8'),str(path))
-    def include(name): lua.execute((ROOT/'Shared/Lua'/f'{name}.lua').read_text(encoding='utf-8'))
-    lua.globals().include=include
-    lua.globals().LoadGameplay=lambda:lua.execute((ROOT/'TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua').read_text(encoding='utf-8'))
-    lua.execute((ROOT/'tools/tests/ministry_mock.lua').read_text())
-    lua.execute((ROOT/'tools/tests/ministry_assertions.lua').read_text())
-    RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay executes in mock events across requested thresholds, teams, 25-major scenario, capture/liberation, construction/sale, reload, upgrades and territory changes'
+    suites=[]
+    for test in ['ministry_assertions.lua','ministry_hardening.lua']:
+        lua=LuaRuntime(); logs=[]
+        lua.globals().print=lambda *args:logs.append(' '.join(map(str,args)))
+        def include(name): lua.execute((ROOT/'Shared/Lua'/f'{name}.lua').read_text(encoding='utf-8'))
+        lua.globals().include=include
+        lua.globals().LoadGameplay=lambda:lua.execute((ROOT/'TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua').read_text(encoding='utf-8'))
+        lua.execute((ROOT/'tools/tests/ministry_mock.lua').read_text())
+        lua.execute((ROOT/'tools/tests'/test).read_text())
+        summaries=[line for line in logs if line.startswith('PASS ')]
+        for line in summaries: print(line)
+        suites.append({'file':test,'result':summaries,'diagnostic_lines_observed':sum(s.startswith('CWC3_ALMOST_DIAG') for s in logs)})
+    RESULTS['lua_mock_suites']=suites
+    RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
     root=ET.parse(ROOT/NAME).getroot()
     assert len(list(ROOT.glob('*.modinfo')))==1
     assert root.get('id')==MOD_ID and root.get('version')=='1'
+    for key,value in {'MinCompatibleSaveVersion':'1','AffectsSavedGames':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0'}.items():
+        assert root.findtext('Properties/'+key)==value,key
     deps=list(root.find('Dependencies'))
     assert [(d.tag,d.get('id').lower(),d.get('minversion'),d.get('maxversion')) for d in deps]==[
       ('Dlc','6da07636-4123-4018-b643-6575b4ec336b','0','999'),('Mod','d1b6328c-ff44-4b0d-aad7-c657f83610cd','151','151')]
     declared={e.text:e for e in root.findall('Files/File')}
+    assert len(declared)==len(root.findall('Files/File')),'duplicate manifest path'
     assert set(declared)=={p.relative_to(ROOT).as_posix() for p in files()}
     assert [e.text for e in root.findall('Actions/OnModActivated/UpdateDatabase')]==ORDER
     assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[ENTRY]
@@ -105,6 +122,9 @@ def package_checks(db):
         if entry.get('import')=='1': imported.append(path.name.casefold())
         if path.suffix=='.xml': ET.parse(path)
         if path.suffix=='.sql': assert entry.get('import')=='0'
+        if path.suffix in ['.lua','.dds']: assert entry.get('import')=='1'
+        if path.suffix in ['.sql','.lua','.xml']:
+            assert 'CWC2_' not in path.read_text(encoding='utf-8'),'unwanted runtime dependency on previous pack'
     assert len(imported)==len(set(imported)),'VFS basename collision'
     art=ROOT/'TheMinistryOfAlmost/Art'
     textures=[]
@@ -128,10 +148,32 @@ def package_checks(db):
     RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains'
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--compare-database',type=Path,action='append',default=[],help='Also execute SQL against an existing cache without overlaying a CP-schema snapshot')
+    args=parser.parse_args()
     RESULTS['source_audit']=audit()
-    db=sql_checks(); lua_checks(); package_checks(db)
+    db=sql_checks()
+    runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
+    pristine=sql_checks(mutate=False); pristine.close()
+    runs.append({'evidence':dict(EVIDENCE),'fixture':'unaltered source definitions','result':'PASS'})
+    previous=os.environ.get('CWC3_DATABASE')
+    try:
+        for path in args.compare_database:
+            os.environ['CWC3_DATABASE']=str(path)
+            for mutate in [False,True]:
+                comparison=sql_checks(mutate); comparison.close()
+                runs.append({'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture' if mutate else 'unaltered source definitions','result':'PASS'})
+    finally:
+        if previous is None: os.environ.pop('CWC3_DATABASE',None)
+        else: os.environ['CWC3_DATABASE']=previous
+    RESULTS['database_runs']=runs
+    RESULTS['database_evidence']=runs[0]['evidence']
+    lua_checks(); package_checks(db); db.close()
     RESULTS['in_game']='NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
-    for k,v in RESULTS.items(): print(k+': '+(str(v) if k!='source_audit' else 'PASS pinned source hashes and API/timing assertions'))
+    for k,v in RESULTS.items():
+        if k in ['database_evidence','inherited_selection_sound','lua_mock_suites']: continue
+        if k=='database_runs': print('database_runs: '+str(len(v))+' SQLite baselines passed'); continue
+        print(k+': '+(str(v) if k!='source_audit' else 'PASS pinned source hashes and API/timing assertions'))
 if __name__=='__main__': main()

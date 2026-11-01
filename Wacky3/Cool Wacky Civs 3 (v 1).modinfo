@@ -24,13 +24,14 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="77FDF5B883A6EA318E7C0746241DD6F6" import="0">CHANGELOG.md</File>
-    <File md5="466DAD933CAB30BF4523561B78615910" import="0">docs/Compatibility.md</File>
-    <File md5="90155D4F53D074278E1F0DDE3C6A0842" import="0">docs/ImplementationReport.md</File>
+    <File md5="C8BC1B87689C9ED3A20BCB1D7B444569" import="0">CHANGELOG.md</File>
+    <File md5="7D0ABCC39ED2EA850AEB9D0EC99A70B7" import="0">docs/Compatibility.md</File>
+    <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
-    <File md5="7D549F899C87B73C0991BE40BAD2F160" import="0">docs/Testing.md</File>
-    <File md5="A700572AB13AC4252B97F164202B5599" import="0">README.md</File>
-    <File md5="4D096F1C45862CF09A29EE8255679297" import="1">Shared/Lua/CWC3_Runtime.lua</File>
+    <File md5="462D3C236A2FF32B108727A099AEE275" import="0">docs/Testing.md</File>
+    <File md5="E6D6E7E98126109F80C10E63192EAD87" import="0">README.md</File>
+    <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
+    <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
     <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
     <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
@@ -82,13 +83,13 @@
     <File md5="A52C9D76EF8B530344BFBF01AD9D77D1" import="1">TheMinistryOfAlmost/Art/CWC3_Unit64.dds</File>
     <File md5="695C411D91CB26EDB07A5CD68BCF3352" import="1">TheMinistryOfAlmost/Art/CWC3_Unit80.dds</File>
     <File md5="81D97D2EE7B1343F3930E7D80D1D4CC6" import="0">TheMinistryOfAlmost/Lua/CWC3_Almost.xml</File>
-    <File md5="965EB3017D44C36E4B2FAB06929DA1F0" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
-    <File md5="9CEE6D09E0F636156F94E06F56D09D88" import="0">TheMinistryOfAlmost/README.md</File>
+    <File md5="42E725CB7BEC50BC79DABDF22080A3D9" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
+    <File md5="DE4790EC1AB1769E57C75A1584D8DCDA" import="0">TheMinistryOfAlmost/README.md</File>
     <File md5="691ED00F2EB05D58AB566E1F32DBA919" import="0">TheMinistryOfAlmost/SQL/Ministry_Art.sql</File>
     <File md5="B0CAE591F236E947E7412343FCFCCA25" import="0">TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</File>
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
-    <File md5="F1F4DF5FA388DD7257C4AC0A2F9832CA" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+    <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
   </Files>
   <Actions>
     <OnModActivated>

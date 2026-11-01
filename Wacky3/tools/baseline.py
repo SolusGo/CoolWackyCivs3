@@ -6,6 +6,7 @@ from xml.etree import ElementTree as ET
 CP_ID = 'd1b6328c-ff44-4b0d-aad7-c657f83610cd'
 ROOT = Path(__file__).resolve().parents[1]
 USER = Path.home()/"Documents/My Games/Sid Meier's Civilization 5"
+EVIDENCE = {}
 
 def quote(name):
     return '"' + name.replace('"', '""') + '"'
@@ -19,6 +20,23 @@ def database():
     d = sqlite3.connect(':memory:'); source.backup(d); source.close()
     assert d.execute("SELECT 1 FROM Civilizations WHERE Type='CIVILIZATION_VENICE'").fetchone(), 'BNW required'
     assert not d.execute("SELECT 1 FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone(), 'Use a baseline without Wacky3'
+    active = 'IsDummy' in {r[1] for r in d.execute('PRAGMA table_info(Buildings)')}
+    EVIDENCE.clear()
+    reported=cache.relative_to(USER.resolve()).as_posix() if cache.is_relative_to(USER.resolve()) else str(cache)
+    EVIDENCE.update(database=reported, installed_cp_version=151,
+        mode='existing CP-schema snapshot (not certified CP-only)' if active else 'BNW snapshot with CP151 schema overlay (not active CP data)',
+        source_tables=d.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table'").fetchone()[0],
+        source_civilizations=d.execute('SELECT COUNT(*) FROM Civilizations').fetchone()[0])
+    for table,typ,fields in [('Buildings','BUILDING_LIBRARY',['Cost','GoldMaintenance','PrereqTech','SpecialistType','SpecialistCount']),
+                             ('Units','UNIT_SPEARMAN',['Combat','Moves','Cost','PrereqTech'])]:
+        row=d.execute('SELECT '+','.join(fields)+' FROM '+table+' WHERE Type=?',(typ,)).fetchone()
+        EVIDENCE[typ]=dict(zip(fields,row))
+    # Do not silently overlay a captured active database: missing runtime tables
+    # must fail the SQL test rather than being manufactured by the fixture.
+    if active:
+        d.execute('CREATE TABLE IF NOT EXISTS Language_en_US(Tag TEXT PRIMARY KEY, Text TEXT)')
+        d.row_factory = sqlite3.Row
+        return d
     # Vanilla caches need CP schema additions. Active CP caches are also accepted.
     for path in sorted((cp/'Database Changes').rglob('*.sql')):
         for statement in re.findall(r'ALTER\s+TABLE\s+[^;]+?\s+ADD\s+.*?;', path.read_text(encoding='utf-8-sig'), re.I|re.S):

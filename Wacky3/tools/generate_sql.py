@@ -20,7 +20,7 @@ def clone(table, old, new, changes):
 def companions(prefix, column, old, new):
     result = ''
     for (table,) in DB.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").fetchall():
-        if not table.startswith(prefix) or table.endswith('_new'): continue
+        if not (table.startswith(prefix) or (prefix=='Unit_' and table=='UnitGameplay2DScripts')) or table.endswith('_new'): continue
         cols = [r[1] for r in DB.execute('PRAGMA table_info('+quote(table)+')')]
         if column not in cols: continue
         # Companion tables ordinarily have no ID; retain auto-increment behavior if present.
