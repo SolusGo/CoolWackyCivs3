@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
+  <Properties>
+    <Name>Cool Wacky Civs 3</Name>
+    <Teaser>The Ministry of Almost: second place inspires another attempt.</Teaser>
+    <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.</Description>
+    <Authors>SolusGo</Authors>
+    <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <MinCompatibleSaveVersion>1</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+    <SupportsMac>0</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies>
+    <Dlc id="6DA07636-4123-4018-B643-6575B4EC336B" minversion="0" maxversion="999" title="Expansion - Brave New World" />
+    <Mod id="d1b6328c-ff44-4b0d-aad7-c657f83610cd" minversion="151" maxversion="151" title="(1) Community Patch" />
+  </Dependencies>
+  <References />
+  <Blocks />
+  <Files>
+    <File md5="77FDF5B883A6EA318E7C0746241DD6F6" import="0">CHANGELOG.md</File>
+    <File md5="466DAD933CAB30BF4523561B78615910" import="0">docs/Compatibility.md</File>
+    <File md5="90155D4F53D074278E1F0DDE3C6A0842" import="0">docs/ImplementationReport.md</File>
+    <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
+    <File md5="7D549F899C87B73C0991BE40BAD2F160" import="0">docs/Testing.md</File>
+    <File md5="A700572AB13AC4252B97F164202B5599" import="0">README.md</File>
+    <File md5="4D096F1C45862CF09A29EE8255679297" import="1">Shared/Lua/CWC3_Runtime.lua</File>
+    <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
+    <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
+    <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
+    <File md5="50805CCEF4FF840FEB1E2FD751DAD07F" import="1">TheMinistryOfAlmost/Art/CWC3_Academy24.dds</File>
+    <File md5="6B61B2803CB9DEFC9A5BC62FAD0FF5A5" import="1">TheMinistryOfAlmost/Art/CWC3_Academy256.dds</File>
+    <File md5="FBC20905BFB19CA75B134637F1024DEB" import="1">TheMinistryOfAlmost/Art/CWC3_Academy32.dds</File>
+    <File md5="5FA37325C76378E11354E932086E2A57" import="1">TheMinistryOfAlmost/Art/CWC3_Academy45.dds</File>
+    <File md5="88CDB1D269D4426A5DD11C43087DC9E5" import="1">TheMinistryOfAlmost/Art/CWC3_Academy48.dds</File>
+    <File md5="2016F9EE7C8A4319A36B941099AD1D08" import="1">TheMinistryOfAlmost/Art/CWC3_Academy64.dds</File>
+    <File md5="67E5DAAAA7B47E6786D39C6B05FA40A7" import="1">TheMinistryOfAlmost/Art/CWC3_Academy80.dds</File>
+    <File md5="59078152935121C616978517771E376D" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha128.dds</File>
+    <File md5="1F2D2FE55C2D1B8F415A3AB52AC40CD6" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha16.dds</File>
+    <File md5="9D1282E4E0DE980DB87C85659A63CD86" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha24.dds</File>
+    <File md5="49FCA6A36F7193B60D12B795CA6701A0" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha256.dds</File>
+    <File md5="36BE4276828B3873AF0E2C74F309F433" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha32.dds</File>
+    <File md5="674918304B65E3ABB22A0D941B19D6BD" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha45.dds</File>
+    <File md5="093A4DD3DCF3769EB4D71C79CB06863C" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha48.dds</File>
+    <File md5="25B57FD271D3C083C6D0E31C96705C4B" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha64.dds</File>
+    <File md5="24B76D26C5B1573099D76E88F417F24E" import="1">TheMinistryOfAlmost/Art/CWC3_Alpha80.dds</File>
+    <File md5="4B40DB98068652CD6D398437AB6EF60D" import="1">TheMinistryOfAlmost/Art/CWC3_Civ128.dds</File>
+    <File md5="E7466427100F8C065578133C1C27422F" import="1">TheMinistryOfAlmost/Art/CWC3_Civ16.dds</File>
+    <File md5="DE737328495EB371AE0CEB26EDF20B9F" import="1">TheMinistryOfAlmost/Art/CWC3_Civ24.dds</File>
+    <File md5="7419BB349870C16902AEF2C87D5E2854" import="1">TheMinistryOfAlmost/Art/CWC3_Civ256.dds</File>
+    <File md5="3A050785B5253BB47EBA3CAC0D80CAB0" import="1">TheMinistryOfAlmost/Art/CWC3_Civ32.dds</File>
+    <File md5="C2BE2561FA53B44D2FB619701C2BA304" import="1">TheMinistryOfAlmost/Art/CWC3_Civ45.dds</File>
+    <File md5="95D732214285CEF17A548A80963F66E3" import="1">TheMinistryOfAlmost/Art/CWC3_Civ48.dds</File>
+    <File md5="445729D94DEB0CEF5025AE926B373521" import="1">TheMinistryOfAlmost/Art/CWC3_Civ64.dds</File>
+    <File md5="F06FA3A42B70A1EE7AE712DDAB9733A2" import="1">TheMinistryOfAlmost/Art/CWC3_Civ80.dds</File>
+    <File md5="B54C50F75169426092E42203E95030E2" import="1">TheMinistryOfAlmost/Art/CWC3_Dawn.dds</File>
+    <File md5="A0522592F4B6A998D57D2F61C50C1699" import="1">TheMinistryOfAlmost/Art/CWC3_Leader.dds</File>
+    <File md5="1D23B0564E5DC240BBFF2FE53255D145" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon128.dds</File>
+    <File md5="110E3E5633608CCBD58A8D83757371CB" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon16.dds</File>
+    <File md5="49395E3413DA4C0579B691030FA96CF4" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon24.dds</File>
+    <File md5="C46017C742C0ABE23A48356540CA62D3" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon256.dds</File>
+    <File md5="AFEFC115FE8246FF8A3332F16436061B" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon32.dds</File>
+    <File md5="20234AB273FE62BC43068D0D697FD634" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon45.dds</File>
+    <File md5="625B39CABF409D8750FD6C714A1C65F8" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon48.dds</File>
+    <File md5="4DA620FB3C8545C432C4962B9141B5F0" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon64.dds</File>
+    <File md5="7687846BFC778AF3BE579CE59B36A04C" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon80.dds</File>
+    <File md5="485B2D23AEBBA7ED7AD88845AC38C19B" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderScene.xml</File>
+    <File md5="6DF79BFCDFC74E872874696EEE5653E5" import="1">TheMinistryOfAlmost/Art/CWC3_Map.dds</File>
+    <File md5="95BB98F0157FA9F0D27E7B3C716059D6" import="1">TheMinistryOfAlmost/Art/CWC3_Unit128.dds</File>
+    <File md5="C3122725F1EB5EC13D2C492C2DA5EF0B" import="1">TheMinistryOfAlmost/Art/CWC3_Unit16.dds</File>
+    <File md5="87F5F57896E05A7C15D2680AF2803679" import="1">TheMinistryOfAlmost/Art/CWC3_Unit24.dds</File>
+    <File md5="DA892F3A3C4A971BB292540C0081824F" import="1">TheMinistryOfAlmost/Art/CWC3_Unit256.dds</File>
+    <File md5="043715772E25A06C3A14646F42423706" import="1">TheMinistryOfAlmost/Art/CWC3_Unit32.dds</File>
+    <File md5="FC407DBC36AEA1450FAF5DBC7DE06B26" import="1">TheMinistryOfAlmost/Art/CWC3_Unit45.dds</File>
+    <File md5="144ABDF698BFD49063EE4C2EECD09543" import="1">TheMinistryOfAlmost/Art/CWC3_Unit48.dds</File>
+    <File md5="A52C9D76EF8B530344BFBF01AD9D77D1" import="1">TheMinistryOfAlmost/Art/CWC3_Unit64.dds</File>
+    <File md5="695C411D91CB26EDB07A5CD68BCF3352" import="1">TheMinistryOfAlmost/Art/CWC3_Unit80.dds</File>
+    <File md5="81D97D2EE7B1343F3930E7D80D1D4CC6" import="0">TheMinistryOfAlmost/Lua/CWC3_Almost.xml</File>
+    <File md5="965EB3017D44C36E4B2FAB06929DA1F0" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
+    <File md5="9CEE6D09E0F636156F94E06F56D09D88" import="0">TheMinistryOfAlmost/README.md</File>
+    <File md5="691ED00F2EB05D58AB566E1F32DBA919" import="0">TheMinistryOfAlmost/SQL/Ministry_Art.sql</File>
+    <File md5="B0CAE591F236E947E7412343FCFCCA25" import="0">TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</File>
+    <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
+    <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
+    <File md5="F1F4DF5FA388DD7257C4AC0A2F9832CA" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>Shared/SQL/CWC3_Options.sql</UpdateDatabase>
+      <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Art.sql</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="TheMinistryOfAlmost/Lua/CWC3_Almost.xml">
+      <Name>Always the Challenger</Name>
+      <Description>Ministry owner-turn snapshots and Second Wind defensive veterans.</Description>
+    </EntryPoint>
+  </EntryPoints>
+</Mod>

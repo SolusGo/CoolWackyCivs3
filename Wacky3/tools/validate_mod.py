@@ -1,0 +1,137 @@
+"""Real SQLite/Lua51/source/texture/package checks; never claims in-game passes."""
+import hashlib, json, re, struct
+from collections import Counter
+from pathlib import Path
+from xml.etree import ElementTree as ET
+from PIL import Image
+from lupa.lua51 import LuaRuntime
+from baseline import ROOT, database, quote
+from build_mod import NAME, MOD_ID, ORDER, ENTRY, files
+from audit_cp import audit
+
+RESULTS={}
+def sql_checks():
+    db=database()
+    # Deliberately modify the active source definitions in memory. Generated SQL
+    # must inherit these, proving it doesn't replace CP values with vanilla ones.
+    db.execute("UPDATE Units SET Combat=Combat+3,Cost=Cost+7,Moves=Moves+1 WHERE Type='UNIT_SPEARMAN'")
+    db.execute("UPDATE Buildings SET Cost=Cost+13,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_LIBRARY'")
+    db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_LIBRARY','YIELD_CULTURE',2)")
+    baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
+    for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
+    civ=db.execute("SELECT * FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone()
+    assert (civ['Playable'],civ['AIPlayable'])==(1,0)
+    for table,old,new,allowed in [
+      ('Units','UNIT_SPEARMAN','UNIT_CWC3_SECOND_WIND_GUARD',{'ID','Type','Description','Civilopedia','Help','Strategy','IconAtlas','PortraitIndex','Moves'}),
+      ('Buildings','BUILDING_LIBRARY','BUILDING_CWC3_RUNNER_UP_ACADEMY',{'ID','Type','Description','Civilopedia','Help','Strategy','IconAtlas','PortraitIndex'})]:
+        a=db.execute('SELECT * FROM '+table+' WHERE Type=?',(old,)).fetchone()
+        b=db.execute('SELECT * FROM '+table+' WHERE Type=?',(new,)).fetchone()
+        for key in a.keys():
+            if key not in allowed: assert a[key]==b[key],(table,key,a[key],b[key])
+        if table=='Units': assert b['Moves']==a['Moves']+1
+        prefix,column=('Unit_','UnitType') if table=='Units' else ('Building_','BuildingType')
+        for (companion,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
+            if not companion.startswith(prefix) or companion.endswith('_new'): continue
+            cols=[r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')')]
+            if column not in cols: continue
+            fields=[c for c in cols if c not in [column,'ID']]
+            query='SELECT '+','.join(map(quote,fields))+' FROM '+quote(companion)+' WHERE '+quote(column)+'=?'
+            original=Counter(tuple(r) for r in db.execute(query,(old,)))
+            unique=Counter(tuple(r) for r in db.execute(query,(new,)))
+            if companion=='Unit_FreePromotions':
+                unique.subtract({('PROMOTION_CWC3_SECOND_WIND',):1}); unique=+unique
+            if companion=='Building_YieldChanges':
+                expected=Counter((r[0],r[1]+1) if r[0]=='YIELD_CULTURE' else r for r in original.elements())
+                assert unique==expected,(companion,unique,expected)
+            else: assert original==unique,(companion,original-unique,unique-original)
+    for table,rows in baseline.items():
+        existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not 'CWC3_' in str(r['Type'])]
+        assert existing==rows,('changed native rows',table)
+    for suffix,kind in [('SCIENCE_1','SCIENCE'),('SCIENCE_2','SCIENCE'),('CULTURE','CULTURE'),('ACADEMY_PRODUCTION','PRODUCTION')]:
+        typ='BUILDING_CWC3_ALMOST_'+suffix
+        row=db.execute('SELECT * FROM Buildings WHERE Type=?',(typ,)).fetchone()
+        assert all(row[k]==v for k,v in {'Cost':-1,'FaithCost':-1,'IsDummy':1,'ShowInPedia':0,'NeverCapture':1,'ConquestProb':0}.items())
+        assert [tuple(r) for r in db.execute('SELECT YieldType,Yield FROM Building_YieldChanges WHERE BuildingType=?',(typ,))]==[('YIELD_'+kind,1)]
+    promotion=db.execute("SELECT * FROM UnitPromotions WHERE Type='PROMOTION_CWC3_HOME_DEFENSE'").fetchone()
+    assert promotion['DefenseMod']==15 and promotion['AttackMod']==0 and promotion['FriendlyLandsModifier']==0
+    assert db.execute("SELECT LostWithUpgrade FROM UnitPromotions WHERE Type='PROMOTION_CWC3_SECOND_WIND'").fetchone()[0]==0
+    assert db.execute("SELECT UnitType FROM Civilization_UnitClassOverrides WHERE CivilizationType=? AND UnitClassType='UNITCLASS_SPEARMAN'",(civ['Type'],)).fetchone()[0]=='UNIT_CWC3_SECOND_WIND_GUARD'
+    assert db.execute("SELECT BuildingType FROM Civilization_BuildingClassOverrides WHERE CivilizationType=? AND BuildingClassType='BUILDINGCLASS_LIBRARY'",(civ['Type'],)).fetchone()[0]=='BUILDING_CWC3_RUNNER_UP_ACADEMY'
+    assert db.execute("SELECT Count FROM Civilization_FreeUnits WHERE CivilizationType=? AND UnitClassType='UNITCLASS_SETTLER'",(civ['Type'],)).fetchone()[0]==1
+    keys={r[0] for r in db.execute("SELECT Tag FROM Language_en_US WHERE Tag LIKE 'TXT_KEY_CWC3_%'")}
+    for key in ['CIV5_HEADING_1','CIV5_TEXT_1','PENULTIMATE_NAME','PENULTIMATE_SUBTITLE','PENULTIMATE_LIVED','PENULTIMATE_HEADING_1','PENULTIMATE_TEXT_1']:
+        assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
+    for path in [ROOT/p for p in ORDER]:
+        for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE']: continue # Pedia category prefixes
+            assert key in keys,('missing localization',key)
+    for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
+        assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
+    assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+    RESULTS['database']='PASS: real BNW cache + installed CP151 schema; active-definition mutation fixture, complete Spearman/Library inheritance, original rows unchanged, dummies, overrides, localization'
+    return db
+
+def lua_checks():
+    lua=LuaRuntime()
+    syntax=lua.eval('function(s,n) local f,e=loadstring(s,n); assert(f,e) end')
+    paths=list(ROOT.rglob('*.lua'))
+    for path in paths: syntax(path.read_text(encoding='utf-8'),str(path))
+    def include(name): lua.execute((ROOT/'Shared/Lua'/f'{name}.lua').read_text(encoding='utf-8'))
+    lua.globals().include=include
+    lua.globals().LoadGameplay=lambda:lua.execute((ROOT/'TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua').read_text(encoding='utf-8'))
+    lua.execute((ROOT/'tools/tests/ministry_mock.lua').read_text())
+    lua.execute((ROOT/'tools/tests/ministry_assertions.lua').read_text())
+    RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay executes in mock events across requested thresholds, teams, 25-major scenario, capture/liberation, construction/sale, reload, upgrades and territory changes'
+
+def package_checks(db):
+    root=ET.parse(ROOT/NAME).getroot()
+    assert len(list(ROOT.glob('*.modinfo')))==1
+    assert root.get('id')==MOD_ID and root.get('version')=='1'
+    deps=list(root.find('Dependencies'))
+    assert [(d.tag,d.get('id').lower(),d.get('minversion'),d.get('maxversion')) for d in deps]==[
+      ('Dlc','6da07636-4123-4018-b643-6575b4ec336b','0','999'),('Mod','d1b6328c-ff44-4b0d-aad7-c657f83610cd','151','151')]
+    declared={e.text:e for e in root.findall('Files/File')}
+    assert set(declared)=={p.relative_to(ROOT).as_posix() for p in files()}
+    assert [e.text for e in root.findall('Actions/OnModActivated/UpdateDatabase')]==ORDER
+    assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[ENTRY]
+    context=ET.parse(ROOT/ENTRY).getroot()
+    assert context.find('Script').get('file')=='Ministry_Gameplay.lua'
+    imported=[]
+    for name,entry in declared.items():
+        path=ROOT/name
+        assert hashlib.md5(path.read_bytes()).hexdigest().upper()==entry.get('md5'),name
+        if path.suffix in ['.lua','.xml','.sql','.md']:
+            assert b'\r' not in path.read_bytes(),('noncanonical line endings would invalidate Git checkout checksums',name)
+        if entry.get('import')=='1': imported.append(path.name.casefold())
+        if path.suffix=='.xml': ET.parse(path)
+        if path.suffix=='.sql': assert entry.get('import')=='0'
+    assert len(imported)==len(set(imported)),'VFS basename collision'
+    art=ROOT/'TheMinistryOfAlmost/Art'
+    textures=[]
+    for atlas,size,name,cols,rows in db.execute("SELECT Atlas,IconSize,Filename,IconsPerRow,IconsPerColumn FROM IconTextureAtlases WHERE Atlas LIKE 'CWC3_%'"):
+        path=art/name; assert path.is_file(),name
+        im=Image.open(path); im.load(); assert im.size==(size*int(cols),size*int(rows))
+        header=struct.unpack('<31I',path.read_bytes()[4:128]); assert header[21]==32 and header[19]==0x41
+        assert header[6]==size.bit_length(),('mip count',name,header[6])
+        expected=128; w,h=im.size
+        for _ in range(header[6]): expected+=w*h*4; w=max(1,w//2); h=max(1,h//2)
+        assert path.stat().st_size==expected,('DDS payload',name)
+        assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
+        textures.append(name)
+    assert len(textures)==45
+    for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
+        assert Image.open(art/name).size==dimensions
+    assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
+    for table,typ in [('Civilizations','CIVILIZATION_CWC3_ALMOST'),('Leaders','LEADER_CWC3_PENULTIMATE'),('Units','UNIT_CWC3_SECOND_WIND_GUARD'),('Buildings','BUILDING_CWC3_RUNNER_UP_ACADEMY')]:
+        row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
+        assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
+    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains'
+
+def main():
+    RESULTS['source_audit']=audit()
+    db=sql_checks(); lua_checks(); package_checks(db)
+    RESULTS['in_game']='NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance.'
+    # Report stays outside the manifest to avoid a checksum self-reference.
+    out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
+    for k,v in RESULTS.items(): print(k+': '+(str(v) if k!='source_audit' else 'PASS pinned source hashes and API/timing assertions'))
+if __name__=='__main__': main()

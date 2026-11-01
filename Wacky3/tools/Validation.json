@@ -1,0 +1,24 @@
+{
+  "source_audit": {
+    "commit": "44c1e14ff75d80c1dba5c8a71e8289439a53aafb",
+    "source_files_verified": 12,
+    "checks": {
+      "DLL identifies as v151": true,
+      "Team:IsHasTech is registered": true,
+      "Team:IsHasTech uses researched state": true,
+      "City:SetNumRealBuilding is registered": true,
+      "Player ScriptData read/write registered": true,
+      "DefenseMod is read from promotions": true,
+      "Defense strength uses defense-only modifier": true,
+      "Tile ownership callback occurs after ownership assignment": true,
+      "Upgrade conversion preserves non-lost promotions": true,
+      "PlayerDoTurn is after city yields and research": true,
+      "NewGameTurn precedes sequential player activation": true
+    },
+    "ui_dispatch_synchrony": "NOT established by DLL source; manual in-game acceptance required"
+  },
+  "database": "PASS: real BNW cache + installed CP151 schema; active-definition mutation fixture, complete Spearman/Library inheritance, original rows unchanged, dummies, overrides, localization",
+  "lua": "PASS: 4 files parse under Lua 5.1; production gameplay executes in mock events across requested thresholds, teams, 25-major scenario, capture/liberation, construction/sale, reload, upgrades and territory changes",
+  "package": "PASS: 65 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance."
+}
