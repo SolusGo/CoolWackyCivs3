@@ -1,6 +1,6 @@
 # Cool Wacky Civs 3 — version 1
 
-An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate. Human selectable (`Playable=1`); excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
+An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate, and **The Hollow Choir**, led by The First Note. Both are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
 
@@ -8,10 +8,16 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 
 1. Install BNW and Community Patch **version 151**. Enable the standalone `(1) Community Patch`, without the Vox Populi balance components. The dependency deliberately rejects newer CP versions until separately audited.
 2. Copy this `Wacky3` folder to `Documents/My Games/Sid Meier's Civilization 5/MODS/Cool Wacky Civs 3 (v 1)`. The `.modinfo` must sit directly inside that folder. Alternatively, extract the optional install ZIP produced by `tools/build_mod.py --package` into `MODS`.
-3. Enable the patch and this pack in the Mods menu, then choose **The Ministry of Almost** as the human civilization. Start a **new sequential single-player game**, with the human in player slot zero. The precise supported boundary requires the Ministry to be the **first living sequential player**, so an owner in a higher slot also qualifies after all earlier players are eliminated. The algorithms have mock coverage with 34 living major teams, subject to the installed DLL's player limits.
+3. Enable the patch and this pack in the Mods menu, then choose either civilization as the human in a **new sequential single-player game**. For **The Ministry of Almost**, use human player slot zero: its precise supported boundary requires the Ministry to be the **first living sequential player**, so a higher slot qualifies only after all earlier players are eliminated. The Ministry has mock coverage with 34 living major teams, subject to the installed DLL's player limits. The Choir's passive terrain reconciliation has no first-slot restriction; native timing still awaits acceptance.
 4. Do not add the mod to an existing save or remove it from a Ministry save. Existing version 1 saves retain their snapshot. Check `Database.log` and `Lua.log` when doing the acceptance tests.
 
-## Current civilization
+## The Hollow Choir
+
+**Capital:** Resonance. **Victory focus:** Culture / Science. Hill city centers gain +1 Production; independently, each adjacent Mountain supplies +1 Faith, capped at +2, regardless of ownership. The **Chorus Sentinel** inherits the active Swordsman and adds a persistent +1 Sight / +20% defense on Hills promotion. The **Resonance Hall** inherits the active Amphitheater, adds +1 Culture, and supplies +1 Science per two owned Mountains within three hexes, capped at +2. Shared Mountains count for every qualifying Hall. Five zero/one yield controllers reconcile map/building changes and reload without a saved ledger.
+
+See the [Choir guide](TheHollowChoir/README.md), [strategy](docs/strategy/TheHollowChoir.md) and [implementation/testing report](docs/HollowChoirTesting.md). Custom crystal artwork is not yet supplied; valid native America/Washington/Swordsman/Amphitheater assets are temporary fallbacks. Automated coverage includes active-row inheritance and terrain/lifecycle Lua51 mocks; **no in-game test pass is claimed**.
+
+## The Ministry of Almost
 
 **Capital:** Runner-Up. **Victory focus:** Science / Culture. **Secondary strength:** defensive warfare. **Complexity:** intermediate, 3/5.
 
@@ -47,6 +53,7 @@ Use Python 3.11+ and `python -m pip install -r requirements-dev.txt`. All tools 
 python tools/audit_cp.py --fetch
 python tools/generate_sql.py
 python tools/generate_text.py
+python tools/generate_hollow_choir.py
 python tools/build_art.py
 python tools/build_mod.py --package
 python tools/validate_mod.py
@@ -54,7 +61,7 @@ python tools/validate_mod.py
 python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My Games\Sid Meier's Civilization 5\cache\Civ5DebugDatabase.db"
 ```
 
-Validation reads game files **read-only** and works on in-memory copies. Set `CWC3_DATABASE` to a BNW debug database **without Wacky3**, and `CWC3_CP_DIR` to the installed `(1) Community Patch` folder. Defaults use the normal Documents game directory and `cache_backup/Civ5DebugDatabase.db`. A pre-CP snapshot receives the installed CP schema overlay; a snapshot already containing CP schema is tested **without** adding missing schema tables or overwriting its options. Neither supplied cache is certified as CP-only. A clean active BNW+CP151 cache is still required for final integration acceptance. Art does not need regeneration for gameplay or documentation edits; run its compiler only when rebuilding or changing assets.
+Validation reads game files **read-only** and works on in-memory copies. Set `CWC3_DATABASE` to a BNW debug database **without Wacky3**, and `CWC3_CP_DIR` to the installed `(1) Community Patch` folder. Defaults use the normal Documents game directory and `cache_backup/Civ5DebugDatabase.db`. A pre-CP snapshot receives the installed CP schema overlay; a snapshot already containing CP schema is tested **without** adding missing schema tables or overwriting its options. Neither supplied cache is certified as CP-only. A clean active BNW+CP151 cache is still required for final integration acceptance. Art does not need regeneration for gameplay or documentation edits; run its compiler only when rebuilding or changing assets. The Choir generator changes only Choir SQL; its native temporary art needs no compilation.
 
 The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits the active definitions at load time, rather than freezing vanilla stats in generated columns. Companion tables are enumerated from the CP151 schema at generation time. Re-run the generator when changing the target schema; inspect the emitted inventory before supporting a new patch. No build tool imports or needs Wacky2.
 

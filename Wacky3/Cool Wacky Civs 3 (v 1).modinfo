@@ -2,7 +2,7 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost: second place inspires another attempt.</Teaser>
+    <Teaser>The Ministry of Almost and The Hollow Choir: recovery and resonance.</Teaser>
     <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
@@ -24,15 +24,24 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="C8BC1B87689C9ED3A20BCB1D7B444569" import="0">CHANGELOG.md</File>
+    <File md5="117A83FFB9262097C3E4905E6D6EC780" import="0">CHANGELOG.md</File>
     <File md5="7D0ABCC39ED2EA850AEB9D0EC99A70B7" import="0">docs/Compatibility.md</File>
+    <File md5="9B04999F1968BDB5230B5C5809FE2ADD" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
+    <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
     <File md5="462D3C236A2FF32B108727A099AEE275" import="0">docs/Testing.md</File>
-    <File md5="E6D6E7E98126109F80C10E63192EAD87" import="0">README.md</File>
+    <File md5="BA6B115BAA06019D1804FD5BE80FB16D" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
+    <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
+    <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
+    <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
+    <File md5="3D3C7089C39C87E2F210A636803C5DFC" import="0">TheHollowChoir/SQL/Choir_Buildings.sql</File>
+    <File md5="0973E6C8D98469D2B5B896937864A3DF" import="0">TheHollowChoir/SQL/Choir_Civilization.sql</File>
+    <File md5="86709CF10495B6CA15EF422E6C7B1BBD" import="0">TheHollowChoir/SQL/Choir_Text.sql</File>
+    <File md5="4FD1291E75B41175C13CD96896C6DBE9" import="0">TheHollowChoir/SQL/Choir_Units.sql</File>
     <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
     <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
     <File md5="50805CCEF4FF840FEB1E2FD751DAD07F" import="1">TheMinistryOfAlmost/Art/CWC3_Academy24.dds</File>
@@ -99,12 +108,20 @@
       <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Text.sql</UpdateDatabase>
       <UpdateDatabase>TheMinistryOfAlmost/SQL/Ministry_Art.sql</UpdateDatabase>
+      <UpdateDatabase>TheHollowChoir/SQL/Choir_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheHollowChoir/SQL/Choir_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheHollowChoir/SQL/Choir_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheHollowChoir/SQL/Choir_Text.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
     <EntryPoint type="InGameUIAddin" file="TheMinistryOfAlmost/Lua/CWC3_Almost.xml">
       <Name>Always the Challenger</Name>
       <Description>Ministry owner-turn snapshots and Second Wind defensive veterans.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheHollowChoir/Lua/CWC3_Choir.xml">
+      <Name>Songs Beneath Stone</Name>
+      <Description>Hollow Choir terrain yields and capture cleanup.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

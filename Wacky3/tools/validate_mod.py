@@ -6,8 +6,9 @@ from xml.etree import ElementTree as ET
 from PIL import Image
 from lupa.lua51 import LuaRuntime
 from baseline import ROOT, database, quote, EVIDENCE
-from build_mod import NAME, MOD_ID, ORDER, ENTRY, files
+from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, files
 from audit_cp import audit
+from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
 
 RESULTS={}
 def sql_checks(mutate=True):
@@ -18,6 +19,9 @@ def sql_checks(mutate=True):
         db.execute("UPDATE Units SET Combat=Combat+3,Cost=Cost+7,Moves=Moves+1 WHERE Type='UNIT_SPEARMAN'")
         db.execute("UPDATE Buildings SET Cost=Cost+13,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_LIBRARY'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_LIBRARY','YIELD_CULTURE',2)")
+        db.execute("UPDATE Units SET Combat=Combat+4,Cost=Cost+9,Moves=Moves+1 WHERE Type='UNIT_SWORDSMAN'")
+        db.execute("UPDATE Buildings SET Cost=Cost+17,GoldMaintenance=GoldMaintenance+1,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_AMPHITHEATER'")
+        db.execute("UPDATE Building_YieldChanges SET Yield=Yield+2 WHERE BuildingType='BUILDING_AMPHITHEATER' AND YieldType='YIELD_CULTURE'")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
     civ=db.execute("SELECT * FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone()
@@ -67,7 +71,7 @@ def sql_checks(mutate=True):
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
-            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE']: continue # Pedia category prefixes
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE']: continue # Pedia category prefixes
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -76,6 +80,7 @@ def sql_checks(mutate=True):
     RESULTS['inherited_selection_sound']=dict(db.execute("SELECT * FROM UnitGameplay2DScripts WHERE UnitType='UNIT_CWC3_SECOND_WIND_GUARD'").fetchone())
     assert not db.execute("SELECT name FROM sqlite_temp_master WHERE name LIKE 'CWC3_%'").fetchone(),'temporary clones must be dropped'
     RESULTS['database']='PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds'
+    RESULTS['hollow_choir_database']=check_choir_database(db)
     return db
 
 def lua_checks():
@@ -95,6 +100,7 @@ def lua_checks():
         for line in summaries: print(line)
         suites.append({'file':test,'result':summaries,'diagnostic_lines_observed':sum(s.startswith('CWC3_ALMOST_DIAG') for s in logs)})
     RESULTS['lua_mock_suites']=suites
+    RESULTS['hollow_choir_lua']=check_choir_lua()
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -110,9 +116,10 @@ def package_checks(db):
     assert len(declared)==len(root.findall('Files/File')),'duplicate manifest path'
     assert set(declared)=={p.relative_to(ROOT).as_posix() for p in files()}
     assert [e.text for e in root.findall('Actions/OnModActivated/UpdateDatabase')]==ORDER
-    assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[ENTRY]
+    assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[entry[0] for entry in ENTRIES]
     context=ET.parse(ROOT/ENTRY).getroot()
     assert context.find('Script').get('file')=='Ministry_Gameplay.lua'
+    assert ET.parse(ROOT/ENTRIES[1][0]).getroot().find('Script').get('file')=='HollowChoirGameplay.lua'
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -169,7 +176,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance.'
+    RESULTS['in_game']='NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md and docs/HollowChoirTesting.md acceptance.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

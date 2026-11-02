@@ -36,8 +36,16 @@ def audit(fetch=False):
     checks['Game turn and active player exposed']=binding('CvLuaGame.cpp',['GetGameTurn','GetActivePlayer'])
     attack=body('CvUnit.cpp','int CvUnit::GetMaxAttackStrength(')
     checks['Melee attack excludes generic defense modifier']='getDefenseModifier(' not in attack
+    checks['Choir native promotion fields']=all('GetInt("'+field+'")' in source['CvPromotionClasses.cpp'] for field in ['VisibilityChange','HillsDefense'])
+    checks['Choir attack excludes hill defense']='hillsDefenseModifier(' not in attack
+    defense=body('CvUnit.cpp','int CvUnit::GetMaxDefenseStrength(')
+    checks['Choir melee hill defense conditional']=bool(re.search(r'if\(pInPlot->isHills\(\)\)\s*iModifier \+= hillsDefenseModifier\(\)',defense))
+    checks['Choir terrain Lua bindings']=binding('CvLuaPlot.cpp',['IsHills','IsMountain','GetOwner','GetX','GetY','GetPlotCity'])
     ranged=body('CvUnit.cpp','int CvUnit::GetMaxRangedCombatStrength(')
     checks['Ranged generic defense only in non-attacking branch']=bool(re.search(r'else\s*\{\s*// Regular defense modifier\s*iModifier \+= getDefenseModifier',ranged))
+    defending_branch=re.search(r'else\s*\{\s*// City Defense',ranged)
+    hill_branch=re.search(r'if \(pMyPlot->isHills\(\)\)\s*iModifier \+= hillsDefenseModifier\(\)',ranged)
+    checks['Choir ranged hill defense conditional']=bool(defending_branch and hill_branch and defending_branch.start() < hill_branch.start())
     upgrade=body('CvUnit.cpp','CvUnit* CvUnit::DoUpgradeTo(')
     checks['UnitUpgraded precedes normal conversion']=upgrade.index('GAMEEVENTINVOKE_HOOK(GAMEEVENT_UnitUpgraded') < upgrade.index('pNewUnit->convert(this, true, false)')
     convert=body('CvUnit.cpp','void CvUnit::convert(')

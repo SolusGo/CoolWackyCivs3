@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 1 roster addition — 2 November 2026
+
+- Add The Hollow Choir, led by The First Note, with Resonance as capital; human-only registration, supplied Dawn/diplomacy wording, Civilopedia, strategy and violet/silver colors.
+- Add independent Hill +1 Production and adjacent-Mountain Faith capped at +2; desired-state city reconciliation handles founding, transfers, borders, Hall changes and reload with five bounded dummies.
+- Add active Swordsman/companion inheritance and a persistent +1 Sight / +20% native HillsDefense promotion for the Chorus Sentinel.
+- Add active Amphitheater/companion inheritance, +1 Culture and Hall-dependent Science per two owned Mountains within radius three, capped at +2; shared Mountains count independently per city.
+- Extend manifest, pinned CP151 audit, SQLite inheritance checks and Lua51 terrain/lifecycle tests. Existing Ministry civilization files and shared runtime/options are unchanged.
+- Use documented native art placeholders. Custom crystal artwork and in-game acceptance remain pending; pack multiplayer/hotseat restrictions remain in effect.
+
 ## Version 1 hardening — 2 November 2026
 
 Fixed defects:

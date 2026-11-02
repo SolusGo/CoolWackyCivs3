@@ -18,7 +18,12 @@
       "Diagnostic city stores exposed": true,
       "Game turn and active player exposed": true,
       "Melee attack excludes generic defense modifier": true,
+      "Choir native promotion fields": true,
+      "Choir attack excludes hill defense": true,
+      "Choir melee hill defense conditional": true,
+      "Choir terrain Lua bindings": true,
       "Ranged generic defense only in non-attacking branch": true,
+      "Choir ranged hill defense conditional": true,
       "UnitUpgraded precedes normal conversion": true,
       "UnitConverted follows all promotion transfer": true,
       "UnitConverted exact argument order": true,
@@ -69,6 +74,7 @@
     "FirstSelectionSound": "AS2D_BIRTH_PIKEMAN"
   },
   "database": "PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds",
+  "hollow_choir_database": "PASS: human-only registration, exact Swordsman/Amphitheater scalars and 174 companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion, localization and native art inheritance",
   "database_runs": [
     {
       "evidence": {
@@ -183,7 +189,10 @@
       "diagnostic_lines_observed": 286
     }
   ],
-  "lua": "PASS: 6 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
-  "package": "PASS: 66 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
-  "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md acceptance."
+  "hollow_choir_lua": [
+    "PASS Hollow Choir: 365 assertions covering terrain matrix, shared radii, ownership/building changes, capture/gift/liberation, founding/raze, reload/free cleanup, repeated turns, later owners and speed-independent yields"
+  ],
+  "lua": "PASS: 8 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "package": "PASS: 75 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md and docs/HollowChoirTesting.md acceptance."
 }

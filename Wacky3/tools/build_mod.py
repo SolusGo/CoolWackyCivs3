@@ -6,7 +6,10 @@ ROOT=Path(__file__).resolve().parents[1]
 NAME='Cool Wacky Civs 3 (v 1).modinfo'
 MOD_ID='70d794f7-4fb2-4196-9709-8193f8ee36a9'
 ORDER=['Shared/SQL/CWC3_Options.sql']+['TheMinistryOfAlmost/SQL/Ministry_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
+ORDER += ['TheHollowChoir/SQL/Choir_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text']]
 ENTRY='TheMinistryOfAlmost/Lua/CWC3_Almost.xml'
+ENTRIES=[(ENTRY,'Always the Challenger','Ministry owner-turn snapshots and Second Wind defensive veterans.'),
+         ('TheHollowChoir/Lua/CWC3_Choir.xml','Songs Beneath Stone','Hollow Choir terrain yields and capture cleanup.')]
 
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and
@@ -15,7 +18,7 @@ def files():
 
 def build(package=False):
     root=ET.Element('Mod',id=MOD_ID,version='1'); props=ET.SubElement(root,'Properties')
-    values={'Name':'Cool Wacky Civs 3','Teaser':'The Ministry of Almost: second place inspires another attempt.',
+    values={'Name':'Cool Wacky Civs 3','Teaser':'The Ministry of Almost and The Hollow Choir: recovery and resonance.',
       'Description':'Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.',
       'Authors':'SolusGo','Homepage':'https://github.com/SolusGo/CoolWackyCivs3','AffectsSavedGames':'1',
       'MinCompatibleSaveVersion':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0','SupportsMac':'0',
@@ -31,9 +34,11 @@ def build(package=False):
         ET.SubElement(entries,'File',{'md5':hashlib.md5(path.read_bytes()).hexdigest().upper(),'import':'1' if imported else '0'}).text=path.relative_to(ROOT).as_posix()
     actions=ET.SubElement(ET.SubElement(root,'Actions'),'OnModActivated')
     for path in ORDER: ET.SubElement(actions,'UpdateDatabase').text=path
-    entry=ET.SubElement(ET.SubElement(root,'EntryPoints'),'EntryPoint',type='InGameUIAddin',file=ENTRY)
-    ET.SubElement(entry,'Name').text='Always the Challenger'
-    ET.SubElement(entry,'Description').text='Ministry owner-turn snapshots and Second Wind defensive veterans.'
+    points=ET.SubElement(root,'EntryPoints')
+    for path,name,description in ENTRIES:
+        entry=ET.SubElement(points,'EntryPoint',type='InGameUIAddin',file=path)
+        ET.SubElement(entry,'Name').text=name
+        ET.SubElement(entry,'Description').text=description
     ET.indent(root,space='  ')
     (ROOT/NAME).write_bytes(ET.tostring(root,encoding='utf-8',xml_declaration=True))
     if package:
@@ -41,7 +46,7 @@ def build(package=False):
         with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as out:
             for p in files()+[ROOT/NAME]: out.write(p,'Cool Wacky Civs 3 (v 1)/'+p.relative_to(ROOT).as_posix())
         print(dest)
-    print(f'Manifest: {len(files())} files, {len(ORDER)} database actions, one gameplay context')
+    print(f'Manifest: {len(files())} files, {len(ORDER)} database actions, {len(ENTRIES)} gameplay contexts')
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__); parser.add_argument('--package',action='store_true')
     build(parser.parse_args().package)
