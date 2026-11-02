@@ -4,6 +4,20 @@ Target: standalone `(1) Community Patch`, UUID `d1b6328c-ff44-4b0d-aad7-c657f836
 
 Source pin: [`44c1e14ff75d80c1dba5c8a71e8289439a53aafb`](https://github.com/LoneGazebo/Community-Patch-DLL/tree/44c1e14ff75d80c1dba5c8a71e8289439a53aafb). `CustomMods.h` reports `MOD_DLL_VERSION_NUMBER ((uint) 151)`. `tools/cp151_sources.json` records individual raw source URLs and SHA256 hashes. `audit_cp.py --fetch` reconstructs ignored references, then verifies both hashes and concrete source assertions. This is the CP151 source identification used here; it is not a claim that the user's installed compiled DLL has been binary-reproduced from that commit.
 
+## Schema correction — 3 November 2026
+
+The old generators and inheritance tests enumerated broad table prefixes from modded caches. This incorrectly made **Building_JFD_District** and **Building_ConstructionAudio** mandatory dependencies in both building SQL files. Neither table is declared by the audited BNW/standalone CP151 sources. Their original supplying mods are not established here; the JFD name alone is not provenance evidence. Only those two four-statement clone blocks were removed from each building file. All other generated civilization/unit SQL is byte-identical.
+
+`tools/target_schema.py` now derives the target from native base/G&K/BNW XML table definitions, native selection-sound and localization declarations, and the installed CP151 manifest's XML/SQL DDL in activation order. It retains not-null/unique/primary-key constraints, defaults, SQL table replacements/renames, indexes and triggers. It verifies CP schema-file MD5s against the v151 package manifest and pins **260 installed source SHA256s** plus the resulting column inventory in `tools/cp151_schema_sources.json`. These installed-schema hashes are distinct from the 13 upstream DLL source pins above; upstream identity of every installed schema file is not claimed. Normal generation/auditing fails if source hashes or the derived inventory change. `--pin` is an explicit audit/update operation, not a routine build step.
+
+The approved inventory is **145 BuildingType companions and 27 UnitType companions**, including native `UnitGameplay2DScripts`. No unfamiliar CP table was removed: legitimate instant yields, plot yields, Great Work effects, prerequisites, flavors, resources and unit promotion/upgrade tables remain. The complete names and column definitions are in the schema pin file. Both generators obtain their inventory from this target alone, independent of `CWC3_DATABASE`. See the [complete repair report](CP151SchemaRepair.md) for implementation, results and file purposes.
+
+The new priority fixture reconstructs **808 tables** (including SQLite's sequence table) with only verified target schema, selected native XML rows and **329 synthetic companion records** exercising otherwise-empty tables. It does not import any cache schema or third-party table. It deliberately does not replay CP data migrations/balance SQL or reconstruct a final native gameplay database: this demonstrates clean **schema** compatibility, not clean native runtime acceptance. Both pristine and mutated fixtures execute all ten Wacky3 SQL actions. The previous four cache cases remain supplementary tests, for **six SQL runs total**.
+
+Contamination regression adds `Building_JFD_District` and an artificial `Unit_ThirdPartySchemaRegression` table, reruns both generators, and compares all seven output files byte for byte. It also checks that every approved companion remains emitted. Missing-table negative controls demonstrate that the clean fixture detects the original defect. The 365 Choir and 180 Ministry assertions, eight Lua51 syntax checks, source audit, manifest/DDS checks and distributable byte checks remain intact.
+
+An external CP package typo was observed: its activation list references `Database Changes/Text/en_US/CoreGameOptionTextChanges.xml`, which is absent; the corresponding `.sql` contains only a localization UPDATE. The schema builder explicitly skips this one absent text action. It does not invent or change the external file. This does not affect Wacky3's target schema, but native package loading/logs still need acceptance.
+
 ## APIs and tables
 
 | Concern | Verified source | Implementation |
@@ -23,7 +37,7 @@ Source pin: [`44c1e14ff75d80c1dba5c8a71e8289439a53aafb`](https://github.com/Lone
 | Unit selection sound | Native UnitGameplay2DScripts table | Explicit active-row clone outside the Unit_ table-name prefix |
 | Optional economic observations | Verified player Culture/research stores and city queue/Production bindings | Read-only, disabled by default, bounded in-memory trace; never used to award or compensate yields |
 
-The options file enables `EVENTS_CITY`, `EVENTS_TILE_IMPROVEMENTS`, `EVENTS_UNIT_CREATED`, `EVENTS_UNIT_UPGRADES`, `EVENTS_LIBERATION` and `EVENTS_UNIT_CONVERTS`. These are documented CP151 events. `UnitSetXY`, `CityCaptureComplete`, `PlayerCityFounded` and `PlayerDoTurn` use existing hooks. The pack adds one XML InGameUIAddin context and imports its Lua/helper/art through VFS. SQL activation order is options → civilization → unit → building → localization → art, after the CP dependency.
+The options file enables `EVENTS_CITY`, `EVENTS_TILE_IMPROVEMENTS`, `EVENTS_UNIT_CREATED`, `EVENTS_UNIT_UPGRADES`, `EVENTS_LIBERATION` and `EVENTS_UNIT_CONVERTS`. These are documented CP151 events. `UnitSetXY`, `CityCaptureComplete`, `PlayerCityFounded` and `PlayerDoTurn` use existing hooks. The pack has two XML InGameUIAddin contexts and imports Lua/helper/art through VFS. SQL activation order is options → Ministry civilization/unit/building/localization/art → Choir civilization/unit/building/localization, after the CP dependency. This repair changes no hook, GUID, version, save format, balance or artwork.
 
 ## Owner-turn timing: evidence and unresolved boundary
 
@@ -60,7 +74,7 @@ Both ordinary and goody upgrades are exercised in source-ordered mocks. SQL reta
 
 ## Database provenance and schema discrepancy
 
-The hardening run tests two read-only source caches, each with both pristine and mutated source-definition cases:
+In addition to the source-derived clean schema fixture above, validation retains two read-only source caches, each with both pristine and mutated source-definition cases:
 
 | Source | Original tables | Civilizations | Treatment |
 | --- | ---: | ---: | --- |

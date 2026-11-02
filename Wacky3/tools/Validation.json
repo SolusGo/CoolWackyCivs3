@@ -2,6 +2,8 @@
   "source_audit": {
     "commit": "44c1e14ff75d80c1dba5c8a71e8289439a53aafb",
     "source_files_verified": 13,
+    "schema_source_files_verified": 260,
+    "approved_schema_companions": 172,
     "checks": {
       "DLL identifies as v151": true,
       "Team:IsHasTech is registered": true,
@@ -48,25 +50,35 @@
     "supported_boundary": "NewGameTurn for actual Ministry owner only when first living sequential player",
     "other_hooks_reviewed": "PlayerDoTurn and ActivePlayerTurnStart are post-economy; GameCoreUpdateBegin is per update and cannot identify each owner boundary without polling/approximating"
   },
-  "database_evidence": {
-    "database": "cache_backup/Civ5DebugDatabase.db",
-    "installed_cp_version": 151,
-    "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
-    "source_tables": 491,
-    "source_civilizations": 120,
-    "BUILDING_LIBRARY": {
-      "Cost": 75,
-      "GoldMaintenance": 1,
-      "PrereqTech": "TECH_WRITING",
-      "SpecialistType": null,
-      "SpecialistCount": 0
+  "schema_audit": {
+    "result": "PASS",
+    "pinned_source_files": 260,
+    "approved_companions": {
+      "Building_": 145,
+      "Unit_": 27
     },
-    "UNIT_SPEARMAN": {
-      "Combat": 11,
-      "Moves": 2,
-      "Cost": 56,
-      "PrereqTech": "TECH_BRONZE_WORKING"
-    }
+    "removed_unsupported": [
+      "Building_ConstructionAudio",
+      "Building_JFD_District"
+    ],
+    "regeneration": [
+      {
+        "input": "clean source-derived schema",
+        "result": "PASS: all seven SQL outputs byte-identical to checked-in output"
+      },
+      {
+        "input": "artificial third-party building/unit tables",
+        "result": "PASS: all seven SQL outputs byte-identical to checked-in output"
+      }
+    ],
+    "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
+  },
+  "database_evidence": {
+    "database": "source-derived clean BNW + CP151 schema fixture",
+    "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
+    "source_tables": 808,
+    "source_civilizations": 2,
+    "synthetic_companion_records": 329
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -74,30 +86,28 @@
     "FirstSelectionSound": "AS2D_BIRTH_PIKEMAN"
   },
   "database": "PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds",
-  "hollow_choir_database": "PASS: human-only registration, exact Swordsman/Amphitheater scalars and 174 companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion, localization and native art inheritance",
+  "hollow_choir_database": "PASS: human-only registration, exact Swordsman/Amphitheater scalars and 172 companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion, localization and native art inheritance",
   "database_runs": [
     {
       "evidence": {
-        "database": "cache_backup/Civ5DebugDatabase.db",
-        "installed_cp_version": 151,
-        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
-        "source_tables": 491,
-        "source_civilizations": 120,
-        "BUILDING_LIBRARY": {
-          "Cost": 75,
-          "GoldMaintenance": 1,
-          "PrereqTech": "TECH_WRITING",
-          "SpecialistType": null,
-          "SpecialistCount": 0
-        },
-        "UNIT_SPEARMAN": {
-          "Combat": 11,
-          "Moves": 2,
-          "Cost": 56,
-          "PrereqTech": "TECH_BRONZE_WORKING"
-        }
+        "database": "source-derived clean BNW + CP151 schema fixture",
+        "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
+        "source_tables": 808,
+        "source_civilizations": 2,
+        "synthetic_companion_records": 329
       },
       "fixture": "mutated stats and pre-existing Culture",
+      "result": "PASS"
+    },
+    {
+      "evidence": {
+        "database": "source-derived clean BNW + CP151 schema fixture",
+        "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
+        "source_tables": 808,
+        "source_civilizations": 2,
+        "synthetic_companion_records": 329
+      },
+      "fixture": "unaltered source definitions",
       "result": "PASS"
     },
     {
@@ -122,6 +132,30 @@
         }
       },
       "fixture": "unaltered source definitions",
+      "result": "PASS"
+    },
+    {
+      "evidence": {
+        "database": "cache_backup/Civ5DebugDatabase.db",
+        "installed_cp_version": 151,
+        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+        "source_tables": 491,
+        "source_civilizations": 120,
+        "BUILDING_LIBRARY": {
+          "Cost": 75,
+          "GoldMaintenance": 1,
+          "PrereqTech": "TECH_WRITING",
+          "SpecialistType": null,
+          "SpecialistCount": 0
+        },
+        "UNIT_SPEARMAN": {
+          "Combat": 11,
+          "Moves": 2,
+          "Cost": 56,
+          "PrereqTech": "TECH_BRONZE_WORKING"
+        }
+      },
+      "fixture": "mutated source definitions",
       "result": "PASS"
     },
     {
@@ -193,6 +227,7 @@
     "PASS Hollow Choir: 365 assertions covering terrain matrix, shared radii, ownership/building changes, capture/gift/liberation, founding/raze, reload/free cleanup, repeated turns, later owners and speed-independent yields"
   ],
   "lua": "PASS: 8 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
-  "package": "PASS: 75 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
+  "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
+  "package": "PASS: 76 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md and docs/HollowChoirTesting.md acceptance."
 }

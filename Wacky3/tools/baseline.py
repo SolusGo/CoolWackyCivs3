@@ -1,4 +1,8 @@
-"""Read a BNW database and overlay the installed CP151 schema in memory only."""
+"""Read supplemental modded caches; never use their schema to generate SQL.
+
+The authoritative clean schema/fixture lives in target_schema.py. The legacy
+cache overlay below is retained only as an additional data regression input.
+"""
 import os, re, sqlite3
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -12,6 +16,8 @@ def quote(name):
     return '"' + name.replace('"', '""') + '"'
 
 def database():
+    from target_schema import verified
+    verified()  # Supplemental runs also require the audited source pins.
     cache = Path(os.environ.get('CWC3_DATABASE', USER/'cache_backup/Civ5DebugDatabase.db')).resolve()
     cp = Path(os.environ.get('CWC3_CP_DIR', USER/'MODS/(1) Community Patch'))
     manifests = [ET.parse(p).getroot() for p in cp.glob('*.modinfo')]

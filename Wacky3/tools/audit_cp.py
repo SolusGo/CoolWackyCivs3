@@ -4,6 +4,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 def audit(fetch=False):
+    from target_schema import verified
+    schema_evidence=verified()[2]
     manifest=json.loads((ROOT/'tools/cp151_sources.json').read_text())
     ref=ROOT/'tools/reference'; ref.mkdir(exist_ok=True)
     source={}
@@ -75,7 +77,9 @@ def audit(fetch=False):
     update=body('CvGame.cpp','void CvGame::update()')
     checks['GameCoreUpdateBegin is per update rather than per owner']='"GameCoreUpdateBegin"' in update and 'getNumGameTurnActive() == 0' in update
     assert all(checks.values()),checks
-    return {'commit':manifest['commit'], 'source_files_verified':len(source), 'checks':checks,
+    return {'commit':manifest['commit'], 'source_files_verified':len(source),
+            'schema_source_files_verified':len(schema_evidence['sources']),
+            'approved_schema_companions':len(schema_evidence['companions']), 'checks':checks,
             'ui_dispatch_synchrony':'NOT established by DLL source; manual in-game acceptance required',
             'ai_processing_human_boundary':'NOT established; diagnostic-only, never updates snapshots',
             'supported_boundary':'NewGameTurn for actual Ministry owner only when first living sequential player',

@@ -1,5 +1,5 @@
 """Real SQLite/Lua51/source/texture/package checks; never claims in-game passes."""
-import argparse, hashlib, json, os, re, struct
+import argparse, hashlib, json, os, re, struct, zipfile
 from collections import Counter
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -9,10 +9,19 @@ from baseline import ROOT, database, quote, EVIDENCE
 from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, files
 from audit_cp import audit
 from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
+from target_schema import clean_fixture, approved_companions, verified
+from validate_schema import check_regeneration, seed_companions
 
 RESULTS={}
-def sql_checks(mutate=True):
-    db=database()
+def sql_checks(mutate=True, clean=False):
+    db=clean_fixture() if clean else database()
+    if clean:
+        EVIDENCE.clear()
+        EVIDENCE.update(database='source-derived clean BNW + CP151 schema fixture',
+            mode='pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache',
+            source_tables=db.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table'").fetchone()[0],
+            source_civilizations=db.execute('SELECT COUNT(*) FROM Civilizations').fetchone()[0])
+        EVIDENCE['synthetic_companion_records']=seed_companions(db)
     # Deliberately modify the active source definitions in memory. Generated SQL
     # must inherit these, proving it doesn't replace CP values with vanilla ones.
     if mutate:
@@ -35,8 +44,7 @@ def sql_checks(mutate=True):
             if key not in allowed: assert a[key]==b[key],(table,key,a[key],b[key])
         if table=='Units': assert b['Moves']==a['Moves']+1
         prefix,column=('Unit_','UnitType') if table=='Units' else ('Building_','BuildingType')
-        for (companion,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
-            if not (companion.startswith(prefix) or (table=='Units' and companion=='UnitGameplay2DScripts')) or companion.endswith('_new'): continue
+        for companion in approved_companions(prefix, column):
             cols=[r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')')]
             if column not in cols: continue
             fields=[c for c in cols if c not in [column,'ID']]
@@ -152,6 +160,14 @@ def package_checks(db):
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_ALMOST'),('Leaders','LEADER_CWC3_PENULTIMATE'),('Units','UNIT_CWC3_SECOND_WIND_GUARD'),('Buildings','BUILDING_CWC3_RUNNER_UP_ACADEMY')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
+    package=ROOT/'dist/Cool Wacky Civs 3 (v 1).zip'
+    if package.exists():
+        with zipfile.ZipFile(package) as archive:
+            expected={'Cool Wacky Civs 3 (v 1)/'+name:ROOT/name for name in [*declared,NAME]}
+            assert len(archive.namelist())==len(expected) and set(archive.namelist())==set(expected)
+            for name,path in expected.items(): assert archive.read(name)==path.read_bytes(),('Stale package file',name)
+        RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
+    else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
     RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains'
 
 def main():
@@ -159,10 +175,14 @@ def main():
     parser.add_argument('--compare-database',type=Path,action='append',default=[],help='Also execute SQL against an existing cache without overlaying a CP-schema snapshot')
     args=parser.parse_args()
     RESULTS['source_audit']=audit()
-    db=sql_checks()
+    RESULTS['schema_audit']=check_regeneration()
+    db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
-    pristine=sql_checks(mutate=False); pristine.close()
+    pristine=sql_checks(mutate=False, clean=True); pristine.close()
     runs.append({'evidence':dict(EVIDENCE),'fixture':'unaltered source definitions','result':'PASS'})
+    for mutate in [False,True]:
+        comparison=sql_checks(mutate); comparison.close()
+        runs.append({'evidence':dict(EVIDENCE),'fixture':'mutated source definitions' if mutate else 'unaltered source definitions','result':'PASS'})
     previous=os.environ.get('CWC3_DATABASE')
     try:
         for path in args.compare_database:

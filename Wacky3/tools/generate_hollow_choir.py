@@ -1,7 +1,10 @@
 """Generate Hollow Choir SQL only; inherit active CP151 rows and companion effects."""
-from baseline import ROOT, database, quote
+from baseline import ROOT, quote
+from target_schema import schema_database, approved_companions
+from pathlib import Path
+import os
 
-SQL = ROOT/'TheHollowChoir/SQL'
+SQL = Path(os.environ.get('CWC3_SQL_ROOT', ROOT))/'TheHollowChoir/SQL'
 CIV = 'CIVILIZATION_CWC3_HOLLOW_CHOIR'
 LEADER = 'LEADER_CWC3_THE_FIRST_NOTE'
 UNIT = 'UNIT_CWC3_CHORUS_SENTINEL'
@@ -25,9 +28,7 @@ def clone(table, old, new, changes):
 
 def companions(db, prefix, column, old, new):
     result = ''
-    for (table,) in db.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"):
-        if not (table.startswith(prefix) or (prefix == 'Unit_' and table == 'UnitGameplay2DScripts')) or table.endswith('_new'):
-            continue
+    for table in approved_companions(prefix, column):
         columns = [r[1] for r in db.execute('PRAGMA table_info('+quote(table)+')')]
         if column not in columns: continue
         assignments = quote(column)+'='+literal(new)
@@ -43,7 +44,7 @@ def write(name, content):
 
 
 def main():
-    db = database()
+    db = schema_database()
     civ = """INSERT INTO Colors(Type,Red,Green,Blue,Alpha) VALUES
  ('COLOR_CWC3_CHOIR_VIOLET',0.24,0.08,0.38,1),('COLOR_CWC3_CHOIR_SILVER',0.83,0.81,0.91,1);
 INSERT INTO PlayerColors(Type,PrimaryColor,SecondaryColor,TextColor) VALUES

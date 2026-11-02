@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 1 schema compatibility correction — 3 November 2026
+
+- Replace cache-derived companion inventories in both generators with pinned native BNW/standalone CP151 schema declarations. Preserve 145 building and 27 unit companion tables, including native unit selection audio.
+- Remove unsupported Building_JFD_District and Building_ConstructionAudio clone blocks from both unique-building SQL files; no other generated gameplay SQL changes.
+- Add a clean target-schema fixture with native XML samples and synthetic inheritance records, both existing cache regressions, artificial schema-contamination/byte-identical regeneration tests and ZIP byte validation.
+- Preserve all 365 Choir/180 Ministry assertions, gameplay Lua, exact bonuses, GUID/version/save format, event hooks, art, dependencies and activation order. Native engine acceptance remains outstanding.
+- Document the external CP manifest localization typo and full schema provenance/limitations in docs/CP151SchemaRepair.md.
+
 ## Version 1 roster addition — 2 November 2026
 
 - Add The Hollow Choir, led by The First Note, with Resonance as capital; human-only registration, supplied Dawn/diplomacy wording, Civilopedia, strategy and violet/silver colors.

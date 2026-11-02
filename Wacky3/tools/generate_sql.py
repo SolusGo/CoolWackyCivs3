@@ -1,10 +1,12 @@
 """Generate schema-independent active-row clones against the CP151 table inventory."""
-from baseline import ROOT, database, quote
-import json
+from baseline import ROOT, quote
+from target_schema import schema_database, approved_companions
+from pathlib import Path
+import os
 
-SQL = ROOT/'TheMinistryOfAlmost/SQL'
+SQL = Path(os.environ.get('CWC3_SQL_ROOT', ROOT))/'TheMinistryOfAlmost/SQL'
 SQL.mkdir(parents=True, exist_ok=True)
-DB = database()
+DB = schema_database()
 
 def literal(value):
     if value is None: return 'NULL'
@@ -19,8 +21,7 @@ def clone(table, old, new, changes):
 
 def companions(prefix, column, old, new):
     result = ''
-    for (table,) in DB.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").fetchall():
-        if not (table.startswith(prefix) or (prefix=='Unit_' and table=='UnitGameplay2DScripts')) or table.endswith('_new'): continue
+    for table in approved_companions(prefix, column):
         cols = [r[1] for r in DB.execute('PRAGMA table_info('+quote(table)+')')]
         if column not in cols: continue
         # Companion tables ordinarily have no ID; retain auto-increment behavior if present.

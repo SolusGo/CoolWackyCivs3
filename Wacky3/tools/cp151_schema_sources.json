@@ -1,0 +1,4469 @@
+{
+  "sources": {
+    "bnw:DLC/Expansion/Gameplay/XML/AI/CIV5AICityStrategies.xml": "6599471a7ceab2516d1085dc94a816bd93b5e16e61ea2706a1b3dc9b44ac18a4",
+    "bnw:DLC/Expansion/Gameplay/XML/AI/CIV5AIEconomicStrategies.xml": "acdd3c0ad76b088e41e80c8b2957b71c10b767051996d1e710fc6a98b07f9fbd",
+    "bnw:DLC/Expansion/Gameplay/XML/AI/CIV5AIMilitaryStrategies.xml": "a1344cf6b74438f654feec2b337821629336fbaf5eb9d44e02896adf8428e2cd",
+    "bnw:DLC/Expansion/Gameplay/XML/AI/CIV5CitySpecializations.xml": "95a54491ba2744726533193cc12cc4ed69f68988491d1efc1eb84f7f97aa4a0a",
+    "bnw:DLC/Expansion/Gameplay/XML/AI/CIV5TacticalMoves.xml": "0a266b187091b6cad142fbe75eb566b0ef11a1ae874b1659856d3797073c420f",
+    "bnw:DLC/Expansion/Gameplay/XML/BasicInfos/CIV5Domains.xml": "6d3331e799b26087ecb6ae360f954611539d1c8ad730fa3098ac0fce84a24aee",
+    "bnw:DLC/Expansion/Gameplay/XML/BasicInfos/CIV5MinorCivApproachTypes.xml": "e3a50e269c0311503be45fc3e7de96f9668db52f6ff804ef00fa9d496931c346",
+    "bnw:DLC/Expansion/Gameplay/XML/BasicInfos/CIV5MinorCivTraits.xml": "91c953e18724b77be58199aaaa1ccf206a30af6b8818fa9ff499ff4bd7026679",
+    "bnw:DLC/Expansion/Gameplay/XML/BasicInfos/CIV5UnitAIInfos.xml": "568daf236aae9f38f329ea406b8c71355243c1c4e8ddaef25dcef9ff7d6b2343",
+    "bnw:DLC/Expansion/Gameplay/XML/BasicInfos/CIV5UnitCombatInfos.xml": "fb0c7d665a8c4632287ecbb2478eed0ce28bd09cfe4ecab5fa9571607173ec76",
+    "bnw:DLC/Expansion/Gameplay/XML/Buildings/CIV5BuildingClasses.xml": "761f3399c37e617f619dfbd3231b9f78a600ab1cb49341f9bdc38d11b4ddd17c",
+    "bnw:DLC/Expansion/Gameplay/XML/Buildings/CIV5Buildings.xml": "110f29a80e5e1978ca4c3df600bc1bab8ac4e02c933ff3b298f00864b4e0e794",
+    "bnw:DLC/Expansion/Gameplay/XML/Buildings/CIV5Buildings_Expansion.xml": "0dc7c2ef9c4eda3b81a189e6aca203a76bf2303c36d525e0f4a39f7088f5d003",
+    "bnw:DLC/Expansion/Gameplay/XML/Civilizations/CIV5Civilizations.xml": "8adaac37ab503e45f8b2e16857c2d950c9186095c4b747abe3856c5b4010bcc8",
+    "bnw:DLC/Expansion/Gameplay/XML/Civilizations/CIV5MinorCivilizations.xml": "318b2d42f7a4f4cfe00d1b2d6289d6893b198411bc8437d657770fc23446bb33",
+    "bnw:DLC/Expansion/Gameplay/XML/Civilizations/CIV5Traits.xml": "dac4c6766a195178474afda8e5feaabde99ccbc74f1eafb45fa341000b68f341",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5Eras.xml": "ff7f99f8d86099d84912e385bf34e3036ad4d0064d821cf80c39d14ea19a7269",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5Flavors.xml": "2d2c703e73a0d20c21d1f9e2ecc78879b2b85f7b18d0f725279e041752716613",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5GameSpeeds.xml": "89d620b43d520f82fb3549d39ebcaca838b9287e5fd02bd9a1489216246f74e2",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5GoodyHuts.xml": "812d0f13bae8d6c758c154d7d100509724665635dfec79d10b8622b8cc8e2820",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5HandicapInfos.xml": "8a1da369806f1c2bc44ae892dd9bd9f507cf76afcb56632dc95f4e1b41bb8077",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5IconTextureAtlases_Expansion.xml": "dbec6d6c23f46eb21df25ae5fded0579798b23027bfd854d4831e2e68155d9b3",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5Policies.xml": "308e096c2f4997496d94ef8d7b0632fa5574c18bd303fbd8504a85c855afe5f3",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5PolicyBranchTypes.xml": "254b3dc18cba6f526740a5fff38012690196bc5e453af7a4a00ec905590e38c1",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5Processes.xml": "5cf1a5bd18b9894087a4b6f38e924693a75aaa85bcc7ada1c376502daa093d3e",
+    "bnw:DLC/Expansion/Gameplay/XML/GameInfo/CIV5Worlds.xml": "bfb8206888475efd98abae6dae4f0f0554d9419376c379ac9ec0ecc7fa81b2e3",
+    "bnw:DLC/Expansion/Gameplay/XML/GlobalDefines.xml": "5cffaf468541587220bb2af165acc4583d6b2026234f7bdaf3672bd219c68bd9",
+    "bnw:DLC/Expansion/Gameplay/XML/Leaders/CIV5Leader_Washington.xml": "4e41779bf44e34295db92b65192e7237857dfd29304d8269ba8671878eea4d80",
+    "bnw:DLC/Expansion/Gameplay/XML/Misc/Notifications.xml": "47444c6b002aa83f356ff363d847a9d5fea79d2c11b03651900d19d5f70ebbcc",
+    "bnw:DLC/Expansion/Gameplay/XML/Religions/CIV5Beliefs.xml": "a5ed3bb4649883401ff850dff4ed8cf259549edeea88bf3343b00f8ffa79cb96",
+    "bnw:DLC/Expansion/Gameplay/XML/Religions/Civ5Religions.xml": "aa9f80da2efa63241b952d5c2c00021dbb27019c8c44f9cdc6b7c9b9fb5a5d79",
+    "bnw:DLC/Expansion/Gameplay/XML/Technologies/CIV5Technologies.xml": "8b8ca7d4aabca9fdcfd894db5e9c7773bc9db40451109255564ed9227dcb11b6",
+    "bnw:DLC/Expansion/Gameplay/XML/Terrain/CIV5Features.xml": "8f00ca19c3a246222247b8e0a2728b0388f8d8e1f5dfa32f71237916a6c6aeb6",
+    "bnw:DLC/Expansion/Gameplay/XML/Terrain/CIV5Improvements.xml": "5f90306455fba6573604595901a680b851e0dc46bbaab4d5eb5a74dcdadedfeb",
+    "bnw:DLC/Expansion/Gameplay/XML/Terrain/CIV5Improvements_Expansion.xml": "0214c78de53c2e8264a2a07855e484ebf534eeaca0fa5cc98dadfeda94d668c3",
+    "bnw:DLC/Expansion/Gameplay/XML/Terrain/CIV5Resources.xml": "7e0c259a07bf2bad66f9b059133858290ca1ac63d3d5ce23b2e0e8634473dbb2",
+    "bnw:DLC/Expansion/Gameplay/XML/Terrain/CIV5Yields.xml": "216685e30eb55bd3a4cdf9af4d180bb84fa7ac50db0ad7b248cda1cec1b4a59b",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5Builds.xml": "181ecd10371db7b5b71d551fa909fcecf1ed1f155ee2579a8a03959b07d8ba1f",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5Builds_Expansion.xml": "18b13bf770bae24178da4393256b70b3547d82d5cedbb3f5e9da000ff21843bc",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5Controls.xml": "7399e7893da1059431b487eb5b3f1f9f1446f6b29159982b86f4ad3897831616",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5Missions.xml": "980680bdf885b937dbdebcb3d8e63f3576f4d068312f7905d3526ed53a6f3543",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5MultiUnitFormations.xml": "1be5e9184f4d9c03dc3880cdf858a3fa5dbce40acc5d3b3aadfcfd61b176dbe8",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5UnitClasses.xml": "57e90af34352d3b11447a818d75292dfe9b260345e587191ea605de64363b05c",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5UnitPromotions.xml": "314ae5edf7712083e0a2c5260b5cea13a9c762185f00cfa2344a3df3c1878633",
+    "bnw:DLC/Expansion/Gameplay/XML/Units/CIV5Units.xml": "a2a9c5a3738d31e78fa733e34645c1f8ae523282a726e4cfada72355a74db1bd",
+    "bnw:DLC/Expansion2/Gameplay/XML/AI/CIV5AICityStrategies.xml": "e45691725c3df91b787f4aa7aa0db3fd47d93178801dbb0c5691e8d9c1dc2dfa",
+    "bnw:DLC/Expansion2/Gameplay/XML/AI/CIV5AIEconomicStrategies.xml": "0dd1fcce1425028453a79aca101f2a96d715dba4c54beac29bf0bf8eae346dec",
+    "bnw:DLC/Expansion2/Gameplay/XML/AI/CIV5AIMilitaryStrategies.xml": "45f6ec4fb4f423b1db3f4bf4cd3b682dbff18273fb23109e37ad24b462461c04",
+    "bnw:DLC/Expansion2/Gameplay/XML/AI/CIV5CitySpecializations.xml": "95a54491ba2744726533193cc12cc4ed69f68988491d1efc1eb84f7f97aa4a0a",
+    "bnw:DLC/Expansion2/Gameplay/XML/AI/CIV5TacticalMoves.xml": "4d22ac5bf9ebe53fa2b35457ae59c782a28643aced168575548914842a6ecc89",
+    "bnw:DLC/Expansion2/Gameplay/XML/BasicInfos/CIV5Domains.xml": "6d3331e799b26087ecb6ae360f954611539d1c8ad730fa3098ac0fce84a24aee",
+    "bnw:DLC/Expansion2/Gameplay/XML/BasicInfos/CIV5MinorCivApproachTypes.xml": "e3a50e269c0311503be45fc3e7de96f9668db52f6ff804ef00fa9d496931c346",
+    "bnw:DLC/Expansion2/Gameplay/XML/BasicInfos/CIV5MinorCivTraits.xml": "91c953e18724b77be58199aaaa1ccf206a30af6b8818fa9ff499ff4bd7026679",
+    "bnw:DLC/Expansion2/Gameplay/XML/BasicInfos/CIV5UnitAIInfos.xml": "d8f3a8342d50f0579b609bc2ff907ed942ae98dd2cb8b3c2a546f00eac4ba7d3",
+    "bnw:DLC/Expansion2/Gameplay/XML/BasicInfos/CIV5UnitCombatInfos.xml": "3f433f0cb698eae4e77d24dd4e4f9da6ac353cc4e71ce98efac701113e0f5268",
+    "bnw:DLC/Expansion2/Gameplay/XML/Buildings/CIV5BuildingClasses.xml": "5e8812d1b65e5c632cd77ad26e700d401ecf89cd65309d7b95594d061a084ae3",
+    "bnw:DLC/Expansion2/Gameplay/XML/Buildings/CIV5Buildings.xml": "0c8b9f3d6c2a95b0279eadfd8c7a86c613f755cd0464653bd38db22e94901a3e",
+    "bnw:DLC/Expansion2/Gameplay/XML/Buildings/CIV5Buildings_Expansion2.xml": "b1d6e2cd6045dc78db12ccf5fb4082baf0a970956595560b5875f6b348489c97",
+    "bnw:DLC/Expansion2/Gameplay/XML/Buildings/CIV5Buildings_Inherited_Expansion2.xml": "f70554e9e355088373dc5a16f3a167d1552ea4204b0ecad190311c37385e7c2d",
+    "bnw:DLC/Expansion2/Gameplay/XML/Civilizations/CIV5Civilizations.xml": "accc159b672d25740578219b5306d49e250bcf5c89af4d8a84ccf206f4d298eb",
+    "bnw:DLC/Expansion2/Gameplay/XML/Civilizations/CIV5Civilizations_Expansion2.xml": "6f37a63136c20319aaadf5f8ae455276884c826d6e87f9657323804eb930a136",
+    "bnw:DLC/Expansion2/Gameplay/XML/Civilizations/CIV5MinorCivilizations.xml": "06e064c7b69199629cf654e43e003e83f30b751fa6bda0728e8d4e2f3eb6aa18",
+    "bnw:DLC/Expansion2/Gameplay/XML/Civilizations/CIV5Traits.xml": "f6d3e8bf87325fac7c40d021974713bae7e0ec6de264a133f730540cd82b0f28",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Eras.xml": "b3d2e3a2032f7aaa54f415a28c8042076d467fbcb0fa9d5ff7994096f3bf163d",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Flavors.xml": "3b0f1963f10f6ce05bc3176fbcad7d428e59b043018a6402835fb2075a39eea2",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5GameSpeeds.xml": "931b55a28b59f187823e6844f15f5e6b18f6fc53fbd4a1f3c9aff4debd1055d5",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5GoodyHuts.xml": "2f4cc8cd5997554b71aa357992eb9dc807348543bace77069fe74bb84a68f4da",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5GreatWorks_Expansion2.xml": "49dbd79e2f411721f54b9fdd20ca57aef5b005e0416f0ffb4f13af077e2f7670",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5HandicapInfos.xml": "7884c9a72efbb1eef0ca8ba51a9e6c59fe683d40a3f76712486862ced5c8f600",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5IconTextureAtlases_CivilWarScenario.xml": "ca99ae69fd2748780faf0ec4f30726702286c672dde38dadfb5f7f21ce743590",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5IconTextureAtlases_Expansion2.xml": "2d0b09542caa6f774afbe334d527ea4d4c24ecbd3d139ff4bd01eb261de70b24",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5IconTextureAtlases_Inherited_Expansion2.xml": "449565ae6dfd587db90680125d9272ae80586e88a3cc85aac24078062ba2fa14",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Policies.xml": "5c1d2c7e91449c75923b274166d02827f637134a78e42707b143ea096dc16200",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5PolicyBranchTypes.xml": "b75d750b666b5587533737e8fce1e1756eaa861897c6c2f21a5407fd46b70ae9",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Processes.xml": "64fd666d6dfe72b8364a44472fe43ab374d00000e8d207ec8628a5b337620913",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Projects.xml": "e58d2ad95b77cd9f1d31b6898548ad13257dbb09d734fc67e901190ee50f13e0",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Resolutions.xml": "042db635c40e44e5f974c21395913a7bbfecef8e99fd71da6daef1a91fc70e80",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Specialists.xml": "7ef013bffa83450d7af21689f9a6e03157392f17a4dcc77717788bbcd6002e40",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Victories.xml": "2b52f264b2c5aeea11b0b2727feac8ad18d91a6cc6aa3f2903ad30e43d788cf8",
+    "bnw:DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Worlds.xml": "c22b0d54ba83fa10219f661323213b284d8926c47eae3c25dba1c11a2ea3bdf9",
+    "bnw:DLC/Expansion2/Gameplay/XML/GlobalDefines.xml": "776886d572403932b525d441c07ad91e6ef212a0725afbe762d460a475702c43",
+    "bnw:DLC/Expansion2/Gameplay/XML/Leaders/CIV5Leader_Washington_Expansion2.xml": "101a4155a2c24e6034ebecb75d386f679baa7045743753504c6105ef6b873ec6",
+    "bnw:DLC/Expansion2/Gameplay/XML/Misc/Notifications.xml": "6f8805c0eb29fd1b61314defd5d7b2eb280b59e6723ce086edb8082be96436c8",
+    "bnw:DLC/Expansion2/Gameplay/XML/Religions/CIV5Beliefs.xml": "240d08124694537f650f9b06e53bc76fd81d1eb0d70be0209f7e97bbee26244f",
+    "bnw:DLC/Expansion2/Gameplay/XML/Religions/Civ5Religions.xml": "c4a3e70a4dfb531e81c2defb41d542f4ace6b194d652a87d4700ad44fb25d380",
+    "bnw:DLC/Expansion2/Gameplay/XML/Technologies/CIV5Technologies.xml": "c64bee47199b59f4d8ca2a937f31b1528fc0f1af0e03bfc9db95fdb2f60228dd",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Features.xml": "de442953489f86c87e7844a6ed91f0975e87e39538acf0b4b8ba2cec710b401e",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Improvements.xml": "9a23601c5a3f24e9a6da39893347a25a994b5b204bc03eedde8f174bd52f3056",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Improvements_Inherited_Expansion2.xml": "6895d7a5077b0e6884f99461531294abe600417761f182d68d4dceff9c75a633",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Resources.xml": "779e28929a8221326d64cfdc77729e1e6be6c97e98c6abdb248e8624bcbcdf03",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Terrains.xml": "54445a23f499a1d4fe90cff1b35f78e6a1243bef264a9c02388efcb7675e2de9",
+    "bnw:DLC/Expansion2/Gameplay/XML/Terrain/CIV5Yields.xml": "216685e30eb55bd3a4cdf9af4d180bb84fa7ac50db0ad7b248cda1cec1b4a59b",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5Builds.xml": "b6d0160cfa40c2fda56761f83078d8984bad88a74e57d33ef8a6bf931d7f1926",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5Controls.xml": "ed0ff44a52f979df26f821790ee86c270ba2975de5dc6b58c81b7442b83d70d2",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5Missions.xml": "59a6c5a621a77432d44941278c864b1729ad9e25263f5616587a1d8853855fac",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5MultiUnitFormations.xml": "ba068199f287d443d0d5669613f1996d85e98175e9e9b8001a252dd4e2502b89",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5UnitPromotions.xml": "0fc75a852b3adfce4f3f0d39107d2d840112f76d2be6d7bd91c94d86e57cbcc4",
+    "bnw:DLC/Expansion2/Gameplay/XML/Units/CIV5Units.xml": "9ea1ca5753e4709c7d818e09faab659b0073ead26cec8449662f4199b2c0bcf0",
+    "bnw:Gameplay/XML/AI/CIV5AICityStrategies.xml": "a3011f34b84f3999269e87cdf29de9f43a880568d234a9a39ead4c8c52b38e5c",
+    "bnw:Gameplay/XML/AI/CIV5AIEconomicStrategies.xml": "6f1da6ac04af32eed15fa0cefa991031b2467688a9d60e3ba052371602010141",
+    "bnw:Gameplay/XML/AI/CIV5AIGrandStrategies.xml": "b1ef0c8cda1b0fb3ac842460ebcd6893bbf19d7f40f3463a82f2859517c53016",
+    "bnw:Gameplay/XML/AI/CIV5AIMilitaryStrategies.xml": "ac6a9bc5c3f0b2c658514dc068e591887185423be7465ff0b487098a2e8f7a63",
+    "bnw:Gameplay/XML/AI/CIV5CitySpecializations.xml": "3f790f3f797eddeff94e5466ec2a6e115b6decba8da0050da1125a9af2f6732e",
+    "bnw:Gameplay/XML/AI/CIV5TacticalMoves.xml": "47c8b4899c5968b7c4acf1ef12ea827b3c5652f8678326112fecc9cfa267a0e9",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Attitudes.xml": "e4aed6d9c7ba8f28cb470bb84043783dee55b65e3bd32b20f060d6372c21537d",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Calendars.xml": "c1def4aa373282bd1d36d88bfbddda7b0d7b7646d8fd676a6cdb37bea93838b5",
+    "bnw:Gameplay/XML/BasicInfos/CIV5CitySizes.xml": "3f7f548394d85dd5debe3ae5a1b406c209e0ffa2cd4c1bfdfe1013ac74868c33",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Concepts.xml": "56f3073d1f38d48d15e184e8ac7be22942c07db7be6f7aa36acbbfd9e1c07fbb",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Contacts.xml": "527e98918744b60365e36c76a30a1650e8d54ced921558e63437363b954bf0bc",
+    "bnw:Gameplay/XML/BasicInfos/CIV5DenialInfos.xml": "95c80547407f13c6878ee37ceed22e794e7df174754b0622645972ea1e023fbd",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Domains.xml": "1c87e92b846c529975cc8dfbe48ebc81b0dd60e9ca173845a1a141483e46bde9",
+    "bnw:Gameplay/XML/BasicInfos/CIV5InvisibleInfos.xml": "be5c874732a3c546274c9df2ec2fd550c2ed5e5196480606457ec0591c981675",
+    "bnw:Gameplay/XML/BasicInfos/CIV5MajorCivApproachTypes.xml": "1f352a481177971a35bf67b80f7c54b3c75ab285d90375d519b7febc48fd06de",
+    "bnw:Gameplay/XML/BasicInfos/CIV5MemoryInfos.xml": "31f66c29b8da7564e8cd5f4345a50e9ad925c7c49635fee6633614a79365e719",
+    "bnw:Gameplay/XML/BasicInfos/CIV5MinorCivApproachTypes.xml": "778ae1b3269ad80ce5baf9499a42743c144e6bc580ed1a88ddf5e3e149d80a4a",
+    "bnw:Gameplay/XML/BasicInfos/CIV5MinorCivTraits.xml": "311e3af2d744962ecd5f9af40984b02afeec20e201d2a40916e878e60129632f",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Months.xml": "76bab7ee5bb54abfb6c0a3b03069174176e57169c3364632c31de9cccb583b50",
+    "bnw:Gameplay/XML/BasicInfos/CIV5Seasons.xml": "2835664bcc887b078c588eb6a6dbef3ff8da7de2f0450452a1aed8ed70cb01d9",
+    "bnw:Gameplay/XML/BasicInfos/CIV5UnitAIInfos.xml": "60a95ba162d0f0694a08f6d57b08dd6d456cbb79486f6d81e26253ebda09e1c3",
+    "bnw:Gameplay/XML/BasicInfos/CIV5UnitCombatInfos.xml": "8d0335a07bcc022945da59c9a99064b85a63baf4951369c4d8e2a23ea3905eb1",
+    "bnw:Gameplay/XML/Buildings/CIV5BuildingClasses.xml": "fef19ec3b3198c7cbafd4cc210b5097392b5406418397f0c7e0b863570f44ba6",
+    "bnw:Gameplay/XML/Buildings/CIV5Buildings.xml": "7905bcc868dde30532eb62c00df9205cd6105a314d29961a937ce42efc319632",
+    "bnw:Gameplay/XML/Civilizations/CIV5Civilizations.xml": "bb831c2f39ea69ce553103d2f88922eae3034a42c185d306b81570f5b82312ec",
+    "bnw:Gameplay/XML/Civilizations/CIV5MinorCivilizations.xml": "dc5aa0da289aa42c30bc06cb3788d98537821b4920376e1a916bc154c77a5dc4",
+    "bnw:Gameplay/XML/Civilizations/CIV5Regions.xml": "31225adac7c7bfe17d775ccccac2ea1b5eba2071c6a5626013b4bf9fb24cee25",
+    "bnw:Gameplay/XML/Civilizations/CIV5Traits.xml": "a71e23bdb1b1f987ef884169a1fa5f1593b765e08d9a35a043266b96d5602a1d",
+    "bnw:Gameplay/XML/Diplomacy/Civ5Diplomacy_Responses.xml": "3114e86f8ce5c5a06fd9047fa2c41e78bbd6d7ecf05e95c76710cd1b5a9e510f",
+    "bnw:Gameplay/XML/GameInfo/CIV5ArtStyleTypes.xml": "1ea278ee31f7f867830bdf4031137eb6ddbaf3d6f15f603cac8a0cb42537d7ab",
+    "bnw:Gameplay/XML/GameInfo/CIV5Climates.xml": "ff47f91004996b3f68b5a6171ccf47d0b4f0a2442c6c69e88d624fadc7e4eb59",
+    "bnw:Gameplay/XML/GameInfo/CIV5CultureLevels.xml": "9f55c1945f2bc007aecf0f171e7038050e6607dfa590b8fa7c3faa83d6c02085",
+    "bnw:Gameplay/XML/GameInfo/CIV5Cursors.xml": "50a650a6614345c797a2475acaaea360d629b3ae2d2cddba616c8aca9496b5d6",
+    "bnw:Gameplay/XML/GameInfo/CIV5EmphasizeInfos.xml": "85d71089e259509698f1481405dc284e385afdc290d8efa9d247a11ac21dbc39",
+    "bnw:Gameplay/XML/GameInfo/CIV5Eras.xml": "0a45707e407c6bbdd68aa526db8ae1a684adb2e17ad6b05a449e8be8f492ef5e",
+    "bnw:Gameplay/XML/GameInfo/CIV5Flavors.xml": "6a43dd741c71a033da192f6b608b7bcf1a2ee906249f19842f761a30561a0083",
+    "bnw:Gameplay/XML/GameInfo/CIV5GameOptions.xml": "47b6162bb09e21423d2a780a018f9300c18c9927524c2f5b968b9480cd6f3de4",
+    "bnw:Gameplay/XML/GameInfo/CIV5GameSpeeds.xml": "81c80f2e42defb05d3993cf25dee67e4a3cc2bc5108489c508b78c1de7e8738e",
+    "bnw:Gameplay/XML/GameInfo/CIV5GoodyHuts.xml": "2274e474e9abe9149694b5829ee38031769e52779c76ef1cd793cc649657a7e4",
+    "bnw:Gameplay/XML/GameInfo/CIV5HandicapInfos.xml": "0f477895bb5519699495466c42839cae05b699ed38003f50bcac6359071ca597",
+    "bnw:Gameplay/XML/GameInfo/CIV5HurryInfos.xml": "bca0b2c22ddb4dac9ebd16785fdacc4673703a82a472cafbdda5b02567707559",
+    "bnw:Gameplay/XML/GameInfo/CIV5IconFontMapping.xml": "a354c8f14d712a09502ecec0a033d9264f08a278c47e2f005f204f8d7efe02e9",
+    "bnw:Gameplay/XML/GameInfo/CIV5IconTextureAtlases.xml": "cb803a650ce1825081c85fb53652f174105bc2cfea1147374b9281f56f9435ef",
+    "bnw:Gameplay/XML/GameInfo/CIV5MultiplayerOptions.xml": "532b6c241769703351e2438acf4826c04caa42a79a648c8b4de62e46df9b7d08",
+    "bnw:Gameplay/XML/GameInfo/CIV5PlayerOptions.xml": "33c837600a9e19e906def6ccc4b892c1862b00dcafa6c408c11920608a2bd66b",
+    "bnw:Gameplay/XML/GameInfo/CIV5Policies.xml": "47a865ce9b7851e728860b22db685803c36ed9bd25163baf3090138d5694e56f",
+    "bnw:Gameplay/XML/GameInfo/CIV5PolicyBranchTypes.xml": "88d748dfbd7e264e505f5da461b4ec1bceb8a911e1a360a32c1506ac764d46f2",
+    "bnw:Gameplay/XML/GameInfo/CIV5Processes.xml": "e0424fd6ed4a3ffbbd4cd6459b2409c6e1ced1c06ebf7b3702e0cafd7eecf55f",
+    "bnw:Gameplay/XML/GameInfo/CIV5Projects.xml": "0e37938afb4a5af23f6d9301d99dfb2980b973856e5700ba99209d430d3b21e5",
+    "bnw:Gameplay/XML/GameInfo/CIV5Replays.xml": "9aac3f5a0cb0be5e694d5f7bc83f2944f8f06a6ac844335111303e24ac21eda3",
+    "bnw:Gameplay/XML/GameInfo/CIV5SeaLevels.xml": "1b6fff1584525ba3bfeb7ec3e79dc24cf50010930867c7b088e9a2af0b0c39eb",
+    "bnw:Gameplay/XML/GameInfo/CIV5SmallAwards.xml": "48d0c235483cd15e5bfed309068b38962b633d12da0df283eb2393737d710f0c",
+    "bnw:Gameplay/XML/GameInfo/CIV5Specialists.xml": "7d36a0e36f76819fde52bedd7f325cc865583b6e7b58a030af83fe5c11684b06",
+    "bnw:Gameplay/XML/GameInfo/CIV5Trades.xml": "4f1c0d9ad79727985c0e35af89288392c0de9f99702337fdcdb6b6d805ce7efe",
+    "bnw:Gameplay/XML/GameInfo/CIV5TurnTimers.xml": "2daca63fc40129bbabf802aa1656ea56ef5fd15de84cec24370c6c5ce67c6f9a",
+    "bnw:Gameplay/XML/GameInfo/CIV5Victories.xml": "b0e0d07f6a1f72898737353693423d059c1532ab93122f19965b92815bdd45c2",
+    "bnw:Gameplay/XML/GameInfo/CIV5VoteSources.xml": "e95b346bb34f6c9facf94a051c7d0125987c1ae285e4c03149142c6070c02bf2",
+    "bnw:Gameplay/XML/GameInfo/CIV5Votes.xml": "1c005c241c2a95464b755c7d8f3a4fe023b03dc8ca0f5f4bf49d507cb937a7be",
+    "bnw:Gameplay/XML/GameInfo/CIV5Worlds.xml": "56466a8814f0503a22bfed74dc3fd4afdced7a178fbda77cd8c067e17e74f688",
+    "bnw:Gameplay/XML/GlobalDefines.xml": "3d2841dcbc89138c31b87275b7b1b63727dea3b1f2fc76b7758ab56db295e52e",
+    "bnw:Gameplay/XML/Interface/CIV5Colors.xml": "bf8e7cab4fc8b8374516e72dcffc8064c3a155661c9c087f40cb370c0ff6ae0a",
+    "bnw:Gameplay/XML/Interface/CIV5InterfaceModes.xml": "7d1db5ca08b8efd620c6b14b6df8ba821cad7624e8a263e05eed34f4226ea0e9",
+    "bnw:Gameplay/XML/Interface/CIV5PlayerColors.xml": "04505f1c593a9b4cd42621fbd55aa78f9332474f542634df0b79dd780a7ee611",
+    "bnw:Gameplay/XML/Leaders/CIV5LeaderTables.xml": "b2f193bbfaf38626adcde8fee5e9bc463703a225adbe8fd462d8983ac30d2872",
+    "bnw:Gameplay/XML/Leaders/CIV5Leader_Washington.xml": "8d7051b3b32aa529450d7fe013bc40978dc0f62acecd2a1c31b23fc4b9d14f32",
+    "bnw:Gameplay/XML/Misc/CIV5Routes.xml": "12a447ee2e6b259a390068f5c3725d222323ab10b6db5d0b4c5da287dc787d25",
+    "bnw:Gameplay/XML/Misc/Notifications.xml": "47444c6b002aa83f356ff363d847a9d5fea79d2c11b03651900d19d5f70ebbcc",
+    "bnw:Gameplay/XML/Technologies/CIV5Technologies.xml": "560efc8a82a71e794a4385d09f274fb1196afef0fb99e87d816607386b0b86fd",
+    "bnw:Gameplay/XML/Terrain/CIV5Features.xml": "bc28f8f0381672d6bd0ec6d0b24f070d4ea85ec4230ad40d4c268211e34df38f",
+    "bnw:Gameplay/XML/Terrain/CIV5Improvements.xml": "d508fb2b2efed9b3ae0cdf9622413516b87517972d8b9fb721c4ab20759ee077",
+    "bnw:Gameplay/XML/Terrain/CIV5ResourceClasses.xml": "9b17040ab1a39fbe70aceffe0ad2b062218a3feb6b52e1cef06b3a9e833da7ee",
+    "bnw:Gameplay/XML/Terrain/CIV5Resources.xml": "4d90df0fa519982e2ae3c214ea70f7dfae5cd97d2b42dda7c05ff69a88edda08",
+    "bnw:Gameplay/XML/Terrain/CIV5Terrains.xml": "49a53956cf5c400ed850397993636593ca8727728c0c94f7d0ee5015640eb13b",
+    "bnw:Gameplay/XML/Terrain/CIV5Yields.xml": "9281c16a829cbfcc15755d3229d7abc62f4bd60071ea229b0974c4299cdc8791",
+    "bnw:Gameplay/XML/Units/CIV5Automates.xml": "c22b7004b5279c04b054057a53ce03a3e8ed0fb0bf73da1b236d6ce104705235",
+    "bnw:Gameplay/XML/Units/CIV5Builds.xml": "223f7a208a6c32a39fe978fe207b4cec89cdf0f8d4919420543c5f43e6bcf5ef",
+    "bnw:Gameplay/XML/Units/CIV5Commands.xml": "8431f5acb54524fcf60282267c37bd63546b364713a4441b5997cb26d9ee870d",
+    "bnw:Gameplay/XML/Units/CIV5Controls.xml": "8875a896b7c17caa71832cb18771897797951d6d5237c19de4da2c80509a6544",
+    "bnw:Gameplay/XML/Units/CIV5Missions.xml": "2c57350d0e3ecd3cda2d1bd0993654a16f5fcced31f1dbeba259c071dc89233a",
+    "bnw:Gameplay/XML/Units/CIV5MultiUnitFormations.xml": "61ab47385d806f8169b1ddc3c1ac5b969ccb9686e6a2977b479ba9b3b7826c19",
+    "bnw:Gameplay/XML/Units/CIV5SpecialUnits.xml": "e1660166526fae5e64af9e648f5532d51d13b08c3bf9c0f69ac6ee67d5b01f47",
+    "bnw:Gameplay/XML/Units/CIV5UnitClasses.xml": "d06c6c5b1ec92261f0b219f57648aed5e44a1c5712039600525a59c7203cf831",
+    "bnw:Gameplay/XML/Units/CIV5UnitMovementRates.xml": "bff36fb1e2bd51c4a508a236a711293f5564db88278e972f11fc49006f407891",
+    "bnw:Gameplay/XML/Units/CIV5UnitPromotions.xml": "577e3a39488a3ba8f757dd8124ab938801c0096edab5caa09a14f7fd1be59096",
+    "bnw:Gameplay/XML/Units/CIV5Units.xml": "3335f22be52e37e4353765e1b910d7233a03384dc052ebdfa904075392b62c41",
+    "bnw:Gameplay/XML/Units/Civ5AnimationCategories.xml": "3e83b4f521b175c6216066235938ec8460acaf6ada051ef8501e6335a34646c7",
+    "bnw:Gameplay/XML/Units/Civ5AnimationPaths.xml": "4695365916be909904f433aed4eec9ee1c57d403f75a8079b9c40f2f607fe01d",
+    "bnw:Gameplay/XML/Units/Civ5EntityEvents.xml": "872f12ab8acb6d09a61c7e5fa279821ab0ef782ef8dcf53cb3d2a5ffe7e55d1c",
+    "bnw:SQL/Civ5LocalizationDatabaseSchema.sql": "f2c6f776d79cbabf9b00c9ee177afe4eae8ea4239d1d954d7a0e062cf7c3a705",
+    "bnw:Sounds/XML/UnitGameplay.xml": "83da7480d53cad41b6be7f15760856cf76de217fee6b265e925fe2cec3d2083c",
+    "cp151:(1) Community Patch (v 151).modinfo": "f0a183fe86cbd5b46860600d2e482bc6e83c1daac4249eb48b0d2425896519ff",
+    "cp151:Database Changes/AI/CoreLeaderPersonalityChanges.sql": "ba298ff005ac9041459b5f4d74b9220885291df503cf5e4c49fdefe368e4348a",
+    "cp151:Database Changes/AI/CoreNewDiplomacyResponses.sql": "5ff52e210c7effb5eda21854a79a4d727a28a91dfa6bb3b85feb0a7a23e6420e",
+    "cp151:Database Changes/AI/CoreStrategyChanges.sql": "14da7ad986493a6c8846ec73e86f5694760a8e628b555d8a5490e262e1fde9a9",
+    "cp151:Database Changes/AI/LeaderTableChanges.sql": "8b6cfcb096222c0186270a1dae3dcb3f90ad1967877636b6417bbac77577483e",
+    "cp151:Database Changes/Achievements/NewAchievementTables.xml": "d5387bdc125ca5d7fb4b23abab9d8fbaba78e7d177436d2d7c78c3871b23a517",
+    "cp151:Database Changes/AddTableIndexes.sql": "02394c2a823457cf75fa2ffddbb72114dbaa42b9c17444c90977e9fdbeab88b8",
+    "cp151:Database Changes/City/Buildings/BuildingTableChanges.sql": "9b9f5e7c005836ef2fa1ad4a9ac8c4687abc9a6d5c0c7b14440e6068bcb6f7e1",
+    "cp151:Database Changes/City/Buildings/BuildingTableFixes.sql": "caf7fd83e60ecdc64b39980162d781866fddeb5b414a50eda39a5a6460cf9642",
+    "cp151:Database Changes/City/Buildings/NewBuildingTables.xml": "d9552f869678ae168b1bbf7e71346ee76cf64c73d00ac1f92f8a62fd7c1964e8",
+    "cp151:Database Changes/City/GreatWorks/CoreNewGreatWorks.sql": "c5aba6da8d367f6392d08292a71d0b9e3c7aab285248dee1de958da15adbee19",
+    "cp151:Database Changes/City/Processes/ProcessTableChanges.sql": "a192da6c64d37c77c07f1d8ce7bcae6a6b6efb94e8397b28beee265780bd706b",
+    "cp151:Database Changes/City/Projects/NewProjectTables.xml": "b52d4d8b3381c7a1fd83b9d7be5355d9a44ec788e9aaee48a143d3f0d05be896",
+    "cp151:Database Changes/City/Projects/ProjectTableChanges.sql": "f99204da35dcf514b61ee7f16cb98b6db75f2a1d90a71e8eca1db13e1d257d5d",
+    "cp151:Database Changes/Civilizations/CivilizationChanges.sql": "85d1e37876f2405dfacd1cb263326bcd69a68db9d8199e0554ca27410124f911",
+    "cp151:Database Changes/Civilizations/CivilizationTableChanges.sql": "6daba702cf04751cc7b345ae1616c9f1e6482e83b783852692e31cc13785f998",
+    "cp151:Database Changes/Civilizations/NewCivilizationTables.xml": "bb57c7df114eca4d101cc81ace459548544b67c36cdb60b9498547db90f68db8",
+    "cp151:Database Changes/Civilizations/NewTraitTables.xml": "4e8c90dcad69e811126c0fb57a8fd4f6a0600e82577d50b3cc94ad03b8d2031a",
+    "cp151:Database Changes/Civilizations/TraitTableChanges.sql": "ce9e6ae186b4a2bcc2862b6e82ae5cd4b4bddd18a8eea67e82c52e9f8522503b",
+    "cp151:Database Changes/CommunityTables.xml": "5778d364e1ff41c1d0f0d4a826e2d480f324140b3ecb471bb3a3b22388f32f7a",
+    "cp151:Database Changes/Concepts/ConceptTableChanges.sql": "f8de62d4ed69dfb27407719273d0387cabc5143dd7a744dd5eb112217ee05e21",
+    "cp151:Database Changes/Concepts/CoreConceptChanges.sql": "8634eca5a9b076cd575d610886b3d5411952bf0ce026954e78edaaab315f1f99",
+    "cp151:Database Changes/CoreTriggers.sql": "ed09a674538efb14a6f6eae3096b3058992db745cb508127c74d3ba7c0e83f98",
+    "cp151:Database Changes/Corporations/NewCorporationTables.xml": "99b9f2f35195143403f70e03bc39bebde2b836440566e6b9e97befcc20cc62ce",
+    "cp151:Database Changes/Difficulty/CoreDifficultyChanges.sql": "59ab9722a1a3c74b412abfcd0843f40e1fee8c8db699d1a01d2e79f465d86a3f",
+    "cp151:Database Changes/Difficulty/DifficultyTableChanges.sql": "c7613fdb50b9048d6f4a2d963e97dd724a86c5ba212076eecf727723220109ad",
+    "cp151:Database Changes/Difficulty/NewDifficultyTables.xml": "e3cd15d448dd6cf3b0cc5066f2caa58e965f82c1d2ec51d2948bc5fec1f07f22",
+    "cp151:Database Changes/Espionage/NewEspionageTables.xml": "c5233f9879de09848b4bfcfc0881b99fea018526d7e1c0d5064749f39c243029",
+    "cp151:Database Changes/Events/NewEventTables.xml": "32fcea202728e230bc77f489c24bd32aa2fdf890706e86c7f37f14dee38d1ddb",
+    "cp151:Database Changes/FixTypeConstraints.sql": "73ab5d557121f3067a2b3d7b7f07862ed8c48c7c91055ab8539cd7c68b509b2e",
+    "cp151:Database Changes/GameSpeedTableChanges.sql": "8bf5e533d962d1188c85527f5aaee89a98826153587e92940d8001292cf12e88",
+    "cp151:Database Changes/Minors/CoreMinorQuestChanges.sql": "cc9c69adef2f4979bb43fe903f8f20831b8dcb4ca7a6d2130312b095a124a6e4",
+    "cp151:Database Changes/Minors/CoreNewMinorTables.xml": "9a46746bfbec8a7bfb1cab0804fd99af4ec1a6fd20f3cbc4c68ade309afd6dc4",
+    "cp151:Database Changes/Minors/MinorQuestTableChanges.sql": "8e492e866d9e9d7858eb96f36072ca5aea9d662b3c1e41b7ff1d1b33fcafcc43",
+    "cp151:Database Changes/Minors/MinorTableChanges.sql": "70b6ebe9731f0ed2c3ba4176163fd89657323182b0dacfb250740f5fcfa3e544",
+    "cp151:Database Changes/Mod Support/NewContractTables.xml": "7664d43f5f0489c30b305416e918db8cdb32c6353688826ca53a22ce4d0cf80e",
+    "cp151:Database Changes/Mod Support/NewDiploModifierTables.xml": "ab9fe2d46acea6bcb4b53f63de18931ce60944a9e16a4fa937617b451f82bed4",
+    "cp151:Database Changes/NewCustomModOptions.xml": "a5e687fdaaf6793ec6d1313da2f40af6ef7ce4a2da5b0d50eab3a6c41c6a5e1c",
+    "cp151:Database Changes/NewEnumTables.xml": "fa68b323f418675b3457a5e0be4dd0807c5116c3f86b245326ebb9de42df2deb",
+    "cp151:Database Changes/Notifications/NewNotificationTables.xml": "aee955a9d10d9bb5a805e647dd0e33e829921a15c02d2e2e45fdb1458d7e92d8",
+    "cp151:Database Changes/Notifications/NotificationTableFixes.sql": "0b48513b3a16e9306e7f51a51be2e63f685b0526d6ea49955e08593a944b7ecf",
+    "cp151:Database Changes/Policies/NewPolicyTables.xml": "4d96bf82c035432dbaaa123c51ecb81aa244b73bdd1b772dd9a6d193dbc0d0da",
+    "cp151:Database Changes/Policies/PolicyTableChanges.sql": "cc2f0c8db39c2b39621e59a6ecced77f65d1bbee699ed1b2c337136d13623e88",
+    "cp151:Database Changes/Religions/BeliefTableChanges.sql": "6e8dd34c297b7f99f4ff557fb5e0fd525ee0bf3d9333b134e4e7631491b140cf",
+    "cp151:Database Changes/Religions/NewBeliefTables.xml": "cc87d5fd28b79b0b49ffd48f398f358c34f1b44cd31eb616db31bcc5da6f3673",
+    "cp151:Database Changes/Religions/ReligionTableChanges.sql": "ae98224f90a3e07e2e4251541c737abaf4498def4c9cf06bb6b63e527694d281",
+    "cp151:Database Changes/RemapperTables.xml": "2a67bd9775163db09e137127a4fee927ef1d54980cce8f1ac3195f0d5d8290fe",
+    "cp151:Database Changes/Tech/EraTableChanges.sql": "bf8573cb558397ba95e6ad319cfb33261e06c44e773555c261f8fe7fa6d07b4c",
+    "cp151:Database Changes/Tech/NewTechTables.xml": "341626f5d05d2f891ce3aad94fc6c866e15f13b49465cd1ddebc37279b4936aa",
+    "cp151:Database Changes/Tech/TechTableChanges.sql": "bf0a090569a3734c165078aa3ca3f74c70d8564cb3c19d4163ae3b3620405066",
+    "cp151:Database Changes/UnitPromotions/NewPromotionTables.xml": "cb211278333bcf269aa3869281f08f0f6e143e1cd8f341ef4fc62b886cf1ab9d",
+    "cp151:Database Changes/UnitPromotions/PromotionTableChanges.sql": "eaccb5075783201f3b8c754bfa772e60411823e03e32a6dc858473ddc34e6091",
+    "cp151:Database Changes/Units/CoreUnitChanges.sql": "acf449cd287159da3efbcdff6780bec33acbf577fce8378166d112e573571bc2",
+    "cp151:Database Changes/Units/GreatPeople/NewGreatPersonTables.xml": "3ff2101b1782f3b89833dab3589240bf0bc26b0aefa8cd421a764f1f1a38130b",
+    "cp151:Database Changes/Units/NewUnitTables.xml": "07a74513208478a8d9a404a024ee1e59abc012cfda5efed213f852769ef2ed76",
+    "cp151:Database Changes/Units/UnitTableChanges.sql": "f19f510130a02bf68e5e8f23d6251ca29a49f581de8086d6402957b4b9c19574",
+    "cp151:Database Changes/WorldCongress/CongressTableChanges.sql": "2dbcd3b31a13ec714570a444284e2724258a4c9ba39e6dd93a51edcc68d5f5a2",
+    "cp151:Database Changes/WorldCongress/ProjectTableChanges.sql": "786d16c0a47e03a9592459d6f2b4dd0d4e269b20e8050af85c460d2ceea4b584",
+    "cp151:Database Changes/WorldCongress/ResolutionTableChanges.sql": "2b00dcace1ed833b46303a70225438c50d45a7411ef42e46f21b1b758407b9e8",
+    "cp151:Database Changes/WorldMap/AncientRuinTableChanges.sql": "a59c390ea13b59122c04e8ea2de02930f5a81fbb312804684c7831ec41029d75",
+    "cp151:Database Changes/WorldMap/Features/FeatureTableChanges.sql": "135e3a25d4b29e4dfc54116e370f8c80a372b3341a33de74038f2a14e7cd9664",
+    "cp151:Database Changes/WorldMap/Features/NewFeatureTables.xml": "50f83fc3356fd73a148a4b44cb5ea452c1083eaaa971f20332aa7bd465e5b429",
+    "cp151:Database Changes/WorldMap/Improvements/BuildTableChanges.sql": "b5b74dd7cdf8dedef4be612a7aea115ce20a93aab9b1b5d4e8dfedd203d2bcc7",
+    "cp151:Database Changes/WorldMap/Improvements/ImprovementTableChanges.sql": "1718f9831c35fb02435ed415d7bc2f400903069c92383a99049ab486a6348fe3",
+    "cp151:Database Changes/WorldMap/Improvements/NewImprovementTables.xml": "b9ccedc89ee8068959345912d168e21e525151a732368400d2a61fd7fee83916",
+    "cp151:Database Changes/WorldMap/Plots/NewPlotTables.xml": "679ffd2b78b51e7f9b2490c75f39fd637fdc0dfd3bb18e6df2417138d03b2e41",
+    "cp151:Database Changes/WorldMap/Resources/NewResourceTables.xml": "c5f7056b2fb2a599438376e19cdf8fbb96b3a55f5ed5d39b3a8514b7e4644d6d",
+    "cp151:Database Changes/WorldMap/Resources/ResourceTableChanges.sql": "50cf6da60754484f88f59d0d23df81d8bf884a2f4cc6e3ff12ad180405989833",
+    "cp151:Database Changes/WorldMap/Terrains/NewTerrainTables.xml": "fc6099b0234a889a43c217d2d6e95dc8bdd70dde1fe70f1c1f04116203528bc1",
+    "cp151:Database Changes/WorldMap/Terrains/TerrainTableChanges.sql": "344a18836335fceff5de22c479e922e3f5416dc5117633dc864a104d00da35ef",
+    "cp151:Database Changes/WorldMap/Yields/YieldTableChanges.sql": "5be701df630b668a6647309d0ae68edeedb685161d219f1cb56c6b9a8c201ccf",
+    "cp151:Database Changes/WorldTableChanges.sql": "2e97ba8a134c08f35d6ef033b16cc16a9561024a32f00ac283b77e2dc2837f24"
+  },
+  "companions": {
+    "Building_AreaYieldModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_BonusFromAccomplishments": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "AccomplishmentType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Happiness",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'0'",
+        "pk": 0
+      },
+      {
+        "name": "ExtraSpies",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'0'",
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainXP",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'0'",
+        "pk": 0
+      },
+      {
+        "name": "UnitCombatType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitProductionModifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'0'",
+        "pk": 0
+      }
+    ],
+    "Building_BuildingClassHappiness": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Happiness",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_BuildingClassLocalHappiness": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Happiness",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_BuildingClassLocalYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldChange",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_BuildingClassYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldChange",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": "'0'",
+        "pk": 0
+      }
+    ],
+    "Building_BuildingClassYieldModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_CityConnectionPlotYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_CityConnectionPlotYieldChangesGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ClassNeededAnywhere": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ClassNeededNowhere": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ClassesNeededInCity": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainFreeExperiencePerGreatWork": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainFreeExperiencePerGreatWorkCity": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainFreeExperiencePerGreatWorkGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainFreeExperiences": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainFreeExperiencesGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_DomainProductionModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "DomainType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ExtraPlayerInstancesFromAccomplishments": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "AccomplishmentType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ExtraInstances",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_FeatureYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FeatureType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_Flavors": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FlavorType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Flavor",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_FreeSpecUnits": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumUnits",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_FreeSpecialistCounts": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "SpecialistType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Count",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_FreeUnits": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumUnits",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GlobalYieldModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GoldenAgeYieldMod": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GreatPersonPointFromConstruction": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "GreatPersonType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": "'ERA_ANCIENT'",
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GreatPersonProgressFromConstruction": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "GreatPersonType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": "'ERA_ANCIENT'",
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GreatWorkYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GreatWorkYieldChangesLocal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_GrowthExtraYield": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_HurryModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "HurryType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "HurryCostModifier",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_HurryModifiersLocal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "HurryType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "HurryCostModifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ImprovementYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ImprovementType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ImprovementYieldChangesGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ImprovementType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_InstantYield": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_InstantYieldFromWLTKDStart": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LakePlotYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LakePlotYieldChangesGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LocalFeatureAnds": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FeatureType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LocalFeatureOrs": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FeatureType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LocalResourceAnds": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LocalResourceOrs": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LockedBuildingClasses": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_LuxuryYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_PlotYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "PlotType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_PrereqBuildingClasses": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumBuildingNeeded",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ReligionYieldFromFaithPurchasableBuildings": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ReligionYieldFromFaithPurchasableBuildingsGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceClaim": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "IncludeOwnedByOtherPlayer",
+        "type": "boolean",
+        "notnull": 1,
+        "default": "0",
+        "pk": 0
+      }
+    ],
+    "Building_ResourceCultureChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "CultureChange",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceFaithChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FaithChange",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceHappinessChange": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "HappinessChange",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceMonopolyAnds": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceMonopolyOrs": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourcePlotsToPlace": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumPlots",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceQuantityToPlace",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceQuantity": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Quantity",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceQuantityFromPOP": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceQuantityPerXFranchises": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumFranchises",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceQuantityRequirements": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Cost",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceYieldChangesGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ResourceYieldModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_RiverPlotYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_SeaPlotYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_SeaResourceYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_SpecialistYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "SpecialistType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_SpecialistYieldChangesLocal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "SpecialistType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_SpecificGreatPersonRateModifier": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "SpecialistType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_TechAndPrereqs": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TechType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_TechEnhancedYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TechType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_TerrainYieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TerrainType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_ThemingBonuses": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Description",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Bonus",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": "'0'",
+        "pk": 0
+      },
+      {
+        "name": "SameEra",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "UniqueEras",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "ConsecutiveEras",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "MustBeArt",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "MustBeArtifact",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "MustBeEqualArtArtifact",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "RequiresOwner",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "RequiresAnyButOwner",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "RequiresSamePlayer",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "RequiresUniquePlayers",
+        "type": "boolean",
+        "notnull": 0,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "AIPriority",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": "'0'",
+        "pk": 0
+      }
+    ],
+    "Building_ThemingYieldBonus": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_UnitClassTrainingAllowed": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_UnitCombatFreeExperiences": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitCombatType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Experience",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_UnitCombatProductionModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitCombatType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_UnitCombatProductionModifiersGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitCombatType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Modifier",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_WLTKDFromProject": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ProjectType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Turns",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_WLTKDYieldMod": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangeWorldWonder": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangeWorldWonderGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChanges": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesEraScalingTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesFromAccomplishments": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "AccomplishmentType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesFromPassingTR": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesFromXCityStateStrategicResource": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumRequired",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerCityStrengthTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerGoldenAge": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldCap",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerLocalTheme": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerMonopoly": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerPop": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerPopInEmpire": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerReligion": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerXBuilding": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumRequired",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldChangesPerXTiles": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumRequired",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromBirth": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "IsEraScaling",
+        "type": "boolean",
+        "notnull": 1,
+        "default": "0",
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromBirthRetroactive": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromBorderGrowth": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromCombatExperienceTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromConstruction": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromDeath": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromFaithPurchase": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromGPBirthScaledWithArtistBulb": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromGPBirthScaledWithPerTurnYield": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "GreatPersonType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldIn",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldOut",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromGPBirthScaledWithWriterBulb": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromGPExpend": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromGoldenAgeStart": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromInternalTR": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromInternalTREnd": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromInternationalTREnd": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromLongCount": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPillage": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPillageGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPillageGlobalPlayer": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPolicyUnlock": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromProcessModifier": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPurchase": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromPurchaseGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromSpyAttack": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromSpyDefense": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromSpyDefenseOrID": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromSpyIdentify": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromSpyRigElection": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromTech": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromUnitGiftGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromUnitLevelUp": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromUnitLevelUpGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromUnitProduction": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromVictory": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "IsEraScaling",
+        "type": "boolean",
+        "notnull": 1,
+        "default": "1",
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromVictoryGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "IsEraScaling",
+        "type": "boolean",
+        "notnull": 1,
+        "default": "0",
+        "pk": 0
+      },
+      {
+        "name": "GoldenAgeOnly",
+        "type": "boolean",
+        "notnull": 1,
+        "default": "0",
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromVictoryGlobalPlayer": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromYieldPercent": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldOut",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldIn",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldFromYieldPercentGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldOut",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldIn",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldModifiers": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldModifiersEraScaling": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldModifiersFromAccomplishments": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "AccomplishmentType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldModifiersFromDistanceToCapital": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldBase",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldFalloff",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldLimit",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerAllyTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerFranchise": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerFriendTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerXFeatureTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FeatureType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerXImprovementGlobal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ImprovementType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumRequired",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerXImprovementLocal": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ImprovementType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "NumRequired",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Building_YieldPerXTerrainTimes100": [
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TerrainType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "UnitGameplay2DScripts": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "SelectionSound",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FirstSelectionSound",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_AITypes": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitAIType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_Bounties": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_BuildOnFound": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_BuildingClassPurchaseRequireds": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_BuildingClassRequireds": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_Buildings": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_Builds": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ClassUpgrades": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitClassType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_EraCombatStrength": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "CombatStrength",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_EraCombatType": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitCombatType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'1'",
+        "pk": 0
+      }
+    ],
+    "Unit_EraUnitPromotions": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "PromotionType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Value",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": "'1'",
+        "pk": 0
+      }
+    ],
+    "Unit_Flavors": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "FlavorType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Flavor",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_FreePromotions": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "PromotionType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_GreatPersons": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "GreatPersonType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_NotAITypes": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UnitAIType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ProductionModifierBuildings": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "BuildingType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ProductionModifier",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ProductionTraits": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TraitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Trait",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ResourceQuantityExpended": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Amount",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ResourceQuantityRequirements": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Cost",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": "'1'",
+        "pk": 0
+      }
+    ],
+    "Unit_ResourceQuantityTotals": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ResourceType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Amount",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_ScalingFromOwnedImprovements": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "ImprovementType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Amount",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_TechTypes": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "TechType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_UniqueNames": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "UniqueName",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "GreatWorkType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "EraType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_YieldFromBarbarianKills": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_YieldFromKills": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 0,
+        "default": null,
+        "pk": 0
+      }
+    ],
+    "Unit_YieldOnCompletion": [
+      {
+        "name": "UnitType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "YieldType",
+        "type": "TEXT",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      },
+      {
+        "name": "Yield",
+        "type": "INTEGER",
+        "notnull": 1,
+        "default": null,
+        "pk": 0
+      }
+    ]
+  },
+  "basis": "Installed BNW XML + standalone CP151 manifest-ordered XML/SQL DDL; no cache schema",
+  "cp_source_commit": "44c1e14ff75d80c1dba5c8a71e8289439a53aafb"
+}

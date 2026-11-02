@@ -2,6 +2,7 @@
 from collections import Counter
 from lupa.lua51 import LuaRuntime
 from baseline import ROOT, quote
+from target_schema import approved_companions
 from generate_hollow_choir import CIV, LEADER, UNIT, HALL, PROMO, PREFIX
 
 
@@ -19,8 +20,7 @@ def check_database(db):
         b = db.execute('SELECT * FROM '+table+' WHERE Type=?', (new,)).fetchone()
         for key in a.keys():
             if key not in excluded: assert a[key] == b[key], (table, key, a[key], b[key])
-        for (companion,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall():
-            if not (companion.startswith(prefix) or (table=='Units' and companion=='UnitGameplay2DScripts')) or companion.endswith('_new'): continue
+        for companion in approved_companions(prefix, column):
             cols = [r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')')]
             if column not in cols: continue
             fields = [c for c in cols if c not in [column,'ID']]

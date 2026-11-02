@@ -24,21 +24,22 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="117A83FFB9262097C3E4905E6D6EC780" import="0">CHANGELOG.md</File>
-    <File md5="7D0ABCC39ED2EA850AEB9D0EC99A70B7" import="0">docs/Compatibility.md</File>
-    <File md5="9B04999F1968BDB5230B5C5809FE2ADD" import="0">docs/HollowChoirTesting.md</File>
+    <File md5="F15857C1F1DE1001907B154BD6B044D0" import="0">CHANGELOG.md</File>
+    <File md5="D628A9DD214E0D7ABA117571FAA458B1" import="0">docs/Compatibility.md</File>
+    <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
+    <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
-    <File md5="462D3C236A2FF32B108727A099AEE275" import="0">docs/Testing.md</File>
-    <File md5="BA6B115BAA06019D1804FD5BE80FB16D" import="0">README.md</File>
+    <File md5="FE52125498111076C6CDB9EA21C30A0B" import="0">docs/Testing.md</File>
+    <File md5="2AA083E69D4A2AAEB3A2EED74E1E6E96" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
     <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
-    <File md5="3D3C7089C39C87E2F210A636803C5DFC" import="0">TheHollowChoir/SQL/Choir_Buildings.sql</File>
+    <File md5="733C8D3A3433A8C08FA2FA5907B92878" import="0">TheHollowChoir/SQL/Choir_Buildings.sql</File>
     <File md5="0973E6C8D98469D2B5B896937864A3DF" import="0">TheHollowChoir/SQL/Choir_Civilization.sql</File>
     <File md5="86709CF10495B6CA15EF422E6C7B1BBD" import="0">TheHollowChoir/SQL/Choir_Text.sql</File>
     <File md5="4FD1291E75B41175C13CD96896C6DBE9" import="0">TheHollowChoir/SQL/Choir_Units.sql</File>
@@ -95,7 +96,7 @@
     <File md5="42E725CB7BEC50BC79DABDF22080A3D9" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
     <File md5="DE4790EC1AB1769E57C75A1584D8DCDA" import="0">TheMinistryOfAlmost/README.md</File>
     <File md5="691ED00F2EB05D58AB566E1F32DBA919" import="0">TheMinistryOfAlmost/SQL/Ministry_Art.sql</File>
-    <File md5="B0CAE591F236E947E7412343FCFCCA25" import="0">TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</File>
+    <File md5="A8F5D03208540C73D3F170E20DC29729" import="0">TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</File>
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
