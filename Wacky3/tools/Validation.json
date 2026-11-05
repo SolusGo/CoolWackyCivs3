@@ -36,6 +36,9 @@
       "UnitUpgraded precedes normal conversion": true,
       "UnitConverted follows all promotion transfer": true,
       "UnitConverted exact argument order": true,
+      "Summer conversion repair precedes old unit death": true,
+      "Summer gifts use the same post-transfer conversion": true,
+      "Summer Sight is native unit base plus promotion visibility": true,
       "UnitUpgraded exact argument order": true,
       "UnitCreated exact argument order": true,
       "UnitCreated follows initial free promotions": true,
@@ -235,11 +238,15 @@
     "PASS Hollow Choir: 365 assertions covering terrain matrix, shared radii, ownership/building changes, capture/gift/liberation, founding/raze, reload/free cleanup, repeated turns, later owners and speed-independent yields"
   ],
   "seventeenth_summer_lua": [
-    "PASS Summer QUICK: 1039 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
-    "PASS Summer STANDARD: 1369 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
-    "PASS Summer EPIC: 1963 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
-    "PASS Summer MARATHON: 3613 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
-    "PASS: pinned CP151 panels hide lineage and retain the visible Awakened icon"
+    "PASS Summer QUICK: 1179 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS Summer STANDARD: 1509 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS Summer EPIC: 2103 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS Summer MARATHON: 3753 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS Summer performance 25 majors: 10560 irrelevant unit events; zero owner/phase queries, city visits, sweeps or writes; one foreign recovery sweep per turn",
+    "PASS Summer STANDARD/25 majors: 1516 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS Summer performance 34 majors: 14520 irrelevant unit events; zero owner/phase queries, city visits, sweeps or writes; one foreign recovery sweep per turn",
+    "PASS Summer STANDARD/34 majors: 1516 assertions; cycles, next-payout order, invalid-state recovery, reloads, liberation, city transfers and unit lifecycle",
+    "PASS: both pinned CP151 panels match native rendering except hidden lineage, across all 16 promotion sets and trade/empty selections; Awakened and unrelated promotions retained"
   ],
   "lua": "PASS: 12 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",

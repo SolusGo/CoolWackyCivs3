@@ -1,5 +1,11 @@
 # Changelog
 
+## Seventeenth Summer hardening audit — 6 November 2026
+
+- Fix future saved-turn identifiers freezing cycle progression; safely repair malformed/overflow/duplicate records while preserving the existing namespace, valid record format, GUID and all mechanics.
+- Filter ordinary unit events before phase work, eliminate repeated unit sweeps on duplicate callbacks and unrelated watched-city passes, and keep foreign owner-local recovery for illegal promotions/controllers.
+- Add invalid-state, zero-city, liberation, Faith purchase, full transition reload, 25/34-major operation-budget and native/patched panel rendering regressions; extend source and fallback-art assertions. Document results separately from outstanding native in-game acceptance.
+
 ## Daily Civ V Surprise #17 — The Seventeenth Summer — 5 November 2026
 
 - Added Chorus-Mother Ixa, First Emergence, the human-only Summer civilization, localization and valid native fallback art.

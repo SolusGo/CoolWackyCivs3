@@ -4,7 +4,7 @@ from lupa.lua51 import LuaRuntime
 from baseline import ROOT, quote
 from target_schema import approved_companions
 from generate_seventeenth_summer import CIV, LEADER, UNIT, NURSERY, LINEAGE, AWAKENED, PREFIX, DUMMIES
-from generate_summer_ui import generated
+from generate_summer_ui import generated, SOURCES
 
 
 def check_database(db):
@@ -38,8 +38,8 @@ def check_database(db):
         for k,v in dict(Cost=-1,FaithCost=-1,GoldMaintenance=0,GreatWorkCount=-1,IsDummy=1,ShowInPedia=0,NeverCapture=1,ConquestProb=0).items():
             assert b[k]==v,(typ,k)
         assert [tuple(r) for r in db.execute('SELECT YieldType,Yield FROM Building_YieldChanges WHERE BuildingType=?',(typ,))]==[('YIELD_'+kind,amount)]
-    for typ,expected in [(LINEAGE,dict(CannotBeChosen=1,LostWithUpgrade=0,ShowInUnitPanel=0,IsVisibleAboveFlag=0,CombatPercent=0)),
-                         (AWAKENED,dict(CannotBeChosen=1,LostWithUpgrade=1,LostOnGifting=1,CombatPercent=20,AttackMod=0,DefenseMod=0))]:
+    for typ,expected in [(LINEAGE,dict(CannotBeChosen=1,LostWithUpgrade=0,LostOnGifting=0,ShowInUnitPanel=0,IsVisibleAboveFlag=0,CombatPercent=0,VisibilityChange=0)),
+                         (AWAKENED,dict(CannotBeChosen=1,LostWithUpgrade=1,LostOnGifting=1,CombatPercent=20,AttackMod=0,DefenseMod=0,VisibilityChange=0))]:
         row=db.execute('SELECT * FROM UnitPromotions WHERE Type=?',(typ,)).fetchone()
         for k,v in expected.items(): assert row[k]==v,(typ,k)
     assert [r[0] for r in db.execute('SELECT UnitType FROM Unit_FreePromotions WHERE PromotionType=?',(LINEAGE,))]==[UNIT]
@@ -56,43 +56,68 @@ def check_database(db):
         cols=[r[1] for r in db.execute('PRAGMA table_info('+table+')') if r[1]!='CivilizationType']
         query='SELECT '+','.join(map(quote,cols))+' FROM '+table+' WHERE CivilizationType=?'
         assert Counter(tuple(r) for r in db.execute(query,(CIV,)))==Counter(tuple(r) for r in db.execute(query,('CIVILIZATION_AMERICA',)))
+    for table,original,unique,fields in [
+        ('Civilizations','CIVILIZATION_AMERICA',CIV,['IconAtlas','AlphaIconAtlas','PortraitIndex','ArtDefineTag','DawnOfManImage','MapImage']),
+        ('Leaders','LEADER_WASHINGTON',LEADER,['IconAtlas','PortraitIndex','ArtDefineTag'])]:
+        a=db.execute('SELECT * FROM '+table+' WHERE Type=?',(original,)).fetchone()
+        b=db.execute('SELECT * FROM '+table+' WHERE Type=?',(unique,)).fetchone()
+        for field in fields: assert b[field]==a[field],('native fallback art changed',table,field)
     return 'PASS: human-only registration, active Spearman/Granary scalars and all companions, Sight/Faith deltas, four controllers, promotions, overrides, starts and localization'
 
 
 def check_lua():
     results=[]
-    for speed,dormant,emerged in [('QUICK',9,3),('STANDARD',13,4),('EPIC',20,6),('MARATHON',39,12)]:
+    for speed,dormant,emerged,majors in [('QUICK',9,3,None),('STANDARD',13,4,None),('EPIC',20,6,None),('MARATHON',39,12,None),
+                                      ('STANDARD',13,4,25),('STANDARD',13,4,34)]:
         lua=LuaRuntime(); logs=[]
         lua.globals().print=lambda *a:logs.append(' '.join(map(str,a)))
         lua.globals().include=lambda n:lua.execute((ROOT/'Shared/Lua'/f'{n}.lua').read_text(encoding='utf-8'))
         lua.globals().LoadSummer=lambda:lua.execute((ROOT/'TheSeventeenthSummer/Lua/SummerGameplay.lua').read_text(encoding='utf-8'))
         lua.globals().Speed=speed; lua.globals().Dormant=dormant; lua.globals().Emerged=emerged
+        lua.globals().MajorCount=majors
         lua.execute((ROOT/'tools/tests/seventeenth_summer.lua').read_text(encoding='utf-8'))
         for line in logs: print(line)
         results.extend(logs)
     for name,expected in generated().items():
         actual=(ROOT/'TheSeventeenthSummer/UI'/name).read_text(encoding='utf-8')
         assert actual==expected,('Only the pinned ancestry filter may differ from CP151 UI',name)
-        # Run the actual promotion-rendering function independently of native UI.
+        # Compare native and patched rendering for every ownership combination,
+        # trade units and the enemy panel's empty selection. No cross-context
+        # override is assumed: CP owns its private InstanceManager and controls.
         start=actual.index('function UpdateUnitPromotions(')
         end=actual.index('\nend',start)+4
         code=actual[start:end]
         if name=='UnitPanel.lua': code=code.replace('g_EarnedPromotionIM','MockManager')
-        lua=LuaRuntime()
-        lua.execute("""
-        local promotions={{ID=1,Type='PROMOTION_SUMMER_BROOD_LINEAGE'}, {ID=2,Type='PROMOTION_SUMMER_AWAKENED'}}
+        old,new=next((old,new) for path,_,old,new in SOURCES if path.endswith('/'+name))
+        native=code.replace(new,old)
+        assert native!=code
+        for mask in range(16):
+            for trade in [False,True]:
+                outputs=[]
+                for script in [native,code]:
+                    lua=LuaRuntime()
+                    lua.globals().Mask=mask; lua.globals().Trade=trade
+                    lua.execute("""
+        local promotions={{ID=1,Type='PROMOTION_SUMMER_BROOD_LINEAGE',PortraitIndex=1},
+          {ID=2,Type='PROMOTION_SUMMER_AWAKENED',PortraitIndex=2},
+          {ID=3,Type='PROMOTION_ORDINARY',PortraitIndex=3}, {ID=4,Type='PROMOTION_OTHER',PortraitIndex=4}}
         GameInfo={UnitPromotions=function() local i=0; return function() i=i+1; return promotions[i] end end}
-        Icons={}; IconHookup=function(index,size,atlas,control) Icons[#Icons+1]=control end
+        Icons={}; IconHookup=function(index,size,atlas,control) Icons[#Icons+1]=index end
         Locale={ConvertTextKey=function() return '' end}
         MockManager={ResetInstances=function() end,GetInstance=function() return {UnitPromotionImage={SetToolTipString=function() end}} end}
         Controls={}
-        for i=1,3 do
+        for i=1,4 do
           local c={hidden=true}; function c:SetHide(v) self.hidden=v end; function c:IsHidden() return self.hidden end
           Controls['UnitPromotion'..i]=c
         end
-        MockUnit={IsHasPromotion=function() return true end,IsTrade=function() return false end}
+        MockUnit={IsHasPromotion=function(self,id) return math.floor(Mask/2^(id-1))%2==1 end,
+                  IsTrade=function() return Trade end}
         """)
-        lua.execute(code)
-        lua.execute('UpdateUnitPromotions(MockUnit); assert(#Icons==1,"lineage hidden, Awakened visible")')
-    results.append('PASS: pinned CP151 panels hide lineage and retain the visible Awakened icon')
+                    lua.execute(script)
+                    lua.execute('UpdateUnitPromotions(MockUnit)')
+                    outputs.append(list(lua.globals().Icons.values()))
+                    if name=='EnemyUnitPanel.lua':
+                        lua.execute('UpdateUnitPromotions(nil); for _,c in pairs(Controls) do assert(c:IsHidden()) end')
+                assert outputs[1]==[icon for icon in outputs[0] if icon!=1],(name,mask,trade,outputs)
+    results.append('PASS: both pinned CP151 panels match native rendering except hidden lineage, across all 16 promotion sets and trade/empty selections; Awakened and unrelated promotions retained')
     return results

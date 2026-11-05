@@ -24,12 +24,12 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="6272099A60C6554561988AACCCC430FB" import="0">CHANGELOG.md</File>
+    <File md5="0E8042A45E6EC273057B7F57FDD9CC03" import="0">CHANGELOG.md</File>
     <File md5="D628A9DD214E0D7ABA117571FAA458B1" import="0">docs/Compatibility.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
-    <File md5="DA8CCEDA5DC7297D6E2DF7F052D68F55" import="0">docs/SeventeenthSummerTesting.md</File>
+    <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
     <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
@@ -103,8 +103,8 @@
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
     <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
-    <File md5="B9734D8183D4165EAA807BD14B3FC418" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
-    <File md5="9F8DBE657B540779A204C3FCE19F28F3" import="0">TheSeventeenthSummer/README.md</File>
+    <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
+    <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
     <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>
     <File md5="831F4A8C3C9A9360A64E9CBF1F619958" import="0">TheSeventeenthSummer/SQL/Summer_Civilization.sql</File>
     <File md5="6F7DD387F01466F7F775D82A35170B4C" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>
