@@ -2,7 +2,7 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost and The Hollow Choir: recovery and resonance.</Teaser>
+    <Teaser>The Ministry of Almost, The Hollow Choir and The Seventeenth Summer.</Teaser>
     <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
@@ -24,15 +24,17 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="F15857C1F1DE1001907B154BD6B044D0" import="0">CHANGELOG.md</File>
+    <File md5="6272099A60C6554561988AACCCC430FB" import="0">CHANGELOG.md</File>
     <File md5="D628A9DD214E0D7ABA117571FAA458B1" import="0">docs/Compatibility.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
+    <File md5="DA8CCEDA5DC7297D6E2DF7F052D68F55" import="0">docs/SeventeenthSummerTesting.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
+    <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
     <File md5="FE52125498111076C6CDB9EA21C30A0B" import="0">docs/Testing.md</File>
-    <File md5="2AA083E69D4A2AAEB3A2EED74E1E6E96" import="0">README.md</File>
+    <File md5="518B13C9DBD5FFC9E97B2D9341E3AF84" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
@@ -100,6 +102,15 @@
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+    <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
+    <File md5="B9734D8183D4165EAA807BD14B3FC418" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
+    <File md5="9F8DBE657B540779A204C3FCE19F28F3" import="0">TheSeventeenthSummer/README.md</File>
+    <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>
+    <File md5="831F4A8C3C9A9360A64E9CBF1F619958" import="0">TheSeventeenthSummer/SQL/Summer_Civilization.sql</File>
+    <File md5="6F7DD387F01466F7F775D82A35170B4C" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>
+    <File md5="C19A53AC30640B904BA2F3DE0807143A" import="0">TheSeventeenthSummer/SQL/Summer_Units.sql</File>
+    <File md5="63BF53F456DBF413EB9820FC834AC1C6" import="1">TheSeventeenthSummer/UI/EnemyUnitPanel.lua</File>
+    <File md5="01DEE08942E8AD9032193D8B8C7577EA" import="1">TheSeventeenthSummer/UI/UnitPanel.lua</File>
   </Files>
   <Actions>
     <OnModActivated>
@@ -113,6 +124,10 @@
       <UpdateDatabase>TheHollowChoir/SQL/Choir_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheHollowChoir/SQL/Choir_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheHollowChoir/SQL/Choir_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Text.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -123,6 +138,10 @@
     <EntryPoint type="InGameUIAddin" file="TheHollowChoir/Lua/CWC3_Choir.xml">
       <Name>Songs Beneath Stone</Name>
       <Description>Hollow Choir terrain yields and capture cleanup.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheSeventeenthSummer/Lua/CWC3_Summer.xml">
+      <Name>The Great Emergence</Name>
+      <Description>Save-backed Summer cycle, brood veterans and Nursery yields.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

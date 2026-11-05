@@ -19,11 +19,18 @@
       "Diagnostic player stores exposed": true,
       "Diagnostic city stores exposed": true,
       "Game turn and active player exposed": true,
+      "Summer game speed and owner APIs": true,
+      "Summer unit reconciliation APIs": true,
+      "Summer CombatPercent promotion source": true,
+      "Summer generic melee combat includes CombatPercent": true,
+      "Summer attack uses generic melee modifier": true,
       "Melee attack excludes generic defense modifier": true,
       "Choir native promotion fields": true,
       "Choir attack excludes hill defense": true,
+      "Summer defense uses generic melee modifier": true,
       "Choir melee hill defense conditional": true,
       "Choir terrain Lua bindings": true,
+      "Summer ranged CombatPercent precedes attack-defense branches": true,
       "Ranged generic defense only in non-attacking branch": true,
       "Choir ranged hill defense conditional": true,
       "UnitUpgraded precedes normal conversion": true,
@@ -64,11 +71,11 @@
     "regeneration": [
       {
         "input": "clean source-derived schema",
-        "result": "PASS: all seven SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all eleven SQL outputs byte-identical to checked-in output"
       },
       {
         "input": "artificial third-party building/unit tables",
-        "result": "PASS: all seven SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all eleven SQL outputs byte-identical to checked-in output"
       }
     ],
     "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
@@ -78,7 +85,7 @@
     "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
     "source_tables": 808,
     "source_civilizations": 2,
-    "synthetic_companion_records": 329
+    "synthetic_companion_records": 471
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -87,6 +94,7 @@
   },
   "database": "PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds",
   "hollow_choir_database": "PASS: human-only registration, exact Swordsman/Amphitheater scalars and 172 companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion, localization and native art inheritance",
+  "seventeenth_summer_database": "PASS: human-only registration, active Spearman/Granary scalars and all companions, Sight/Faith deltas, four controllers, promotions, overrides, starts and localization",
   "database_runs": [
     {
       "evidence": {
@@ -94,7 +102,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 329
+        "synthetic_companion_records": 471
       },
       "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
@@ -105,7 +113,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 329
+        "synthetic_companion_records": 471
       },
       "fixture": "unaltered source definitions",
       "result": "PASS"
@@ -226,8 +234,15 @@
   "hollow_choir_lua": [
     "PASS Hollow Choir: 365 assertions covering terrain matrix, shared radii, ownership/building changes, capture/gift/liberation, founding/raze, reload/free cleanup, repeated turns, later owners and speed-independent yields"
   ],
-  "lua": "PASS: 8 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "seventeenth_summer_lua": [
+    "PASS Summer QUICK: 1039 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
+    "PASS Summer STANDARD: 1369 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
+    "PASS Summer EPIC: 1963 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
+    "PASS Summer MARATHON: 3613 assertions; cycles, next-payout order, reloads, transfers, Nurseries, creation, multi-upgrades and foreign cleanup",
+    "PASS: pinned CP151 panels hide lineage and retain the visible Awakened icon"
+  ],
+  "lua": "PASS: 12 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 76 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
-  "in_game": "NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md and docs/HollowChoirTesting.md acceptance."
+  "package": "PASS: 87 manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md and docs/SeventeenthSummerTesting.md acceptance. Summer uses explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified."
 }

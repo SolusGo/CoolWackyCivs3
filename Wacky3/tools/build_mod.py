@@ -7,9 +7,11 @@ NAME='Cool Wacky Civs 3 (v 1).modinfo'
 MOD_ID='70d794f7-4fb2-4196-9709-8193f8ee36a9'
 ORDER=['Shared/SQL/CWC3_Options.sql']+['TheMinistryOfAlmost/SQL/Ministry_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 ORDER += ['TheHollowChoir/SQL/Choir_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text']]
+ORDER += ['TheSeventeenthSummer/SQL/Summer_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text']]
 ENTRY='TheMinistryOfAlmost/Lua/CWC3_Almost.xml'
 ENTRIES=[(ENTRY,'Always the Challenger','Ministry owner-turn snapshots and Second Wind defensive veterans.'),
-         ('TheHollowChoir/Lua/CWC3_Choir.xml','Songs Beneath Stone','Hollow Choir terrain yields and capture cleanup.')]
+         ('TheHollowChoir/Lua/CWC3_Choir.xml','Songs Beneath Stone','Hollow Choir terrain yields and capture cleanup.'),
+         ('TheSeventeenthSummer/Lua/CWC3_Summer.xml','The Great Emergence','Save-backed Summer cycle, brood veterans and Nursery yields.')]
 
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and
@@ -18,7 +20,7 @@ def files():
 
 def build(package=False):
     root=ET.Element('Mod',id=MOD_ID,version='1'); props=ET.SubElement(root,'Properties')
-    values={'Name':'Cool Wacky Civs 3','Teaser':'The Ministry of Almost and The Hollow Choir: recovery and resonance.',
+    values={'Name':'Cool Wacky Civs 3','Teaser':'The Ministry of Almost, The Hollow Choir and The Seventeenth Summer.',
       'Description':'Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.',
       'Authors':'SolusGo','Homepage':'https://github.com/SolusGo/CoolWackyCivs3','AffectsSavedGames':'1',
       'MinCompatibleSaveVersion':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0','SupportsMac':'0',

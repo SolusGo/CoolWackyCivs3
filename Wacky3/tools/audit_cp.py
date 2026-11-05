@@ -36,14 +36,22 @@ def audit(fetch=False):
     checks['Diagnostic player stores exposed']=binding('CvLuaPlayer.cpp',['GetCurrentResearch','GetResearchProgressTimes100','GetJONSCultureEverGeneratedTimes100'])
     checks['Diagnostic city stores exposed']=binding('CvLuaCity.cpp',['GetID','GetX','GetY','GetProductionTimes100','GetProductionUnit','GetProductionBuilding','GetProductionProject'])
     checks['Game turn and active player exposed']=binding('CvLuaGame.cpp',['GetGameTurn','GetActivePlayer'])
+    checks['Summer game speed and owner APIs']=binding('CvLuaGame.cpp',['GetGameSpeedType']) and binding('CvLuaPlayer.cpp',['IsHuman','AddNotification'])
+    checks['Summer unit reconciliation APIs']=binding('CvLuaUnit.cpp',['GetUnitType','GetID','IsHasPromotion','SetHasPromotion'])
     attack=body('CvUnit.cpp','int CvUnit::GetMaxAttackStrength(')
+    generic=body('CvUnit.cpp','int CvUnit::GetGenericMeleeStrengthModifier(')
+    checks['Summer CombatPercent promotion source']='GetInt("CombatPercent")' in source['CvPromotionClasses.cpp'] and 'changeExtraCombatPercent(thisPromotion.GetCombatPercent() * iChange)' in source['CvUnit.cpp']
+    checks['Summer generic melee combat includes CombatPercent']='int iModifier = getExtraCombatPercent() + GetStrategicResourceCombatPenalty();' in generic
+    checks['Summer attack uses generic melee modifier']='GetGenericMeleeStrengthModifier(pDefender, pToPlot, true' in attack
     checks['Melee attack excludes generic defense modifier']='getDefenseModifier(' not in attack
     checks['Choir native promotion fields']=all('GetInt("'+field+'")' in source['CvPromotionClasses.cpp'] for field in ['VisibilityChange','HillsDefense'])
     checks['Choir attack excludes hill defense']='hillsDefenseModifier(' not in attack
     defense=body('CvUnit.cpp','int CvUnit::GetMaxDefenseStrength(')
+    checks['Summer defense uses generic melee modifier']='GetGenericMeleeStrengthModifier(pAttacker, pInPlot, false' in defense
     checks['Choir melee hill defense conditional']=bool(re.search(r'if\(pInPlot->isHills\(\)\)\s*iModifier \+= hillsDefenseModifier\(\)',defense))
     checks['Choir terrain Lua bindings']=binding('CvLuaPlot.cpp',['IsHills','IsMountain','GetOwner','GetX','GetY','GetPlotCity'])
     ranged=body('CvUnit.cpp','int CvUnit::GetMaxRangedCombatStrength(')
+    checks['Summer ranged CombatPercent precedes attack-defense branches']='int iModifier = getExtraCombatPercent() + GetStrategicResourceCombatPenalty();' in ranged
     checks['Ranged generic defense only in non-attacking branch']=bool(re.search(r'else\s*\{\s*// Regular defense modifier\s*iModifier \+= getDefenseModifier',ranged))
     defending_branch=re.search(r'else\s*\{\s*// City Defense',ranged)
     hill_branch=re.search(r'if \(pMyPlot->isHills\(\)\)\s*iModifier \+= hillsDefenseModifier\(\)',ranged)

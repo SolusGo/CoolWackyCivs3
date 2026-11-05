@@ -9,6 +9,7 @@ from baseline import ROOT, database, quote, EVIDENCE
 from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, files
 from audit_cp import audit
 from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
+from validate_seventeenth_summer import check_database as check_summer_database, check_lua as check_summer_lua
 from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
 
@@ -31,6 +32,8 @@ def sql_checks(mutate=True, clean=False):
         db.execute("UPDATE Units SET Combat=Combat+4,Cost=Cost+9,Moves=Moves+1 WHERE Type='UNIT_SWORDSMAN'")
         db.execute("UPDATE Buildings SET Cost=Cost+17,GoldMaintenance=GoldMaintenance+1,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_AMPHITHEATER'")
         db.execute("UPDATE Building_YieldChanges SET Yield=Yield+2 WHERE BuildingType='BUILDING_AMPHITHEATER' AND YieldType='YIELD_CULTURE'")
+        db.execute("UPDATE Buildings SET Cost=Cost+19,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_GRANARY'")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_GRANARY','YIELD_FAITH',3)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
     civ=db.execute("SELECT * FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone()
@@ -59,7 +62,7 @@ def sql_checks(mutate=True, clean=False):
                 assert unique==expected,(companion,unique,expected)
             else: assert original==unique,(companion,original-unique,unique-original)
     for table,rows in baseline.items():
-        existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not 'CWC3_' in str(r['Type'])]
+        existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not any(p in str(r['Type']) for p in ['CWC3_','BUILDING_SUMMER_','PROMOTION_SUMMER_'])]
         assert existing==rows,('changed native rows',table)
     for table in ['Civilizations','Leaders','Traits','Units','Buildings','UnitPromotions']:
         assert not db.execute('SELECT Type FROM '+quote(table)+" WHERE Type LIKE '%CWC3_%' GROUP BY Type HAVING COUNT(*)<>1").fetchone(),('duplicate identifier',table)
@@ -79,7 +82,7 @@ def sql_checks(mutate=True, clean=False):
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
-            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE']: continue # Pedia category prefixes
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA']: continue # Pedia category prefixes
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -89,6 +92,7 @@ def sql_checks(mutate=True, clean=False):
     assert not db.execute("SELECT name FROM sqlite_temp_master WHERE name LIKE 'CWC3_%'").fetchone(),'temporary clones must be dropped'
     RESULTS['database']='PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds'
     RESULTS['hollow_choir_database']=check_choir_database(db)
+    RESULTS['seventeenth_summer_database']=check_summer_database(db)
     return db
 
 def lua_checks():
@@ -109,6 +113,7 @@ def lua_checks():
         suites.append({'file':test,'result':summaries,'diagnostic_lines_observed':sum(s.startswith('CWC3_ALMOST_DIAG') for s in logs)})
     RESULTS['lua_mock_suites']=suites
     RESULTS['hollow_choir_lua']=check_choir_lua()
+    RESULTS['seventeenth_summer_lua']=check_summer_lua()
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -128,6 +133,7 @@ def package_checks(db):
     context=ET.parse(ROOT/ENTRY).getroot()
     assert context.find('Script').get('file')=='Ministry_Gameplay.lua'
     assert ET.parse(ROOT/ENTRIES[1][0]).getroot().find('Script').get('file')=='HollowChoirGameplay.lua'
+    assert ET.parse(ROOT/ENTRIES[2][0]).getroot().find('Script').get('file')=='SummerGameplay.lua'
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -196,7 +202,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. UI notification synchrony, actual yield settlement, combat previews, engine save persistence and art presentation require docs/Testing.md and docs/HollowChoirTesting.md acceptance.'
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md and docs/SeventeenthSummerTesting.md acceptance. Summer uses explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

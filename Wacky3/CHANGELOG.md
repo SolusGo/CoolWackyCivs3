@@ -1,5 +1,12 @@
 # Changelog
 
+## Daily Civ V Surprise #17 — The Seventeenth Summer — 5 November 2026
+
+- Added Chorus-Mother Ixa, First Emergence, the human-only Summer civilization, localization and valid native fallback art.
+- Added configurable four-speed, save-backed Dormancy/Emergence phases; explicit CP151 post-economy next-payout timing, exclusive city controllers and one-time transition notifications.
+- Added active Spearman/Granary and complete companion inheritance, Shellguard Sight and upgrade lineage, universal Emergence CombatPercent, and Nursery permanent Faith/conditional Production.
+- Added direct city/unit lifecycle reconciliation, narrowly pinned CP151 panel filters for the hidden marker, four-speed production Lua tests, source/SQLite/regeneration/package coverage and strategy/manual acceptance documentation. No native game pass is claimed.
+
 ## Version 1 schema compatibility correction — 3 November 2026
 
 - Replace cache-derived companion inventories in both generators with pinned native BNW/standalone CP151 schema declarations. Preserve 145 building and 27 unit companion tables, including native unit selection audio.

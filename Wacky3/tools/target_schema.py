@@ -90,7 +90,7 @@ def derive():
     assets, cp = installations()
     sources, definitions, samples = {}, {}, {}
     parents = {'UnitType': {'UNIT_SPEARMAN','UNIT_SWORDSMAN'},
-               'BuildingType': {'BUILDING_LIBRARY','BUILDING_AMPHITHEATER'},
+               'BuildingType': {'BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY'},
                'CivilizationType': {'CIVILIZATION_AMERICA'}, 'LeaderType': {'LEADER_WASHINGTON'}}
     types = set().union(*parents.values(), {'CIVILIZATION_VENICE'})
     catalogs = {'Flavors','MajorCivApproachTypes','MinorCivApproachTypes','IconTextureAtlases'}
