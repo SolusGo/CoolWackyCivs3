@@ -1,0 +1,31 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-11-06",
+  "assets": [
+    {
+      "file": "Emblem.png",
+      "prompt": "Use case: logo-brand. Asset type: Civilization V mod civilization emblem, square icon master. Ornate antique golden railway wheel incorporating a clock face, circular gold-rim presentation, deep navy face. Bold recognizable central silhouette, tasteful nineteenth-century engraving, polished strategy game painted icon. Center the entire circular medallion inside square with 8 percent margin. No wording, no letters, no watermark. Background genuinely transparent outside the circular gold rim.",
+      "transparent_background": true
+    },
+    {
+      "file": "Leader.png",
+      "prompt": "Use case: stylized-concept. Asset type: Civilization V static leader illustration in landscape 4:3, no UI. Grand Stationmaster Veyl: elderly gentleman, calm precise friendly expression, immaculate nineteenth-century navy railway uniform decorated with locomotive-shaped medals. He holds a large golden pocket watch clearly visible at chest level. Waist-up portrait centered in a monumental iron-and-glass railway station office, enormous clock and steam locomotives beyond windows. Antique gold and navy palette, painterly historical strategy game illustration, warm light, detailed face. No writing, no watermark.",
+      "transparent_background": false
+    },
+    {
+      "file": "Dawn.png",
+      "prompt": "Use case: historical-scene. Asset type: Civilization V Dawn of Man illustration, landscape 4:3. Monumental fictional railway terminus, steam locomotives on parallel tracks, vaulted iron-and-glass architecture, an enormous central station clock. Nineteenth-century industrial grandeur, navy and antique gold details, golden morning light diffusing through locomotive steam. Cinematic painterly strategy game artwork. No lettering, no watermark, no UI.",
+      "transparent_background": false
+    },
+    {
+      "file": "Unit.png",
+      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique unit square portrait. Line Surveyor, a nineteenth-century railway engineer with surveying tripod and brass instruments, maps and measuring equipment, navy work clothes with antique gold trim, railway embankment behind. One engineer, full upper body and instruments within circular gold-rim portrait on navy background, entire circle fits inside square with margin. Painterly historical strategy game icon, readable at small sizes, no lettering, no watermark. Transparent outside circular rim.",
+      "transparent_background": true
+    },
+    {
+      "file": "Office.png",
+      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique building square icon. A grand nineteenth-century railway administration building with a prominent central clock tower, iron-and-glass annex and antique gold architectural ornament on navy stone. Three-quarter architectural view, entire building clearly framed inside circular antique gold rim on navy background. Painterly historical strategy game icon. No lettering, no watermark. Transparent outside circular rim.",
+      "transparent_background": true
+    }
+  ]
+}

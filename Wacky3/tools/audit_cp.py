@@ -50,6 +50,14 @@ def audit(fetch=False):
     checks['Summer defense uses generic melee modifier']='GetGenericMeleeStrengthModifier(pAttacker, pInPlot, false' in defense
     checks['Choir melee hill defense conditional']=bool(re.search(r'if\(pInPlot->isHills\(\)\)\s*iModifier \+= hillsDefenseModifier\(\)',defense))
     checks['Choir terrain Lua bindings']=binding('CvLuaPlot.cpp',['IsHills','IsMountain','GetOwner','GetX','GetY','GetPlotCity'])
+    checks['Timetable connection and capital bindings']=binding('CvLuaPlayer.cpp',['IsCapitalConnectedToCity','GetCapitalCity','GetTeam'])
+    connection=body('CvLuaPlayer.cpp','int CvLuaPlayer::lIsCapitalConnectedToCity(')
+    checks['Timetable ordinary connection accepts a city at argument two']='CvLuaCity::GetInstance(L, 2)' in connection and 'pkCity->IsConnectedToCapital()' in connection
+    checks['Timetable intact route and ownership bindings']=binding('CvLuaPlot.cpp',['GetRouteType','IsRoutePillaged','GetOwner','GetPlotIndex','GetPlotCity','IsWater','IsMountain','IsImpassable'])
+    checks['Timetable pillage query uses native route state']='pkPlot->IsRoutePillaged()' in body('CvLuaPlot.cpp','int CvLuaPlot::lIsRoutePillaged(')
+    checks['Timetable impassability accepts the owner team']='luaL_optinteger(L, 2, NO_TEAM)' in body('CvLuaPlot.cpp','int CvLuaPlot::lIsImpassable(')
+    adjacency=body('CvLuaMap.cpp','int CvLuaMap::lPlotDirection(')
+    checks['Timetable native hex adjacency and wrapping']=binding('CvLuaMap.cpp',['GetPlot','PlotDirection']) and 'lua_tointeger(L, 3) % 6' in adjacency and 'plotDirection(iMapX, iMapY, eDirection)' in adjacency and 'GC.getMap().isWrapX()' in adjacency
     ranged=body('CvUnit.cpp','int CvUnit::GetMaxRangedCombatStrength(')
     checks['Summer ranged CombatPercent precedes attack-defense branches']='int iModifier = getExtraCombatPercent() + GetStrategicResourceCombatPenalty();' in ranged
     checks['Ranged generic defense only in non-attacking branch']=bool(re.search(r'else\s*\{\s*// Regular defense modifier\s*iModifier \+= getDefenseModifier',ranged))

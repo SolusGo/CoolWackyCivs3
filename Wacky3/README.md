@@ -1,6 +1,6 @@
 # Cool Wacky Civs 3 — version 1
 
-An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; and **The Seventeenth Summer**, led by Chorus-Mother Ixa. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
+An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; and **The Perpetual Timetable**, led by Grand Stationmaster Veyl. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
 
@@ -8,8 +8,16 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 
 1. Install BNW and Community Patch **version 151**. Enable the standalone `(1) Community Patch`, without the Vox Populi balance components. The dependency deliberately rejects newer CP versions until separately audited.
 2. Copy this `Wacky3` folder to `Documents/My Games/Sid Meier's Civilization 5/MODS/Cool Wacky Civs 3 (v 1)`. The `.modinfo` must sit directly inside that folder. Alternatively, extract the optional install ZIP produced by `tools/build_mod.py --package` into `MODS`.
-3. Enable the patch and this pack in the Mods menu, then choose a civilization as the human in a **new sequential single-player game**. For **The Ministry of Almost**, use human player slot zero: its precise supported boundary requires the Ministry to be the **first living sequential player**, so a higher slot qualifies only after all earlier players are eliminated. The Ministry has mock coverage with 34 living major teams, subject to the installed DLL's player limits. The Choir's passive terrain reconciliation has no first-slot restriction; native timing still awaits acceptance. Summer supports any human slot using an explicit post-economy, next-payout cycle.
+3. Enable the patch and this pack in the Mods menu, then choose a civilization as the human in a **new sequential single-player game**. For **The Ministry of Almost**, use human player slot zero: its precise supported boundary requires the Ministry to be the **first living sequential player**, so a higher slot qualifies only after all earlier players are eliminated. The Ministry has mock coverage with 34 living major teams, subject to the installed DLL's player limits. The Choir's passive terrain reconciliation has no first-slot restriction; native timing still awaits acceptance. Summer and Timetable support any human slot using explicit post-economy, next-payout evaluation.
 4. Do not add the mod to an existing save or remove it from a Ministry save. Existing version 1 saves retain their snapshot. Check `Database.log` and `Lua.log` when doing the acceptance tests.
+
+## The Perpetual Timetable
+
+**Capital:** Terminus Prime. **Motto:** “The World Shall Run on Time.” **Victory focus:** Science / Culture. **Complexity:** 3/5. The Grand Schedule gives non-capital cities with ordinary Capital connections **+1 Production and +1 Science**, including valid Harbor connections. After Railroad technology, a continuous, intact land railroad entirely within the owner's territory adds **+1 Culture**. Owned city centers serve as junctions; Road gaps, foreign/unowned territory, water and pillaged track fail the strict railway test.
+
+The Worker-replacing **Line Surveyor** retains active CP rules, adding +1 Movement and rounded 110% Work Rate for all construction. The Workshop-replacing **Dispatch Office** retains all active Workshop effects and adds +1 permanent Gold; connected non-capital Offices add +1 Culture and qualifying railroad Offices add +1 Production. Six railway cities with six Offices add **10 Production, 5 Science, 10 Culture and 6 Gold**. One BFS serves both abilities per evaluation. Five bounded city-yield controllers reconcile ownership, buildings and reload without ScriptData or per-frame polling.
+
+Owner-turn reconciliation is **post-economy** and governs the next payout after evaluation. Route changes without direct callbacks wait until that next owner evaluation and its following payout. Original PNG/DDS artwork supplies every portrait and the static leader scene; native Worker/Workshop world art is retained. See the [civilization guide](ThePerpetualTimetable/README.md), [strategy](docs/strategy/ThePerpetualTimetable.md), [testing/timing contract](docs/TimetableTesting.md) and [complete implementation report](docs/TimetableImplementationReport.md). **Native in-game acceptance remains outstanding.**
 
 ## The Seventeenth Summer
 
@@ -41,7 +49,7 @@ See the [civilization guide](TheMinistryOfAlmost/README.md), [winning strategy](
 
 ## Verification status and limits
 
-**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, Choir/Ministry/Summer behavior assertions, 13 DLL-source/260 installed-schema source pins, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
+**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, all four civilizations' behavior assertions, 14 DLL-source/260 installed-schema source pins, two additional Timetable data-only source hashes, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Timetable acceptance report](docs/TimetableTesting.md), the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
 
 The DLL publishes `NewGameTurn` before first-player activation; `PlayerDoTurn` follows city yields and research. Wacky3 finds the actual Ministry owner and uses `NewGameTurn` **only when that owner is the first living sequential player**. **Synchronous UI dispatch before native yield collection still needs in-game acceptance.** An event observed after that owner's `PlayerDoTurn` or `ActivePlayerTurnStart` is rejected without resnapshotting. `AIProcessingStartedForPlayer` is diagnostic-only because its human-owner timing is unverified. An owner with earlier living players gets a one-time Lua.log warning; the previous saved tier is preserved and new snapshots are suspended. Such later-slot setups, hotseat, multiplayer and autoplay are unsupported. No instant-yield compensation is used.
 
@@ -61,8 +69,11 @@ python tools/generate_sql.py
 python tools/generate_text.py
 python tools/generate_hollow_choir.py
 python tools/generate_seventeenth_summer.py
+python tools/generate_timetable.py
 python tools/generate_summer_ui.py
 python tools/build_art.py
+python tools/build_timetable_art.py
+python tools/validate_timetable.py
 python tools/build_mod.py --package
 python tools/validate_mod.py
 # Also test an existing CP-schema database without overlaying its schema:
@@ -71,7 +82,7 @@ python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My G
 
 Validation reads game files **read-only** and works in memory. Set `CWC3_GAME_DIR` to the installed Civilization V directory if Steam-library discovery cannot find BNW. Set `CWC3_CP_DIR` for a nonstandard `(1) Community Patch` location. `tools/target_schema.py` verifies installed source hashes and builds the authoritative clean target schema. `CWC3_DATABASE` selects only the supplementary BNW cache **without Wacky3**, defaulting to `cache_backup/Civ5DebugDatabase.db`; it cannot influence SQL generation. The existing CP-schema comparison cache is tested without manufacturing missing schema/options. Neither cache is certified CP-only. Art does not need regeneration for this repair; the Choir uses native temporary art.
 
-The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All three SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
+The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All four SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
 
 ## Adding another civilization
 

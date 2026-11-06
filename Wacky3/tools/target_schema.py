@@ -205,6 +205,10 @@ def clean_fixture():
                       for k,v in row.items() if k in columns and k!='ID'}
             # No columns or tables are invented to accommodate data samples.
             db.execute('INSERT INTO '+quote(table)+'('+','.join(map(quote,values))+') VALUES ('+','.join('?' for _ in values)+')',tuple(values.values()))
+    # Data-only extension, independently hashed; never changes the schema pin or
+    # the authoritative companion inventory used by any SQL generator.
+    from timetable_fixture import add_samples
+    add_samples(db)
     _, cp = installations()
     for row in ET.parse(cp/'Database Changes/NewCustomModOptions.xml').iter('Row'):
         if row.get('Name'):

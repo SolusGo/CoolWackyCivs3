@@ -1,5 +1,11 @@
 # Community Patch v151 compatibility evidence
 
+## Timetable extension — 6 November 2026
+
+The fourth civilization reuses the same CP151 schema inventory, runtime setter, options and single-pack build. No previous civilization mechanic changes. New source-verified bindings, independent strict rail search, data-only fixture additions and explicit post-economy next-payout timing are documented in [TimetableTesting.md](TimetableTesting.md). The original 13 DLL hashes remain; a reviewed `CvLuaMap.cpp` at the same commit makes 14. The existing 260 schema source hashes and all 172 companions remain byte-identical. Two additional native Worker sample-data files have separate hashes in `timetable_fixture.py`; no schema repinning was performed.
+
+The current pack has four InGameUIAddin contexts and 19 database actions. Timetable loads after Summer (civilization → units → buildings → text → art), with each entry point once. Normal connections use the native capital-connection flag; rail rewards use owned intact land-track reachability only. Source-backed API tests and Lua behavior mocks pass; native ordinary-connection cache freshness and real payouts still need acceptance. No pre-payout or UI-dispatch timing claim is added by this extension. Historical evidence below describes its original audited roster.
+
 Target: standalone `(1) Community Patch`, UUID `d1b6328c-ff44-4b0d-aad7-c657f83610cd`, mod version **151**. The installed manifest identifies its package as 5.4.6. BNW DLC UUID is `6DA07636-4123-4018-B643-6575B4EC336B`. Wacky3 uses GUID `70d794f7-4fb2-4196-9709-8193f8ee36a9`. The mod dependency constrains CP to min/max 151. No VP balance option is enabled.
 
 Source pin: [`44c1e14ff75d80c1dba5c8a71e8289439a53aafb`](https://github.com/LoneGazebo/Community-Patch-DLL/tree/44c1e14ff75d80c1dba5c8a71e8289439a53aafb). `CustomMods.h` reports `MOD_DLL_VERSION_NUMBER ((uint) 151)`. `tools/cp151_sources.json` records individual raw source URLs and SHA256 hashes. `audit_cp.py --fetch` reconstructs ignored references, then verifies both hashes and concrete source assertions. This is the CP151 source identification used here; it is not a claim that the user's installed compiled DLL has been binary-reproduced from that commit.

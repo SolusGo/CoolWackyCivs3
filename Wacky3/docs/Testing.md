@@ -1,5 +1,7 @@
 # Manual Civilization V acceptance checklist
 
+For the fourth civilization use [TimetableTesting.md](TimetableTesting.md), including Road/Harbor versus strict railway eligibility and the post-economy next-payout contract. Its automated tests do not complete the native checklist below or change Ministry timing requirements.
+
 **Engine status: NOT RUN. Statically verified but awaiting in-game acceptance.** SQL, mock and source passes are separately recorded in `tools/Validation.json`; they do not check off any item below. Use a disposable new sequential single-player game, human Ministry in slot zero, BNW and standalone CP151. Enable logging/FireTuner. Avoid VP and unrelated gameplay mods for the first run. No test here requires regenerating the existing artwork.
 
 ## Registration, load and artwork

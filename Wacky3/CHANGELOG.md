@@ -1,5 +1,14 @@
 # Changelog
 
+## The Perpetual Timetable — 6 November 2026
+
+- Add human-only Grand Stationmaster Veyl, Terminus Prime, The Grand Schedule, exact supplied diplomacy/Dawn narrative, city/spy names and navy/gold identity to the existing single pack.
+- Add flat non-capital ordinary-connection Production/Science and post-Railroad Culture from a separate, continuous fully owned intact land-rail BFS; share one search across UA and Dispatch Office, excluding Roads, water, Mountains, impassable/pillaged/foreign/unowned segments.
+- Clone the active CP Worker/Workshop and every approved companion. Line Surveyor adds +1 Movement/rounded 110% WorkRate; Dispatch Office adds exactly +1 permanent Gold, ordinary-connection Culture and strict railroad Production. Five invisible zero/one controllers use current-state reload/lifecycle repair and explicit post-economy next-payout timing.
+- Add original PNG masters and 48 legitimate DDS assets, reproducible compilation, static leader scene, strategy/timing/native-acceptance documentation and complete changed-file inventory.
+- Extend clean/supplementary SQLite, mutated stats/duplicate Gold, WorkRate rounding, Lua51 production behavior/performance, regeneration-contamination and package tests. Preserve schema pin, existing source hashes, GUID/version/save minimum, options and all previous civilizations' gameplay/source assets. Add one reviewed native map binding source and two separately hashed data-only fixture inputs.
+- No native Civ V acceptance is claimed. Actual Road/Harbor cache refresh, economic settlement, save serialization, unit selection and presentation remain manual checks.
+
 ## Seventeenth Summer hardening audit — 6 November 2026
 
 - Fix future saved-turn identifiers freezing cycle progression; safely repair malformed/overflow/duplicate records while preserving the existing namespace, valid record format, GUID and all mechanics.

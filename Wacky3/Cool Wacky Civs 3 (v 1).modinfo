@@ -2,8 +2,8 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost, The Hollow Choir and The Seventeenth Summer.</Teaser>
-    <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture and defensive recovery without permanent stacking.</Description>
+    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer and The Perpetual Timetable.</Teaser>
+    <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture, defensive recovery and railway infrastructure.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
     <AffectsSavedGames>1</AffectsSavedGames>
@@ -24,17 +24,20 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="0E8042A45E6EC273057B7F57FDD9CC03" import="0">CHANGELOG.md</File>
-    <File md5="D628A9DD214E0D7ABA117571FAA458B1" import="0">docs/Compatibility.md</File>
+    <File md5="187923E7A2CACFD8037A9D206AD49C39" import="0">CHANGELOG.md</File>
+    <File md5="DE1468BC2F755C44EBEEE4FB5AB0CA86" import="0">docs/Compatibility.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
+    <File md5="1E4FE9609CACD9525964BEE33B84ADEA" import="0">docs/strategy/ThePerpetualTimetable.md</File>
     <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
-    <File md5="FE52125498111076C6CDB9EA21C30A0B" import="0">docs/Testing.md</File>
-    <File md5="518B13C9DBD5FFC9E97B2D9341E3AF84" import="0">README.md</File>
+    <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
+    <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
+    <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
+    <File md5="ACBC24DAC6D05101066821966229FFD4" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
@@ -102,6 +105,63 @@
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+    <File md5="8F63CDBA2A5556341DA029B21A5238DD" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha128.dds</File>
+    <File md5="64EAA3D21B439446F57E54A539C7DC26" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha16.dds</File>
+    <File md5="FDC6CB03B9B071DB69270BEDB4F4CC68" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha24.dds</File>
+    <File md5="9F61007D03AB2BDF7E9BC98F67D5C30C" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha256.dds</File>
+    <File md5="D0C063B9DF3C40B37118F1C94AB13301" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha32.dds</File>
+    <File md5="3C03FCAEA01051D2696D35F0A32906FB" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha45.dds</File>
+    <File md5="7F71CE1F7F641CF054176DA1FCE18674" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha48.dds</File>
+    <File md5="9D8140F33D63136B2A947498D80CE03F" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha64.dds</File>
+    <File md5="DB7E768FA1BE72651FCB9D44665FDE57" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha80.dds</File>
+    <File md5="2D7C452982F1775AF3B795476ABE162A" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ128.dds</File>
+    <File md5="F7A8077C26CA1DF1CC6CB63883641A1F" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ16.dds</File>
+    <File md5="9F23CA85B5B1F536D7292F7EA79018B0" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ24.dds</File>
+    <File md5="A6BCE48DA218231A3AC0F2E0C3FACEEF" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ256.dds</File>
+    <File md5="0E582BCE609F4FDE4D297381D036ADFF" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ32.dds</File>
+    <File md5="3BE688E136EB8BCCF81A4004098052DF" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ45.dds</File>
+    <File md5="DDB92CAD1940DF9608219D516A93C79D" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ48.dds</File>
+    <File md5="3F593955A63DBE384365E8116813F7E4" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ64.dds</File>
+    <File md5="528BD766C52E800461F455500587012B" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ80.dds</File>
+    <File md5="A08BE833EEE06FD87808634791AC9722" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Dawn.dds</File>
+    <File md5="8E3E926BC1D566B3A90A08EDF54B8C22" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader.dds</File>
+    <File md5="90988085BD50DA8FBC671BE34AC8018A" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader128.dds</File>
+    <File md5="0B15E4A2A2A1D7CD91E3EEF2A97AA55D" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader16.dds</File>
+    <File md5="894C809EAB9D02E2965EB68947F28AA2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader24.dds</File>
+    <File md5="E638566D814E9CC444A7000E556D5133" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader256.dds</File>
+    <File md5="6EDAE452E6C9F455CB4B9A05FACE7EBB" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader32.dds</File>
+    <File md5="3C7075698CE0851DA750F673752EED59" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader45.dds</File>
+    <File md5="520206105038F4DC671B65EFD1A36157" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader48.dds</File>
+    <File md5="7B74EF7F80F15B6B08F46C5DBF8C8E6F" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader64.dds</File>
+    <File md5="62F6731B5A848D29EF0387F445C00CB8" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader80.dds</File>
+    <File md5="A59D392D15DD16EF0D95604EBDAF5F62" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_LeaderScene.xml</File>
+    <File md5="3A6C0ED8FF43124A8DB098D4AA943CD2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Map.dds</File>
+    <File md5="8AD70F300E6E295D67917174288A735E" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office128.dds</File>
+    <File md5="A2AC069F8ED6E8AF2EA352C7361791DE" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office16.dds</File>
+    <File md5="05FCBA778125832D975DF251DDBC1631" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office24.dds</File>
+    <File md5="4C461F8A1FE3A7CC77AC732D21EC3E62" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office256.dds</File>
+    <File md5="ABF470DFBBE77C0AFC35C1884FB99619" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office32.dds</File>
+    <File md5="9B8C0A1A60F043329376F52EB4BF13A7" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office45.dds</File>
+    <File md5="22CEB82D1280648E59DDA33E44BC3C06" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office48.dds</File>
+    <File md5="CEAFB0171817B9D113A0E0B5F455DA78" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office64.dds</File>
+    <File md5="BCE8E0CB71C2AFA437A2C17739A57E2E" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office80.dds</File>
+    <File md5="D7E15EB6B7928DD588CAE21D73BAA432" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit128.dds</File>
+    <File md5="20DE6E22A6A75196E368464C6DA14847" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit16.dds</File>
+    <File md5="118CB8225EA44F3BB630C6D915D304C5" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit24.dds</File>
+    <File md5="7970D2C3CBEDF8F603082212491C4AB7" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit256.dds</File>
+    <File md5="429CC0D73E75F8F5F47FE7C81EA830DD" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit32.dds</File>
+    <File md5="37CF1561784B2F2EE2B97913A2AB370D" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit45.dds</File>
+    <File md5="700EC8C26573071F4076579D5E6F261C" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit48.dds</File>
+    <File md5="0A91FAD808322768FB90B4741FC4EAE2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit64.dds</File>
+    <File md5="18E9C1F0A30859211BD4D0220C041404" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit80.dds</File>
+    <File md5="490F5CB0B500AE7B7D101FCC3FEACF61" import="0">ThePerpetualTimetable/Lua/CWC3_Timetable.xml</File>
+    <File md5="FEB6F57411EDC57A5B99FB590F3F5E6F" import="1">ThePerpetualTimetable/Lua/TimetableGameplay.lua</File>
+    <File md5="61DE19AE7E50945CC02E2A7114DED1A6" import="0">ThePerpetualTimetable/README.md</File>
+    <File md5="90868A56E123CE170550DD5CE41AAEB1" import="0">ThePerpetualTimetable/SQL/Timetable_Art.sql</File>
+    <File md5="9EBD1BCF467F40991E7FFA762BCDDEC8" import="0">ThePerpetualTimetable/SQL/Timetable_Buildings.sql</File>
+    <File md5="734A36346218AB1C56159420A2A7A3C0" import="0">ThePerpetualTimetable/SQL/Timetable_Civilization.sql</File>
+    <File md5="3D89038773CAF03651D17C34ED024BEB" import="0">ThePerpetualTimetable/SQL/Timetable_Text.sql</File>
+    <File md5="1581CC85B73E604452F25A5D47C97915" import="0">ThePerpetualTimetable/SQL/Timetable_Units.sql</File>
     <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
     <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
@@ -128,6 +188,11 @@
       <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheSeventeenthSummer/SQL/Summer_Text.sql</UpdateDatabase>
+      <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Units.sql</UpdateDatabase>
+      <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Text.sql</UpdateDatabase>
+      <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Art.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -142,6 +207,10 @@
     <EntryPoint type="InGameUIAddin" file="TheSeventeenthSummer/Lua/CWC3_Summer.xml">
       <Name>The Great Emergence</Name>
       <Description>Save-backed Summer cycle, brood veterans and Nursery yields.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="ThePerpetualTimetable/Lua/CWC3_Timetable.xml">
+      <Name>The Grand Schedule</Name>
+      <Description>Ordinary Capital connections and continuous owned railway city yields.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

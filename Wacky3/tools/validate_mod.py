@@ -10,6 +10,7 @@ from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, files
 from audit_cp import audit
 from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
 from validate_seventeenth_summer import check_database as check_summer_database, check_lua as check_summer_lua
+from validate_timetable import check_database as check_timetable_database, check_lua as check_timetable_lua, check_rounding
 from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
 
@@ -34,8 +35,19 @@ def sql_checks(mutate=True, clean=False):
         db.execute("UPDATE Building_YieldChanges SET Yield=Yield+2 WHERE BuildingType='BUILDING_AMPHITHEATER' AND YieldType='YIELD_CULTURE'")
         db.execute("UPDATE Buildings SET Cost=Cost+19,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_GRANARY'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_GRANARY','YIELD_FAITH',3)")
+        db.execute("UPDATE Units SET Moves=Moves+2,Cost=Cost+11,WorkRate=85 WHERE Type='UNIT_WORKER'")
+        db.execute("UPDATE Buildings SET Cost=Cost+23,GoldMaintenance=GoldMaintenance+3,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_WORKSHOP'")
+        # Two inherited Gold rows exercise the exactly-one-additional-Gold path.
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_WORKSHOP','YIELD_GOLD',3)")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_WORKSHOP','YIELD_GOLD',2)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
+    native_companions={}
+    for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP')]:
+        for table in approved_companions(prefix,column):
+            native_companions[(table,column,parent)]=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)+' WHERE '+quote(column)+'=?',(parent,))]
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
+    for (table,column,parent),rows in native_companions.items():
+        assert [tuple(r) for r in db.execute('SELECT * FROM '+quote(table)+' WHERE '+quote(column)+'=?',(parent,))]==rows,('Native companion changed',table,parent)
     civ=db.execute("SELECT * FROM Civilizations WHERE Type='CIVILIZATION_CWC3_ALMOST'").fetchone()
     assert (civ['Playable'],civ['AIPlayable'])==(1,0)
     for table,old,new,allowed in [
@@ -82,7 +94,7 @@ def sql_checks(mutate=True, clean=False):
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
-            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA']: continue # Pedia category prefixes
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL']: continue # Pedia category prefixes
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -93,9 +105,11 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['database']='PASS: SQLite execution, pristine and mutated baseline stats/Culture, complete Spearman/Library inheritance, native rows unchanged, bounded dummies, overrides, localization and selection sounds'
     RESULTS['hollow_choir_database']=check_choir_database(db)
     RESULTS['seventeenth_summer_database']=check_summer_database(db)
+    RESULTS['timetable_database']=check_timetable_database(db)
+    RESULTS['timetable_rounding']=check_rounding(db)
     return db
 
-def lua_checks():
+def lua_checks(db):
     syntax=LuaRuntime().eval('function(s,n) local f,e=loadstring(s,n); assert(f,e) end')
     paths=list(ROOT.rglob('*.lua'))
     for path in paths: syntax(path.read_text(encoding='utf-8'),str(path))
@@ -114,6 +128,7 @@ def lua_checks():
     RESULTS['lua_mock_suites']=suites
     RESULTS['hollow_choir_lua']=check_choir_lua()
     RESULTS['seventeenth_summer_lua']=check_summer_lua()
+    RESULTS['timetable_lua']=check_timetable_lua(db)
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -134,6 +149,8 @@ def package_checks(db):
     assert context.find('Script').get('file')=='Ministry_Gameplay.lua'
     assert ET.parse(ROOT/ENTRIES[1][0]).getroot().find('Script').get('file')=='HollowChoirGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[2][0]).getroot().find('Script').get('file')=='SummerGameplay.lua'
+    assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
+    assert len(ENTRIES)==4 and len(set(e[0] for e in ENTRIES))==4
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -150,7 +167,9 @@ def package_checks(db):
     art=ROOT/'TheMinistryOfAlmost/Art'
     textures=[]
     for atlas,size,name,cols,rows in db.execute("SELECT Atlas,IconSize,Filename,IconsPerRow,IconsPerColumn FROM IconTextureAtlases WHERE Atlas LIKE 'CWC3_%'"):
-        path=art/name; assert path.is_file(),name
+        matches=[p for p in files() if p.name==name]
+        assert len(matches)==1,('missing/ambiguous atlas',name)
+        path=matches[0]; assert path.is_file(),name
         im=Image.open(path); im.load(); assert im.size==(size*int(cols),size*int(rows))
         header=struct.unpack('<31I',path.read_bytes()[4:128]); assert header[21]==32 and header[19]==0x41
         assert header[6]==size.bit_length(),('mip count',name,header[6])
@@ -159,11 +178,19 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==45
+    assert len(textures)==90
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
+    timetable_art=ROOT/'ThePerpetualTimetable/Art'
+    for kind,dimensions in [('Dawn',(1024,768)),('Leader',(1600,1200)),('Map',(360,412))]:
+        assert Image.open(timetable_art/f'CWC3_Timetable_{kind}.dds').size==dimensions
+    assert ET.parse(timetable_art/'CWC3_Timetable_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Timetable_Leader.dds'
+    assert declared['ThePerpetualTimetable/Art/CWC3_Timetable_LeaderScene.xml'].get('import')=='1'
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_ALMOST'),('Leaders','LEADER_CWC3_PENULTIMATE'),('Units','UNIT_CWC3_SECOND_WIND_GUARD'),('Buildings','BUILDING_CWC3_RUNNER_UP_ACADEMY')]:
+        row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
+        assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
+    for table,typ in [('Civilizations','CIVILIZATION_CWC3_PERPETUAL_TIMETABLE'),('Leaders','LEADER_CWC3_VEYL'),('Units','UNIT_CWC3_LINE_SURVEYOR'),('Buildings','BUILDING_CWC3_DISPATCH_OFFICE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
     package=ROOT/'dist/Cool Wacky Civs 3 (v 1).zip'
@@ -174,7 +201,7 @@ def package_checks(db):
             for name,path in expected.items(): assert archive.read(name)==path.read_bytes(),('Stale package file',name)
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
-    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 48 DDS textures, alpha and full icon mip chains'
+    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 96 DDS textures, alpha and full icon mip chains'
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -201,8 +228,8 @@ def main():
         else: os.environ['CWC3_DATABASE']=previous
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
-    lua_checks(); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md and docs/SeventeenthSummerTesting.md acceptance. Summer uses explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
+    lua_checks(db); package_checks(db); db.close()
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md and docs/TimetableTesting.md acceptance. Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():
