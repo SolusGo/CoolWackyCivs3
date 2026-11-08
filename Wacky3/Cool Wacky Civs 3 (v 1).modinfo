@@ -2,7 +2,7 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer and The Perpetual Timetable.</Teaser>
+    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable and The Candlekeeper's Covenant.</Teaser>
     <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture, defensive recovery and railway infrastructure.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
@@ -24,12 +24,15 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="187923E7A2CACFD8037A9D206AD49C39" import="0">CHANGELOG.md</File>
+    <File md5="88A73B3F836E5F2681B7C3821CA3A807" import="0">CHANGELOG.md</File>
     <File md5="DE1468BC2F755C44EBEEE4FB5AB0CA86" import="0">docs/Compatibility.md</File>
+    <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
+    <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
+    <File md5="5229951131CE034157671514564D91A5" import="0">docs/strategy/TheCandlekeepersCovenant.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
     <File md5="1E4FE9609CACD9525964BEE33B84ADEA" import="0">docs/strategy/ThePerpetualTimetable.md</File>
@@ -37,10 +40,49 @@
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
     <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
     <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
-    <File md5="ACBC24DAC6D05101066821966229FFD4" import="0">README.md</File>
+    <File md5="E69F2043F612A0733A5F5380B3CB9498" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
+    <File md5="603C10C407C18C3D88AB1C94A3158FF8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha128.dds</File>
+    <File md5="165FEAB3D7F1100CF9B02B3A85CA33D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha16.dds</File>
+    <File md5="30CA3F302658F5ECA90D083F7CF599A8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha24.dds</File>
+    <File md5="5D00489F94BE74E7F6115F96147E3B2B" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha256.dds</File>
+    <File md5="D80FE2C385340DCC13A2ACEE60BCD0D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha32.dds</File>
+    <File md5="0BDCCE44E8D7C05710A7E2F94B240752" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha45.dds</File>
+    <File md5="E05CC5FE7E91F9E189AABED80B725323" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha48.dds</File>
+    <File md5="FC49ED6186CA61661283369ADF183C43" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha64.dds</File>
+    <File md5="776129B34487B8D6FF080720D5CA1115" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha80.dds</File>
+    <File md5="055A10EB13EF74C34550AF5DE70DFE44" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ128.dds</File>
+    <File md5="44B7F8544C98C080871E28BE9AE3381F" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ16.dds</File>
+    <File md5="4C75D7985CE7838FA7D6A48155B3DDB1" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ24.dds</File>
+    <File md5="B7573E1AD2C66909763F3E9ECAC913F5" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ256.dds</File>
+    <File md5="35EF3764018ECD5BA23CDACF44203A25" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ32.dds</File>
+    <File md5="60EDB873B07C3985DFECE492FD6E79A4" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ45.dds</File>
+    <File md5="D6C7AFD79F63CAA82ADF76E08B96758A" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ48.dds</File>
+    <File md5="2989A2B773F4E57F58383DA39928007C" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ64.dds</File>
+    <File md5="6163BF9DD12C36B6D22262A0787B16C9" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ80.dds</File>
+    <File md5="82BAD1715A8BDCBEB52F8CB18891571C" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Dawn.dds</File>
+    <File md5="E8530A2B305E4B318EC03CC0C15C9CB3" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader.dds</File>
+    <File md5="BA96C44D5814472D2FD35B4B65D3B8D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader128.dds</File>
+    <File md5="1B3A15BF20AE5DA228116B6D3D25317E" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader16.dds</File>
+    <File md5="AE183A15CBDC18B834FCC45A6128DD42" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader24.dds</File>
+    <File md5="D99790668F207D9868D51D15B9F58E88" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader256.dds</File>
+    <File md5="1F91C47DD18169D9FCF09BAB15CB97A1" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader32.dds</File>
+    <File md5="EE128C54CEF1043794C46E018889F1B4" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader45.dds</File>
+    <File md5="EBC2CB100AACA81B90D5F794E931CB22" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader48.dds</File>
+    <File md5="E049B805D069A6FF1103CF921EA47F99" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader64.dds</File>
+    <File md5="D48994938B48F618E9042DB59553E493" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader80.dds</File>
+    <File md5="BC4EE5C2A49F34971422C6E3E9D42210" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml</File>
+    <File md5="E07A16CAEC391F6E3EB29598919A8562" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Map.dds</File>
+    <File md5="A8982030C99D0DEDAEEB63721CE3AC02" import="1">TheCandlekeepersCovenant/Lua/CovenantGameplay.lua</File>
+    <File md5="B8636CCE494FC5ED04EBAB72956987E1" import="0">TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml</File>
+    <File md5="5792B854B19929BF45B64B8C7606C80D" import="0">TheCandlekeepersCovenant/README.md</File>
+    <File md5="A832FE2DEF61CE89D15D7EC23A7E3D1F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Art.sql</File>
+    <File md5="1B7C6FB48010CCAD393365732C206D25" import="0">TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</File>
+    <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
+    <File md5="0BF1C473499B2EE8A8EBE4C33600266A" import="0">TheCandlekeepersCovenant/SQL/Covenant_Text.sql</File>
+    <File md5="E4EE4E4438ADD5879E42D2F9CDFA770F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Units.sql</File>
     <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
@@ -193,6 +235,11 @@
       <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Text.sql</UpdateDatabase>
       <UpdateDatabase>ThePerpetualTimetable/SQL/Timetable_Art.sql</UpdateDatabase>
+      <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Art.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -211,6 +258,10 @@
     <EntryPoint type="InGameUIAddin" file="ThePerpetualTimetable/Lua/CWC3_Timetable.xml">
       <Name>The Grand Schedule</Name>
       <Description>Ordinary Capital connections and continuous owned railway city yields.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml">
+      <Name>The Names We Carry</Name>
+      <Description>Save-backed permanent city destruction ledger, memory yields and Eternal Vigil.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

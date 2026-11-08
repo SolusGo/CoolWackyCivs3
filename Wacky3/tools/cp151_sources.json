@@ -56,6 +56,14 @@
     "CvLuaMap.cpp": {
       "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/Lua/CvLuaMap.cpp",
       "sha256": "70d866aee6a37b27abe68db4ebb2dbe691f07d27af8baf2331ca5abe9deb5683"
+    },
+    "CvCity.cpp": {
+      "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/CvCity.cpp",
+      "sha256": "2e2cf69b58d2dcd585f6a534bb3a436699be3f976f020a30202e83f809f61bd2"
+    },
+    "CvUnitCombat.cpp": {
+      "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/CvUnitCombat.cpp",
+      "sha256": "cb4b2a1b3078afc5c5720a2a5e94048142155b4b1bf111798dc79b424c1a61c8"
     }
   }
 }

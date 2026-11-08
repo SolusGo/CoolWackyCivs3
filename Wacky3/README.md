@@ -1,6 +1,6 @@
 # Cool Wacky Civs 3 — version 1
 
-An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; and **The Perpetual Timetable**, led by Grand Stationmaster Veyl. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
+An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; **The Perpetual Timetable**, led by Grand Stationmaster Veyl; and **The Candlekeeper's Covenant**, led by High Keeper Seraphine. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
 
@@ -10,6 +10,14 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 2. Copy this `Wacky3` folder to `Documents/My Games/Sid Meier's Civilization 5/MODS/Cool Wacky Civs 3 (v 1)`. The `.modinfo` must sit directly inside that folder. Alternatively, extract the optional install ZIP produced by `tools/build_mod.py --package` into `MODS`.
 3. Enable the patch and this pack in the Mods menu, then choose a civilization as the human in a **new sequential single-player game**. For **The Ministry of Almost**, use human player slot zero: its precise supported boundary requires the Ministry to be the **first living sequential player**, so a higher slot qualifies only after all earlier players are eliminated. The Ministry has mock coverage with 34 living major teams, subject to the installed DLL's player limits. The Choir's passive terrain reconciliation has no first-slot restriction; native timing still awaits acceptance. Summer and Timetable support any human slot using explicit post-economy, next-payout evaluation.
 4. Do not add the mod to an existing save or remove it from a Ministry save. Existing version 1 saves retain their snapshot. Check `Database.log` and `Lua.log` when doing the acceptance tests.
+
+## The Candlekeeper's Covenant
+
+**Capital:** Last Light. **Motto:** “No Flame Shall Be Forgotten.” **Victory focus:** Culture / Science. **Complexity:** 4/5. The Names We Carry records one Lost Flame per observed permanent foreign-major city destruction, capped at twelve. Captures grant nothing. Each Flame adds +1 recurring capital Culture; every three add +1 capital Science. A save-backed lifetime ledger and city-list reconciliation distinguish surviving transfers from actual removal, preserve the last observed owner and exclude Covenant-founded cities to prevent farming.
+
+The Pikeman-replacing **Vigil Keeper** preserves the active CP baseline and adds permanent +1 Sight and +15% **defense only** in native friendly territory, including qualifying Open Borders. The Temple-replacing **Hall of Remembrance** preserves all active Temple effects and adds +1 Culture; each Covenant Hall gains +1 Science at three Flames and +2 at nine. Nine Flames/six Halls add **15 Culture and 15 Science**. Eighteen invisible controllers follow capital changes and strip foreign/free copies. CityRazed is explicitly pre-removal; BattleStarted repairs defenders before native strength calculation.
+
+Original Seraphine/candle artwork supplies 30 DDS assets and a static scene. Any human slot is supported in sequential single-player; post-economy evaluations govern the next payout. See the [civilization guide](TheCandlekeepersCovenant/README.md), [strategy](docs/strategy/TheCandlekeepersCovenant.md), [native checklist](docs/CovenantTesting.md) and [implementation report](docs/CovenantImplementationReport.md). **Native in-game acceptance remains outstanding**, including economic timing, save serialization and actual combat. Entirely unobservable scripted transitions are documented limitations.
 
 ## The Perpetual Timetable
 
@@ -49,7 +57,7 @@ See the [civilization guide](TheMinistryOfAlmost/README.md), [winning strategy](
 
 ## Verification status and limits
 
-**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, all four civilizations' behavior assertions, 14 DLL-source/260 installed-schema source pins, two additional Timetable data-only source hashes, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Timetable acceptance report](docs/TimetableTesting.md), the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
+**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, all five civilizations' behavior assertions, 16 DLL-source/260 installed-schema source pins, two additional Timetable data-only source hashes, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Covenant acceptance report](docs/CovenantTesting.md), the [Timetable acceptance report](docs/TimetableTesting.md), the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
 
 The DLL publishes `NewGameTurn` before first-player activation; `PlayerDoTurn` follows city yields and research. Wacky3 finds the actual Ministry owner and uses `NewGameTurn` **only when that owner is the first living sequential player**. **Synchronous UI dispatch before native yield collection still needs in-game acceptance.** An event observed after that owner's `PlayerDoTurn` or `ActivePlayerTurnStart` is rejected without resnapshotting. `AIProcessingStartedForPlayer` is diagnostic-only because its human-owner timing is unverified. An owner with earlier living players gets a one-time Lua.log warning; the previous saved tier is preserved and new snapshots are suspended. Such later-slot setups, hotseat, multiplayer and autoplay are unsupported. No instant-yield compensation is used.
 
@@ -70,9 +78,12 @@ python tools/generate_text.py
 python tools/generate_hollow_choir.py
 python tools/generate_seventeenth_summer.py
 python tools/generate_timetable.py
+python tools/generate_covenant.py
 python tools/generate_summer_ui.py
 python tools/build_art.py
 python tools/build_timetable_art.py
+python tools/build_covenant_art.py
+python tools/validate_covenant.py
 python tools/validate_timetable.py
 python tools/build_mod.py --package
 python tools/validate_mod.py
@@ -82,7 +93,7 @@ python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My G
 
 Validation reads game files **read-only** and works in memory. Set `CWC3_GAME_DIR` to the installed Civilization V directory if Steam-library discovery cannot find BNW. Set `CWC3_CP_DIR` for a nonstandard `(1) Community Patch` location. `tools/target_schema.py` verifies installed source hashes and builds the authoritative clean target schema. `CWC3_DATABASE` selects only the supplementary BNW cache **without Wacky3**, defaulting to `cache_backup/Civ5DebugDatabase.db`; it cannot influence SQL generation. The existing CP-schema comparison cache is tested without manufacturing missing schema/options. Neither cache is certified CP-only. Art does not need regeneration for this repair; the Choir uses native temporary art.
 
-The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All four SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
+The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All five SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
 
 ## Adding another civilization
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## The Candlekeeper's Covenant — 9 November 2026
+
+- Add human-only High Keeper Seraphine, Last Light, full supplied Dawn/diplomacy text, city/spy names and original candle/leader artwork within the existing GUID/package.
+- Add a ScriptData-backed 12-Flame permanent destruction ledger using founding-turn/coordinate/lifetime identities, verified pre-removal CityRazed candidates, prompt capture/founding ownership updates and bounded city-list reconciliation. Captures do not award; last-owner minors/Covenants and Covenant-founded cities are excluded.
+- Add twelve capital Culture, four capital Science and two Hall Science controllers with exact threshold yields, capital relocation, foreign/free-copy cleanup and idempotent reload/ownership repair. Nine Flames/six Halls reproduce +15 Culture/+15 Science.
+- Clone the active CP Pikeman/Temple plus all 172 approved companions. Vigil Keeper adds permanent Sight/upgrade lineage and conditional DefenseMod=15, AttackMod=0 using native friendly territory. Verified pre-strength BattleStarted repairs defenders after silent diplomacy changes; no generic offensive friendly-land bonus is used. Hall adds exactly one permanent Culture, including duplicate inherited Culture rows.
+- Add 30 legitimate DDS assets with retained original PNG masters/prompts, reproducible compilation, static leader scene, strategy, implementation report and manual native acceptance checklist.
+- Extend pinned CP source evidence, clean/supplementary pristine/mutated SQLite, deterministic regeneration, production Lua51 lifecycle/ledger/combat/performance, and complete package tests. Existing civilizations' gameplay and SQL, schema pins, GUID/version/save minimum remain intact.
+- Native Civ V acceptance has not been run. Unobservable scripted creation/transfer/destruction histories, economic settlement, engine save serialization, combat previews and runtime presentation remain documented acceptance limits.
+
 ## The Perpetual Timetable — 6 November 2026
 
 - Add human-only Grand Stationmaster Veyl, Terminus Prime, The Grand Schedule, exact supplied diplomacy/Dawn narrative, city/spy names and navy/gold identity to the existing single pack.

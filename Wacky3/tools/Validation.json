@@ -1,7 +1,7 @@
 {
   "source_audit": {
     "commit": "44c1e14ff75d80c1dba5c8a71e8289439a53aafb",
-    "source_files_verified": 14,
+    "source_files_verified": 16,
     "schema_source_files_verified": 260,
     "approved_schema_companions": 172,
     "checks": {
@@ -59,7 +59,19 @@
       "PlayerDoTurn is after city yields and research": true,
       "NewGameTurn precedes sequential player activation": true,
       "TURN_START published before owner doTurn": true,
-      "GameCoreUpdateBegin is per update rather than per owner": true
+      "GameCoreUpdateBegin is per update rather than per owner": true,
+      "Covenant verified lifetime bindings": true,
+      "Covenant founding turn survives acquisition": true,
+      "Covenant CityRazed is PRE-removal with owner XY": true,
+      "Covenant raw city kill has no claimed destruction Lua hook": true,
+      "Covenant ScriptData is engine serialized": true,
+      "Covenant native friendly territory binding": true,
+      "Covenant native friendly means own team and qualifying Open Borders": true,
+      "Covenant verified BattleStarted coordinate contract": true,
+      "Covenant BattleStarted precedes strength: void CvUnitCombat::GenerateMeleeCombatInfo(": true,
+      "Covenant BattleStarted precedes strength: void CvUnitCombat::GenerateRangedCombatInfo(CvUnit&": true,
+      "Covenant BattleStarted precedes strength: void CvUnitCombat::GenerateRangedCombatInfo(CvCity&": true,
+      "Covenant BattleStarted precedes strength: void CvUnitCombat::GenerateAirCombatInfo(": true
     },
     "ui_dispatch_synchrony": "NOT established by DLL source; manual in-game acceptance required",
     "ai_processing_human_boundary": "NOT established; diagnostic-only, never updates snapshots",
@@ -80,11 +92,11 @@
     "regeneration": [
       {
         "input": "clean source-derived schema",
-        "result": "PASS: all fifteen SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all nineteen SQL outputs byte-identical to checked-in output"
       },
       {
         "input": "artificial third-party building/unit tables",
-        "result": "PASS: all fifteen SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all nineteen SQL outputs byte-identical to checked-in output"
       }
     ],
     "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
@@ -94,7 +106,7 @@
     "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
     "source_tables": 808,
     "source_civilizations": 2,
-    "synthetic_companion_records": 636
+    "synthetic_companion_records": 800
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -106,6 +118,7 @@
   "seventeenth_summer_database": "PASS: human-only registration, active Spearman/Granary scalars and all companions, Sight/Faith deltas, four controllers, promotions, overrides, starts and localization",
   "timetable_database": "PASS: human-only registration, active Worker/Workshop scalars and all 172 companions, rounded WorkRate, one extra Gold, five isolated controllers, overrides, localization, starts and native model inheritance",
   "timetable_rounding": "PASS: production SQL inherits active WorkRate 80 -> 88, 85 -> 94, 100 -> 110; native Worker unchanged",
+  "covenant_database": "PASS: human-only registration, complete active Pikeman/Temple scalar and 172 companion inheritance, exactly +1 Hall Culture including duplicate rows, 18 exclusive 0/1 controllers, native-model inheritance, permanent Sight and defense-only promotion",
   "database_runs": [
     {
       "evidence": {
@@ -113,7 +126,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 636
+        "synthetic_companion_records": 800
       },
       "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
@@ -124,7 +137,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 636
+        "synthetic_companion_records": 800
       },
       "fixture": "unaltered source definitions",
       "result": "PASS"
@@ -260,8 +273,12 @@
     "PASS Timetable: 5642 assertions; A-I/L-M connection, rail, lifecycle, yield/reload cases; 4-player N fixture; 1206 neighbor calls for 100 rail cities; native in-game timing NOT tested",
     "PASS Timetable: 5642 assertions; A-I/L-M connection, rail, lifecycle, yield/reload cases; 34-player N fixture; 1206 neighbor calls for 100 rail cities; native in-game timing NOT tested"
   ],
-  "lua": "PASS: 14 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "covenant_lua": [
+    "PASS Covenant 2103 assertions; 4 majors; human slot 0; Marathon mock; native game acceptance outstanding",
+    "PASS Covenant 2103 assertions; 34 majors; human slot 3; Marathon mock; native game acceptance outstanding"
+  ],
+  "lua": "PASS: 16 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 147 manifest files + checksums, correct dependencies/order/context/VFS paths, 96 DDS textures, alpha and full icon mip chains",
-  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md and docs/TimetableTesting.md acceptance. Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified."
+  "package": "PASS: 189 manifest files + checksums, correct dependencies/order/context/VFS paths, 126 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md, docs/TimetableTesting.md and docs/CovenantTesting.md acceptance. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified."
 }

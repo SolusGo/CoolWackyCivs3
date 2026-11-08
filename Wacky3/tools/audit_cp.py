@@ -95,6 +95,21 @@ def audit(fetch=False):
     checks['TURN_START published before owner doTurn']=active.index('PublishPlayerTurnStatus(DLLUIClass::TURN_START') < active.index('\n\t\t\t\t\t\tdoTurn();')
     update=body('CvGame.cpp','void CvGame::update()')
     checks['GameCoreUpdateBegin is per update rather than per owner']='"GameCoreUpdateBegin"' in update and 'getNumGameTurnActive() == 0' in update
+    checks['Covenant verified lifetime bindings']=binding('CvLuaCity.cpp',['GetGameTurnFounded','GetOriginalOwner','GetID','GetOwner'])
+    checks['Covenant founding turn survives acquisition']='pNewCity->setGameTurnFounded(iGameTurnFounded)' in acquisition
+    disband=body('CvPlayer.cpp','void CvPlayer::disband(')
+    checks['Covenant CityRazed is PRE-removal with owner XY']='GAMEEVENT_CityRazed, GetID(), pPlot->getX(), pPlot->getY()' in disband and disband.index('GAMEEVENT_CityRazed') < disband.index('pCity->kill()')
+    kill=body('CvCity.cpp','void CvCity::kill(')
+    checks['Covenant raw city kill has no claimed destruction Lua hook']='deleteCity(m_iID)' in kill and 'CityRazed' not in kill and 'CityDestroyed' not in kill
+    checks['Covenant ScriptData is engine serialized']='visitor(player.m_strScriptData)' in source['CvPlayer.cpp']
+    checks['Covenant native friendly territory binding']=binding('CvLuaPlot.cpp',['IsFriendlyTerritory','GetNumUnits','GetUnit']) and 'pkPlot->IsFriendlyTerritory(ePlayer)' in source['CvLuaPlot.cpp']
+    friendly=body('CvPlot.cpp','bool CvPlot::IsFriendlyTerritory(')
+    checks['Covenant native friendly means own team and qualifying Open Borders']='ePlotOwner == eTeam' in friendly and 'IsAllowsOpenBordersToTeam(eTeam)' in friendly and 'IsPlayerHasOpenBorders(ePlayer)' in friendly
+    checks['Covenant verified BattleStarted coordinate contract']='GAMEEVENTINVOKE_HOOK(GAMEEVENT_BattleStarted, iType, (pPlot).getX(), (pPlot).getY())' in source['CustomMods.h']
+    for signature in ['void CvUnitCombat::GenerateMeleeCombatInfo(', 'void CvUnitCombat::GenerateRangedCombatInfo(CvUnit&', 'void CvUnitCombat::GenerateRangedCombatInfo(CvCity&', 'void CvUnitCombat::GenerateAirCombatInfo(']:
+        combat=body('CvUnitCombat.cpp',signature)
+        first_strength=min(pos for token in ['GetMaxAttackStrength(', 'GetMaxDefenseStrength(', 'GetMaxRangedCombatStrength(', 'GetRangeCombatDamage(', 'rangeCombatDamage(', 'GetAirCombatDamage(', 'GetInterceptionDamage('] if (pos:=combat.find(token))>=0)
+        checks['Covenant BattleStarted precedes strength: '+signature]=combat.index('BATTLE_STARTED(')<first_strength
     assert all(checks.values()),checks
     return {'commit':manifest['commit'], 'source_files_verified':len(source),
             'schema_source_files_verified':len(schema_evidence['sources']),

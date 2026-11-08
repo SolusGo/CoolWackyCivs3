@@ -14,8 +14,8 @@ from target_schema import approved_companions, clean_fixture, verified
 def seed_companions(db):
     """Exercise even normally-empty CP tables with nonzero test-only records."""
     count=0
-    for prefix,column,parents in [('Building_','BuildingType',['BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY','BUILDING_WORKSHOP']),
-                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER'])]:
+    for prefix,column,parents in [('Building_','BuildingType',['BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY','BUILDING_WORKSHOP','BUILDING_TEMPLE']),
+                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER','UNIT_PIKEMAN'])]:
         for table in approved_companions(prefix,column):
             columns=list(db.execute('PRAGMA table_info('+quote(table)+')'))
             for parent in parents:
@@ -34,7 +34,7 @@ def seed_companions(db):
 
 def audit_generated_inventory():
     inventories={prefix:set(approved_companions(prefix,col)) for prefix,col in [('Building_','BuildingType'),('Unit_','UnitType')]}
-    for civ,stem in [('TheHollowChoir','Choir'),('TheMinistryOfAlmost','Ministry'),('TheSeventeenthSummer','Summer'),('ThePerpetualTimetable','Timetable')]:
+    for civ,stem in [('TheHollowChoir','Choir'),('TheMinistryOfAlmost','Ministry'),('TheSeventeenthSummer','Summer'),('ThePerpetualTimetable','Timetable'),('TheCandlekeepersCovenant','Covenant')]:
         for kind,prefix in [('Buildings','Building_'),('Units','Unit_')]:
             sql=(ROOT/civ/'SQL'/f'{stem}_{kind}.sql').read_text()
             referenced=set(re.findall(r'Companion AS SELECT \* FROM "([^"]+)"',sql))
@@ -72,17 +72,17 @@ def check_regeneration():
                     disk.close()
                 output=temp/('contaminated' if contaminated else 'clean')
                 os.environ.update(CWC3_DATABASE=str(cache),CWC3_SQL_ROOT=str(output))
-                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py']:
+                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py','generate_covenant.py']:
                     with contextlib.redirect_stdout(io.StringIO()): runpy.run_path(str(ROOT/'tools'/script),run_name='__main__')
                 paths=list(output.rglob('*.sql'))
-                assert len(paths)==15, 'Every generator output must be compared'
+                assert len(paths)==19, 'Every generator output must be compared'
                 for generated in paths:
                     relative=generated.relative_to(output)
                     assert generated.read_bytes()==(ROOT/relative).read_bytes(),('Nondeterministic or contaminated regeneration',relative)
                     assert 'Building_JFD_District' not in generated.read_text()
                     assert 'Unit_ThirdPartySchemaRegression' not in generated.read_text()
                 results.append({'input':'artificial third-party building/unit tables' if contaminated else 'clean source-derived schema',
-                                'result':'PASS: all fifteen SQL outputs byte-identical to checked-in output'})
+                                'result':'PASS: all nineteen SQL outputs byte-identical to checked-in output'})
     finally:
         for key,value in previous.items():
             if value is None: os.environ.pop(key,None)

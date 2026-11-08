@@ -11,6 +11,7 @@ from audit_cp import audit
 from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
 from validate_seventeenth_summer import check_database as check_summer_database, check_lua as check_summer_lua
 from validate_timetable import check_database as check_timetable_database, check_lua as check_timetable_lua, check_rounding
+from validate_covenant import check_database as check_covenant_database, check_lua as check_covenant_lua
 from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
 
@@ -40,9 +41,13 @@ def sql_checks(mutate=True, clean=False):
         # Two inherited Gold rows exercise the exactly-one-additional-Gold path.
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_WORKSHOP','YIELD_GOLD',3)")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_WORKSHOP','YIELD_GOLD',2)")
+        db.execute("UPDATE Units SET Combat=Combat+6,Cost=Cost+27,Moves=Moves+1 WHERE Type='UNIT_PIKEMAN'")
+        db.execute("UPDATE Buildings SET Cost=Cost+29,GoldMaintenance=GoldMaintenance+3,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_TEMPLE'")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_TEMPLE','YIELD_CULTURE',2)")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_TEMPLE','YIELD_CULTURE',4)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     native_companions={}
-    for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP')]:
+    for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP'),('Unit_','UnitType','UNIT_PIKEMAN'),('Building_','BuildingType','BUILDING_TEMPLE')]:
         for table in approved_companions(prefix,column):
             native_companions[(table,column,parent)]=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)+' WHERE '+quote(column)+'=?',(parent,))]
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
@@ -94,7 +99,7 @@ def sql_checks(mutate=True, clean=False):
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
-            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL']: continue # Pedia category prefixes
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL','TXT_KEY_CWC3_COVENANT_CIV5','TXT_KEY_CWC3_COVENANT_SERAPHINE']: continue # Pedia category prefixes
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -107,6 +112,7 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['seventeenth_summer_database']=check_summer_database(db)
     RESULTS['timetable_database']=check_timetable_database(db)
     RESULTS['timetable_rounding']=check_rounding(db)
+    RESULTS['covenant_database']=check_covenant_database(db)
     return db
 
 def lua_checks(db):
@@ -129,6 +135,7 @@ def lua_checks(db):
     RESULTS['hollow_choir_lua']=check_choir_lua()
     RESULTS['seventeenth_summer_lua']=check_summer_lua()
     RESULTS['timetable_lua']=check_timetable_lua(db)
+    RESULTS['covenant_lua']=check_covenant_lua(db)
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -150,7 +157,8 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[1][0]).getroot().find('Script').get('file')=='HollowChoirGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[2][0]).getroot().find('Script').get('file')=='SummerGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
-    assert len(ENTRIES)==4 and len(set(e[0] for e in ENTRIES))==4
+    assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
+    assert len(ENTRIES)==5 and len(set(e[0] for e in ENTRIES))==5
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -178,7 +186,7 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==90
+    assert len(textures)==117
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
@@ -187,6 +195,14 @@ def package_checks(db):
         assert Image.open(timetable_art/f'CWC3_Timetable_{kind}.dds').size==dimensions
     assert ET.parse(timetable_art/'CWC3_Timetable_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Timetable_Leader.dds'
     assert declared['ThePerpetualTimetable/Art/CWC3_Timetable_LeaderScene.xml'].get('import')=='1'
+    covenant_art=ROOT/'TheCandlekeepersCovenant/Art'
+    for kind,dimensions in [('Dawn',(1024,768)),('Leader',(1600,1200)),('Map',(360,412))]:
+        assert Image.open(covenant_art/f'CWC3_Covenant_{kind}.dds').size==dimensions
+    assert ET.parse(covenant_art/'CWC3_Covenant_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Covenant_Leader.dds'
+    assert declared['TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml'].get('import')=='1'
+    for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
+        row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
+        assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_ALMOST'),('Leaders','LEADER_CWC3_PENULTIMATE'),('Units','UNIT_CWC3_SECOND_WIND_GUARD'),('Buildings','BUILDING_CWC3_RUNNER_UP_ACADEMY')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -201,7 +217,7 @@ def package_checks(db):
             for name,path in expected.items(): assert archive.read(name)==path.read_bytes(),('Stale package file',name)
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
-    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 96 DDS textures, alpha and full icon mip chains'
+    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 126 DDS textures, alpha and full icon mip chains'
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -229,7 +245,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(db); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md and docs/TimetableTesting.md acceptance. Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md, docs/TimetableTesting.md and docs/CovenantTesting.md acceptance. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

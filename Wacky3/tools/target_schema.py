@@ -209,6 +209,7 @@ def clean_fixture():
     # the authoritative companion inventory used by any SQL generator.
     from timetable_fixture import add_samples
     add_samples(db)
+    add_samples(db, {'UnitType':'UNIT_PIKEMAN', 'BuildingType':'BUILDING_TEMPLE'})
     _, cp = installations()
     for row in ET.parse(cp/'Database Changes/NewCustomModOptions.xml').iter('Row'):
         if row.get('Name'):

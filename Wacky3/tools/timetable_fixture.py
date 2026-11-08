@@ -17,11 +17,11 @@ EXTRA_DATA_HASHES = {
 }
 
 
-def add_samples(db):
+def add_samples(db, parents=None):
     assets, _ = installations()
     pins = json.loads((ROOT/'tools/cp151_schema_sources.json').read_text())['sources']
     pins = {**pins, **EXTRA_DATA_HASHES}
-    parents = {'UnitType':'UNIT_WORKER', 'BuildingType':'BUILDING_WORKSHOP'}
+    parents = parents or {'UnitType':'UNIT_WORKER', 'BuildingType':'BUILDING_WORKSHOP'}
     samples = {}
     for layer in LAYERS:
         layer_rows = {}
@@ -53,5 +53,5 @@ def add_samples(db):
     assert hashlib.sha256(audio.read_bytes()).hexdigest()==pins['bnw:Sounds/XML/UnitGameplay.xml']
     for row in ET.parse(audio).getroot().findall('UnitGameplay2DScripts/Row'):
         values = row_values(row)
-        if values.get('UnitType')=='UNIT_WORKER':
+        if values.get('UnitType')==parents['UnitType']:
             db.execute('INSERT INTO UnitGameplay2DScripts('+','.join(map(quote,values))+') VALUES ('+','.join('?' for _ in values)+')',tuple(values.values()))
