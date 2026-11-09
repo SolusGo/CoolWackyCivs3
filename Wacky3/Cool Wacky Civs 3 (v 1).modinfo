@@ -2,7 +2,7 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable and The Candlekeeper's Covenant.</Teaser>
+    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable, The Candlekeeper's Covenant and The Paleontological Directorate.</Teaser>
     <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture, defensive recovery and railway infrastructure.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
@@ -24,7 +24,7 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="88A73B3F836E5F2681B7C3821CA3A807" import="0">CHANGELOG.md</File>
+    <File md5="D55095356FE3D0B4F5E2D72E7532BCAB" import="0">CHANGELOG.md</File>
     <File md5="DE1468BC2F755C44EBEEE4FB5AB0CA86" import="0">docs/Compatibility.md</File>
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
@@ -40,7 +40,7 @@
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
     <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
     <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
-    <File md5="E69F2043F612A0733A5F5380B3CB9498" import="0">README.md</File>
+    <File md5="414EFAB991D9F3759596E26B9A582553" import="0">README.md</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
@@ -147,6 +147,73 @@
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+    <File md5="7A0E2EA4DE7E4E8D1BBBB9F01FBAF929" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha128.dds</File>
+    <File md5="FA85A67E9628589E9944A6993C63C65C" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha16.dds</File>
+    <File md5="8083CE749A48BD2BC6599F0830CDAD08" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha24.dds</File>
+    <File md5="015DC76A90CE151F1D3F1514E9313519" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha256.dds</File>
+    <File md5="14AE8FF657CFD28FDE30902AEB161223" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha32.dds</File>
+    <File md5="797C75EFCFF0F3B189F9CEA2E5606242" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha45.dds</File>
+    <File md5="0103CF5ADCF460854F6859D247E7722A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha48.dds</File>
+    <File md5="CFB927310A81C8AB0EA6D87FC0E17FCA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha64.dds</File>
+    <File md5="6DC2C24FB4199395DCBEF99348280C8B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha80.dds</File>
+    <File md5="EFF935DD510A39567A5540B7C3C25156" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ128.dds</File>
+    <File md5="41C1EDF7A58DE5C0628E984DFA24711D" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ16.dds</File>
+    <File md5="06C48C7BB118279140B76139DE05853F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ24.dds</File>
+    <File md5="8A0C79B089F95EC37283825144AC1208" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ256.dds</File>
+    <File md5="FE3715C47C096420090C91F31E9A95AF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ32.dds</File>
+    <File md5="B926CFAAA765418BEF6F6C08C0F63D1F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ45.dds</File>
+    <File md5="D94CCCE6ABC77D1C6D8CE5379DD01B47" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ48.dds</File>
+    <File md5="196B0AE39D4FB566F29B61AB12AE3C7A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ64.dds</File>
+    <File md5="E0E7DF4C70E9436C543B102C84CCD3DC" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ80.dds</File>
+    <File md5="B7A2B55C579EB6E3E0CBCE49E69B643A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Dawn.dds</File>
+    <File md5="7A0E2EA4DE7E4E8D1BBBB9F01FBAF929" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag128.dds</File>
+    <File md5="FA85A67E9628589E9944A6993C63C65C" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag16.dds</File>
+    <File md5="8083CE749A48BD2BC6599F0830CDAD08" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag24.dds</File>
+    <File md5="015DC76A90CE151F1D3F1514E9313519" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag256.dds</File>
+    <File md5="14AE8FF657CFD28FDE30902AEB161223" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag32.dds</File>
+    <File md5="797C75EFCFF0F3B189F9CEA2E5606242" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag45.dds</File>
+    <File md5="0103CF5ADCF460854F6859D247E7722A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag48.dds</File>
+    <File md5="CFB927310A81C8AB0EA6D87FC0E17FCA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag64.dds</File>
+    <File md5="6DC2C24FB4199395DCBEF99348280C8B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag80.dds</File>
+    <File md5="4FA5A7A66FF0ED9EB3DDB55B51E483F9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader.dds</File>
+    <File md5="3AF50537BAECD9B42114CFE523954942" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader128.dds</File>
+    <File md5="F496BEC2381479B04A5769181E93C77A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader16.dds</File>
+    <File md5="2748F02F04F1404157F63268313E5C4E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader24.dds</File>
+    <File md5="9791AD11B0E18F54E87CE31B6B821E78" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader256.dds</File>
+    <File md5="7FD42728CD6AA8D32D20953FA0E0BB04" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader32.dds</File>
+    <File md5="FF61C3074FE1A34FD8DB29571F6CD832" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader45.dds</File>
+    <File md5="EBAED806270AAA38FF2E0D54F67F3AD3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader48.dds</File>
+    <File md5="BAFBBED5BE42F07350F7DAA769720428" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader64.dds</File>
+    <File md5="9E28CB17146CA544481B4381484C3450" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader80.dds</File>
+    <File md5="0E02C04C1B99C212500F1FACA4FC06FD" import="1">ThePaleontologicalDirectorate/Art/PALEO_LeaderScene.xml</File>
+    <File md5="440721AA1FF12713276892B5994D5A49" import="1">ThePaleontologicalDirectorate/Art/PALEO_Map.dds</File>
+    <File md5="39F1ADFA1F5747201D64906788EB8D01" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum128.dds</File>
+    <File md5="3A26B087AF0C5C69435302D3196D0835" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum16.dds</File>
+    <File md5="020565D7A66A1C846AEFBB21BDB5A386" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum24.dds</File>
+    <File md5="1CC72B1824EBFA26D5FC04305F3ECBA9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum256.dds</File>
+    <File md5="22BF21D33AD7DA04CBC785FBC9F252F0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum32.dds</File>
+    <File md5="2CD6E14E92393EB5C075523951696AD0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum45.dds</File>
+    <File md5="2FD5376367131226E5962F7298BFFD25" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum48.dds</File>
+    <File md5="84BF335BB8C7C4841B123EB13CAA67B8" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum64.dds</File>
+    <File md5="723EAAFAA31740596F350A1C5BE56F82" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum80.dds</File>
+    <File md5="06FC6E34140A6234D48BA9C9CA2AFCDF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit128.dds</File>
+    <File md5="DDE0127D78F6FB471E9DA04F03970E1F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit16.dds</File>
+    <File md5="256B1894B497CF7AE34880146B4705C2" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit24.dds</File>
+    <File md5="C344CAE5A7A16F0438BE3F1027379452" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit256.dds</File>
+    <File md5="0205F19F23A55B5C3364A29830364EB2" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit32.dds</File>
+    <File md5="DB24985FD955BD0766EBC7F1F9A95834" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit45.dds</File>
+    <File md5="0D5E19BE709F4682ED2A52F19F2C1B68" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit48.dds</File>
+    <File md5="528A04D919B3138297D37A1F737916F4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit64.dds</File>
+    <File md5="79D0FED4D5004390A1C8FE162E499DB1" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit80.dds</File>
+    <File md5="BA716D72A720FD48DC1041C68321DDD1" import="1">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.lua</File>
+    <File md5="CFB24ADC6292AFEDE8C11EF603285CC3" import="0">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml</File>
+    <File md5="4EF306DF66E56A01E629067B816BF0AB" import="0">ThePaleontologicalDirectorate/README.md</File>
+    <File md5="9C67AE14D21BE7FE93C1AF8390AC3D2F" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</File>
+    <File md5="3CE95AF879393061B050ADE229CDF13C" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</File>
+    <File md5="B3928857EAC613FC2C4CCA1A4E911E2E" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</File>
+    <File md5="FF8C1E670DE2E16BFB73391D520E7FBB" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</File>
+    <File md5="D50B90172D00D202488D40E9387C9C08" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Units.sql</File>
+    <File md5="31FFE98EA8CD0E519D6C2CD95E9EAB8B" import="0">ThePaleontologicalDirectorate/TESTING.md</File>
     <File md5="8F63CDBA2A5556341DA029B21A5238DD" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha128.dds</File>
     <File md5="64EAA3D21B439446F57E54A539C7DC26" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha16.dds</File>
     <File md5="FDC6CB03B9B071DB69270BEDB4F4CC68" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha24.dds</File>
@@ -240,6 +307,11 @@
       <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Text.sql</UpdateDatabase>
       <UpdateDatabase>TheCandlekeepersCovenant/SQL/Covenant_Art.sql</UpdateDatabase>
+      <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Units.sql</UpdateDatabase>
+      <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</UpdateDatabase>
+      <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -262,6 +334,10 @@
     <EntryPoint type="InGameUIAddin" file="TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml">
       <Name>The Names We Carry</Name>
       <Description>Save-backed permanent city destruction ledger, memory yields and Eternal Vigil.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml">
+      <Name>The Earth Remembers</Name>
+      <Description>Library/University class yields and save-backed successful excavation rewards.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

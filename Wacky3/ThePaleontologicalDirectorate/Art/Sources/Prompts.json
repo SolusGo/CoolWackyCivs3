@@ -1,0 +1,25 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "prompts": [
+    {
+      "name": "Leader",
+      "prompt": "Use case: stylized-concept. Asset type: static Civilization V leader diplomacy scene, landscape 4:3 illustration. Director Emeritus Othmar, elderly eccentric scientist, warm enthusiastic expression, white unruly hair, cracked round spectacles, dust-covered leather field coat, pockets overflowing with fossils, holding a fossilized ammonite. He stands in a gigantic grand natural history museum; behind him a visibly incorrectly assembled dinosaur skeleton, humorous but convincing bones, huge vaulted hall and dusty display cases. Painterly historical strategy-game art, warm amber light, earthy brown and gold palette, scholarly eccentric republic. Waist-up leader centered, face large and legible for portrait crops, museum readable around him. No writing, no labels, no watermark.",
+      "transparent_background": false
+    },
+    {
+      "name": "Emblem",
+      "prompt": "Use case: logo-brand. Asset type: Civilization V civilization icon. A single circular gold-rimmed emblem depicting an elegant clearly recognizable ammonite fossil spiral in pale ivory and old gold on a dark earthy brown background. Strong readable silhouette, restrained engraved museum-medallion aesthetic, circular ornamental gold edge, centered, comfortable padding, square canvas. Outside the circular emblem must be transparent. No text, no letters, no watermark.",
+      "transparent_background": true
+    },
+    {
+      "name": "Unit",
+      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique unit portrait, square illustration. An archaeological field expedition, two scholarly field researchers in dusty leather clothing and sun hats with geological hammers, brushes, excavation tools and wooden specimen crates containing fossils, at a carefully excavated rocky dig trench. Historical painterly strategy game style, warm earthy gold and brown palette. Strong central composition that reads well in a circular portrait crop. No weapons, no military armor, no writing, no labels, no watermark.",
+      "transparent_background": false
+    },
+    {
+      "name": "Museum",
+      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique building portrait, square illustration. Grand natural history museum, stately stone architecture, towering arched glass entrance revealing reconstructed dinosaur skeleton and fossil exhibition, a carved ammonite above the entrance. Scientific republic, warm amber museum glow, earthy brown and old gold palette, painterly historical strategy-game icon art. Whole building centered, strong readable silhouette for circular portrait crop. No writing, no labels, no watermark.",
+      "transparent_background": false
+    }
+  ]
+}

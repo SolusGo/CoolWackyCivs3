@@ -10,12 +10,14 @@ ORDER += ['TheHollowChoir/SQL/Choir_'+kind+'.sql' for kind in ['Civilization','U
 ORDER += ['TheSeventeenthSummer/SQL/Summer_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text']]
 ORDER += ['ThePerpetualTimetable/SQL/Timetable_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 ORDER += ['TheCandlekeepersCovenant/SQL/Covenant_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
+ORDER += ['ThePaleontologicalDirectorate/SQL/PALEO_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 ENTRY='TheMinistryOfAlmost/Lua/CWC3_Almost.xml'
 ENTRIES=[(ENTRY,'Always the Challenger','Ministry owner-turn snapshots and Second Wind defensive veterans.'),
          ('TheHollowChoir/Lua/CWC3_Choir.xml','Songs Beneath Stone','Hollow Choir terrain yields and capture cleanup.'),
          ('TheSeventeenthSummer/Lua/CWC3_Summer.xml','The Great Emergence','Save-backed Summer cycle, brood veterans and Nursery yields.'),
          ('ThePerpetualTimetable/Lua/CWC3_Timetable.xml','The Grand Schedule','Ordinary Capital connections and continuous owned railway city yields.'),
-         ('TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml','The Names We Carry','Save-backed permanent city destruction ledger, memory yields and Eternal Vigil.')]
+         ('TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml','The Names We Carry','Save-backed permanent city destruction ledger, memory yields and Eternal Vigil.'),
+         ('ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml','The Earth Remembers','Library/University class yields and save-backed successful excavation rewards.')]
 
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and
@@ -24,7 +26,7 @@ def files():
 
 def build(package=False):
     root=ET.Element('Mod',id=MOD_ID,version='1'); props=ET.SubElement(root,'Properties')
-    values={'Name':'Cool Wacky Civs 3','Teaser':"The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable and The Candlekeeper's Covenant.",
+    values={'Name':'Cool Wacky Civs 3','Teaser':"The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable, The Candlekeeper's Covenant and The Paleontological Directorate.",
       'Description':'Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture, defensive recovery and railway infrastructure.',
       'Authors':'SolusGo','Homepage':'https://github.com/SolusGo/CoolWackyCivs3','AffectsSavedGames':'1',
       'MinCompatibleSaveVersion':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0','SupportsMac':'0',
@@ -36,7 +38,7 @@ def build(package=False):
     ET.SubElement(root,'References'); ET.SubElement(root,'Blocks')
     entries=ET.SubElement(root,'Files')
     for path in files():
-        imported=path.suffix in ['.dds','.lua'] or path.name in ['CWC3_LeaderScene.xml','CWC3_Timetable_LeaderScene.xml','CWC3_Covenant_LeaderScene.xml']
+        imported=path.suffix in ['.dds','.lua'] or path.name in ['CWC3_LeaderScene.xml','CWC3_Timetable_LeaderScene.xml','CWC3_Covenant_LeaderScene.xml','PALEO_LeaderScene.xml']
         ET.SubElement(entries,'File',{'md5':hashlib.md5(path.read_bytes()).hexdigest().upper(),'import':'1' if imported else '0'}).text=path.relative_to(ROOT).as_posix()
     actions=ET.SubElement(ET.SubElement(root,'Actions'),'OnModActivated')
     for path in ORDER: ET.SubElement(actions,'UpdateDatabase').text=path

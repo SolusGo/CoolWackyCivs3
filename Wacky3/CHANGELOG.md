@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-09 — The Paleontological Directorate
+
+- Added human-only Director Emeritus Othmar / Stratum Prime with Library/University class yield reconciliation, active Archaeologist +1 Movement/+1 Sight and complete Museum inheritance plus permanent +2 Science/+1 Culture.
+- Added source-verified CP151 `PlayerBuilt` excavation rewards, exact four-speed payouts, native research overflow and save-backed once-per-site payment records. No VP/custom DLL dependencies.
+- Added 57 DDS assets with retained original PNG masters, full localization/Dawn narrative, static leader scene and alpha/unit flag.
+- Added pinned archaeology/research/sale source evidence, SQL inheritance/regeneration and Lua51 lifecycle/reward tests, plus the native A–T acceptance guide. Native in-game tests have not been run.
+
 ## The Candlekeeper's Covenant — 9 November 2026
 
 - Add human-only High Keeper Seraphine, Last Light, full supplied Dawn/diplomacy text, city/spy names and original candle/leader artwork within the existing GUID/package.

@@ -12,6 +12,8 @@ from validate_hollow_choir import check_database as check_choir_database, check_
 from validate_seventeenth_summer import check_database as check_summer_database, check_lua as check_summer_lua
 from validate_timetable import check_database as check_timetable_database, check_lua as check_timetable_lua, check_rounding
 from validate_covenant import check_database as check_covenant_database, check_lua as check_covenant_lua
+from validate_paleo import check_database as check_paleo_database, check_lua as check_paleo_lua, check_art as check_paleo_art
+from paleo_fixture import source_checks as paleo_source_checks
 from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
 
@@ -45,6 +47,9 @@ def sql_checks(mutate=True, clean=False):
         db.execute("UPDATE Buildings SET Cost=Cost+29,GoldMaintenance=GoldMaintenance+3,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_TEMPLE'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_TEMPLE','YIELD_CULTURE',2)")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_TEMPLE','YIELD_CULTURE',4)")
+        db.execute("UPDATE Units SET Moves=Moves+3,Cost=Cost+23,BaseSightRange=BaseSightRange+2 WHERE Type='UNIT_ARCHAEOLOGIST'")
+        db.execute("UPDATE Buildings SET Cost=Cost+29,GoldMaintenance=GoldMaintenance+2,GreatWorkCount=GreatWorkCount+1,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_MUSEUM'")
+        db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_MUSEUM','YIELD_SCIENCE',4),('BUILDING_MUSEUM','YIELD_SCIENCE',3),('BUILDING_MUSEUM','YIELD_CULTURE',2)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     native_companions={}
     for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP'),('Unit_','UnitType','UNIT_PIKEMAN'),('Building_','BuildingType','BUILDING_TEMPLE')]:
@@ -79,7 +84,7 @@ def sql_checks(mutate=True, clean=False):
                 assert unique==expected,(companion,unique,expected)
             else: assert original==unique,(companion,original-unique,unique-original)
     for table,rows in baseline.items():
-        existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not any(p in str(r['Type']) for p in ['CWC3_','BUILDING_SUMMER_','PROMOTION_SUMMER_'])]
+        existing=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)) if not any(p in str(r['Type']) for p in ['CWC3_','BUILDING_SUMMER_','PROMOTION_SUMMER_','PALEO_'])]
         assert existing==rows,('changed native rows',table)
     for table in ['Civilizations','Leaders','Traits','Units','Buildings','UnitPromotions']:
         assert not db.execute('SELECT Type FROM '+quote(table)+" WHERE Type LIKE '%CWC3_%' GROUP BY Type HAVING COUNT(*)<>1").fetchone(),('duplicate identifier',table)
@@ -113,6 +118,7 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['timetable_database']=check_timetable_database(db)
     RESULTS['timetable_rounding']=check_rounding(db)
     RESULTS['covenant_database']=check_covenant_database(db)
+    RESULTS['paleo_database']=check_paleo_database(db)
     return db
 
 def lua_checks(db):
@@ -136,6 +142,7 @@ def lua_checks(db):
     RESULTS['seventeenth_summer_lua']=check_summer_lua()
     RESULTS['timetable_lua']=check_timetable_lua(db)
     RESULTS['covenant_lua']=check_covenant_lua(db)
+    RESULTS['paleo_lua']=check_paleo_lua(db)
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -158,7 +165,8 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[2][0]).getroot().find('Script').get('file')=='SummerGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
-    assert len(ENTRIES)==5 and len(set(e[0] for e in ENTRIES))==5
+    assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
+    assert len(ENTRIES)==6 and len(set(e[0] for e in ENTRIES))==6
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -200,6 +208,7 @@ def package_checks(db):
         assert Image.open(covenant_art/f'CWC3_Covenant_{kind}.dds').size==dimensions
     assert ET.parse(covenant_art/'CWC3_Covenant_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Covenant_Leader.dds'
     assert declared['TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml'].get('import')=='1'
+    RESULTS['paleo_art']=check_paleo_art(db,declared)
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -217,13 +226,14 @@ def package_checks(db):
             for name,path in expected.items(): assert archive.read(name)==path.read_bytes(),('Stale package file',name)
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
-    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 126 DDS textures, alpha and full icon mip chains'
+    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 183 DDS textures, alpha and full icon mip chains'
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--compare-database',type=Path,action='append',default=[],help='Also execute SQL against an existing cache without overlaying a CP-schema snapshot')
     args=parser.parse_args()
     RESULTS['source_audit']=audit()
+    RESULTS['paleo_source_audit']=paleo_source_checks()
     RESULTS['schema_audit']=check_regeneration()
     db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
@@ -245,7 +255,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(db); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md, docs/TimetableTesting.md and docs/CovenantTesting.md acceptance. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require the existing acceptance guides and ThePaleontologicalDirectorate/TESTING.md. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

@@ -210,6 +210,8 @@ def clean_fixture():
     from timetable_fixture import add_samples
     add_samples(db)
     add_samples(db, {'UnitType':'UNIT_PIKEMAN', 'BuildingType':'BUILDING_TEMPLE'})
+    from paleo_fixture import add_samples as add_paleo_samples
+    add_paleo_samples(db)
     _, cp = installations()
     for row in ET.parse(cp/'Database Changes/NewCustomModOptions.xml').iter('Row'):
         if row.get('Name'):

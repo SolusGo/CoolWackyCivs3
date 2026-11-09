@@ -78,6 +78,7 @@
     "supported_boundary": "NewGameTurn for actual Ministry owner only when first living sequential player",
     "other_hooks_reviewed": "PlayerDoTurn and ActivePlayerTurnStart are post-economy; GameCoreUpdateBegin is per update and cannot identify each owner boundary without polling/approximating"
   },
+  "paleo_source_audit": "PASS: pinned CP151 successful build branch, exact finishing-unit event, human archaeology queue/choice lifetime, native research completion and serialized overflow",
   "schema_audit": {
     "result": "PASS",
     "pinned_source_files": 260,
@@ -92,11 +93,11 @@
     "regeneration": [
       {
         "input": "clean source-derived schema",
-        "result": "PASS: all nineteen SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all twenty-three SQL outputs byte-identical to checked-in output"
       },
       {
         "input": "artificial third-party building/unit tables",
-        "result": "PASS: all nineteen SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all twenty-three SQL outputs byte-identical to checked-in output"
       }
     ],
     "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
@@ -106,7 +107,7 @@
     "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
     "source_tables": 808,
     "source_civilizations": 2,
-    "synthetic_companion_records": 800
+    "synthetic_companion_records": 964
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -119,6 +120,7 @@
   "timetable_database": "PASS: human-only registration, active Worker/Workshop scalars and all 172 companions, rounded WorkRate, one extra Gold, five isolated controllers, overrides, localization, starts and native model inheritance",
   "timetable_rounding": "PASS: production SQL inherits active WorkRate 80 -> 88, 85 -> 94, 100 -> 110; native Worker unchanged",
   "covenant_database": "PASS: human-only registration, complete active Pikeman/Temple scalar and 172 companion inheritance, exactly +1 Hall Culture including duplicate rows, 18 exclusive 0/1 controllers, native-model inheritance, permanent Sight and defense-only promotion",
+  "paleo_database": "PASS: human-only registration, all active Archaeologist/Museum scalar and 172 companion definitions, +1 move/sight, exactly +2 Science/+1 Culture including duplicate inherited yields, bounded dummies, localization and overrides",
   "database_runs": [
     {
       "evidence": {
@@ -126,7 +128,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 800
+        "synthetic_companion_records": 964
       },
       "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
@@ -137,7 +139,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 800
+        "synthetic_companion_records": 964
       },
       "fixture": "unaltered source definitions",
       "result": "PASS"
@@ -277,8 +279,28 @@
     "PASS Covenant 2103 assertions; 4 majors; human slot 0; Marathon mock; native game acceptance outstanding",
     "PASS Covenant 2103 assertions; 34 majors; human slot 3; Marathon mock; native game acceptance outstanding"
   ],
-  "lua": "PASS: 16 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "paleo_lua": [
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 17 Science, human slot 0: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 17 Science, human slot 3: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 25 Science, human slot 0: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 25 Science, human slot 3: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 38 Science, human slot 0: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 38 Science, human slot 3: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 75 Science, human slot 0: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)",
+    "PALEO: unsupported custom game speed; Field Discovery disabled",
+    "PASS PALEO 75 Science, human slot 3: 115 lifecycle/reward assertions (Lua51 mock; native acceptance NOT RUN)"
+  ],
+  "lua": "PASS: 18 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "paleo_art": "PASS: 57 legacy DDS files, declared dimensions, BGRA8888 payloads, transparent atlas masks, full icon mips, custom unit flag and static leader scene",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 189 manifest files + checksums, correct dependencies/order/context/VFS paths, 126 DDS textures, alpha and full icon mip chains",
-  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence and art/UI presentation require docs/Testing.md, docs/HollowChoirTesting.md, docs/SeventeenthSummerTesting.md, docs/TimetableTesting.md and docs/CovenantTesting.md acceptance. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified."
+  "package": "PASS: 256 manifest files + checksums, correct dependencies/order/context/VFS paths, 183 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require the existing acceptance guides and ThePaleontologicalDirectorate/TESTING.md. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.",
+  "paleo_finalization": "PASS: final source/binding/ScriptData serialization assertions, pristine clean-schema archaeology AI/Kill/Prompt/targets, DDS and rebuilt ZIP/manifest checks after documentation finalization"
 }
