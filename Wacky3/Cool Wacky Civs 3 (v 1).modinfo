@@ -2,8 +2,8 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>The Ministry of Almost, The Hollow Choir, The Seventeenth Summer, The Perpetual Timetable, The Candlekeeper's Covenant and The Paleontological Directorate.</Teaser>
-    <Description>Independent human-only civilization pack for BNW + Community Patch v151. Science, Culture, defensive recovery and railway infrastructure.</Description>
+    <Teaser>Ten human-only civilizations, including the Department of Lost Things, Assembly of Scarecrows, Kingdom of Makuria, Salt Road Compact and Paleontological Directorate.</Teaser>
+    <Description>Independent ten-civilization human-only pack for BNW + standalone Community Patch v151. Science, Culture, religion, agriculture, caravans and archaeology.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
     <AffectsSavedGames>1</AffectsSavedGames>
@@ -24,26 +24,42 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="D55095356FE3D0B4F5E2D72E7532BCAB" import="0">CHANGELOG.md</File>
-    <File md5="DE1468BC2F755C44EBEEE4FB5AB0CA86" import="0">docs/Compatibility.md</File>
+    <File md5="27E343B7E8293C4CF08F1F43F3E1956C" import="0">CHANGELOG.md</File>
+    <File md5="E9EEB7B049DADDD0B427C5CDD871ACE6" import="0">docs/ArchivedDailyImplementationReport.md</File>
+    <File md5="03B573FCDABC45EFC77DFFC17E7098A9" import="0">docs/ArchivedDailyTesting.md</File>
+    <File md5="27B476B44E10E187A39320DD0DBC1AE0" import="0">docs/Compatibility.md</File>
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
+    <File md5="B6CA4A6E7AC1B8D37329ED2E3E8CDACA" import="0">docs/strategy/TheAssemblyOfScarecrows.md</File>
     <File md5="5229951131CE034157671514564D91A5" import="0">docs/strategy/TheCandlekeepersCovenant.md</File>
+    <File md5="AED6C4283BDA33FF7066077EEA5581FA" import="0">docs/strategy/TheDepartmentOfLostThings.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
+    <File md5="6BBCD44392994D7251B7B625BB19EED4" import="0">docs/strategy/TheKingdomOfMakuria.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
     <File md5="1E4FE9609CACD9525964BEE33B84ADEA" import="0">docs/strategy/ThePerpetualTimetable.md</File>
+    <File md5="7363D34F447E50B0980BA1476A8541AE" import="0">docs/strategy/TheSaltRoadCompact.md</File>
     <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
     <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
     <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
-    <File md5="414EFAB991D9F3759596E26B9A582553" import="0">README.md</File>
+    <File md5="45DFB73286E561D96B7B88AF5B82E7ED" import="0">README.md</File>
+    <File md5="52EA2FDE8282ADF49A185B53B3EC6314" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
+    <File md5="4D1C6EF84AB4079D8D2CFC9D1CAF5B34" import="0">TheAssemblyOfScarecrows/Art/README.md</File>
+    <File md5="67B00BF89A4A583214DD22362BC01631" import="1">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.lua</File>
+    <File md5="61DE31DAF3665796E81A3418C4C8C209" import="0">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.xml</File>
+    <File md5="C70D637D29630BB2B10F4909092D1BA3" import="0">TheAssemblyOfScarecrows/README.md</File>
+    <File md5="F40070526D10C8739EC6B0D17D7ED7D0" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</File>
+    <File md5="E6C52B050870923D4A5EF57CB001F845" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</File>
+    <File md5="1AA1B309BE310A8853F91F95F0BC22F7" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Text.sql</File>
+    <File md5="FBBF007CCF14516C4FA0343AD1B5528A" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Units.sql</File>
+    <File md5="2625725790EFC7895808766F7C4134AF" import="0">TheAssemblyOfScarecrows/TESTING.md</File>
     <File md5="603C10C407C18C3D88AB1C94A3158FF8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha128.dds</File>
     <File md5="165FEAB3D7F1100CF9B02B3A85CA33D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha16.dds</File>
     <File md5="30CA3F302658F5ECA90D083F7CF599A8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha24.dds</File>
@@ -83,6 +99,15 @@
     <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
     <File md5="0BF1C473499B2EE8A8EBE4C33600266A" import="0">TheCandlekeepersCovenant/SQL/Covenant_Text.sql</File>
     <File md5="E4EE4E4438ADD5879E42D2F9CDFA770F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Units.sql</File>
+    <File md5="31295A1638DE02CB3B7452A885A5F8C9" import="0">TheDepartmentOfLostThings/Art/README.md</File>
+    <File md5="D37FE12FEF4F0C91CA154B8464574EA3" import="1">TheDepartmentOfLostThings/Lua/LOST_Gameplay.lua</File>
+    <File md5="344CF632023887763195E0AA6B983077" import="0">TheDepartmentOfLostThings/Lua/LOST_Gameplay.xml</File>
+    <File md5="152433B5D7D9033D8B83C9287FD7046D" import="0">TheDepartmentOfLostThings/README.md</File>
+    <File md5="9BED9DA1D48C37B0C93558AFF9A27A1A" import="0">TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</File>
+    <File md5="867BD0627760A657BB033A53800DE6E7" import="0">TheDepartmentOfLostThings/SQL/LOST_Civilization.sql</File>
+    <File md5="5BB8D25B3982035C1A04BB18798C34CF" import="0">TheDepartmentOfLostThings/SQL/LOST_Text.sql</File>
+    <File md5="D413D218D5F2B314F0C5E0A5BF057BE6" import="0">TheDepartmentOfLostThings/SQL/LOST_Units.sql</File>
+    <File md5="BAF0BD2CBA3949CEFEFC40A37AC33D45" import="0">TheDepartmentOfLostThings/TESTING.md</File>
     <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
@@ -90,6 +115,15 @@
     <File md5="0973E6C8D98469D2B5B896937864A3DF" import="0">TheHollowChoir/SQL/Choir_Civilization.sql</File>
     <File md5="86709CF10495B6CA15EF422E6C7B1BBD" import="0">TheHollowChoir/SQL/Choir_Text.sql</File>
     <File md5="4FD1291E75B41175C13CD96896C6DBE9" import="0">TheHollowChoir/SQL/Choir_Units.sql</File>
+    <File md5="D279FC3058F8DBF25FA77EA2E751F75F" import="0">TheKingdomOfMakuria/Art/README.md</File>
+    <File md5="AAA322AF970495CE3B3122E100AF9503" import="1">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.lua</File>
+    <File md5="A6BE208D963A5E973101AE30B0422150" import="0">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.xml</File>
+    <File md5="026CF373F278EDE4A6B42DE67964B142" import="0">TheKingdomOfMakuria/README.md</File>
+    <File md5="5B7FD194DEB0B43C0260D939A62BC2F5" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</File>
+    <File md5="D6215D9B6787E4BDCA25BDCDBD2F8088" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</File>
+    <File md5="45D87B43A99DF985CE1A2F17956C8B2D" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Text.sql</File>
+    <File md5="7CD5E45C25FC878A1599F917DEE83604" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</File>
+    <File md5="FA6698CC31CA9B47B4AE7AA089CB816B" import="0">TheKingdomOfMakuria/TESTING.md</File>
     <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
     <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
     <File md5="50805CCEF4FF840FEB1E2FD751DAD07F" import="1">TheMinistryOfAlmost/Art/CWC3_Academy24.dds</File>
@@ -205,15 +239,15 @@
     <File md5="0D5E19BE709F4682ED2A52F19F2C1B68" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit48.dds</File>
     <File md5="528A04D919B3138297D37A1F737916F4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit64.dds</File>
     <File md5="79D0FED4D5004390A1C8FE162E499DB1" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit80.dds</File>
-    <File md5="BA716D72A720FD48DC1041C68321DDD1" import="1">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.lua</File>
+    <File md5="D814671F008755BC50C781A5EF149CB1" import="1">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.lua</File>
     <File md5="CFB24ADC6292AFEDE8C11EF603285CC3" import="0">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml</File>
-    <File md5="4EF306DF66E56A01E629067B816BF0AB" import="0">ThePaleontologicalDirectorate/README.md</File>
+    <File md5="27B0FB225C1C3A38FB50B4EFAE5C2E25" import="0">ThePaleontologicalDirectorate/README.md</File>
     <File md5="9C67AE14D21BE7FE93C1AF8390AC3D2F" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</File>
     <File md5="3CE95AF879393061B050ADE229CDF13C" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</File>
     <File md5="B3928857EAC613FC2C4CCA1A4E911E2E" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</File>
-    <File md5="FF8C1E670DE2E16BFB73391D520E7FBB" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</File>
+    <File md5="49E61A8A537E006AEBEB2C3FC02FD393" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</File>
     <File md5="D50B90172D00D202488D40E9387C9C08" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Units.sql</File>
-    <File md5="31FFE98EA8CD0E519D6C2CD95E9EAB8B" import="0">ThePaleontologicalDirectorate/TESTING.md</File>
+    <File md5="91A126151DC0D93FB890098203126A74" import="0">ThePaleontologicalDirectorate/TESTING.md</File>
     <File md5="8F63CDBA2A5556341DA029B21A5238DD" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha128.dds</File>
     <File md5="64EAA3D21B439446F57E54A539C7DC26" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha16.dds</File>
     <File md5="FDC6CB03B9B071DB69270BEDB4F4CC68" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha24.dds</File>
@@ -271,6 +305,15 @@
     <File md5="734A36346218AB1C56159420A2A7A3C0" import="0">ThePerpetualTimetable/SQL/Timetable_Civilization.sql</File>
     <File md5="3D89038773CAF03651D17C34ED024BEB" import="0">ThePerpetualTimetable/SQL/Timetable_Text.sql</File>
     <File md5="1581CC85B73E604452F25A5D47C97915" import="0">ThePerpetualTimetable/SQL/Timetable_Units.sql</File>
+    <File md5="DE60698AFB6E5CF5E4742AC8DBAAA105" import="0">TheSaltRoadCompact/Art/README.md</File>
+    <File md5="992877414EFFB300A5DBBA92E15C3BED" import="1">TheSaltRoadCompact/Lua/SALT_Gameplay.lua</File>
+    <File md5="B965C1646C9D271C743B856334ED7436" import="0">TheSaltRoadCompact/Lua/SALT_Gameplay.xml</File>
+    <File md5="3D7A86EA50C709036F3827A9EB36E28A" import="0">TheSaltRoadCompact/README.md</File>
+    <File md5="61818A081F6558EA0646750A2393CA08" import="0">TheSaltRoadCompact/SQL/SALT_Buildings.sql</File>
+    <File md5="B188ED5C0C84161EB01670CECC7D6B5B" import="0">TheSaltRoadCompact/SQL/SALT_Civilization.sql</File>
+    <File md5="9060A2DA62FA50E622AD45D46C44A07E" import="0">TheSaltRoadCompact/SQL/SALT_Text.sql</File>
+    <File md5="48099D680B741285DD372A9BF29245AE" import="0">TheSaltRoadCompact/SQL/SALT_Units.sql</File>
+    <File md5="B67884C63F9B752FEC4DEAD664A5873F" import="0">TheSaltRoadCompact/TESTING.md</File>
     <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
     <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
@@ -312,6 +355,22 @@
       <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</UpdateDatabase>
       <UpdateDatabase>ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</UpdateDatabase>
+      <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Text.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -338,6 +397,22 @@
     <EntryPoint type="InGameUIAddin" file="ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml">
       <Name>The Earth Remembers</Name>
       <Description>Library/University class yields and save-backed successful excavation rewards.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheDepartmentOfLostThings/Lua/LOST_Gameplay.xml">
+      <Name>Nothing Is Ever Truly Lost</Name>
+      <Description>Save-backed per-city Curios from resolved enemy combat kills.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.xml">
+      <Name>The Fields Have Eyes</Name>
+      <Description>Owned unpillaged Farm thresholds and Harvest Bell yields.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.xml">
+      <Name>The Walls of Dongola</Name>
+      <Description>Per-city Walls BuildingClass Culture and Faith.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheSaltRoadCompact/Lua/SALT_Gameplay.xml">
+      <Name>The Price of Passage</Name>
+      <Description>Binary outgoing active land-route city yields.</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

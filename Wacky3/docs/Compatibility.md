@@ -1,5 +1,13 @@
 # Community Patch v151 compatibility evidence
 
+## Current ten-civilization extension — 12 November 2026
+
+The current pack registers ten human-only civilizations, **45 unique database actions** and **ten gameplay contexts**. Four archived additions reuse the established pinned schema/clone/runtime architecture; the previously implemented Directorate is retained, with total real/free Library/University class eligibility corrected. The original five civilization gameplay files, all 260 schema pins, 172 approved companion definitions, mod GUID, CP151 dependency, version 1 and save minimum/format are preserved.
+
+See [ArchivedDailyTesting.md](ArchivedDailyTesting.md) for exact combat, Farm, Walls, trade-route and excavation source contracts, clean/supplementary database provenance, complete automated and native matrices, economic timing and limitations. `archived_sources.json` adds one pinned CP151 trade source plus data-only native samples; no schema repinning or VP balance dependency is introduced. Native presentation fallbacks are intentional for the four additions. Existing DDS validation remains active.
+
+**Native Civ V acceptance has not been run.** The source fixture is a clean schema with selected sample data, not final CP gameplay data. Owner-turn reconciliation occurs after native economic collection and applies to the next payout. Existing saves have not been acceptance-tested with this roster; use a new game for the added civilizations. Historical sections below record earlier stages and their then-current counts.
+
 ## Timetable extension — 6 November 2026
 
 The fourth civilization reuses the same CP151 schema inventory, runtime setter, options and single-pack build. No previous civilization mechanic changes. New source-verified bindings, independent strict rail search, data-only fixture additions and explicit post-economy next-payout timing are documented in [TimetableTesting.md](TimetableTesting.md). The original 13 DLL hashes remain; a reviewed `CvLuaMap.cpp` at the same commit makes 14. The existing 260 schema source hashes and all 172 companions remain byte-identical. Two additional native Worker sample-data files have separate hashes in `timetable_fixture.py`; no schema repinning was performed.

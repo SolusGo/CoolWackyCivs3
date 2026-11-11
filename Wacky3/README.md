@@ -1,6 +1,6 @@
 # Cool Wacky Civs 3 — version 1
 
-An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; **The Perpetual Timetable**, led by Grand Stationmaster Veyl; **The Candlekeeper's Covenant**, led by High Keeper Seraphine; and **The Paleontological Directorate**, led by Director Emeritus Othmar. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
+An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **ten civilizations** — **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; **The Perpetual Timetable**, led by Grand Stationmaster Veyl; **The Candlekeeper's Covenant**, led by High Keeper Seraphine; **The Paleontological Directorate**, led by Director Emeritus Othmar; **Department of Lost Things**, led by Chief Registrar Nobody; **Assembly of Scarecrows**, led by Old Man Thistle; **Kingdom of Makuria**, led by Merkurios; and **The Salt Road Compact**, led by First Broker Nahir. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
 
@@ -11,9 +11,25 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 3. Enable the patch and this pack in the Mods menu, then choose a civilization as the human in a **new sequential single-player game**. For **The Ministry of Almost**, use human player slot zero: its precise supported boundary requires the Ministry to be the **first living sequential player**, so a higher slot qualifies only after all earlier players are eliminated. The Ministry has mock coverage with 34 living major teams, subject to the installed DLL's player limits. The Choir's passive terrain reconciliation has no first-slot restriction; native timing still awaits acceptance. Summer and Timetable support any human slot using explicit post-economy, next-payout evaluation.
 4. Do not add the mod to an existing save or remove it from a Ministry save. Existing version 1 saves retain their snapshot. Check `Database.log` and `Lua.log` when doing the acceptance tests.
 
+## Archived Daily expansion — 12 November 2026
+
+The five archived designs [#002/#007/#013/#016/#020](https://github.com/SolusGo/Weekly-civs/tree/main/Civilizations) are integrated in the ten-civilization pack. The Directorate was already present and is retained; its class checks now include free buildings. The original five civilizations' gameplay files are unchanged.
+
+| Civilization | UA | UU / UB | Guide |
+| --- | --- | --- | --- |
+| Department of Lost Things | Up to four saved Curios per city from nearby genuine combat kills; +1 Culture/+1 Science each | Retrieval Officer: Sight/anti-Barbarian strength. Lost Property Office: +1 Culture/+1 Gold per Curio | [Complete guide](TheDepartmentOfLostThings/README.md) |
+| Assembly of Scarecrows | Three owned unpillaged Farms: +2 Culture/+1 Production; six add +2 Food | Wicker Sentinel: Sight/native friendly strength. Harvest Bell: +1 Culture and capped Farm Gold | [Complete guide](TheAssemblyOfScarecrows/README.md) |
+| Kingdom of Makuria | A Walls-class building grants its city +1 Culture/+1 Faith | Nubian Bowman: Sight/+15% defense only. Painted Church: +1 Culture/+1 Science | [Complete guide](TheKingdomOfMakuria/README.md) |
+| The Salt Road Compact | Binary active outgoing land-route condition: +2 Production/+1 Culture per origin city | Dune Escort: Sight/Desert-target attack and Desert defense. Salt Exchange: +1 Food/+1 Gold and conditional +1 Science | [Complete guide](TheSaltRoadCompact/README.md) |
+| The Paleontological Directorate | Library +1 Science; independently University +1 Culture, including free/replacement buildings | Fossil Expedition: Movement/Sight/successful excavation Science. Natural History Museum: +2 Science/+1 Culture | [Complete guide](ThePaleontologicalDirectorate/README.md) |
+
+The four additions use valid native art fallbacks and unique player colors. Existing custom DDS assets remain unchanged. [Source contracts and testing](docs/ArchivedDailyTesting.md) distinguish actual SQLite/Lua51/package checks from **native Civ V acceptance, which has not been run**. See the [implementation report](docs/ArchivedDailyImplementationReport.md) and `tools/Validation.json` for the final inventory/results. The manifest contains **45 SQL activation actions and ten gameplay contexts**, each exactly once.
+
+The original GUID `70d794f7-4fb2-4196-9709-8193f8ee36a9`, version 1, save minimum 1 and existing save record formats are preserved. New namespaced Curio records do not alter existing records. **Start a new game for the new civilizations. Existing-save compatibility has not been acceptance-tested.** Owner-turn reconciliation is post-economy and affects the next payout. Native combat/route/archaeology dispatch and real save serialization still require acceptance.
+
 ## The Paleontological Directorate
 
-**Capital:** Stratum Prime. **Victory focus:** Science / Culture. **The Earth Remembers** adds +1 base Science per city with any real Library-class building and, independently, +1 base Culture with any real University-class building. Replacements qualify once per class. The **Fossil Expedition** inherits the active Archaeologist and adds +1 Movement/+1 Sight; authoritative CP151 `PlayerBuilt` completion grants 17/25/38/75 Science on Quick/Standard/Epic/Marathon, with a save-backed once-per-site ledger. Artifact and Landmark choices stay native. The **Natural History Museum** inherits all active Museum effects and adds unconditional +2 Science/+1 Culture. Five fully equipped cities add **15 Science and 10 Culture** in base unique yields.
+**Capital:** Stratum Prime. **Victory focus:** Science / Culture. **The Earth Remembers** adds +1 base Science per city with any Library-class building (real or free) and, independently, +1 base Culture with any University-class building (real or free). Replacements qualify once per class. The **Fossil Expedition** inherits the active Archaeologist and adds +1 Movement/+1 Sight; authoritative CP151 `PlayerBuilt` completion grants 17/25/38/75 Science on Quick/Standard/Epic/Marathon, with a save-backed once-per-site ledger. Artifact and Landmark choices stay native. The **Natural History Museum** inherits all active Museum effects and adds unconditional +2 Science/+1 Culture. Five fully equipped cities add **15 Science and 10 Culture** in base unique yields.
 
 Original art supplies 57 valid DDS files, including custom portraits, alpha, unit flag and a static Othmar scene. See the [civilization guide and hook proof](ThePaleontologicalDirectorate/README.md) and [A–T verification checklist](ThePaleontologicalDirectorate/TESTING.md). No custom DLL or VP dependency. Source/SQLite/Lua51/art/packaging checks pass; **native in-game acceptance remains outstanding**.
 
@@ -63,7 +79,7 @@ See the [civilization guide](TheMinistryOfAlmost/README.md), [winning strategy](
 
 ## Verification status and limits
 
-**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, all six civilizations' behavior assertions, 16 core DLL-source/260 installed-schema source pins, four additional Directorate DLL hashes and twelve native-data pins, two additional Timetable data-only source hashes, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Covenant acceptance report](docs/CovenantTesting.md), the [Timetable acceptance report](docs/TimetableTesting.md), the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
+**Statically verified but awaiting in-game acceptance.** Checks cover a source-derived clean BNW + CP151 schema fixture plus both supplementary caches, pristine/mutated source definitions, contamination-proof regeneration, Lua 5.1 syntax, all ten civilizations' behavior assertions, 16 core DLL-source/260 installed-schema source pins, four additional Directorate DLL hashes and twelve native-data pins, two additional Timetable data-only source hashes, two pinned Summer panel overrides, and DDS/manifest/ZIP integrity. **The clean schema fixture does not reconstruct native CP gameplay data; mocks do not demonstrate native economic timing or an in-game pass.** See `tools/Validation.json`, the [Covenant acceptance report](docs/CovenantTesting.md), the [Timetable acceptance report](docs/TimetableTesting.md), the [Summer acceptance report](docs/SeventeenthSummerTesting.md) and the [schema repair report](docs/CP151SchemaRepair.md).
 
 The DLL publishes `NewGameTurn` before first-player activation; `PlayerDoTurn` follows city yields and research. Wacky3 finds the actual Ministry owner and uses `NewGameTurn` **only when that owner is the first living sequential player**. **Synchronous UI dispatch before native yield collection still needs in-game acceptance.** An event observed after that owner's `PlayerDoTurn` or `ActivePlayerTurnStart` is rejected without resnapshotting. `AIProcessingStartedForPlayer` is diagnostic-only because its human-owner timing is unverified. An owner with earlier living players gets a one-time Lua.log warning; the previous saved tier is preserved and new snapshots are suspended. Such later-slot setups, hotseat, multiplayer and autoplay are unsupported. No instant-yield compensation is used.
 
@@ -86,12 +102,14 @@ python tools/generate_seventeenth_summer.py
 python tools/generate_timetable.py
 python tools/generate_covenant.py
 python tools/generate_paleo.py
+python tools/generate_archived.py
 python tools/generate_summer_ui.py
 python tools/build_art.py
 python tools/build_timetable_art.py
 python tools/build_covenant_art.py
 python tools/build_paleo_art.py
 python tools/paleo_fixture.py --fetch  # first-time PALEO source references
+python tools/archived_fixture.py --fetch  # pinned trade-route lifecycle reference
 python tools/validate_paleo.py
 python tools/validate_covenant.py
 python tools/validate_timetable.py
@@ -103,7 +121,7 @@ python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My G
 
 Validation reads game files **read-only** and works in memory. Set `CWC3_GAME_DIR` to the installed Civilization V directory if Steam-library discovery cannot find BNW. Set `CWC3_CP_DIR` for a nonstandard `(1) Community Patch` location. `tools/target_schema.py` verifies installed source hashes and builds the authoritative clean target schema. `CWC3_DATABASE` selects only the supplementary BNW cache **without Wacky3**, defaulting to `cache_backup/Civ5DebugDatabase.db`; it cannot influence SQL generation. The existing CP-schema comparison cache is tested without manufacturing missing schema/options. Neither cache is certified CP-only. Art does not need regeneration for this repair; the Choir uses native temporary art.
 
-The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All six SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
+The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
 
 ## Adding another civilization
 

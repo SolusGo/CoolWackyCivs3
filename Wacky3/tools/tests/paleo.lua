@@ -67,6 +67,7 @@ local function City(player,id,x)
     function c:GetX() return self.x end
     function c:GetY() return self.y end
     function c:GetNumRealBuilding(b) return self.real[b] or 0 end
+    function c:GetNumBuilding(b) return (self.real[b] or 0)+(self.free[b] or 0) end
     function c:GetNumFreeBuilding(b) return self.free[b] or 0 end
     function c:SetNumRealBuilding(b,n,noBonus)
         eq(noBonus,true,'suppress construction rewards'); self.real[b]=n; self.writes=self.writes+1
@@ -113,7 +114,7 @@ GameEvents.CitySoldBuilding.Fire(PaleoSlot,1,11)
 eq(c.real[100],0,'sold last Library'); eq(c.real[101],1,'independent University')
 c.real[12]=0; c.real[13]=0; c.free[11]=1; c.free[13]=1
 Events.SerialEventCityInfoDirty.Fire()
-eq(c.real[100],0,'free Library excluded'); eq(c.real[101],0,'free University excluded')
+eq(c.real[100],1,'free Library qualifies once'); eq(c.real[101],1,'free University qualifies once')
 c.real[11]=1; c.real[13]=1
 Events.NewGameTurn.Fire()
 eq(c.real[100],1,'recover script building'); eq(c.real[101],1,'recover script university')

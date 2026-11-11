@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-12 — Five archived Daily designs integrated
+
+- Expand the existing six-civilization checkout to ten by adding the Department of Lost Things, Assembly of Scarecrows, Kingdom of Makuria and Salt Road Compact, retaining the already implemented Paleontological Directorate. All are human-only. The original five civilization gameplay sources remain unchanged.
+- Add saved per-city capped Curios and persisted combat-victim deduplication, exact unworked Farm thresholds/Bell Gold, Boolean Walls-class yields and binary outgoing active land-route/Exchange yields. Add native civilization-specific anti-Barbarian, friendly territory, defense-only and Desert-target/defense promotions.
+- Preserve active CP151 parent scalar and all approved companion data for Spearman, Composite Bowman, Horseman, Library, Granary, Temple and Caravansary replacements. Native promotion/route/combat consumers are source-audited; no generic Desert combat approximation or invented event is used.
+- Correct the existing Directorate's Library/University BuildingClass eligibility to include free buildings once. Retain its source-verified successful excavation callback, exact four-speed rewards, native choices and existing custom art.
+- Add detailed civilization/strategy/native-acceptance guides, honest native presentation fallbacks and unique player colors; extend clean/supplementary/mutated SQL, deterministic regeneration, Lua51 lifecycle/large-game scenarios, localization and package validation.
+- Integrate 45 unique SQL actions and ten Lua contexts, preserving GUID, dependencies, version 1 and existing save format/minimum. New games are required for reliable testing of the new roster. Native Civ V gameplay/save acceptance remains unperformed.
+
 ## 2026-11-09 — The Paleontological Directorate
 
 - Added human-only Director Emeritus Othmar / Stratum Prime with Library/University class yield reconciliation, active Archaeologist +1 Movement/+1 Sight and complete Museum inheritance plus permanent +2 Science/+1 Culture.

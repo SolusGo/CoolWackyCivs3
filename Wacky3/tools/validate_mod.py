@@ -16,6 +16,8 @@ from validate_paleo import check_database as check_paleo_database, check_lua as 
 from paleo_fixture import source_checks as paleo_source_checks
 from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
+from validate_archived import check_database as check_archived_database, check_lua as check_archived_lua, mutate_baselines
+from archived_fixture import source_checks as archived_source_checks
 
 RESULTS={}
 def sql_checks(mutate=True, clean=False):
@@ -30,6 +32,7 @@ def sql_checks(mutate=True, clean=False):
     # Deliberately modify the active source definitions in memory. Generated SQL
     # must inherit these, proving it doesn't replace CP values with vanilla ones.
     if mutate:
+        mutate_baselines(db)
         db.execute("UPDATE Units SET Combat=Combat+3,Cost=Cost+7,Moves=Moves+1 WHERE Type='UNIT_SPEARMAN'")
         db.execute("UPDATE Buildings SET Cost=Cost+13,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_LIBRARY'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_LIBRARY','YIELD_CULTURE',2)")
@@ -52,7 +55,7 @@ def sql_checks(mutate=True, clean=False):
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_MUSEUM','YIELD_SCIENCE',4),('BUILDING_MUSEUM','YIELD_SCIENCE',3),('BUILDING_MUSEUM','YIELD_CULTURE',2)")
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     native_companions={}
-    for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP'),('Unit_','UnitType','UNIT_PIKEMAN'),('Building_','BuildingType','BUILDING_TEMPLE')]:
+    for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP'),('Unit_','UnitType','UNIT_PIKEMAN'),('Building_','BuildingType','BUILDING_TEMPLE'),('Unit_','UnitType','UNIT_SPEARMAN'),('Unit_','UnitType','UNIT_COMPOSITE_BOWMAN'),('Unit_','UnitType','UNIT_HORSEMAN'),('Building_','BuildingType','BUILDING_CARAVANSARY'),('Building_','BuildingType','BUILDING_LIBRARY'),('Building_','BuildingType','BUILDING_GRANARY')]:
         for table in approved_companions(prefix,column):
             native_companions[(table,column,parent)]=[tuple(r) for r in db.execute('SELECT * FROM '+quote(table)+' WHERE '+quote(column)+'=?',(parent,))]
     for path in ORDER: db.executescript((ROOT/path).read_text(encoding='utf-8'))
@@ -104,7 +107,7 @@ def sql_checks(mutate=True, clean=False):
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
-            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL','TXT_KEY_CWC3_COVENANT_CIV5','TXT_KEY_CWC3_COVENANT_SERAPHINE']: continue # Pedia category prefixes
+            if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL','TXT_KEY_CWC3_COVENANT_CIV5','TXT_KEY_CWC3_COVENANT_SERAPHINE'] or any(key=='TXT_KEY_CWC3_'+c+'_'+suffix for c in ['LOST','SCARECROW','MAKURIA','SALT'] for suffix in ['CIV5','LEADERPAGE']): continue # Pedia category prefixes
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -119,6 +122,7 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['timetable_rounding']=check_rounding(db)
     RESULTS['covenant_database']=check_covenant_database(db)
     RESULTS['paleo_database']=check_paleo_database(db)
+    RESULTS['archived_database']=check_archived_database(db)
     return db
 
 def lua_checks(db):
@@ -143,6 +147,7 @@ def lua_checks(db):
     RESULTS['timetable_lua']=check_timetable_lua(db)
     RESULTS['covenant_lua']=check_covenant_lua(db)
     RESULTS['paleo_lua']=check_paleo_lua(db)
+    RESULTS['archived_lua']=check_archived_lua(db)
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -166,7 +171,10 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
-    assert len(ENTRIES)==6 and len(set(e[0] for e in ENTRIES))==6
+    assert len(ENTRIES)==10 and len(set(e[0] for e in ENTRIES))==10
+    assert len(ORDER)==len(set(ORDER))==45
+    for entry,_,_ in ENTRIES[6:]:
+        assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -234,6 +242,7 @@ def main():
     args=parser.parse_args()
     RESULTS['source_audit']=audit()
     RESULTS['paleo_source_audit']=paleo_source_checks()
+    RESULTS['archived_source_audit']=archived_source_checks()
     RESULTS['schema_audit']=check_regeneration()
     db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
@@ -255,7 +264,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(db); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require the existing acceptance guides and ThePaleontologicalDirectorate/TESTING.md. Covenant, Summer and Timetable use explicit post-economy next-payout timing; Ministry UI dispatch synchrony remains unverified.'
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. Existing saves have NOT been acceptance-tested with this roster; start a new game.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

@@ -28,9 +28,9 @@ local function IsDirectorate(player)
     return player and player:IsAlive() and player:GetCivilizationType() == CIV
 end
 
-local function HasRealClass(city, buildings)
+local function HasClass(city, buildings)
     for _, id in ipairs(buildings) do
-        if city:GetNumRealBuilding(id) > 0 then return true end
+        if city:GetNumBuilding(id) > 0 then return true end
     end
     return false
 end
@@ -41,8 +41,8 @@ local function ReconcileCity(city)
     local x, y = city:GetX(), city:GetY()
     watched[x .. ':' .. y] = eligible and {x=x, y=y} or nil
     -- Absolute 0/1 real count; shared helper also strips every free dummy copy.
-    CWC3.SetBuilding(city, SCIENCE, eligible and HasRealClass(city, library))
-    CWC3.SetBuilding(city, CULTURE, eligible and HasRealClass(city, university))
+    CWC3.SetBuilding(city, SCIENCE, eligible and HasClass(city, library))
+    CWC3.SetBuilding(city, CULTURE, eligible and HasClass(city, university))
 end
 
 local function ReconcilePlayer(id)

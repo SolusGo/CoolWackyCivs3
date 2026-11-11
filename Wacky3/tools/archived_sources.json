@@ -1,0 +1,24 @@
+{
+  "trade_source": {
+    "url": "https://raw.githubusercontent.com/LoneGazebo/Community-Patch-DLL/44c1e14ff75d80c1dba5c8a71e8289439a53aafb/CvGameCoreDLL_Expansion2/CvTradeClasses.cpp",
+    "sha256": "c645883745438c0bf9a1261aa4eedd50ba67899adb9701a0e7c75df2af8dc4fd"
+  },
+  "native_data": {
+    "Gameplay/XML/Buildings/CIV5Buildings.xml": "7905bcc868dde30532eb62c00df9205cd6105a314d29961a937ce42efc319632",
+    "Gameplay/XML/Units/CIV5Units.xml": "3335f22be52e37e4353765e1b910d7233a03384dc052ebdfa904075392b62c41",
+    "DLC/Expansion/Gameplay/XML/Buildings/CIV5Buildings.xml": "110f29a80e5e1978ca4c3df600bc1bab8ac4e02c933ff3b298f00864b4e0e794",
+    "DLC/Expansion/Gameplay/XML/Units/CIV5Units.xml": "a2a9c5a3738d31e78fa733e34645c1f8ae523282a726e4cfada72355a74db1bd",
+    "DLC/Expansion/Gameplay/XML/Units/CIV5Units_Expansion.xml": "87779b3f57b7b87395ed6be93992e56f3956fa1df8646aebd96e7c49573d3f27",
+    "DLC/Expansion2/Gameplay/XML/Buildings/CIV5Buildings.xml": "0c8b9f3d6c2a95b0279eadfd8c7a86c613f755cd0464653bd38db22e94901a3e",
+    "DLC/Expansion2/Gameplay/XML/Buildings/CIV5Buildings_Expansion2.xml": "b1d6e2cd6045dc78db12ccf5fb4082baf0a970956595560b5875f6b348489c97",
+    "DLC/Expansion2/Gameplay/XML/Units/CIV5Units.xml": "9ea1ca5753e4709c7d818e09faab659b0073ead26cec8449662f4199b2c0bcf0",
+    "DLC/Expansion2/Gameplay/XML/Units/CIV5Units_Inherited_Expansion2.xml": "d3c35c2c500a4b387db95dd74efe15d7cce1e5b3e7e0f2aa591142031aedd5c9",
+    "Sounds/XML/UnitGameplay.xml": "83da7480d53cad41b6be7f15760856cf76de217fee6b265e925fe2cec3d2083c",
+    "Gameplay/XML/Terrain/CIV5Improvements.xml": "d508fb2b2efed9b3ae0cdf9622413516b87517972d8b9fb721c4ab20759ee077",
+    "Gameplay/XML/Units/CIV5Builds.xml": "223f7a208a6c32a39fe978fe207b4cec89cdf0f8d4919420543c5f43e6bcf5ef",
+    "DLC/Expansion/Gameplay/XML/Terrain/CIV5Improvements.xml": "5f90306455fba6573604595901a680b851e0dc46bbaab4d5eb5a74dcdadedfeb",
+    "DLC/Expansion/Gameplay/XML/Units/CIV5Builds.xml": "181ecd10371db7b5b71d551fa909fcecf1ed1f155ee2579a8a03959b07d8ba1f",
+    "DLC/Expansion2/Gameplay/XML/Terrain/CIV5Improvements.xml": "9a23601c5a3f24e9a6da39893347a25a994b5b204bc03eedde8f174bd52f3056",
+    "DLC/Expansion2/Gameplay/XML/Units/CIV5Builds.xml": "b6d0160cfa40c2fda56761f83078d8984bad88a74e57d33ef8a6bf931d7f1926"
+  }
+}

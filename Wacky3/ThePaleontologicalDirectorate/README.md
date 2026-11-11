@@ -6,12 +6,12 @@ Implemented in this directory with five ordered SQL actions, one hidden Lua cont
 
 | Unique | Behavior |
 | --- | --- |
-| The Earth Remembers | Each city possessing any **real** Library-class building receives +1 base Science. Independently, any real University-class building supplies +1 base Culture. Replacements qualify; duplicate buildings or instances within one class do not stack. |
+| The Earth Remembers | Each city possessing any Library-class building receives +1 base Science. Independently, any University-class building supplies +1 base Culture. Replacements qualify; duplicate buildings or instances within one class do not stack. |
 | Fossil Expedition | Replaces the active Archaeologist, preserving all scalar/companion effects except presentation and +1 base Movement. An exclusive promotion adds +1 Sight, with no combat/protection effect. |
 | Field Discovery | The Directorate's human-owned Fossil Expedition completing a valid excavation receives 17/25/38/75 Science on Quick/Standard/Epic/Marathon, once per site. Paid at excavation completion, before the normal archaeology choice; Artifact and Landmark both qualify. |
 | Natural History Museum | Replaces the active Museum, preserving all scalar and companion effects and adding unconditional +2 base Science and +1 base Culture. Empty slots qualify. |
 
-A city with a real Library, real University and Natural History Museum has **+3 Science/+2 Culture** in unique base recurring yields; five cities have **+15 Science/+10 Culture**. These are ordinary additive building yields: normal city yield modifiers, resistance and other native settlement rules still apply. There are no population/era/technology multipliers in the unique mechanics, free technologies, new sites, resources, Artifacts or technologies.
+A city with a Library, University and Natural History Museum has **+3 Science/+2 Culture** in unique base recurring yields; five cities have **+15 Science/+10 Culture**. These are ordinary additive building yields: normal city yield modifiers, resistance and other native settlement rules still apply. There are no population/era/technology multipliers in the unique mechanics, free technologies, new sites, resources, Artifacts or technologies.
 
 Build Libraries and Universities across the republic, then Museums. Use the expedition's mobility and sight to plan routes to existing sites. Keep Artifact slots available and negotiate access through other civilizations. Field Discovery is modest and does not depend on the type of archaeological choice.
 
@@ -50,7 +50,7 @@ Only after Science commits, the handler appends `[PALEO_SITE_V1:x:y]` to the own
 
 ## City reconciliation and timing
 
-All buildings in each required class are indexed from the final game database, including other mods' replacements. `GetNumRealBuilding > 0` qualifies once per class; a purely free copy does not qualify. Independent checks set each dummy absolutely. Founding, post-transfer `CityCaptureComplete`, liberation, post-construction and **post-sale** callbacks reconcile directly. CP151's sale network handler calls `DoSellBuilding` before `CitySoldBuilding`.
+All buildings in each required class are indexed from the final game database, including other mods' replacements. `GetNumBuilding > 0` qualifies once per class, including purely free buildings. Duplicate real/free representations never multiply the bonus. Independent checks set each dummy absolutely. Founding, post-transfer `CityCaptureComplete`, liberation, post-construction and **post-sale** callbacks reconcile directly. CP151's sale network handler calls `DoSellBuilding` before `CitySoldBuilding`.
 
 Bootstrap/load scans city lists once, repairing Directorate cities and stripping foreign copies. New-game-turn and active-player-turn events repair the Directorate; `PlayerDoTurn` and watched coordinates provide bounded recovery for silent scripted changes and ownership transfers. `SerialEventCityInfoDirty` repairs watched cities with a recursion guard. No full map, unit census or per-frame polling is used.
 
