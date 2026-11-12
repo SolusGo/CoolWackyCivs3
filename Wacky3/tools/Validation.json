@@ -122,7 +122,7 @@
   "timetable_rounding": "PASS: production SQL inherits active WorkRate 80 -> 88, 85 -> 94, 100 -> 110; native Worker unchanged",
   "covenant_database": "PASS: human-only registration, complete active Pikeman/Temple scalar and 172 companion inheritance, exactly +1 Hall Culture including duplicate rows, 18 exclusive 0/1 controllers, native-model inheritance, permanent Sight and defense-only promotion",
   "paleo_database": "PASS: human-only registration, all active Archaeologist/Museum scalar and 172 companion definitions, +1 move/sight, exactly +2 Science/+1 Culture including duplicate inherited yields, bounded dummies, localization and overrides",
-  "archived_database": "PASS: ten human-only civilizations; four active parent scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; native atlas/scene fallbacks; localization and starting grants",
+  "archived_database": "PASS: ten human-only civilizations; four active parent gameplay scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; original portrait/flag/scene bindings; localization and starting grants",
   "database_runs": [
     {
       "evidence": {
@@ -311,7 +311,8 @@
   ],
   "lua": "PASS: 24 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "paleo_art": "PASS: 57 legacy DDS files, declared dimensions, BGRA8888 payloads, transparent atlas masks, full icon mips, custom unit flag and static leader scene",
+  "daily_art": "PASS: 30 distinct original PNG masters and exact built-in prompts; five unique leaders/glyphs; 285 DDS textures, six complete nine-size atlases per civ, gold-rimmed portraits, monochrome alpha/flags, distinct Dawn/capital scenes, SQL/VFS wiring and deterministic byte regeneration. Native UI rendering NOT RUN.",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 299 manifest files + checksums, correct dependencies/order/context/VFS paths, 183 DDS textures, alpha and full icon mip chains",
+  "package": "PASS: 537 manifest files + checksums, correct dependencies/order/context/VFS paths, 411 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. Existing saves have NOT been acceptance-tested with this roster; start a new game."
 }

@@ -1,0 +1,53 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Leader",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Leader.png",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Asset type: finished leader diplomacy illustration for a Civilization V fantasy civilization, the Department of Lost Things. Create a memorable singular character: Chief Registrar Nobody is a HEADLESS supernatural registrar, not a human man. A very tall thin hovering midnight-blue bureaucratic frock coat with a high EMPTY collar; no head, no skull, no hidden human face, no glowing eye. The empty collar and an antique pair of spectacles floating above it make an unmistakable whimsical silhouette. Two detached ivory gloves: one holding a giant scarlet wax-seal stamp, the other presenting a small lost brass key tied to a paper claim tag. His coat trails paper ticket stubs; an ancient oak counter fills the foreground. Towering orderly lost-property cabinets, hanging umbrellas, clocks and forgotten parcels recede into a nocturnal indigo archive, with cold blue supernatural light and one crimson desk lamp. Mood dryly comic, uncanny and dignified, not horror. Painterly lavish historical strategy-game concept art, hand-painted textures, expressive shapes, deep shadows, no photoreal actor. Landscape composition, approximately 4:3, centered waist-up silhouette at a low desk, empty collar around upper center with plenty of clear space, strong readable figure for later circular portrait crop. No words, no numbers, no letters, no watermark, no UI, no border. Keep all anatomy intentionally headless and hands readable."
+    },
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Emblem",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Emblem.png",
+      "transparent": true,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Square transparent heraldic emblem for Department of Lost Things. One antique brass key crosses a blank ivory luggage claim tag with a large KEYHOLE cutout; a single glossy scarlet wax seal binds them. Strong simple three-object silhouette, indigo enamel accents, gold/copper sculptural relief, dramatic material highlights. Object only, fully transparent outside it; no circle, no frame, no writing, no detailed scenery."
+    },
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Unit",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Unit.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Retrieval Officer, a supernatural early spear guard in a dark indigo field coat with crimson cuffs, a CLOSED antique brass keyhole-shaped faceplate, tall key-shaped spear, strapped cabinet of tagged recovered trinkets and small round shield. One complete purposeful guard with readable silhouette, no exposed human face; misty cobblestone archive steps. Square centered chest-up unit portrait with spear visible."
+    },
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Building",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Building.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Lost Property Office: a whimsically impossible midnight-blue civic registry, tall narrow Victorian stone facade, enormous sculpted brass keyhole over the entrance, scarlet glass lamps, tagged umbrellas and parcels in the vestibule, cavernous filing shelves glimpsed inside. Distinctive building centered, three-quarter architectural portrait, square composition, painterly blue twilight, warm red entrance. No writing or signs."
+    },
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Dawn",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Dawn.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 founding illustration of Unclaimed, the supernatural city of lost things, an impossible blue-hour city of towering filing-cabinet architecture, hanging lost umbrellas and brass-key bridges over misty canals. A headless indigo-coated registrar with floating spectacles stands small in foreground at a red-lit customs counter. Clear wide city storytelling and strong depth, nocturnal cobalt/indigo with small scarlet lamps, dignified whimsical wonder."
+    },
+    {
+      "code": "LOST",
+      "folder": "TheDepartmentOfLostThings",
+      "kind": "Capital",
+      "source": "TheDepartmentOfLostThings/Art/Sources/Capital.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 capital panorama of Unclaimed: the Grand Registry as a cathedral-sized cabinet building with an enormous brass keyhole portal, orderly stone quays, clock bridges, blue mist, crimson lamps and workers sorting colorful lost objects. Architecture is the subject, no large leader figure, central landmark legible when cropped vertically. Painterly indigo and antique copper, unusual supernatural administrative city."
+    }
+  ]
+}

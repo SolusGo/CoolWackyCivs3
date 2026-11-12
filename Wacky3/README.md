@@ -23,7 +23,7 @@ The five archived designs [#002/#007/#013/#016/#020](https://github.com/SolusGo/
 | The Salt Road Compact | Binary active outgoing land-route condition: +2 Production/+1 Culture per origin city | Dune Escort: Sight/Desert-target attack and Desert defense. Salt Exchange: +1 Food/+1 Gold and conditional +1 Science | [Complete guide](TheSaltRoadCompact/README.md) |
 | The Paleontological Directorate | Library +1 Science; independently University +1 Culture, including free/replacement buildings | Fossil Expedition: Movement/Sight/successful excavation Science. Natural History Museum: +2 Science/+1 Culture | [Complete guide](ThePaleontologicalDirectorate/README.md) |
 
-The four additions use valid native art fallbacks and unique player colors. Existing custom DDS assets remain unchanged. [Source contracts and testing](docs/ArchivedDailyTesting.md) distinguish actual SQLite/Lua51/package checks from **native Civ V acceptance, which has not been run**. See the [implementation report](docs/ArchivedDailyImplementationReport.md) and `tools/Validation.json` for the final inventory/results. The manifest contains **45 SQL activation actions and ten gameplay contexts**, each exactly once.
+All five archived civilizations now have extensive original art: 30 independent illustration masters and 285 compiled DDS assets. Each has a memorable leader design, custom civilization/leader/unit/building portraits, alpha/flags, separate Dawn and capital scenes and static diplomacy. See [the art report and preview](docs/ArchivedArtReport.md). Native unit/building world models remain inherited. [Source contracts and testing](docs/ArchivedDailyTesting.md) distinguish actual SQLite/Lua51/package checks from **native Civ V acceptance, which has not been run**. See the [implementation report](docs/ArchivedDailyImplementationReport.md) and `tools/Validation.json` for the final inventory/results. The manifest contains **49 SQL activation actions and ten gameplay contexts**, each exactly once.
 
 The original GUID `70d794f7-4fb2-4196-9709-8193f8ee36a9`, version 1, save minimum 1 and existing save record formats are preserved. New namespaced Curio records do not alter existing records. **Start a new game for the new civilizations. Existing-save compatibility has not been acceptance-tested.** Owner-turn reconciliation is post-economy and affects the next payout. Native combat/route/archaeology dispatch and real save serialization still require acceptance.
 
@@ -107,7 +107,7 @@ python tools/generate_summer_ui.py
 python tools/build_art.py
 python tools/build_timetable_art.py
 python tools/build_covenant_art.py
-python tools/build_paleo_art.py
+python tools/build_daily_art.py
 python tools/paleo_fixture.py --fetch  # first-time PALEO source references
 python tools/archived_fixture.py --fetch  # pinned trade-route lifecycle reference
 python tools/validate_paleo.py

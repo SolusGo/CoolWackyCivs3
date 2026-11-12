@@ -1,0 +1,53 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Leader",
+      "source": "TheKingdomOfMakuria/Art/Sources/Leader.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Historically inspired portrait of Merkurios, king of medieval Christian Nubia, not an exact archaeological reconstruction. A powerful broad-shouldered Black Nubian man in his early forties, deep dark-brown skin, wide-set almond eyes, strong broad nose, square clean-shaven jaw, short tightly coiled black hair and NO beard. A restrained gold diadem with small Christian cross and fine hanging gold pendilia; vivid ivory ceremonial robe with geometric red-ochre embroidered crosses, narrow lapis-blue shoulder mantle and broad gold collar. He sits upright with one hand on a carved ivory armrest, a calm direct self-possessed expression. Behind him sun-warmed Old Dongola stone columns, a red/ivory painted Christian mural and a sliver of Nile blue. Landscape 4:3, waist-up centered leader with face upper center, clear distinctive face. Avoid Egyptian pharaoh costume, European plate armor, European pointed crown, turban, fantasy magic, huge beard or generic wizard. Warm terracotta and ivory light."
+    },
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Emblem",
+      "source": "TheKingdomOfMakuria/Art/Sources/Emblem.png",
+      "transparent": true,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Square transparent heraldic emblem for Kingdom of Makuria, historically inspired game heraldry. One broad gold equal-armed Christian cross above a compact red-ochre crenellated city wall, crossed Nubian wooden bows behind it, small lapis enamel insets. Majestic bold simple silhouette, ivory and aged gold materials. No European crown, no pharaonic symbols, no circle or outer frame, no text. Transparent outside emblem."
+    },
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Unit",
+      "source": "TheKingdomOfMakuria/Art/Sources/Unit.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Nubian Bowman of medieval Christian Makuria, a watchful young Black Nubian archer with deep brown skin, short tightly coiled hair, plain ivory tunic with a narrow red cross-embroidered border, leather forearm guard, a large recurved wooden bow and leather quiver. Historically inspired light equipment, no fantasy plate armor, no pharaonic headdress. Square chest-up unit portrait, sunlit stone Walls of Dongola and Nile blue behind, red ochre, ivory, lapis accents."
+    },
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Building",
+      "source": "TheKingdomOfMakuria/Art/Sources/Building.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Painted Church of medieval Christian Nubia: a modest monumental pale sandstone and mud-brick church in Old Dongola, barrel-vaulted and domed roof, shaded entrance revealing rich red-ochre and ivory Christian wall paintings with simple gold halos and crosses, woven doorway curtain, date palms and Nile light. Historically inspired architecture, no European Gothic spires, no minaret, no Egyptian pyramids. Square three-quarter building portrait, warm terracotta, ivory and lapis-blue sky."
+    },
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Dawn",
+      "source": "TheKingdomOfMakuria/Art/Sources/Dawn.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 historically inspired scene of medieval Christian Old Dongola, capital of Makuria. Massive sunlit mud-brick city walls beside the blue Nile, pale stone and red-ochre churches with domes and painted Christian entrances, white-sailed river boats, palms and townspeople in light linen. A small clean-shaven Black Nubian king in ivory and red-cross embroidered robes and a modest gold diadem watches from a foreground terrace. Serene strong African kingdom, no pyramids, minarets, Gothic castles or fantasy magic; ivory, terracotta, lapis blue."
+    },
+    {
+      "code": "MAKURIA",
+      "folder": "TheKingdomOfMakuria",
+      "kind": "Capital",
+      "source": "TheKingdomOfMakuria/Art/Sources/Capital.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 architectural panorama of Old Dongola in medieval Christian Nubia: a central pale sandstone church with domed vaults, fortified mud-brick walls and the blue Nile beyond, clusters of red-ochre dwellings, palms, boats with white triangular sails and textile awnings. Central church and gate remain clear in a vertical crop. Historically inspired restrained reconstruction, no invented giant statues, pyramids or Gothic skyline. Warm sunlight, ivory and red ochre, no large leader."
+    }
+  ]
+}

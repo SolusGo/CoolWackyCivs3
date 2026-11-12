@@ -58,7 +58,7 @@ CP151 `PlayerDoTurn` is **post-economy**; repairs at that checkpoint govern the 
 
 ## Artwork and build
 
-Four original PNG illustrations were generated with the built-in imagegen tool: Othmar in the museum, ammonite emblem, expedition and Museum. Full prompts are retained in [Art/Sources/Prompts.json](Art/Sources/Prompts.json). The deterministic compiler supplies a white ammonite alpha/unit flag, portraits, static leader/Dawn scene and a museum image for the fictional capital panel. All **57 DDS files** use legacy uncompressed BGRA8888 with declared dimensions; the 54 atlas textures have full mip chains and transparency. Native Archaeologist/Museum **world models** remain inherited; there is no animated custom leader model or recorded speech. No required asset is unfinished or an empty/corrupt placeholder.
+Six new original illustrations redesign Othmar and the Directorate: a stout bald scholar with enormous monocle, wild white side-whiskers, vermilion waistcoat and a treasured ammonite; plus a new emblem, expedition, Museum, separate Dawn and capital. Full prompts are retained in [Art/Sources/Prompts.json](Art/Sources/Prompts.json). The shared deterministic compiler produces all **57 DDS files**, six gold-rimmed/alpha/flag atlas families and three distinct scene images, using legacy BGRA8888 and full icon mips. Native Archaeologist/Museum **world models** remain inherited; diplomacy is static, without a custom animated model or recorded speech. See [the art guide](Art/README.md).
 
 From `Wacky3`, using the repository environment or installed `requirements-dev.txt`:
 
@@ -75,6 +75,6 @@ The installable ZIP is `dist/Cool Wacky Civs 3 (v 1).zip`. Extract its contained
 
 ## Delivered files and remaining work
 
-This directory contains the five SQL files, Lua/XML context, 57 DDS textures, leader-scene XML, four PNG masters, alpha/review PNGs, prompts and these two guides. New developer files are `generate_paleo.py`, `build_paleo_art.py`, `paleo_fixture.py`, `paleo_sources.json`, `validate_paleo.py` and `tests/paleo.lua`. Necessary shared changes are loader/manifest registration, fixture/test integration and the roster documentation. No other civilization implementation changed.
+This directory contains the five SQL files, Lua/XML context, 57 DDS textures, leader-scene XML, six PNG masters, alpha/review PNGs, prompts and these two guides. New developer files are `generate_paleo.py`, `build_paleo_art.py`, `paleo_fixture.py`, `paleo_sources.json`, `validate_paleo.py` and `tests/paleo.lua`. Necessary shared changes are loader/manifest registration, fixture/test integration and the roster documentation. No other civilization implementation changed.
 
 **No unresolved excavation-interface blocker remains.** Remaining work is native acceptance of selection/UI/art, actual archaeological event dispatch/choice preservation, economic timing and engine save serialization, following [TESTING.md](TESTING.md). Source proof and mocks do not constitute an in-game pass.

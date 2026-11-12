@@ -24,10 +24,11 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="27E343B7E8293C4CF08F1F43F3E1956C" import="0">CHANGELOG.md</File>
-    <File md5="E9EEB7B049DADDD0B427C5CDD871ACE6" import="0">docs/ArchivedDailyImplementationReport.md</File>
-    <File md5="03B573FCDABC45EFC77DFFC17E7098A9" import="0">docs/ArchivedDailyTesting.md</File>
-    <File md5="27B476B44E10E187A39320DD0DBC1AE0" import="0">docs/Compatibility.md</File>
+    <File md5="4E0379EB732F2EE97A9C93EF7BD2BD55" import="0">CHANGELOG.md</File>
+    <File md5="5F6CBA5DCFFF3271015E58B93CA3D997" import="0">docs/ArchivedArtReport.md</File>
+    <File md5="48A5EB647CFE46BAD877C66350D53A50" import="0">docs/ArchivedDailyImplementationReport.md</File>
+    <File md5="853476BB03CBAFD8D809EA6503C89A8A" import="0">docs/ArchivedDailyTesting.md</File>
+    <File md5="C47421500AD9E0D2FF34F2F4C6D9A3BF" import="0">docs/Compatibility.md</File>
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
@@ -46,20 +47,79 @@
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
     <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
     <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
-    <File md5="45DFB73286E561D96B7B88AF5B82E7ED" import="0">README.md</File>
+    <File md5="EE0C4CB6C7513C19D86889644EF6E0B3" import="0">README.md</File>
     <File md5="52EA2FDE8282ADF49A185B53B3EC6314" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
-    <File md5="4D1C6EF84AB4079D8D2CFC9D1CAF5B34" import="0">TheAssemblyOfScarecrows/Art/README.md</File>
+    <File md5="1FA3CF951780861A7DF129C7510C4C01" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha128.dds</File>
+    <File md5="5ABA3F2A2D36D130098B89466F64DB8D" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha16.dds</File>
+    <File md5="414D12FE5E6C424B95FECEC4D8763F03" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha24.dds</File>
+    <File md5="64FF3101D50B2480D97F29A45AB24DDE" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha256.dds</File>
+    <File md5="0184D8E341FD5FF7962AA692D1332E51" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha32.dds</File>
+    <File md5="47E958CE31FFFD5E230305252C532F21" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha45.dds</File>
+    <File md5="D2C43B64467A7CE165DE728795270FE4" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha48.dds</File>
+    <File md5="71B6FBB230D80B385129AC10581043AC" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha64.dds</File>
+    <File md5="D2FD17EDEB8DA1428202EA94DE812C36" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha80.dds</File>
+    <File md5="1BD8A7CBCE8B81BACE7999499C73430A" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building128.dds</File>
+    <File md5="DA6E6D8F123B55C7AA9395F9C898A6C2" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building16.dds</File>
+    <File md5="8BE7BEBF3CBCDE6FAFE07E5B3D2B9C2E" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building24.dds</File>
+    <File md5="893FCB2275ED24CC0C04A15D1FE7580E" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building256.dds</File>
+    <File md5="9FFD2EF80C1AA9647B4034120263E3D0" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building32.dds</File>
+    <File md5="515525A89A47911FF62532B5F702D91A" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building45.dds</File>
+    <File md5="509597B0996B019D44D9C196AA7B0A5A" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building48.dds</File>
+    <File md5="0A69FDF7E5C43B07A7B31F6E53741F33" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building64.dds</File>
+    <File md5="3C28636567DF5766AD033C343144AB7C" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Building80.dds</File>
+    <File md5="E6C7F7E1103D65357F005A1C8AF47309" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ128.dds</File>
+    <File md5="E823324807099F7983BBB359C7A4A0AA" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ16.dds</File>
+    <File md5="BF4C6BC8DF6B1C08D250CCE5DD9FFCCF" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ24.dds</File>
+    <File md5="07238584F51376FAF0219D599B5C643C" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ256.dds</File>
+    <File md5="3AE9412A3A7C8F4E1AEFBDBA58851E7C" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ32.dds</File>
+    <File md5="4451A3C39E1C952BD2894CAC90C006DD" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ45.dds</File>
+    <File md5="530A6F31B0999237FFF3582B1997E0F7" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ48.dds</File>
+    <File md5="9B639EB11E478634107DDA409D31CF73" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ64.dds</File>
+    <File md5="051B34994E8A2487110CD61DFD30CADE" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Civ80.dds</File>
+    <File md5="3782AE90BCC70F3947E1B5719B0ED7F7" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Dawn.dds</File>
+    <File md5="1FA3CF951780861A7DF129C7510C4C01" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag128.dds</File>
+    <File md5="5ABA3F2A2D36D130098B89466F64DB8D" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag16.dds</File>
+    <File md5="414D12FE5E6C424B95FECEC4D8763F03" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag24.dds</File>
+    <File md5="64FF3101D50B2480D97F29A45AB24DDE" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag256.dds</File>
+    <File md5="0184D8E341FD5FF7962AA692D1332E51" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag32.dds</File>
+    <File md5="47E958CE31FFFD5E230305252C532F21" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag45.dds</File>
+    <File md5="D2C43B64467A7CE165DE728795270FE4" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag48.dds</File>
+    <File md5="71B6FBB230D80B385129AC10581043AC" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag64.dds</File>
+    <File md5="D2FD17EDEB8DA1428202EA94DE812C36" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag80.dds</File>
+    <File md5="BE031D125B97E3BAC98EF1CAE7A3D385" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader.dds</File>
+    <File md5="18EF7CE0E22365181EAA5A05C72BB1BA" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader128.dds</File>
+    <File md5="85E395FECA36AB9E6D0EE3CF7177E645" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader16.dds</File>
+    <File md5="AF6CA030F43E30ADD05A9BB998364F44" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader24.dds</File>
+    <File md5="7BECBD39444BA9736404896453562567" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader256.dds</File>
+    <File md5="CD21CB99C1ACE11178F116701EDA3643" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader32.dds</File>
+    <File md5="15B36698BEEE0F6ADA484FB32A2BFFC5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader45.dds</File>
+    <File md5="94A3A6BA40AEB9331C22A77626E99B62" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader48.dds</File>
+    <File md5="DB69CA57798650F50703F1E0522C829B" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader64.dds</File>
+    <File md5="F1133E806EB8F7E1EE5F40480C8AF743" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader80.dds</File>
+    <File md5="1C2617152A7FB46863BCFACF42DD88D5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_LeaderScene.xml</File>
+    <File md5="1B4C1495B2BC21A0D71DC5AC2B314FA5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Map.dds</File>
+    <File md5="D8A4F59905BD04DE0F7DEA00075EEA30" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit128.dds</File>
+    <File md5="658CD6993710CA522A4D657AD6ABC13A" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit16.dds</File>
+    <File md5="A1181A6BDDD1105C75B9016890A5BA77" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit24.dds</File>
+    <File md5="38C434297E5A8A9D358433CC98C4B230" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit256.dds</File>
+    <File md5="C24EA35D70DE60267E94304FF07259EA" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit32.dds</File>
+    <File md5="2081ECB871A70BCA69C333D1CEB9CD9F" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit45.dds</File>
+    <File md5="A54792024469FB8C561D6C3A1A79FBDD" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit48.dds</File>
+    <File md5="D0B4C63F3C2AAEAA09E00735E1B76526" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit64.dds</File>
+    <File md5="CB0C6B95864AC8AB99C12B084756516A" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit80.dds</File>
+    <File md5="47AFDD372352FFA82F98198605810119" import="0">TheAssemblyOfScarecrows/Art/README.md</File>
     <File md5="67B00BF89A4A583214DD22362BC01631" import="1">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.lua</File>
     <File md5="61DE31DAF3665796E81A3418C4C8C209" import="0">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.xml</File>
-    <File md5="C70D637D29630BB2B10F4909092D1BA3" import="0">TheAssemblyOfScarecrows/README.md</File>
-    <File md5="F40070526D10C8739EC6B0D17D7ED7D0" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</File>
-    <File md5="E6C52B050870923D4A5EF57CB001F845" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</File>
+    <File md5="3040DF9D6504F0E6FAA41AFAFB37A616" import="0">TheAssemblyOfScarecrows/README.md</File>
+    <File md5="4AA8E46B39E2F3710C1886AE4262C8C9" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Art.sql</File>
+    <File md5="6821DFBB542CB46997527BE390078E61" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</File>
+    <File md5="2C67B0BD5FD58A0362E86898E23F6BEA" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</File>
     <File md5="1AA1B309BE310A8853F91F95F0BC22F7" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Text.sql</File>
-    <File md5="FBBF007CCF14516C4FA0343AD1B5528A" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Units.sql</File>
-    <File md5="2625725790EFC7895808766F7C4134AF" import="0">TheAssemblyOfScarecrows/TESTING.md</File>
+    <File md5="B4FE9B67D5CADB892AFD89D92A4B5D2D" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Units.sql</File>
+    <File md5="4468696D289E8DE1562EE38E293BFC88" import="0">TheAssemblyOfScarecrows/TESTING.md</File>
     <File md5="603C10C407C18C3D88AB1C94A3158FF8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha128.dds</File>
     <File md5="165FEAB3D7F1100CF9B02B3A85CA33D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha16.dds</File>
     <File md5="30CA3F302658F5ECA90D083F7CF599A8" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha24.dds</File>
@@ -99,15 +159,74 @@
     <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
     <File md5="0BF1C473499B2EE8A8EBE4C33600266A" import="0">TheCandlekeepersCovenant/SQL/Covenant_Text.sql</File>
     <File md5="E4EE4E4438ADD5879E42D2F9CDFA770F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Units.sql</File>
-    <File md5="31295A1638DE02CB3B7452A885A5F8C9" import="0">TheDepartmentOfLostThings/Art/README.md</File>
+    <File md5="9FBF3758B940E18DF6CDA5897E903E0C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha128.dds</File>
+    <File md5="1A1F391DE43393FDB56870BF6E413E54" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha16.dds</File>
+    <File md5="F2329D37B72C526BFE048D65AF96105F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha24.dds</File>
+    <File md5="14F2E9DE900C3FB7F62E71C3FD8E0E9C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha256.dds</File>
+    <File md5="F8ACDDE2646662941BC72F4B41343A61" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha32.dds</File>
+    <File md5="6B49BF4881FB82A8611F36F1BB9DEADE" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha45.dds</File>
+    <File md5="93938D72255508E794737CB60450C6BF" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha48.dds</File>
+    <File md5="1DAC6E50CA192CFACCC59CA09208D9AD" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha64.dds</File>
+    <File md5="41B6940BE7EBFCE837E6E438E62FDF3A" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha80.dds</File>
+    <File md5="AE1282F2C7923D10C09E393AF3691949" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building128.dds</File>
+    <File md5="0A29F9844089D963FDECB37BD507950F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building16.dds</File>
+    <File md5="DF69CF53145FBF6CDF750D816555ACD8" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building24.dds</File>
+    <File md5="298ED437E65DFFFFAFF573921051AB40" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building256.dds</File>
+    <File md5="FE04182D37C7FFB0140741A3C17299C0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building32.dds</File>
+    <File md5="60004665802ACF120EDBD65A4426A752" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building45.dds</File>
+    <File md5="B63910A88C21BB2C7EAFEA12F292B30E" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building48.dds</File>
+    <File md5="F953B2EEAD772195683FE4F5E45A34B0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building64.dds</File>
+    <File md5="E25507089602919F5ABC1EF856EB13EB" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Building80.dds</File>
+    <File md5="2BD9262881600E8496BCE2982F4D6330" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ128.dds</File>
+    <File md5="D81F008ADB35E2875D516DA5BD0FAA3E" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ16.dds</File>
+    <File md5="C5E2911DA99F7020E3751487DD013A37" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ24.dds</File>
+    <File md5="A5DA220069242A64ED66EE72B512F3C6" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ256.dds</File>
+    <File md5="12E7C0B6AEEAF978CAC85BFB6A7F6D21" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ32.dds</File>
+    <File md5="342B64750BFFBC343CADCAA15F0BD99B" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ45.dds</File>
+    <File md5="C19963BA3496426B88F6BE5E604A0D6A" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ48.dds</File>
+    <File md5="D460367D71C8B3A59AF9E7665A024A40" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ64.dds</File>
+    <File md5="580FD03506FED156895BCE850AF19E8E" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Civ80.dds</File>
+    <File md5="F4DCCE50790DB86C4F5C3283C9FFC92B" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Dawn.dds</File>
+    <File md5="9FBF3758B940E18DF6CDA5897E903E0C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag128.dds</File>
+    <File md5="1A1F391DE43393FDB56870BF6E413E54" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag16.dds</File>
+    <File md5="F2329D37B72C526BFE048D65AF96105F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag24.dds</File>
+    <File md5="14F2E9DE900C3FB7F62E71C3FD8E0E9C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag256.dds</File>
+    <File md5="F8ACDDE2646662941BC72F4B41343A61" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag32.dds</File>
+    <File md5="6B49BF4881FB82A8611F36F1BB9DEADE" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag45.dds</File>
+    <File md5="93938D72255508E794737CB60450C6BF" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag48.dds</File>
+    <File md5="1DAC6E50CA192CFACCC59CA09208D9AD" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag64.dds</File>
+    <File md5="41B6940BE7EBFCE837E6E438E62FDF3A" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag80.dds</File>
+    <File md5="25F1C307626AC388C8542E6AF905DEF0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader.dds</File>
+    <File md5="DD541E79C9B49AE3577FE3D9B0CAF2E2" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader128.dds</File>
+    <File md5="07D855563113A20FC03EA49AD6FF38BE" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader16.dds</File>
+    <File md5="05E53B56D6F44B6CFD7E11A6CE6A398F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader24.dds</File>
+    <File md5="C87A619545441D18DCF7B81A48AF0F6D" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader256.dds</File>
+    <File md5="3835A767390982BFB5E33B981187F222" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader32.dds</File>
+    <File md5="B5C89A4880E0ABE511277566E03FA3D9" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader45.dds</File>
+    <File md5="11E94708B9F13A5A93CB640540D2A6F1" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader48.dds</File>
+    <File md5="0E1B572F1B4AD5A630A88AC41473FB13" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader64.dds</File>
+    <File md5="6BD1B88523DC5D08E2CD74D7023A82AD" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader80.dds</File>
+    <File md5="A6E693290C7639BEC0DBE4690114F38C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_LeaderScene.xml</File>
+    <File md5="403EE7C573D5C613F344EF01B20B4AB0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Map.dds</File>
+    <File md5="31DC649014AE56B11FF530A92D666959" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit128.dds</File>
+    <File md5="CCCA71BE3C9AA9D2E1FA5EA851E67835" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit16.dds</File>
+    <File md5="2504E93AFBA13E976A1BE4089787EBDE" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit24.dds</File>
+    <File md5="35FBB3A4B4C7FF444187AF11F443F98C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit256.dds</File>
+    <File md5="CBE4EB03D75DD5517C3559370DF0D22E" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit32.dds</File>
+    <File md5="30B0581CCBAF1A0BAFA4A2905B4CD6DA" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit45.dds</File>
+    <File md5="5872EEB328AF3C53985654EC435BAFD3" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit48.dds</File>
+    <File md5="022D8495DDE9226FB24567A9103CBDB6" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit64.dds</File>
+    <File md5="6EF7182CD20BAE3F36860534DE4AAE06" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit80.dds</File>
+    <File md5="51FDCBE6664D27793E8A9606EA7E3FF3" import="0">TheDepartmentOfLostThings/Art/README.md</File>
     <File md5="D37FE12FEF4F0C91CA154B8464574EA3" import="1">TheDepartmentOfLostThings/Lua/LOST_Gameplay.lua</File>
     <File md5="344CF632023887763195E0AA6B983077" import="0">TheDepartmentOfLostThings/Lua/LOST_Gameplay.xml</File>
-    <File md5="152433B5D7D9033D8B83C9287FD7046D" import="0">TheDepartmentOfLostThings/README.md</File>
-    <File md5="9BED9DA1D48C37B0C93558AFF9A27A1A" import="0">TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</File>
-    <File md5="867BD0627760A657BB033A53800DE6E7" import="0">TheDepartmentOfLostThings/SQL/LOST_Civilization.sql</File>
+    <File md5="13FF64429BC694E587B970D509FEB639" import="0">TheDepartmentOfLostThings/README.md</File>
+    <File md5="90F5B9BDF71F65D9A7ACC30DA24B9137" import="0">TheDepartmentOfLostThings/SQL/LOST_Art.sql</File>
+    <File md5="B94C52DC0E34F53A696B47E295B6F867" import="0">TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</File>
+    <File md5="310A6153C9FF28C8C62429F2E00792C7" import="0">TheDepartmentOfLostThings/SQL/LOST_Civilization.sql</File>
     <File md5="5BB8D25B3982035C1A04BB18798C34CF" import="0">TheDepartmentOfLostThings/SQL/LOST_Text.sql</File>
-    <File md5="D413D218D5F2B314F0C5E0A5BF057BE6" import="0">TheDepartmentOfLostThings/SQL/LOST_Units.sql</File>
-    <File md5="BAF0BD2CBA3949CEFEFC40A37AC33D45" import="0">TheDepartmentOfLostThings/TESTING.md</File>
+    <File md5="41A2422847787D9BAB26059C03A93EE3" import="0">TheDepartmentOfLostThings/SQL/LOST_Units.sql</File>
+    <File md5="B9DB7FC03D22CDBAF289CB725CE73F6E" import="0">TheDepartmentOfLostThings/TESTING.md</File>
     <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
@@ -115,15 +234,74 @@
     <File md5="0973E6C8D98469D2B5B896937864A3DF" import="0">TheHollowChoir/SQL/Choir_Civilization.sql</File>
     <File md5="86709CF10495B6CA15EF422E6C7B1BBD" import="0">TheHollowChoir/SQL/Choir_Text.sql</File>
     <File md5="4FD1291E75B41175C13CD96896C6DBE9" import="0">TheHollowChoir/SQL/Choir_Units.sql</File>
-    <File md5="D279FC3058F8DBF25FA77EA2E751F75F" import="0">TheKingdomOfMakuria/Art/README.md</File>
+    <File md5="B28B7B184075F0B626C69D880BAA7D5C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha128.dds</File>
+    <File md5="B9C937FB8F529999EDB49B81695077D3" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha16.dds</File>
+    <File md5="4C6F45F37C5E2E1333AAD383F23A8CAE" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha24.dds</File>
+    <File md5="5E822BFF424A44962ADB8D0213411B11" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha256.dds</File>
+    <File md5="D27AA0F1452411F3D2A0D5C320977F2A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha32.dds</File>
+    <File md5="F26A56114C00F808B7655CF5F1AAA51A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha45.dds</File>
+    <File md5="3443CE6D80109F13657A3F4EE0DD2B0A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha48.dds</File>
+    <File md5="CBFCCF03C010528A77C78F945A817773" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha64.dds</File>
+    <File md5="C92DA1FDE21672991E10D46EC195192C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Alpha80.dds</File>
+    <File md5="480228FB1CAFE8A2FF52A35D402F0B1E" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building128.dds</File>
+    <File md5="1DDBA45BA6CD7BC65952573A7EEC9896" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building16.dds</File>
+    <File md5="3C35BC4F8BA4BEE462DE4570292B56F1" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building24.dds</File>
+    <File md5="488639176C66454FE22F2E5F50D694DD" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building256.dds</File>
+    <File md5="E9C2B83F52E9E772ABDA08484583B957" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building32.dds</File>
+    <File md5="A18D6D0142ABF90A02CBED8276C28077" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building45.dds</File>
+    <File md5="F0E906DD0C4B76B8F3F4F1152A6699F9" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building48.dds</File>
+    <File md5="B3D56324453BBF2D2FFF4E3DDBDEED34" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building64.dds</File>
+    <File md5="99D783E25A1A0D595569FB792D12B553" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Building80.dds</File>
+    <File md5="8FE8E451E1527117254A811D9CBAEA31" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ128.dds</File>
+    <File md5="3428A57945BE471087CCE85CD8BD4E2B" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ16.dds</File>
+    <File md5="0EAB452F56F764B5EAFA64A5328B566A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ24.dds</File>
+    <File md5="53C6A506976D177CE6D56BFCD963B4EE" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ256.dds</File>
+    <File md5="3ADCCA9E120F75C51ED796D8299830B2" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ32.dds</File>
+    <File md5="D89F797B471AB87F7F3DF62B6666B84E" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ45.dds</File>
+    <File md5="FB4019ADFDEE9228B62C63FE7B7301A7" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ48.dds</File>
+    <File md5="4296313AB00EEF62F7B81BA7B4604DD4" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ64.dds</File>
+    <File md5="ADC7B16D6117065A439A5E016D3E7611" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Civ80.dds</File>
+    <File md5="B5DB4D5BBF7B0DC913CF11E7271F7B9C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Dawn.dds</File>
+    <File md5="B28B7B184075F0B626C69D880BAA7D5C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag128.dds</File>
+    <File md5="B9C937FB8F529999EDB49B81695077D3" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag16.dds</File>
+    <File md5="4C6F45F37C5E2E1333AAD383F23A8CAE" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag24.dds</File>
+    <File md5="5E822BFF424A44962ADB8D0213411B11" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag256.dds</File>
+    <File md5="D27AA0F1452411F3D2A0D5C320977F2A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag32.dds</File>
+    <File md5="F26A56114C00F808B7655CF5F1AAA51A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag45.dds</File>
+    <File md5="3443CE6D80109F13657A3F4EE0DD2B0A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag48.dds</File>
+    <File md5="CBFCCF03C010528A77C78F945A817773" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag64.dds</File>
+    <File md5="C92DA1FDE21672991E10D46EC195192C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag80.dds</File>
+    <File md5="637752839DC77655FEDCD0EA05CB9FF6" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader.dds</File>
+    <File md5="6CD7A7959A972436A4F8F8185ADB1A77" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader128.dds</File>
+    <File md5="99DB7478E313CFAF6895657E9EDC7D2D" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader16.dds</File>
+    <File md5="980B22DE23EB993E0D08B45BBBC03884" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader24.dds</File>
+    <File md5="BC978C92AEAE41A5E2148C269493645E" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader256.dds</File>
+    <File md5="5B2356432FFF1E80C0A4502E8DED6813" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader32.dds</File>
+    <File md5="2DBBADC1948E21456B4A377B534C6AF7" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader45.dds</File>
+    <File md5="DD3A04155B5921E4F26388FFB6698D16" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader48.dds</File>
+    <File md5="3E219EEEFD05FC13CFABD20D7A20B482" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader64.dds</File>
+    <File md5="DF25EAB09681A99BA5D8CE4C1CBC46CC" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader80.dds</File>
+    <File md5="0B509B9099FD0A958677B594DAACE682" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_LeaderScene.xml</File>
+    <File md5="C63B561FC5EA5F2FF9E839AAE2DD5019" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Map.dds</File>
+    <File md5="78F4C15F83A0EE929BCA4236EB2CC5B5" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit128.dds</File>
+    <File md5="A92CB22B3628A2992C05D1C57D91BC07" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit16.dds</File>
+    <File md5="B721C72EA475C5FA1C9458B769FB7DD1" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit24.dds</File>
+    <File md5="C9FCF22CCBABBA77239896AE9061EA2F" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit256.dds</File>
+    <File md5="CF7260CD582DAF3B174E558471F04F13" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit32.dds</File>
+    <File md5="2335AE31A3660E6D7337915BCCF5A0C2" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit45.dds</File>
+    <File md5="9ED9F1A744AB9E5D7F7C8CDC0DC478ED" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit48.dds</File>
+    <File md5="806112A0368524CF54FE0FE14525CB60" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit64.dds</File>
+    <File md5="00A7D86FCEBAA915437D0B2D09DD761A" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit80.dds</File>
+    <File md5="57DAB562C359F3256DA59E309F3A8B46" import="0">TheKingdomOfMakuria/Art/README.md</File>
     <File md5="AAA322AF970495CE3B3122E100AF9503" import="1">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.lua</File>
     <File md5="A6BE208D963A5E973101AE30B0422150" import="0">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.xml</File>
-    <File md5="026CF373F278EDE4A6B42DE67964B142" import="0">TheKingdomOfMakuria/README.md</File>
-    <File md5="5B7FD194DEB0B43C0260D939A62BC2F5" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</File>
-    <File md5="D6215D9B6787E4BDCA25BDCDBD2F8088" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</File>
+    <File md5="DB9DB2E059F590911C401761FBB74850" import="0">TheKingdomOfMakuria/README.md</File>
+    <File md5="853150496B850B4BDE684D6E8AD0AFFF" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Art.sql</File>
+    <File md5="5AF102C519C31507DAE28846D6B3EFEB" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</File>
+    <File md5="F030E420EFC7DCE0DA14E8E2B6527166" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</File>
     <File md5="45D87B43A99DF985CE1A2F17956C8B2D" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Text.sql</File>
-    <File md5="7CD5E45C25FC878A1599F917DEE83604" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</File>
-    <File md5="FA6698CC31CA9B47B4AE7AA089CB816B" import="0">TheKingdomOfMakuria/TESTING.md</File>
+    <File md5="82D128A6669ADF3C7FFEF140EE2A1DC9" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</File>
+    <File md5="861F5AFE262334AAF49C11DC566F05D6" import="0">TheKingdomOfMakuria/TESTING.md</File>
     <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
     <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
     <File md5="50805CCEF4FF840FEB1E2FD751DAD07F" import="1">TheMinistryOfAlmost/Art/CWC3_Academy24.dds</File>
@@ -181,71 +359,72 @@
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
-    <File md5="7A0E2EA4DE7E4E8D1BBBB9F01FBAF929" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha128.dds</File>
-    <File md5="FA85A67E9628589E9944A6993C63C65C" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha16.dds</File>
-    <File md5="8083CE749A48BD2BC6599F0830CDAD08" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha24.dds</File>
-    <File md5="015DC76A90CE151F1D3F1514E9313519" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha256.dds</File>
-    <File md5="14AE8FF657CFD28FDE30902AEB161223" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha32.dds</File>
-    <File md5="797C75EFCFF0F3B189F9CEA2E5606242" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha45.dds</File>
-    <File md5="0103CF5ADCF460854F6859D247E7722A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha48.dds</File>
-    <File md5="CFB927310A81C8AB0EA6D87FC0E17FCA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha64.dds</File>
-    <File md5="6DC2C24FB4199395DCBEF99348280C8B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha80.dds</File>
-    <File md5="EFF935DD510A39567A5540B7C3C25156" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ128.dds</File>
-    <File md5="41C1EDF7A58DE5C0628E984DFA24711D" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ16.dds</File>
-    <File md5="06C48C7BB118279140B76139DE05853F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ24.dds</File>
-    <File md5="8A0C79B089F95EC37283825144AC1208" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ256.dds</File>
-    <File md5="FE3715C47C096420090C91F31E9A95AF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ32.dds</File>
-    <File md5="B926CFAAA765418BEF6F6C08C0F63D1F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ45.dds</File>
-    <File md5="D94CCCE6ABC77D1C6D8CE5379DD01B47" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ48.dds</File>
-    <File md5="196B0AE39D4FB566F29B61AB12AE3C7A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ64.dds</File>
-    <File md5="E0E7DF4C70E9436C543B102C84CCD3DC" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ80.dds</File>
-    <File md5="B7A2B55C579EB6E3E0CBCE49E69B643A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Dawn.dds</File>
-    <File md5="7A0E2EA4DE7E4E8D1BBBB9F01FBAF929" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag128.dds</File>
-    <File md5="FA85A67E9628589E9944A6993C63C65C" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag16.dds</File>
-    <File md5="8083CE749A48BD2BC6599F0830CDAD08" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag24.dds</File>
-    <File md5="015DC76A90CE151F1D3F1514E9313519" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag256.dds</File>
-    <File md5="14AE8FF657CFD28FDE30902AEB161223" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag32.dds</File>
-    <File md5="797C75EFCFF0F3B189F9CEA2E5606242" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag45.dds</File>
-    <File md5="0103CF5ADCF460854F6859D247E7722A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag48.dds</File>
-    <File md5="CFB927310A81C8AB0EA6D87FC0E17FCA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag64.dds</File>
-    <File md5="6DC2C24FB4199395DCBEF99348280C8B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag80.dds</File>
-    <File md5="4FA5A7A66FF0ED9EB3DDB55B51E483F9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader.dds</File>
-    <File md5="3AF50537BAECD9B42114CFE523954942" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader128.dds</File>
-    <File md5="F496BEC2381479B04A5769181E93C77A" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader16.dds</File>
-    <File md5="2748F02F04F1404157F63268313E5C4E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader24.dds</File>
-    <File md5="9791AD11B0E18F54E87CE31B6B821E78" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader256.dds</File>
-    <File md5="7FD42728CD6AA8D32D20953FA0E0BB04" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader32.dds</File>
-    <File md5="FF61C3074FE1A34FD8DB29571F6CD832" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader45.dds</File>
-    <File md5="EBAED806270AAA38FF2E0D54F67F3AD3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader48.dds</File>
-    <File md5="BAFBBED5BE42F07350F7DAA769720428" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader64.dds</File>
-    <File md5="9E28CB17146CA544481B4381484C3450" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader80.dds</File>
+    <File md5="908CBD6430FD66685DC337CA054772E3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha128.dds</File>
+    <File md5="1FEAF74602414817B920829AE29F356B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha16.dds</File>
+    <File md5="D2E9D821A06F0B16064CC2679149D212" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha24.dds</File>
+    <File md5="33D7A7D473A3207BBDD6D0B041940017" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha256.dds</File>
+    <File md5="326EA85C95E7806A0D0CB6475DBBBDFD" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha32.dds</File>
+    <File md5="574A84AED0617B53BAE8C52029EEAAC3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha45.dds</File>
+    <File md5="204F0742D4A521F0A49356A2294FD0CA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha48.dds</File>
+    <File md5="3F29A0E09F174A55BFD6813EC9E9C0C9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha64.dds</File>
+    <File md5="5F60F967F86ED22D724EA731E4FBF53E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha80.dds</File>
+    <File md5="47DE04016A8CBB393EB94EB6F38C47E7" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ128.dds</File>
+    <File md5="362F1F09D56C972F8B639EB6E6BBC9A9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ16.dds</File>
+    <File md5="B2CEBA8383657AF40BBD478E451B6DD4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ24.dds</File>
+    <File md5="46B8FDA70A1CC30FC6C06B95B405E37F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ256.dds</File>
+    <File md5="DDCE547ED2F83AD081F7A66F3B789FE5" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ32.dds</File>
+    <File md5="197409DCC009070929899BD2F21852A9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ45.dds</File>
+    <File md5="A3C23A275F658BD47ABC1CCD596FB953" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ48.dds</File>
+    <File md5="3B04DD2E46AB76C8682209D004FB34AB" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ64.dds</File>
+    <File md5="485B26FDB902AA6A0C810E6343C05689" import="1">ThePaleontologicalDirectorate/Art/PALEO_Civ80.dds</File>
+    <File md5="C7F369EC0BFD04281C18B910753F2892" import="1">ThePaleontologicalDirectorate/Art/PALEO_Dawn.dds</File>
+    <File md5="908CBD6430FD66685DC337CA054772E3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag128.dds</File>
+    <File md5="1FEAF74602414817B920829AE29F356B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag16.dds</File>
+    <File md5="D2E9D821A06F0B16064CC2679149D212" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag24.dds</File>
+    <File md5="33D7A7D473A3207BBDD6D0B041940017" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag256.dds</File>
+    <File md5="326EA85C95E7806A0D0CB6475DBBBDFD" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag32.dds</File>
+    <File md5="574A84AED0617B53BAE8C52029EEAAC3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag45.dds</File>
+    <File md5="204F0742D4A521F0A49356A2294FD0CA" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag48.dds</File>
+    <File md5="3F29A0E09F174A55BFD6813EC9E9C0C9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag64.dds</File>
+    <File md5="5F60F967F86ED22D724EA731E4FBF53E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag80.dds</File>
+    <File md5="0DC689066695A47AD20AEFE3883EFF17" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader.dds</File>
+    <File md5="7E2F9EF7CAFA0F198954777F22C582B8" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader128.dds</File>
+    <File md5="9F148AA193B1F40CB7B06757932B3839" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader16.dds</File>
+    <File md5="0238A4D6B79580A5A77DD726CCC078F4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader24.dds</File>
+    <File md5="9E1EF8D4E8EFF642E8BDA4268306A922" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader256.dds</File>
+    <File md5="8D82C8935E09A750C3B60F37DC726C9E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader32.dds</File>
+    <File md5="E6F8C2019D3D1F6B93A2416A66E9E5EF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader45.dds</File>
+    <File md5="CD29E36924EDD2755114D9C5495D1EFC" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader48.dds</File>
+    <File md5="771D4D5AD6CFE777E2A0775B6CBF98EE" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader64.dds</File>
+    <File md5="397E7EF45BF14212C74C7431C734B888" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader80.dds</File>
     <File md5="0E02C04C1B99C212500F1FACA4FC06FD" import="1">ThePaleontologicalDirectorate/Art/PALEO_LeaderScene.xml</File>
-    <File md5="440721AA1FF12713276892B5994D5A49" import="1">ThePaleontologicalDirectorate/Art/PALEO_Map.dds</File>
-    <File md5="39F1ADFA1F5747201D64906788EB8D01" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum128.dds</File>
-    <File md5="3A26B087AF0C5C69435302D3196D0835" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum16.dds</File>
-    <File md5="020565D7A66A1C846AEFBB21BDB5A386" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum24.dds</File>
-    <File md5="1CC72B1824EBFA26D5FC04305F3ECBA9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum256.dds</File>
-    <File md5="22BF21D33AD7DA04CBC785FBC9F252F0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum32.dds</File>
-    <File md5="2CD6E14E92393EB5C075523951696AD0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum45.dds</File>
-    <File md5="2FD5376367131226E5962F7298BFFD25" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum48.dds</File>
-    <File md5="84BF335BB8C7C4841B123EB13CAA67B8" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum64.dds</File>
-    <File md5="723EAAFAA31740596F350A1C5BE56F82" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum80.dds</File>
-    <File md5="06FC6E34140A6234D48BA9C9CA2AFCDF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit128.dds</File>
-    <File md5="DDE0127D78F6FB471E9DA04F03970E1F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit16.dds</File>
-    <File md5="256B1894B497CF7AE34880146B4705C2" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit24.dds</File>
-    <File md5="C344CAE5A7A16F0438BE3F1027379452" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit256.dds</File>
-    <File md5="0205F19F23A55B5C3364A29830364EB2" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit32.dds</File>
-    <File md5="DB24985FD955BD0766EBC7F1F9A95834" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit45.dds</File>
-    <File md5="0D5E19BE709F4682ED2A52F19F2C1B68" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit48.dds</File>
-    <File md5="528A04D919B3138297D37A1F737916F4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit64.dds</File>
-    <File md5="79D0FED4D5004390A1C8FE162E499DB1" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit80.dds</File>
+    <File md5="7BE9573AE3D330325C89EEA1816636A0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Map.dds</File>
+    <File md5="8BB3BE289529DE68B3F9B63C296FB2DF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum128.dds</File>
+    <File md5="8584F71280F8F040760FA39BB59C42FD" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum16.dds</File>
+    <File md5="1AC004D366F0696C0D34AE001020D4C4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum24.dds</File>
+    <File md5="9A16D91D656F1028FE1E6C5A8EB7C9B6" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum256.dds</File>
+    <File md5="6F768A25EB2E56DB728CC5336E8A1D91" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum32.dds</File>
+    <File md5="848636B68E063FE78C7CE5BFFE1CA222" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum45.dds</File>
+    <File md5="8182A6623881F301C0D0161D458CD756" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum48.dds</File>
+    <File md5="0B979E4918B82FE153FD7016BD144911" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum64.dds</File>
+    <File md5="830BF0B42D6B7122B4B03080D706FC9D" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum80.dds</File>
+    <File md5="82F1BEBD07B02EBEE3A7EA5E4206ABB3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit128.dds</File>
+    <File md5="28266E8DF4A259E3AB9E02E452B2D3BC" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit16.dds</File>
+    <File md5="72B21A725CC41BF556583FE692D84A35" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit24.dds</File>
+    <File md5="B687099F1F45CB2BE0ECAAF6754C7CC2" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit256.dds</File>
+    <File md5="47DF4B4E8B5841B2C931AE4AA6428699" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit32.dds</File>
+    <File md5="D4686FA919793988BA7C0AFB0205ED59" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit45.dds</File>
+    <File md5="55681FBEFCD74B7BF2EBD9CF97B098CE" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit48.dds</File>
+    <File md5="7361C204186F706F2AF2DC8E0BC38736" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit64.dds</File>
+    <File md5="144BAB0FD8C7DEE71F326D0499864408" import="1">ThePaleontologicalDirectorate/Art/PALEO_Unit80.dds</File>
+    <File md5="D609E0FC35076C4ECB9CACA60BFC3E13" import="0">ThePaleontologicalDirectorate/Art/README.md</File>
     <File md5="D814671F008755BC50C781A5EF149CB1" import="1">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.lua</File>
     <File md5="CFB24ADC6292AFEDE8C11EF603285CC3" import="0">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml</File>
-    <File md5="27B0FB225C1C3A38FB50B4EFAE5C2E25" import="0">ThePaleontologicalDirectorate/README.md</File>
-    <File md5="9C67AE14D21BE7FE93C1AF8390AC3D2F" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</File>
+    <File md5="AFB52DCEA2758992B080FDE3C0EAC0A1" import="0">ThePaleontologicalDirectorate/README.md</File>
+    <File md5="D0E1361A40D9076431C48532AF444EDF" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</File>
     <File md5="3CE95AF879393061B050ADE229CDF13C" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</File>
-    <File md5="B3928857EAC613FC2C4CCA1A4E911E2E" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</File>
-    <File md5="49E61A8A537E006AEBEB2C3FC02FD393" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</File>
+    <File md5="E0C519665B0AD4F0C1A92F8B32CC852F" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</File>
+    <File md5="AA2E4FFA17A7CA2BE0D161D3FBCB8197" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Text.sql</File>
     <File md5="D50B90172D00D202488D40E9387C9C08" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Units.sql</File>
     <File md5="91A126151DC0D93FB890098203126A74" import="0">ThePaleontologicalDirectorate/TESTING.md</File>
     <File md5="8F63CDBA2A5556341DA029B21A5238DD" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Alpha128.dds</File>
@@ -305,15 +484,74 @@
     <File md5="734A36346218AB1C56159420A2A7A3C0" import="0">ThePerpetualTimetable/SQL/Timetable_Civilization.sql</File>
     <File md5="3D89038773CAF03651D17C34ED024BEB" import="0">ThePerpetualTimetable/SQL/Timetable_Text.sql</File>
     <File md5="1581CC85B73E604452F25A5D47C97915" import="0">ThePerpetualTimetable/SQL/Timetable_Units.sql</File>
-    <File md5="DE60698AFB6E5CF5E4742AC8DBAAA105" import="0">TheSaltRoadCompact/Art/README.md</File>
+    <File md5="A11AAB2B963F031D9D943D471C9F9913" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha128.dds</File>
+    <File md5="97B7A5D88C8051AB63446D2060E392EB" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha16.dds</File>
+    <File md5="FB0875618D153B1DED4F5BD554A47C7B" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha24.dds</File>
+    <File md5="044C9FF70DA75A740C3C99BE657AE35F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha256.dds</File>
+    <File md5="68B52383BE6B1F3229B14013CE3CB278" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha32.dds</File>
+    <File md5="C1AEB59B1627E9DADB1F659C8C765308" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha45.dds</File>
+    <File md5="212F3CF1B3E3679D5E7AE855379FDE2F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha48.dds</File>
+    <File md5="23F0892B2BA207E5174E89F538FF68FF" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha64.dds</File>
+    <File md5="08D92B7072A87E7F4FBD5F776C527A81" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha80.dds</File>
+    <File md5="01BF220D77F1272FF7ED96C62AF51399" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building128.dds</File>
+    <File md5="8C4A219781B9E87659289A263BDE5A8B" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building16.dds</File>
+    <File md5="505AC1C829DB050E63C25DC4A82837B1" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building24.dds</File>
+    <File md5="D84A2A69A6A54379096E60B50A77E62E" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building256.dds</File>
+    <File md5="9FE54E6E95906FA162AB4A2388FE2E2E" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building32.dds</File>
+    <File md5="65AFC349E6A262D09BF3C92DB9B3043E" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building45.dds</File>
+    <File md5="FBCF3611078A254FC3019676B5596E64" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building48.dds</File>
+    <File md5="DB55A7C842F87BF939A4D0ABE9ADA63C" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building64.dds</File>
+    <File md5="2FDFC4A7856B4601EF02AAC490BCD389" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Building80.dds</File>
+    <File md5="9D6B39871BD5041A79DB8DB5BF2509A9" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ128.dds</File>
+    <File md5="129E8EB1771BC01D95342457523B61CA" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ16.dds</File>
+    <File md5="7C9CF6EDDDF963EF8B248E5A294EE505" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ24.dds</File>
+    <File md5="BFDADD44359086B5B4D313189D90B0E7" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ256.dds</File>
+    <File md5="1BAE33C897579B4A0CEEAE210230A6A4" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ32.dds</File>
+    <File md5="94E57EB8FA1E6E8B4765CAC8AEEC5493" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ45.dds</File>
+    <File md5="CB9B232E6DBC614F337951B511E86070" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ48.dds</File>
+    <File md5="D6F3FB42F675BE049D9B1C0E4261094F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ64.dds</File>
+    <File md5="2B528900D25CBDA663236FF7DA8230EC" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Civ80.dds</File>
+    <File md5="78F3D25E107F2A20DC67171EEEAEF69A" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Dawn.dds</File>
+    <File md5="A11AAB2B963F031D9D943D471C9F9913" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag128.dds</File>
+    <File md5="97B7A5D88C8051AB63446D2060E392EB" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag16.dds</File>
+    <File md5="FB0875618D153B1DED4F5BD554A47C7B" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag24.dds</File>
+    <File md5="044C9FF70DA75A740C3C99BE657AE35F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag256.dds</File>
+    <File md5="68B52383BE6B1F3229B14013CE3CB278" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag32.dds</File>
+    <File md5="C1AEB59B1627E9DADB1F659C8C765308" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag45.dds</File>
+    <File md5="212F3CF1B3E3679D5E7AE855379FDE2F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag48.dds</File>
+    <File md5="23F0892B2BA207E5174E89F538FF68FF" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag64.dds</File>
+    <File md5="08D92B7072A87E7F4FBD5F776C527A81" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag80.dds</File>
+    <File md5="67666A9E4E26DA00570AEF8F12224048" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader.dds</File>
+    <File md5="DA5BF8E17913FDFD3CADBC47AAC3937A" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader128.dds</File>
+    <File md5="CF5CBC6292B2C81FDB3AA96879DE794F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader16.dds</File>
+    <File md5="D3437545C0C8AEEE094C7B2A0A33E256" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader24.dds</File>
+    <File md5="557D9E559F86F098B2D25EDC2515235F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader256.dds</File>
+    <File md5="58D3E9BFDB950393486B755BCBA3E5F0" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader32.dds</File>
+    <File md5="B0F76F702699710D217B692813115981" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader45.dds</File>
+    <File md5="10CE6343A65F6B3B4DEA94F4F2949921" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader48.dds</File>
+    <File md5="BC4ADD3F65DE2C8F18AA1E618869F57C" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader64.dds</File>
+    <File md5="E4EBBF42EA4BEE346796AFBD6499F4EA" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader80.dds</File>
+    <File md5="EC50BCA79305AC1447B3D666ECCCA44F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_LeaderScene.xml</File>
+    <File md5="A44C611145EDB9B4205C92F57E4D5576" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Map.dds</File>
+    <File md5="9FE70752BB2F3485B2831C3E5F9BD380" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit128.dds</File>
+    <File md5="893553E1CC2AAB963B9A3D022D7B31B7" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit16.dds</File>
+    <File md5="BF3114984CA54FDA0D5C0BBAADECB6CE" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit24.dds</File>
+    <File md5="B67CE8596FF7865FC35592148BE5DE40" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit256.dds</File>
+    <File md5="E351B89CEFB939822A551270A6AD46AC" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit32.dds</File>
+    <File md5="FAFA4AE0FD9DFD8C022D03525EAA1C7A" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit45.dds</File>
+    <File md5="B00ED5CB955D6FE600CD75ACFEC730BB" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit48.dds</File>
+    <File md5="77FEF638BCCD7DD12F920A2BED27B779" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit64.dds</File>
+    <File md5="EEA2A2BC4A520C114E5FE15E0A7B7691" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit80.dds</File>
+    <File md5="B3D21F60978700AA7E6DB64658CA6699" import="0">TheSaltRoadCompact/Art/README.md</File>
     <File md5="992877414EFFB300A5DBBA92E15C3BED" import="1">TheSaltRoadCompact/Lua/SALT_Gameplay.lua</File>
     <File md5="B965C1646C9D271C743B856334ED7436" import="0">TheSaltRoadCompact/Lua/SALT_Gameplay.xml</File>
-    <File md5="3D7A86EA50C709036F3827A9EB36E28A" import="0">TheSaltRoadCompact/README.md</File>
-    <File md5="61818A081F6558EA0646750A2393CA08" import="0">TheSaltRoadCompact/SQL/SALT_Buildings.sql</File>
-    <File md5="B188ED5C0C84161EB01670CECC7D6B5B" import="0">TheSaltRoadCompact/SQL/SALT_Civilization.sql</File>
+    <File md5="02F2E03D825ABAD4130DFF3946EAE58A" import="0">TheSaltRoadCompact/README.md</File>
+    <File md5="872CD444CD5885E1FAF2F927EC951322" import="0">TheSaltRoadCompact/SQL/SALT_Art.sql</File>
+    <File md5="69547ED082A6897B2976E1CFB77EC270" import="0">TheSaltRoadCompact/SQL/SALT_Buildings.sql</File>
+    <File md5="8E5921FC8A755A913FFB9D4A361FC6F2" import="0">TheSaltRoadCompact/SQL/SALT_Civilization.sql</File>
     <File md5="9060A2DA62FA50E622AD45D46C44A07E" import="0">TheSaltRoadCompact/SQL/SALT_Text.sql</File>
-    <File md5="48099D680B741285DD372A9BF29245AE" import="0">TheSaltRoadCompact/SQL/SALT_Units.sql</File>
-    <File md5="B67884C63F9B752FEC4DEAD664A5873F" import="0">TheSaltRoadCompact/TESTING.md</File>
+    <File md5="7233BF1E4ABEB427DD98ACA238203E05" import="0">TheSaltRoadCompact/SQL/SALT_Units.sql</File>
+    <File md5="1DF549E23C66EC241B2991FB9F4AC4D3" import="0">TheSaltRoadCompact/TESTING.md</File>
     <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
     <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
@@ -359,18 +597,22 @@
       <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheDepartmentOfLostThings/SQL/LOST_Art.sql</UpdateDatabase>
       <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</UpdateDatabase>
       <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheAssemblyOfScarecrows/SQL/SCARECROW_Art.sql</UpdateDatabase>
       <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</UpdateDatabase>
       <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheKingdomOfMakuria/SQL/MAKURIA_Art.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Civilization.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Art.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>

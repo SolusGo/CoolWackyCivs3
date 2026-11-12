@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-12",
+  "assets": [
+    {
+      "file": "Leader.png",
+      "sha256": "351f49dc7780951a033cbf7aa51f20c3a506680b3792c00e7275450029108cd0",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Emblem.png",
+      "sha256": "2a7b86664f5974f313bc14ec16f7ddbf98cc13495aea57a96e322949623fbe9b",
+      "tool": "built-in image_gen",
+      "transparent_background": true,
+      "edited": false
+    },
+    {
+      "file": "Unit.png",
+      "sha256": "5abd836bc8425887d607dca9eaa25a8f0084dbe7365b7b4b8ff8c557d78b8948",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Museum.png",
+      "sha256": "aaadab3f8a893eebd85797977f5613bef6c610324fe6189482bcab7464bbdb97",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": true
+    },
+    {
+      "file": "Dawn.png",
+      "sha256": "3efc654a1bfaba892ac1593f381bae49e16e455138e931166b747ddc25279f42",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Capital.png",
+      "sha256": "fb34b2b90b65b8888bcc1eb4e897fe969bc44ca9841f3abeaaafc54fa0c45c92",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    }
+  ]
+}

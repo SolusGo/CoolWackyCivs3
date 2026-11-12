@@ -1,5 +1,7 @@
 # Archived Daily expansion implementation report
 
+> Historical gameplay-expansion report for commit e107543. The subsequent [original-art update](ArchivedArtReport.md) replaces the four presentation fallbacks, redesigns the Directorate and adds four art actions (49 total). Gameplay mechanics and this earlier test/inventory record remain as documented below.
+
 Completed source/automated validation on **12 November 2026** for BNW + standalone CP151, Windows sequential single-player. Native Civilization V gameplay was **NOT RUN**. Baseline commit: `f772bb8` (already containing the Directorate). The feature branch is `feat/archived-daily-civilizations`; its final commit/push identifier is supplied in the delivery message so the report does not contain a self-referential commit hash.
 
 ## A. Civilization status

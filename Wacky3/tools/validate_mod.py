@@ -18,6 +18,7 @@ from target_schema import clean_fixture, approved_companions, verified
 from validate_schema import check_regeneration, seed_companions
 from validate_archived import check_database as check_archived_database, check_lua as check_archived_lua, mutate_baselines
 from archived_fixture import source_checks as archived_source_checks
+from validate_daily_art import check_art as check_daily_art
 
 RESULTS={}
 def sql_checks(mutate=True, clean=False):
@@ -172,7 +173,7 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
     assert len(ENTRIES)==10 and len(set(e[0] for e in ENTRIES))==10
-    assert len(ORDER)==len(set(ORDER))==45
+    assert len(ORDER)==len(set(ORDER))==49
     for entry,_,_ in ENTRIES[6:]:
         assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
@@ -202,7 +203,7 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==117
+    assert len(textures)==333
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
@@ -217,6 +218,7 @@ def package_checks(db):
     assert ET.parse(covenant_art/'CWC3_Covenant_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Covenant_Leader.dds'
     assert declared['TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml'].get('import')=='1'
     RESULTS['paleo_art']=check_paleo_art(db,declared)
+    RESULTS['daily_art']=check_daily_art(db,declared)
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -234,7 +236,9 @@ def package_checks(db):
             for name,path in expected.items(): assert archive.read(name)==path.read_bytes(),('Stale package file',name)
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
-    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, 183 DDS textures, alpha and full icon mip chains'
+    texture_count=sum(p.suffix=='.dds' for p in files())
+    assert texture_count==411
+    RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, {texture_count} DDS textures, alpha and full icon mip chains'
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)

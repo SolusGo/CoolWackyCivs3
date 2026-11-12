@@ -12,7 +12,7 @@ ORDER += ['ThePerpetualTimetable/SQL/Timetable_'+kind+'.sql' for kind in ['Civil
 ORDER += ['TheCandlekeepersCovenant/SQL/Covenant_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 ORDER += ['ThePaleontologicalDirectorate/SQL/PALEO_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 for folder,code in [('TheDepartmentOfLostThings','LOST'),('TheAssemblyOfScarecrows','SCARECROW'),('TheKingdomOfMakuria','MAKURIA'),('TheSaltRoadCompact','SALT')]:
-    ORDER += [folder+'/SQL/'+code+'_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text']]
+    ORDER += [folder+'/SQL/'+code+'_'+kind+'.sql' for kind in ['Civilization','Units','Buildings','Text','Art']]
 ENTRY='TheMinistryOfAlmost/Lua/CWC3_Almost.xml'
 ENTRIES=[(ENTRY,'Always the Challenger','Ministry owner-turn snapshots and Second Wind defensive veterans.'),
          ('TheHollowChoir/Lua/CWC3_Choir.xml','Songs Beneath Stone','Hollow Choir terrain yields and capture cleanup.'),
@@ -45,7 +45,7 @@ def build(package=False):
     ET.SubElement(root,'References'); ET.SubElement(root,'Blocks')
     entries=ET.SubElement(root,'Files')
     for path in files():
-        imported=path.suffix in ['.dds','.lua'] or path.name in ['CWC3_LeaderScene.xml','CWC3_Timetable_LeaderScene.xml','CWC3_Covenant_LeaderScene.xml','PALEO_LeaderScene.xml']
+        imported=path.suffix in ['.dds','.lua'] or path.name.endswith('_LeaderScene.xml')
         ET.SubElement(entries,'File',{'md5':hashlib.md5(path.read_bytes()).hexdigest().upper(),'import':'1' if imported else '0'}).text=path.relative_to(ROOT).as_posix()
     actions=ET.SubElement(ET.SubElement(root,'Actions'),'OnModActivated')
     for path in ORDER: ET.SubElement(actions,'UpdateDatabase').text=path

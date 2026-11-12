@@ -50,7 +50,7 @@ def main():
     civ = """-- CP151-only plot hooks. No BALANCE_VP feature is enabled.
 UPDATE CustomModOptions SET Value=1 WHERE Name='EVENTS_PLOT';
 INSERT INTO Colors(Type,Red,Green,Blue,Alpha) VALUES
- ('COLOR_PALEO_EARTH',0.19,0.105,0.055,1),('COLOR_PALEO_GOLD',0.87,0.69,0.32,1);
+ ('COLOR_PALEO_EARTH',0.12,0.27,0.24,1),('COLOR_PALEO_GOLD',0.83,0.28,0.13,1);
 INSERT INTO PlayerColors(Type,PrimaryColor,SecondaryColor,TextColor) VALUES
  ('PLAYERCOLOR_PALEO','COLOR_PALEO_EARTH','COLOR_PALEO_GOLD','COLOR_PLAYER_WHITE_TEXT');
 INSERT INTO Traits(Type,Description,ShortDescription) VALUES
@@ -133,7 +133,7 @@ INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES ('{typ}',
         'TRAIT_HELP': 'Each city with a Library-class building gains +1 [ICON_RESEARCH] Science. Independently, each city with a University-class building gains +1 [ICON_CULTURE] Culture. Real or free buildings and unique replacements qualify; each class grants its bonus once per city.',
         'CIV_PEDIA': 'The Paleontological Directorate is an eccentric scientific republic devoted to the ancient earth. Its scholars unearth fossils and preserve antiquities, gathering evidence of lost ecosystems in grand museums. Patience and curiosity guide its universities, while field expeditions carry discovery beyond its borders.',
         'STRATEGY': 'Build Libraries and Universities throughout your republic, then Natural History Museums. Pursue Science and Culture while sending Fossil Expeditions to Antiquity and Hidden Antiquity Sites. Secure access through diplomacy and preserve the collections.',
-        'LEADER_PEDIA': 'Director Emeritus Othmar, Keeper of the Ancient Earth, is an elderly, enthusiastic scientist with cracked spectacles and a dust-covered leather coat full of fossils. He welcomes visitors to a gigantic museum whose most imposing dinosaur skeleton is not quite correctly assembled. Generally peaceful, he is fiercely protective of scientific access and the collections.',
+        'LEADER_PEDIA': 'Director Emeritus Othmar, Keeper of the Ancient Earth, is a stout elderly fossil scholar with an enormous magnifying monocle, wild white side-whiskers, an ivory laboratory coat and a vermilion waistcoat. He cradles prized ammonites as though they were beloved pets. He welcomes visitors to a gigantic museum whose most imposing dinosaur skeleton is not quite correctly assembled. Generally peaceful, he is fiercely protective of scientific access and the collections.',
         'UNIT': 'Fossil Expedition',
         'UNIT_HELP': 'Replaces the Archaeologist. Retains all active Archaeologist rules and excavations, with +1 Movement and +1 Sight. Field Discovery: successfully completing an excavation grants 17/25/38/75 [ICON_RESEARCH] Science on Quick/Standard/Epic/Marathon, once per site, before the normal archaeology choice. Artifact and Landmark choices both qualify.',
         'UNIT_PEDIA': 'Equipped with geological tools, brushes and specimen crates, Fossil Expeditions investigate the remains of the ancient world. Their work follows ordinary archaeological practice, preserving every normal Artifact and Landmark outcome while sharing field discoveries with the republic.',

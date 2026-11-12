@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-12",
+  "assets": [
+    {
+      "file": "Leader.png",
+      "sha256": "17da34e937af0532d105c0ac01b156830cd4ff3722384f4eda86a3e74f4edfcd",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Emblem.png",
+      "sha256": "1d4f74e063228c5525026e02181b6b4490bb9848460fe07f6d77f9ee042bc84e",
+      "tool": "built-in image_gen",
+      "transparent_background": true,
+      "edited": false
+    },
+    {
+      "file": "Unit.png",
+      "sha256": "d7efa18ce7c9b16a73e2b4b02084f3d7426447452e4e98ae287ba646ee890e9e",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Building.png",
+      "sha256": "af02b218ba7b4c0f2aa787c4d564fb68c5407767e5bf83fab75f41d204e68267",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Dawn.png",
+      "sha256": "0b5bee514e50238a908589efcfc9c20bc3f939667b639da8c3dddb4a9b7260e9",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    },
+    {
+      "file": "Capital.png",
+      "sha256": "437b0f06e86c81edbbb6bf43101a66e9d43b5dda39708d0cbb3c0525f0fe63e7",
+      "tool": "built-in image_gen",
+      "transparent_background": false,
+      "edited": false
+    }
+  ]
+}

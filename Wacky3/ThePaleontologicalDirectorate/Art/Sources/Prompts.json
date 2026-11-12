@@ -1,25 +1,54 @@
 {
-  "tool": "built-in image_gen.imagegen",
-  "prompts": [
+  "mode": "built-in image_gen",
+  "assets": [
     {
-      "name": "Leader",
-      "prompt": "Use case: stylized-concept. Asset type: static Civilization V leader diplomacy scene, landscape 4:3 illustration. Director Emeritus Othmar, elderly eccentric scientist, warm enthusiastic expression, white unruly hair, cracked round spectacles, dust-covered leather field coat, pockets overflowing with fossils, holding a fossilized ammonite. He stands in a gigantic grand natural history museum; behind him a visibly incorrectly assembled dinosaur skeleton, humorous but convincing bones, huge vaulted hall and dusty display cases. Painterly historical strategy-game art, warm amber light, earthy brown and gold palette, scholarly eccentric republic. Waist-up leader centered, face large and legible for portrait crops, museum readable around him. No writing, no labels, no watermark.",
-      "transparent_background": false
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Leader",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Leader.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Director Emeritus Othmar, a singular eccentric fossil scholar, a SHORT STOUT elderly man in his late seventies, bald domed head, enormous unruly white side-whiskers and huge bushy white eyebrows, no beard, bulbous rose-colored nose, one oversized round magnifying monocle clipped to his left eye, sparkling small other eye, amused stubborn squint and a crooked delighted grin. Broad round body in a dusty ivory laboratory coat over a vermilion waistcoat and high-waisted charcoal trousers, rolled sleeves and fossil-shaped lapel pins. He cradles a gigantic beautiful ammonite fossil as though a beloved pet, one hand holding a tiny preparation brush. Centered waist-up, face upper center, at a cluttered museum preparation bench beneath huge suspended fossil ribs. Warm amber cabinet lights and cool celadon skylight. Landscape 4:3 richly painterly memorable portrait: round, odd, energetic, approachable, not a handsome bearded wizard, not a generic solemn old leader."
     },
     {
-      "name": "Emblem",
-      "prompt": "Use case: logo-brand. Asset type: Civilization V civilization icon. A single circular gold-rimmed emblem depicting an elegant clearly recognizable ammonite fossil spiral in pale ivory and old gold on a dark earthy brown background. Strong readable silhouette, restrained engraved museum-medallion aesthetic, circular ornamental gold edge, centered, comfortable padding, square canvas. Outside the circular emblem must be transparent. No text, no letters, no watermark.",
-      "transparent_background": true
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Emblem",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Emblem.png",
+      "transparent": true,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Square transparent heraldic emblem for the Paleontological Directorate: one large sculptural ivory AMMONITE fossil with a beautifully readable spiral and chamber ribs, crossed small copper geological hammer and delicate preparation brush below, celadon enamel backing shaped like an open fossil slab rather than a shield. Strong simple memorable scholarly mark, copper and fossil bone highlights. No circle, no outer rim, no lettering, transparent outside."
     },
     {
-      "name": "Unit",
-      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique unit portrait, square illustration. An archaeological field expedition, two scholarly field researchers in dusty leather clothing and sun hats with geological hammers, brushes, excavation tools and wooden specimen crates containing fossils, at a carefully excavated rocky dig trench. Historical painterly strategy game style, warm earthy gold and brown palette. Strong central composition that reads well in a circular portrait crop. No weapons, no military armor, no writing, no labels, no watermark.",
-      "transparent_background": false
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Unit",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Unit.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Fossil Expedition: a lively field paleontologist woman with short windblown dark curls, practical ivory canvas field jacket, vermilion scarf, sun goggles pushed onto forehead, small rock hammer and brush in gloved hands, large rolled field map and exposed ammonite slab in a satchel. No rifle, no military costume. Square centered character portrait, stratified fossil cliffs and a neat excavation tent behind, amber sandstone, celadon sky and vermilion accents."
     },
     {
-      "name": "Museum",
-      "prompt": "Use case: stylized-concept. Asset type: Civilization V unique building portrait, square illustration. Grand natural history museum, stately stone architecture, towering arched glass entrance revealing reconstructed dinosaur skeleton and fossil exhibition, a carved ammonite above the entrance. Scientific republic, warm amber museum glow, earthy brown and old gold palette, painterly historical strategy-game icon art. Whole building centered, strong readable silhouette for circular portrait crop. No writing, no labels, no watermark.",
-      "transparent_background": false
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Museum",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Museum.png",
+      "edit_prompt": "Precise architectural art cleanup. Keep the museum building, glass roof, ammonite doorway relief, dinosaur windows, banners, sky and all upper 80% of this illustration unchanged. Completely REPLACE THE ENTIRE BOTTOM 20 PERCENT STRIP with an uncluttered pale honey-sandstone paved forecourt, natural irregular stone slabs and soft shadows only. In particular the extreme bottom-left corner must be plain clean stone, with no plants, no gold strokes, no cursive marks, no simulated artist signature and no watermark. The paved forecourt should connect naturally to the museum staircase above. Retain the same painterly style and square composition. No text anywhere.",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Natural History Museum of the Paleontological Directorate: grand original stone-and-glass museum with enormous ammonite relief over the entrance, tall celadon iron skylight, warm amber-lit galleries visibly containing a suspended dinosaur skeleton, verdigris bronze doors and an orderly fossil garden. Square three-quarter architectural portrait, majestic scientific civic building, honey sandstone, bone ivory, celadon and vermilion banners with NO writing."
+    },
+    {
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Dawn",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Dawn.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 founding illustration of Stratum Prime: a city of scientific museums, glass-roofed fossil galleries and stratified sandstone terraces built around an enormous open excavation, suspended dinosaur skeleton visible through a grand celadon glass atrium. In the small foreground a short stout bald elderly scholar with huge white side-whiskers, ivory lab coat and vermilion waistcoat excitedly shows a giant ammonite to younger expedition scholars. Warm amber late-afternoon light and celadon glass, wonder and discovery, no prehistoric living dinosaurs or fantasy magic."
+    },
+    {
+      "code": "PALEO",
+      "folder": "ThePaleontologicalDirectorate",
+      "kind": "Capital",
+      "source": "ThePaleontologicalDirectorate/Art/Sources/Capital.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 capital panorama of Stratum Prime: a grand honey-sandstone natural history museum with celadon iron-and-glass roof, fossil ammonite reliefs, a huge suspended dinosaur skeleton seen through the entrance atrium, terraced research gardens and exposed geological strata alongside a carefully organized excavation. Central museum entrance and glass dome dominate for a vertical crop. Bone ivory, copper, celadon and small vermilion accents, no giant leader."
     }
   ]
 }

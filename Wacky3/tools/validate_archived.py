@@ -31,12 +31,13 @@ def check_database(db):
         assert db.execute('SELECT TraitType FROM Leader_Traits WHERE LeaderType=?',(leader,)).fetchone()[0]==trait
         assert db.execute('SELECT UnitType FROM Civilization_UnitClassOverrides WHERE CivilizationType=? AND UnitClassType=?',(civ,'UNITCLASS_'+s['parent_unit'])).fetchone()[0]==unit
         assert db.execute('SELECT BuildingType FROM Civilization_BuildingClassOverrides WHERE CivilizationType=? AND BuildingClassType=?',(civ,'BUILDINGCLASS_'+s['parent_building'])).fetchone()[0]==building
-        metadata={'ID','Type','Description','Civilopedia','Help','Strategy'}
+        metadata={'ID','Type','Description','Civilopedia','Help','Strategy','IconAtlas','PortraitIndex'}
         for table,parent,child,prefix,column in [('Units','UNIT_'+s['parent_unit'],unit,'Unit_','UnitType'),('Buildings','BUILDING_'+s['parent_building'],building,'Building_','BuildingType')]:
             old=db.execute('SELECT * FROM '+table+' WHERE Type=?',(parent,)).fetchone(); new=db.execute('SELECT * FROM '+table+' WHERE Type=?',(child,)).fetchone()
             assert old and new,(c,table)
             for key in old.keys():
-                if key not in metadata: assert old[key]==new[key],(c,table,key,old[key],new[key])
+                if key not in metadata and not (table=='Units' and key in ['UnitFlagAtlas','UnitFlagIconOffset']):
+                    assert old[key]==new[key],(c,table,key,old[key],new[key])
             for companion in approved_companions(prefix,column):
                 fields=[r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')') if r[1] not in [column,'ID']]
                 query='SELECT '+','.join(map(quote,fields))+' FROM '+quote(companion)+' WHERE '+quote(column)+'=? ORDER BY rowid'
@@ -73,18 +74,17 @@ def check_database(db):
         assert db.execute('SELECT Text FROM Language_en_US WHERE Tag=?',(p+'CITY_1',)).fetchone()[0]==s['capital']
         for response, in db.execute('SELECT Response FROM Diplomacy_Responses WHERE LeaderType=?',(leader,)):
             assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(response,)).fetchone()
-        # Fallbacks are exactly native, not fabricated filenames or atlas names.
-        for table,child,parent in [('Civilizations',civ,'CIVILIZATION_AMERICA'),('Leaders',leader,'LEADER_WASHINGTON')]:
-            cols=['IconAtlas','PortraitIndex']+(['AlphaIconAtlas','DawnOfManImage','MapImage'] if table=='Civilizations' else ['ArtDefineTag'])
-            query='SELECT '+','.join(cols)+' FROM '+table+' WHERE Type=?'
-            assert tuple(db.execute(query,(child,)).fetchone())==tuple(db.execute(query,(parent,)).fetchone())
+        for table,child,kind in [('Civilizations',civ,'CIV'),('Leaders',leader,'LEADER'),('Units',unit,'UNIT'),('Buildings',building,'BUILDING')]:
+            assert tuple(db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(child,)).fetchone())==(f'CWC3_{c}_{kind}_ATLAS',0)
+        assert tuple(db.execute('SELECT UnitFlagAtlas,UnitFlagIconOffset FROM Units WHERE Type=?',(unit,)).fetchone())==(f'CWC3_{c}_FLAG_ATLAS',0)
+        assert tuple(db.execute('SELECT IconAtlas,PortraitIndex FROM UnitPromotions WHERE Type=?',(promo,)).fetchone())==(f'CWC3_{c}_UNIT_ATLAS',0)
     assert len(civs)==10 and len(set(civs))==10
     for civ in civs:
         assert tuple(db.execute('SELECT Playable,AIPlayable FROM Civilizations WHERE Type=?',(civ,)).fetchone())==(1,0),civ
     for table in ['Civilizations','Leaders','Traits','Units','Buildings','BuildingClasses','UnitPromotions','Language_en_US']:
         key='Tag' if table=='Language_en_US' else 'Type'
         assert not db.execute('SELECT '+key+' FROM '+table+' GROUP BY '+key+' HAVING COUNT(*)>1').fetchone(),table
-    return 'PASS: ten human-only civilizations; four active parent scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; native atlas/scene fallbacks; localization and starting grants'
+    return 'PASS: ten human-only civilizations; four active parent gameplay scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; original portrait/flag/scene bindings; localization and starting grants'
 
 def check_lua(db):
     results=[]

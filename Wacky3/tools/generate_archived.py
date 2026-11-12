@@ -12,7 +12,7 @@ from generate_hollow_choir import clone, companions, literal
 SPECS = [
  dict(code='LOST', folder='TheDepartmentOfLostThings', name='Department of Lost Things', leader='Chief Registrar Nobody',
       capital='Unclaimed', adjective='Departmental', ua='Nothing Is Ever Truly Lost', unit='Retrieval Officer', parent_unit='SPEARMAN',
-      building='Lost Property Office', parent_building='LIBRARY', colors=((.12,.20,.24),(.82,.71,.40)),
+      building='Lost Property Office', parent_building='LIBRARY', colors=((.10,.14,.33),(.83,.20,.18)),
       ua_help='Enemy combat units killed by Department combat units within 3 tiles of an owned city recover one Curio for the nearest city (ties: lowest city ID). Maximum 4 per city; each supplies +1 Culture and +1 Science every turn. Ordinary Barbarian combat qualifies. Captures pause that Department\'s ledger until recapture; destroyed cities lose their Curios.',
       unit_help='+1 Sight and +15% Combat Strength against Barbarians. Unique promotion persists through upgrades.',
       building_help='+1 Culture and +1 Gold per Recovered Curio, in addition to all active Library effects. At four Curios: UA +4 Culture/+4 Science, Office +4 Culture/+4 Gold.',
@@ -49,7 +49,7 @@ SPECS = [
       spies=['Menas','Georgios','Ioannes','Petros','Stephanos','Mariam','Anna','Michael','Theodoros','Gabriel']),
  dict(code='SALT', folder='TheSaltRoadCompact', name='The Salt Road Compact', leader='First Broker Nahir',
       capital='White Mile', adjective='Compact', ua='The Price of Passage', unit='Dune Escort', parent_unit='HORSEMAN',
-      building='Salt Exchange', parent_building='CARAVANSARY', colors=((.12,.32,.34),(.92,.83,.62)),
+      building='Salt Exchange', parent_building='CARAVANSARY', colors=((.08,.38,.40),(.84,.30,.20)),
       ua_help='Each owned city originating at least one active land trade route gains +2 Production and +1 Culture, once per city regardless of route count. Sea, incoming, canceled and finished routes do not qualify.',
       unit_help='+1 Sight. +15% Combat Strength attacking into Desert terrain or defending on Desert terrain, including Desert Hills and tiles with features. Promotion persists through the normal melee mounted upgrade path.',
       building_help='+1 permanent Food and +1 permanent Gold beyond all active Caravansary effects. +1 Science while the city originates at least one active land trade route.',
@@ -79,8 +79,8 @@ def main():
             sql+=f"INSERT INTO Colors(Type,Red,Green,Blue,Alpha) VALUES ('COLOR_CWC3_{c}_{n}',{','.join(map(str,color))},1);\n"
         sql+=f"INSERT INTO PlayerColors(Type,PrimaryColor,SecondaryColor,TextColor) VALUES ('PLAYERCOLOR_CWC3_{c}','COLOR_CWC3_{c}_0','COLOR_CWC3_{c}_1','COLOR_PLAYER_WHITE_TEXT');\n"
         sql+=f"INSERT INTO Traits(Type,Description,ShortDescription) VALUES ('{trait}','{p}TRAIT_HELP','{p}TRAIT');\n"
-        sql+=clone('Civilizations','CIVILIZATION_AMERICA',civ,dict(Description=p+'CIV',ShortDescription=p+'SHORT',Adjective=p+'ADJECTIVE',Civilopedia=p+'CIV_PEDIA',CivilopediaTag=p+'CIV5',Strategy=p+'STRATEGY',DefaultPlayerColor=f'PLAYERCOLOR_CWC3_{c}',Playable=1,AIPlayable=0,PackageID=None,DawnOfManQuote=p+'DAWN',DawnOfManAudio=''))
-        sql+=clone('Leaders','LEADER_WASHINGTON',leader,dict(Description=p+'LEADER',Civilopedia=p+'LEADER_PEDIA',CivilopediaTag=p+'LEADERPAGE',PackageID=None,Boldness=3,WarmongerHate=7,Meanness=2,Loyalty=8,Forgiveness=6,DoFWillingness=7))
+        sql+=clone('Civilizations','CIVILIZATION_AMERICA',civ,dict(Description=p+'CIV',ShortDescription=p+'SHORT',Adjective=p+'ADJECTIVE',Civilopedia=p+'CIV_PEDIA',CivilopediaTag=p+'CIV5',Strategy=p+'STRATEGY',DefaultPlayerColor=f'PLAYERCOLOR_CWC3_{c}',Playable=1,AIPlayable=0,PackageID=None,DawnOfManQuote=p+'DAWN',DawnOfManAudio='',IconAtlas=f'CWC3_{c}_CIV_ATLAS',AlphaIconAtlas=f'CWC3_{c}_ALPHA_ATLAS',PortraitIndex=0,DawnOfManImage=f'CWC3_{c}_Dawn.dds',MapImage=f'CWC3_{c}_Map.dds'))
+        sql+=clone('Leaders','LEADER_WASHINGTON',leader,dict(Description=p+'LEADER',Civilopedia=p+'LEADER_PEDIA',CivilopediaTag=p+'LEADERPAGE',PackageID=None,Boldness=3,WarmongerHate=7,Meanness=2,Loyalty=8,Forgiveness=6,DoFWillingness=7,IconAtlas=f'CWC3_{c}_LEADER_ATLAS',PortraitIndex=0,ArtDefineTag=f'CWC3_{c}_LeaderScene.xml'))
         for table in ['Civilization_FreeBuildingClasses','Civilization_FreeTechs','Civilization_FreeUnits']:
             sql+=f"CREATE TEMP TABLE CWC3_ArchivedStart AS SELECT * FROM {table} WHERE CivilizationType='CIVILIZATION_AMERICA';\nUPDATE CWC3_ArchivedStart SET CivilizationType='{civ}';\nINSERT INTO {table} SELECT * FROM CWC3_ArchivedStart;\nDROP TABLE CWC3_ArchivedStart;\n"
         sql+=f"INSERT INTO Civilization_Leaders VALUES ('{civ}','{leader}');\nINSERT INTO Leader_Traits VALUES ('{leader}','{trait}');\n"
@@ -90,14 +90,14 @@ def main():
         for table,names,label in [('Civilization_CityNames',s['cities'],'CITY'),('Civilization_SpyNames',s['spies'],'SPY')]:
             for i in range(1,len(names)+1): sql+=f"INSERT INTO {table} VALUES ('{civ}','{p}{label}_{i}');\n"
         write('Civilization',sql)
-        sql=clone('Units','UNIT_'+s['parent_unit'],unit,dict(Description=p+'UNIT',Civilopedia=p+'UNIT_PEDIA',Help=p+'UNIT_HELP',Strategy=p+'UNIT_STRATEGY'))
+        sql=clone('Units','UNIT_'+s['parent_unit'],unit,dict(Description=p+'UNIT',Civilopedia=p+'UNIT_PEDIA',Help=p+'UNIT_HELP',Strategy=p+'UNIT_STRATEGY',IconAtlas=f'CWC3_{c}_UNIT_ATLAS',PortraitIndex=0,UnitFlagAtlas=f'CWC3_{c}_FLAG_ATLAS',UnitFlagIconOffset=0))
         sql+=companions(db,'Unit_','UnitType','UNIT_'+s['parent_unit'],unit)
-        fields={'Type':promo,'Description':p+'PROMOTION','Help':p+'PROMOTION_HELP','CannotBeChosen':1,'LostWithUpgrade':0,'PortraitIndex':9,'IconAtlas':'ABILITY_ATLAS','PediaType':'PEDIA_ATTRIBUTES','PediaEntry':p+'PROMOTION',**s['promotion']}
+        fields={'Type':promo,'Description':p+'PROMOTION','Help':p+'PROMOTION_HELP','CannotBeChosen':1,'LostWithUpgrade':0,'PortraitIndex':0,'IconAtlas':f'CWC3_{c}_UNIT_ATLAS','PediaType':'PEDIA_ATTRIBUTES','PediaEntry':p+'PROMOTION',**s['promotion']}
         sql+=f"INSERT INTO UnitPromotions({','.join(fields)}) VALUES ({','.join(map(literal,fields.values()))});\nINSERT INTO Unit_FreePromotions VALUES ('{unit}','{promo}');\n"
         if c=='SALT':
             sql+=f"-- Unlike UnitPromotions_Terrains, TerrainModifiers applies even on feature tiles.\nINSERT INTO UnitPromotions_TerrainModifiers(PromotionType,TerrainType,Attack,Defense) VALUES ('{promo}','TERRAIN_DESERT',15,15);\n"
         write('Units',sql)
-        sql=clone('Buildings','BUILDING_'+s['parent_building'],building,dict(Description=p+'BUILDING',Civilopedia=p+'BUILDING_PEDIA',Help=p+'BUILDING_HELP',Strategy=p+'BUILDING_STRATEGY'))
+        sql=clone('Buildings','BUILDING_'+s['parent_building'],building,dict(Description=p+'BUILDING',Civilopedia=p+'BUILDING_PEDIA',Help=p+'BUILDING_HELP',Strategy=p+'BUILDING_STRATEGY',IconAtlas=f'CWC3_{c}_BUILDING_ATLAS',PortraitIndex=0))
         sql+=companions(db,'Building_','BuildingType','BUILDING_'+s['parent_building'],building)
         for kind,amount in s['permanent'].items():
             # Add once even if several inherited yield records exist.
@@ -125,6 +125,6 @@ def main():
         sql+=f"INSERT INTO Diplomacy_Responses(LeaderType,ResponseType,Response,Bias) SELECT DISTINCT '{leader}',N.ResponseType,'{p}FALLBACK_%',1 FROM Diplomacy_Responses N WHERE N.LeaderType='LEADER_WASHINGTON' AND NOT EXISTS (SELECT 1 FROM Diplomacy_Responses C WHERE C.LeaderType='{leader}' AND C.ResponseType=N.ResponseType);\n"
         write('Text',sql)
     db.close()
-    print('Generated four archived civilizations with active CP151 clones and native presentation fallbacks')
+    print('Generated four archived civilizations with active CP151 clones and original art bindings')
 
 if __name__=='__main__': main()

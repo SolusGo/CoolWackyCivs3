@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-12 — Original art for all five archived civilizations
+
+- Add thirty independent original image_gen illustration masters: five memorable leaders, five emblems, five unique unit portraits, five unique building portraits, five Dawn scenes and five capital panoramas. Replace the four native presentation fallbacks and redesign Othmar with a distinct stout, wild-browed fossil-scholar identity.
+- Compile 285 legacy DDS assets for the five civilizations (411 in the whole pack): full nine-size gold-rimmed portrait atlases, custom monochrome civilization alpha/unit flags and separate static diplomacy/Dawn/capital scenes. Retain native unit/building world models and audio.
+- Add deterministic shared compilation, exact prompt/provenance/source hashes, visual review sheets, atlas/flag/scene registrations and strict art byte-regeneration validation. Four new art SQL actions bring the pack to 49; ten Lua contexts and gameplay/save formats remain unchanged.
+- Update art guides, visual identities and package metadata. Native Civ V art/UI rendering remains an explicit acceptance test; no native rendering pass is claimed.
+
 ## 2026-11-12 — Five archived Daily designs integrated
 
 - Expand the existing six-civilization checkout to ten by adding the Department of Lost Things, Assembly of Scarecrows, Kingdom of Makuria and Salt Road Compact, retaining the already implemented Paleontological Directorate. All are human-only. The original five civilization gameplay sources remain unchanged.

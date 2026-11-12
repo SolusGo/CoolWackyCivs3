@@ -1,0 +1,53 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Leader",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Leader.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Old Man Thistle is a genuine living SCARECROW, not a human in a costume. An extremely tall crooked willow-stick body stuffed with golden straw, long jointed twig hands, a large lopsided burlap head with one huge black button eye and one tiny seed eye, an expressive asymmetrical stitched crescent smile, straw whiskers, and a battered wide-brim straw hat sprouting purple thistles. A patched moss-green coat hangs on his bent wooden shoulders. He leans companionably on a forked hazel cane, with one curious black crow perched on the brim. Warm benevolent and eccentric, not Halloween horror. Waist-up centered leader, face upper center, amber wheat field council at sunset with harvest bells and a rustic fence. Landscape 4:3. Rich ochre, moss green, purple thistle accents. Make his bent silhouette and stitched face unmistakable."
+    },
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Emblem",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Emblem.png",
+      "transparent": true,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Square transparent heraldic emblem for Assembly of Scarecrows. A single stylized bronze harvest bell suspended between two curved gold wheat stalks, with an expressive black crow perched atop the bell's yoke and one small purple thistle at its foot. Simple bold sculptural relief silhouette, wheat gold, bronze, moss-green enamel. Transparent outside the object; no circle, no frame, no text, no background scenery."
+    },
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Unit",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Unit.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Wicker Sentinel, a sentient scarecrow spear guard made of woven wicker and tightly bound golden straw, empty dark button eyes in a woven mask, peaked woven reed helmet, moss-green patched tabard, wooden spear with a dark iron point and small wicker buckler. No human skin. Stands watchful beside wheat rows and a black crow. One strong centered chest-up character for a square unit portrait; warm harvest sunlight, rust and moss green."
+    },
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Building",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Building.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Harvest Bell: a beautiful rustic open-sided timber bell tower with a large bronze harvest bell, woven wicker and wheat-sheaf ornaments, a stone granary with steep thatched roof attached below, thick ripe wheat fields and small scarecrow guardians. Building is dominant, square three-quarter architectural portrait, amber late-afternoon light, moss green timber shadows, honest agricultural materials. No labels."
+    },
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Dawn",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Dawn.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 founding illustration of First Harvest, a settlement built by living scarecrows: sweeping amber wheat fields, windmills, timber granaries and a great bronze bell tower. Tall crooked straw scarecrow Old Man Thistle in moss-green coat and thistle-sprouting hat leads a small welcoming gathering beside a field path, black crows wheel in the sky. Radiant low autumn sun, friendly folklore, golden ochre and moss green, wide memorable agricultural panorama."
+    },
+    {
+      "code": "SCARECROW",
+      "folder": "TheAssemblyOfScarecrows",
+      "kind": "Capital",
+      "source": "TheAssemblyOfScarecrows/Art/Sources/Capital.png",
+      "transparent": false,
+      "prompt": "Finished original hand-painted strategy-game illustration for Civilization V. Rich tactile brushwork, strong designed silhouette, readable focal subject, selective detail and cinematic light. No words, lettering, numbers, logos, watermarks, borders or UI. Landscape 4:3 capital panorama of First Harvest, an extraordinary cheerful agricultural town of thatched granaries, wicker domes and tall timber harvest-bell towers, winding lanes among vast golden fields, scarecrow workers made of straw and willow, flocks of crows. The central bronze bell tower is large and clearly readable for a vertical capital crop. Honey sunlight, russet roofs, green hedges, no giant human leader."
+    }
+  ]
+}

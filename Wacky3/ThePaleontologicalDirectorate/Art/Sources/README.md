@@ -1,7 +1,7 @@
-# Directorate art masters
+# PALEO retained art masters
 
-The built-in `image_gen.imagegen` tool generated `Leader.png`, `Emblem.png`, `Unit.png` and `Museum.png` for this civilization. The exact final prompt set and transparent-background setting are in [Prompts.json](Prompts.json). No external stock image or paid API/CLI dependency is used.
+Stout bald fossil scholar; wild white side-whiskers and eyebrows, huge monocle, vermilion waistcoat and ammonite.
 
-From `Wacky3`, `python tools/build_paleo_art.py` deterministically crops/resizes the retained masters, makes circular portraits and the code-native monochrome ammonite glyph, and writes all 57 legacy BGRA8888 DDS assets. `Alpha.png` and `ArtReview.png` are compiler outputs. Atlas icons have full mip chains and transparency; the scene files are single-level 1600x1200, 1024x768 and 360x412 textures. PNG sources are excluded from the installable manifest, following pack conventions.
+Built-in image_gen generated six independent PNG masters: `Leader.png`, `Emblem.png`, `Unit.png`, `Museum.png`, `Dawn.png` and `Capital.png`. Exact final prompts and transparent-background settings are in [Prompts.json](Prompts.json). Source hashes and provenance are in `Provenance.json`. The emblem was requested with genuine transparency. No stock artwork was copied.
 
-The civilization emblem, leader, expedition and Museum portraits, civilization alpha and unit flag are custom. In-world expedition and Museum models inherit native Archaeologist/Museum art. Diplomacy is a static illustrated scene without animation or voice; the fictional capital panel uses the Museum illustration. No required visual asset is unfinished.
+`Alpha.png`, `ArtReview.png` and `CompiledHashes.json` are deterministic compiler outputs. Rebuild with `python tools/build_daily_art.py --civ PALEO` from Wacky3. The compiler handles only engine preparation: crop, circular rim, size conversion, code-native glyphs, mip chains and legacy DDS encoding. Visual content was created by image_gen. See [the full art guide](../README.md).

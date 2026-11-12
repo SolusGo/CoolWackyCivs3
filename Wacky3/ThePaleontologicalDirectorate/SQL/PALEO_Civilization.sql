@@ -2,7 +2,7 @@
 -- CP151-only plot hooks. No BALANCE_VP feature is enabled.
 UPDATE CustomModOptions SET Value=1 WHERE Name='EVENTS_PLOT';
 INSERT INTO Colors(Type,Red,Green,Blue,Alpha) VALUES
- ('COLOR_PALEO_EARTH',0.19,0.105,0.055,1),('COLOR_PALEO_GOLD',0.87,0.69,0.32,1);
+ ('COLOR_PALEO_EARTH',0.12,0.27,0.24,1),('COLOR_PALEO_GOLD',0.83,0.28,0.13,1);
 INSERT INTO PlayerColors(Type,PrimaryColor,SecondaryColor,TextColor) VALUES
  ('PLAYERCOLOR_PALEO','COLOR_PALEO_EARTH','COLOR_PALEO_GOLD','COLOR_PLAYER_WHITE_TEXT');
 INSERT INTO Traits(Type,Description,ShortDescription) VALUES
