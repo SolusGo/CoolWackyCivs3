@@ -44,6 +44,9 @@ local playerMethods = {
     IsBarbarian=function() return false end,
     GetTeam=function(self) return self.id end,
     GetCurrentEra=function() return era end,
+    GetCurrentResearch=function() return -1 end,
+    ChangeOverflowResearch=function(self,value) self.science=self.science+value end,
+    ChangeJONSCulture=function(self,value) self.culture=self.culture+value end,
     GetCapitalCity=function(self) return self.cities[1] end,
     Cities=function(self) return GameInfoIterator(self.cities) end,
     Units=function(self) return GameInfoIterator(self.units) end,
@@ -53,7 +56,7 @@ local playerMethods = {
     SetScriptData=function(self,value) self.saved=value end,
 }
 Players = {}
-for i=0,33 do Players[i]=setmetatable({id=i,civ=-1,cities={},units={},saved='[Others:17]'}, {__index=playerMethods}) end
+for i=0,33 do Players[i]=setmetatable({id=i,civ=-1,cities={},units={},science=0,culture=0,saved='[Others:17]'}, {__index=playerMethods}) end
 local owner = Players[0]
 local function id(kind, suffix)
     return assert(GameInfoTypes[kind..'_CWC3_D'..string.format('%03d', DailyNumber)..(suffix and '_'..suffix or '')])
@@ -70,6 +73,7 @@ local plotMethods = {
     GetResourceType=function(self) return self.resource end,
     GetImprovementType=function(self) return self.improvement end,
     IsImprovementPillaged=function(self) return self.pillaged end,
+    IsResourceConnectedByImprovement=function(self,id) return id==GameInfoTypes.IMPROVEMENT_MINE end,
     IsFriendlyTerritory=function(self,p) return self.owner==p or self.openBorders end,
     IsWater=function(self) return self.water end,
     IsLake=function(self) return self.lake end,
@@ -163,6 +167,12 @@ local function move(u,p)
     p.units[#p.units+1]=u
     GameEvents.UnitSetXY.fire(u.owner,u.id,p.x,p.y)
 end
+local function reload()
+    GameEvents, Events = events(), events()
+    CWC3, CWC3Archive, CWC3Daily = nil,nil,nil
+    includes = {}
+    assert(LoadDaily(DailyNumber))
+end
 local function nextTurn()
     turn=turn+1
     GameEvents.PlayerDoTurn.fire(0)
@@ -232,6 +242,8 @@ cases[22]=function(c)
     Controls.Doctrine.click()
     assert(Controls.Lessons.text=='Lessons: 3 / 5')
     Controls.Method.click()
+    reload()
+    assert(Controls.Lessons.text=='Lessons: 0 / 5')
     expect(c,'CHAMBER',0); expect(c,'METHOD',1)
     for i=1,5 do
         nextTurn()
@@ -265,6 +277,7 @@ cases[24]=function(c)
         expect(c,'CULTURE_1',n>=3 and 1 or 0)
         expect(c,'CULTURE_2',n>=6 and 1 or 0)
     end
+    for n=8,26 do city(n).buildings[id('BUILDING')]=1 end
     nextTurn()
     assert(u:GetMoves()==240)
     GameEvents.PlayerDoTurn.fire(0)
@@ -302,6 +315,8 @@ cases[26]=function(c)
     expect(c,'PROSPERITY',0); expect(c,'CHAMBER_GOLD',0)
     Controls.Enlightenment.click()
     expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
+    reload()
+    Controls.Prosperity.click()
     nextTurn()
     expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
     era=2
@@ -388,7 +403,123 @@ cases[30]=function(c)
     expect(c,'PEACE',0)
 end
 
--- Batch C adds scenarios below.
+cases[31]=function(c)
+    c.buildings[id('BUILDING')]=1
+    local scout=unit(0,c.plot,true)
+    for i=1,89 do plot(100+i,0,{revealed=true}) end
+    LoadDaily(31)
+    local function reveal(p, fromTeam, unitOwner, unitID)
+        p.revealed=true
+        GameEvents.TileRevealed.fire(p.x,p.y,0,fromTeam,false,unitOwner,unitID)
+    end
+    reveal(plot(101,1,{water=true}),-1,0,scout.id)
+    for i=1,10 do reveal(plot(101+i,1),1,-1,-1) end
+    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
+    expect(c,'ATLAS_CULTURE',0)
+    local prospect=plot(100,1)
+    reveal(prospect,-1,0,scout.id)
+    reveal(prospect,-1,0,scout.id)
+    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
+    expect(c,'ATLAS_CULTURE',1)
+    assert(owner.science==0 and owner.culture==0)
+    for i=1,109 do reveal(plot(900+i,1),-1,0,scout.id) end
+    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
+    expect(c,'ATLAS_GOLD',1)
+    local rewards={QUICK={10,7},STANDARD={15,10},EPIC={23,15},MARATHON={45,30}}
+    local b,culture = unpack(rewards[Speed])
+    assert(owner.science==b*10 and owner.culture==culture*10)
+    reload()
+    era=1
+    GameEvents.TeamSetEra.fire(0,era,true)
+    assert(owner.science==b*11 and owner.culture==culture*11)
+    assert(owner.saved:find('[CWC3_D031_V1:1:0:1:',1,true))
+    GameEvents.PlayerDoTurn.fire(0)
+    assert(owner.science==b*11 and owner.culture==culture*11)
+end
+cases[32]=function(c)
+    local mine,gold,silver=GameInfoTypes.IMPROVEMENT_MINE,GameInfoTypes.RESOURCE_GOLD,GameInfoTypes.RESOURCE_SILVER
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(32)
+    expect(c,'METALS',0); expect(c,'LAKE',0); expect(c,'MINE_1',0)
+    local m1=add(c,plot(11,0,{owner=0,purchase=1,improvement=mine,resource=gold}),false)
+    local m2=add(c,plot(12,0,{owner=0,purchase=1,improvement=mine}),true)
+    local m3=add(c,plot(13,0,{owner=1,purchase=1,improvement=mine,resource=silver}),true)
+    local lake=add(c,plot(10,1,{owner=0,purchase=2,water=true,lake=true}),false)
+    changed()
+    expect(c,'METALS',0); expect(c,'LAKE',0); expect(c,'MINE_1',1); expect(c,'MINE_2',0)
+    lake.purchase=1
+    c.work[m1.index]=true
+    changed()
+    expect(c,'METALS',1); expect(c,'LAKE',1); expect(c,'MINE_2',1)
+    m1.pillaged=true
+    GameEvents.TileImprovementChanged.fire()
+    expect(c,'METALS',0); expect(c,'MINE_2',0)
+    m3.owner=0
+    GameEvents.TileOwnershipChanged.fire()
+    expect(c,'METALS',1); expect(c,'MINE_2',1)
+    assert(m2.improvement==mine)
+end
+cases[33]=function(c)
+    local adjacent=plot(11,0,{owner=0,purchase=1})
+    local marshal=unit(0,adjacent,true)
+    local civilian=unit(0,c.plot,false)
+    local ship=unit(0,c.plot,false)
+    civilian.combat=false
+    ship.domain=DomainTypes.DOMAIN_SEA
+    c.garrison=ship
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(33)
+    expect(c,'GARRISON',0); expect(c,'HALL',0)
+    move(marshal,c.plot)
+    expect(c,'GARRISON',1); expect(c,'HALL',1)
+    move(marshal,adjacent)
+    expect(c,'GARRISON',0); expect(c,'HALL',0)
+    marshal.embarked=true
+    move(marshal,c.plot)
+    expect(c,'GARRISON',0)
+    marshal.embarked=false
+    changed()
+    expect(c,'GARRISON',1)
+    GameEvents.UnitPrekill.fire(0,marshal.id,marshal.kind,10,0,false,1)
+    expect(c,'GARRISON',0); expect(c,'HALL',0)
+    marshal.dead=true
+    changed()
+    expect(c,'GARRISON',0)
+end
+cases[34]=function(c)
+    local sentinel=unit(0,c.plot,true)
+    c.plot.hills=true
+    LoadDaily(34)
+    GameEvents.BattleStarted.fire(1,10,0)
+    assert(not sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
+    GameEvents.BattleStarted.fire(0,10,0)
+    assert(sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
+    GameEvents.BattleFinished.fire()
+    assert(not sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
+    expect(c,'HILL',1); expect(c,'WALL',0); expect(c,'TERRACE',0)
+    c.free[id('BUILDING')]=1
+    c.free[GameInfoTypes.BUILDING_WALLS]=1
+    changed()
+    expect(c,'HILL',1); expect(c,'WALL',1); expect(c,'TERRACE',1)
+    c.plot.hills=false
+    changed()
+    expect(c,'HILL',0); expect(c,'WALL',1); expect(c,'TERRACE',0)
+end
+cases[35]=function(c)
+    local second=city(2)
+    c.buildings[id('BUILDING')]=1
+    c.celebration=1
+    LoadDaily(35)
+    expect(c,'CELEBRATION',1); expect(c,'OFFICE',1)
+    expect(second,'CELEBRATION',0); expect(second,'OFFICE',0)
+    c.celebration=0
+    GameEvents.CityEndsWLTKD.fire(0,10,0,0)
+    expect(c,'CELEBRATION',0); expect(c,'OFFICE',0)
+    c.celebration=3
+    GameEvents.CityBeginsWLTKD.fire(0,10,0,3)
+    GameEvents.CityExtendsWLTKD.fire(0,10,0,3)
+    expect(c,'CELEBRATION',1); expect(c,'OFFICE',1)
+end
 
 owner.civ=id('CIVILIZATION')
 local capital=city(1)
@@ -396,7 +527,9 @@ assert(cases[DailyNumber],DailyNumber)(capital)
 -- Repeated recovery and foreign capture strip both real and accidental free copies.
 local controller = assert(Controller)
 capital.free[id('BUILDING',controller)]=1
-changed()
+local before=capital:GetNumRealBuilding(id('BUILDING',controller))
+reload()
+assert(capital:GetNumRealBuilding(id('BUILDING',controller))==before)
 assert(capital:GetNumFreeBuilding(id('BUILDING',controller))==0)
 capital.owner=1
 owner.cities={}

@@ -6,7 +6,7 @@ Postmaster-General Elowen leads this human-only civilization from First Address.
 - **Royal Courier** replaces Scout. +1 base Movement. Gains another +1 Movement when beginning the turn in friendly territory, for use while qualifying.
 - **Central Post Office** replaces Market. +1 Gold and +1 Science.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Movement is sampled at the post-economy PlayerDoTurn hook, then deducted on leaving friendly land. Native spend order and Open Borders changes need acceptance.
 

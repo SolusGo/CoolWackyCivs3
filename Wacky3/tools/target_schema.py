@@ -207,6 +207,18 @@ def clean_fixture():
             db.execute('INSERT INTO '+quote(table)+'('+','.join(map(quote,values))+') VALUES ('+','.join('?' for _ in values)+')',tuple(values.values()))
     # Data-only extension, independently hashed; never changes the schema pin or
     # the authoritative companion inventory used by any SQL generator.
+    # Cover I is a native-data fixture row from an already verified XML path.
+    # Gameplay uses the active installed promotion, never this fixture value.
+    assets, _ = installations()
+    if not db.execute("SELECT 1 FROM UnitPromotions WHERE Type='PROMOTION_COVER_1'").fetchone():
+        cover_xml = assets/'DLC/Expansion2/Gameplay/XML/Units/CIV5UnitPromotions.xml'
+        cover = next(row_values(row) for row in ET.parse(cover_xml).getroot().findall('UnitPromotions/Row')
+                     if row.findtext('Type') == 'PROMOTION_COVER_1')
+        columns = {r[1] for r in db.execute('PRAGMA table_info(UnitPromotions)')}
+        values = {k:(int(v.lower()=='true') if v.lower() in ['true','false'] else v)
+                  for k,v in cover.items() if k in columns and k != 'ID'}
+        db.execute('INSERT INTO UnitPromotions('+','.join(map(quote,values))+') VALUES ('+
+                   ','.join('?' for _ in values)+')', tuple(values.values()))
     from timetable_fixture import add_samples
     add_samples(db)
     add_samples(db, {'UnitType':'UNIT_PIKEMAN', 'BuildingType':'BUILDING_TEMPLE'})

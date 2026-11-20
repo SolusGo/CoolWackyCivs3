@@ -1,0 +1,130 @@
+"""Render original emblem and alpha atlases using the pack's DDS compiler."""
+from PIL import Image, ImageDraw
+from baseline import ROOT
+from build_art import SIZES, dds
+from build_daily_art import framed
+from generate_daily_expansion import ROSTER, code
+
+PALETTES = [
+    '823840', '334c73', '236465', '344f85', '783c2a',
+    '434078', '235854', '503f69', '425148', '8c522f',
+    '385472', '665337', '7b323b', '465745', 'a95032',
+]
+
+
+def glyph(number):
+    im = Image.new('RGBA', (64,64))
+    d = ImageDraw.Draw(im)
+    def polygon(points):
+        d.polygon(points,fill='white')
+    def line(points,width=3):
+        d.line(points,fill='white',width=width,joint='curve')
+    def disk(x,y,r):
+        d.ellipse((x-r,y-r,x+r,y+r),fill='white')
+    if number == 21:
+        polygon([(10,24),(32,11),(54,24),(49,28),(15,28)])
+        line([(15,32),(49,32)],4)
+        for x in (20,44):
+            line([(x,31),(x,46)],5)
+        line([(9,51),(20,48),(31,52),(42,48),(55,51)],3)
+    elif number == 22:
+        for points in (
+            [(32,9),(32,29),(13,29)],[(36,13),(54,32),(36,32)],
+            [(51,36),(32,54),(32,36)],[(10,32),(27,32),(27,50)],
+        ):
+            polygon(points)
+    elif number == 23:
+        polygon([(32,8),(53,23),(32,45),(11,23)])
+        line([(33,42),(42,49),(31,54),(34,58),(44,55)],3)
+    elif number == 24:
+        polygon([(11,19),(53,19),(53,47),(11,47)])
+        d.line([(12,20),(32,35),(52,20)],fill=(0,0,0,0),width=3,joint='curve')
+        d.line([(12,45),(23,32)],fill=(0,0,0,0),width=2)
+        d.line([(52,45),(41,32)],fill=(0,0,0,0),width=2)
+    elif number == 25:
+        disk(32,35,14)
+        line([(18,36),(10,29),(12,20)],6); line([(46,36),(54,29),(52,20)],6)
+        polygon([(7,24),(8,14),(14,20),(19,14),(21,23)])
+        polygon([(43,23),(45,14),(51,20),(56,14),(57,24)])
+        for x in (18,46):
+            line([(x,38),(x-6 if x<32 else x+6,44),(x-8 if x<32 else x+8,49)],3)
+    elif number == 26:
+        disk(32,25,13)
+        for i in range(4):
+            line([(25-i,30+i*2),(14+i*3,44+i),(9+i*4,38+i*3)],3)
+            line([(39+i,30+i*2),(50-i*3,44+i),(55-i*4,38+i*3)],3)
+    elif number == 27:
+        for x, y in ((18,19),(30,13),(44,23)):
+            line([(x,45),(x,y)],2)
+            d.rounded_rectangle((x-2,y,x+2,y+11),radius=2,fill='white')
+        line([(10,45),(54,45)],3)
+        line([(16,51),(47,51)],2)
+    elif number == 28:
+        line([(16,13),(48,13)],4); line([(16,51),(48,51)],4)
+        line([(20,15),(23,24),(42,43),(44,49)],3)
+        line([(44,15),(41,24),(22,43),(20,49)],3)
+        polygon([(23,46),(32,38),(41,46)])
+    elif number == 29:
+        for x,y,r in ((25,28,12),(33,24,12),(41,32,11),(34,42,11),(21,40,8),(46,21,4),(16,18,3)):
+            disk(x,y,r)
+        for x,y,r in ((24,26,3),(36,21,3),(44,31,2),(32,40,3),(18,39,2)):
+            d.ellipse((x-r,y-r,x+r,y+r),fill=(0,0,0,0))
+    elif number == 30:
+        line([(10,32),(32,13),(54,32),(54,51),(10,51),(10,32)],3)
+        polygon([(32,47),(27,39),(23,30),(33,33),(34,42),(40,32),(46,29),(43,41)])
+    elif number == 31:
+        d.ellipse((13,13,51,51),outline='white',width=2)
+        polygon([(32,7),(37,27),(56,32),(37,37),(32,57),(27,37),(8,32),(27,27)])
+        d.ellipse((29,29,35,35),fill=(0,0,0,0))
+    elif number == 32:
+        disk(32,21,10)
+        d.ellipse((27,16,37,26),fill=(0,0,0,0))
+        line([(10,39),(21,35),(32,39),(43,35),(54,39)],3)
+        line([(16,48),(24,44),(32,48),(40,44),(48,48)],3)
+    elif number == 33:
+        polygon([(15,12),(40,12),(36,31),(13,31)])
+        polygon([(14,34),(42,34),(48,39),(17,39)])
+        line([(20,38),(39,53)],4); line([(42,39),(24,53)],4)
+    elif number == 34:
+        polygon([(8,34),(22,18),(28,25),(40,12),(55,34)])
+        polygon([(16,37),(49,37),(49,42),(16,42)])
+        polygon([(11,46),(54,46),(54,51),(11,51)])
+    elif number == 35:
+        d.rounded_rectangle((12,15,52,52),radius=5,outline='white',width=4)
+        line([(22,11),(22,21)],4); line([(42,11),(42,21)],4)
+        line([(14,24),(50,24)],3)
+        polygon([(32,28),(35,35),(44,35),(37,40),(39,48),(32,44),(25,48),(27,40),(20,35),(29,35)])
+    return im.resize((1024,1024),Image.Resampling.LANCZOS)
+
+
+def main():
+    for s in ROSTER:
+        n = code(s)
+        prefix = 'CWC3_' + n
+        root = ROOT / s['folder']
+        art = root/'Art'
+        png = art/'Sources'
+        png.mkdir(parents=True,exist_ok=True)
+        alpha = glyph(s['id'])
+        palette = bytes.fromhex(PALETTES[s['id'] - 21])
+        portrait = framed(alpha,tuple(palette))
+        portrait.save(png/'Emblem.png')
+        alpha.save(png/'Alpha.png')
+        sql = []
+        for kind,master in [('CIV',portrait),('ALPHA',alpha)]:
+            for size in SIZES:
+                name = f'{prefix}_{kind}_{size}.dds'
+                dds(master.resize((size,size),Image.Resampling.LANCZOS),art/name)
+                sql.append(f"('{prefix}_{kind}_ATLAS',{size},'{name}',1,1)")
+        content = "-- Generated by tools/build_daily_expansion_art.py.\n"
+        content += "INSERT INTO IconTextureAtlases(Atlas,IconSize,Filename,IconsPerRow,IconsPerColumn) VALUES\n"
+        content += ',\n'.join(sql) + ";\n"
+        content += (f"UPDATE Civilizations SET IconAtlas='{prefix}_CIV_ATLAS', AlphaIconAtlas='{prefix}_ALPHA_ATLAS', "
+                    f"PortraitIndex=0 WHERE Type='CIVILIZATION_{prefix}';\n")
+        content += (f"UPDATE Units SET UnitFlagAtlas='{prefix}_ALPHA_ATLAS', UnitFlagIconOffset=0 WHERE Type='UNIT_{prefix}';\n")
+        (root/'SQL'/f'{n}_Art.sql').write_text(content,encoding='utf-8',newline='\n')
+    print(f'Built original emblems and alpha atlases for {len(ROSTER)} civilizations')
+
+
+if __name__ == '__main__':
+    main()

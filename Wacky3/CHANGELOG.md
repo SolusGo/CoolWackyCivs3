@@ -1,5 +1,12 @@
 # Changelog
 
+## Daily Surprise expansion — Stage C (#031–#035)
+
+- Add Cartographers of Nowhere, Muisca Confederation, Folding Chairs, Chachapoya and Unofficial Holidays.
+- Add saved own-unit exploration rewards, all-source Atlas House thresholds, strictly filtered land garrisons, and live WLTKD counter reconciliation.
+- Add original emblems and flags for all fifteen expansion civilizations. Leader, Dawn, map, diplomacy and replacement portraits use stock art.
+- Extend source checks and the combined 25-civilization package validation.
+
 ## Daily Surprise expansion — Stage B (#026–#030)
 
 - Add Octopus Parliament, Fogbound Republic, Borrowed Tomorrows, Lichen Compact and Glass Orchard.

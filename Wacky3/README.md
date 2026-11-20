@@ -7,7 +7,7 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 <!-- daily-expansion-start -->
 ## Daily Surprise expansion
 
-The pack includes 20 registered civilizations. The original ten are listed above.
+The pack includes 25 registered civilizations. The original ten are listed above.
 
 | Daily | Civilization | Leader | Capital |
 | --- | --- | --- | --- |
@@ -21,6 +21,11 @@ The pack includes 20 registered civilizations. The original ten are listed above
 | 028 | [The Republic of Borrowed Tomorrows](TheRepublicOfBorrowedTomorrows/README.md) | Chancellor Aevra Voss | Tomorrow's End |
 | 029 | [The Lichen Compact](TheLichenCompact/README.md) | Elder Thallia | Symbiosis |
 | 030 | [The Glass Orchard](TheGlassOrchard/README.md) | First Gardener Solenne | Sunspire |
+| 031 | [The Cartographers of Nowhere](TheCartographersOfNowhere/README.md) | Grand Surveyor Elian Vey | Meridian |
+| 032 | [The Muisca Confederation](TheMuiscaConfederation/README.md) | Zipa Tisquesusa | Bacatá |
+| 033 | [The Grand Duchy of Folding Chairs](TheGrandDuchyOfFoldingChairs/README.md) | Grand Duke Stackwell IV | Seatopolis |
+| 034 | [The Chachapoya](TheChachapoya/README.md) | Guardian Yana | Kuélap |
+| 035 | [The Calendar of Unofficial Holidays](TheCalendarOfUnofficialHolidays/README.md) | Minister Pippa Day | Longweekend |
 
 [Implementation report](docs/DailyExpansion_021_035_ImplementationReport.md) · [Native testing index](docs/DailyExpansion_021_035_Testing.md)
 
@@ -125,6 +130,9 @@ python tools/generate_timetable.py
 python tools/generate_covenant.py
 python tools/generate_paleo.py
 python tools/generate_archived.py
+python tools/generate_daily_expansion.py
+python tools/build_daily_expansion_art.py
+python tools/write_daily_guides.py
 python tools/generate_summer_ui.py
 python tools/build_art.py
 python tools/build_timetable_art.py
@@ -132,6 +140,7 @@ python tools/build_covenant_art.py
 python tools/build_daily_art.py
 python tools/paleo_fixture.py --fetch  # first-time PALEO source references
 python tools/archived_fixture.py --fetch  # pinned trade-route lifecycle reference
+python tools/validate_daily_expansion.py
 python tools/validate_paleo.py
 python tools/validate_covenant.py
 python tools/validate_timetable.py

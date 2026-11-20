@@ -6,7 +6,7 @@ Speaker Eightfold leads this human-only civilization from Inkminster. Speaker Ei
 - **Inkguard** replaces Pikeman. +15% defensive strength, retained on upgrade.
 - **Deliberation Chamber** replaces Library. +1 Culture. Also +1 Gold under Prosperity or +1 Science under Enlightenment.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 An outstanding vote grants no active resolution until a player chooses. UI rendering and callback dispatch still require native acceptance.
 

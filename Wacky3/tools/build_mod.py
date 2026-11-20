@@ -31,7 +31,7 @@ DAILY_ROSTER = json.loads((ROOT/'tools/daily_expansion.json').read_text(encoding
 for spec in DAILY_ROSTER:
     stem = f"D{spec['id']:03}"
     folder = spec['folder']
-    ORDER.extend(f"{folder}/SQL/{stem}_{kind}.sql" for kind in ['Civilization','Units','Buildings','Text'])
+    ORDER.extend(f"{folder}/SQL/{stem}_{kind}.sql" for kind in ['Civilization','Units','Buildings','Text','Art'])
     ENTRIES.append((f"{folder}/Lua/{stem}_Gameplay.xml", spec['ability'], spec['name']))
 
 

@@ -6,7 +6,7 @@ Shō Shin leads this human-only civilization from Shuri. Inspired by the histori
 - **Ryukyuan Guard** replaces Pikeman. +1 Sight and +15% defense in friendly territory.
 - **Naha Trading Port** replaces Harbor. +2 Gold and +1 Science.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Native timing, combat and save acceptance remain outstanding.
 

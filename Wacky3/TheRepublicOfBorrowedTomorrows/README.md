@@ -6,7 +6,7 @@ Chancellor Aevra Voss leads this human-only civilization from Tomorrow's End. Th
 - **Debt Collector** replaces Pikeman. +15% Combat Strength in friendly territory. The additional +10% during repayment requires the blocked advance mechanic.
 - **Temporal Exchange** replaces Market. +1 Gold. +1 Science while debt free. The alternate +1 Production requires the blocked advance mechanic.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Exact debt-neutral settlement is blocked. Only the active Pikeman/Market replacements, +15% friendly strength and debt-free Exchange yields are enabled.
 

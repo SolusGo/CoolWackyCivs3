@@ -568,5 +568,277 @@
       "DECLAREWAR": "You have mistaken our preference for peace as an inability to defend ourselves.",
       "DEFEATED": "The glass is shattered... but the seeds remain."
     }
+  },
+  {
+    "id": 31,
+    "folder": "TheCartographersOfNowhere",
+    "name": "The Cartographers of Nowhere",
+    "leader": "Grand Surveyor Elian Vey",
+    "capital": "Meridian",
+    "adjective": "Cartographer",
+    "ability": "The Unfinished Atlas",
+    "ability_help": "Every ten previously unseen land plots discovered by your units give 15 Science and 10 Culture at Standard speed, ten rewards per era. Unspent progress carries forward. City-only discoveries are unavailable because their source cannot be verified.",
+    "unit_parent": "SCOUT",
+    "unit": "Pathfinder",
+    "unit_help": "+1 Sight and ignores terrain movement costs subject to ordinary movement restrictions. Unique bonuses persist through upgrades.",
+    "building_parent": "LIBRARY",
+    "building": "Atlas House",
+    "building_help": "+1 Science. +1 Culture after revealing 100 land plots and +1 Gold after revealing 200, from any source.",
+    "yields": {
+      "SCIENCE": 1
+    },
+    "controllers": {
+      "ATLAS_CULTURE": {
+        "CULTURE": 1
+      },
+      "ATLAS_GOLD": {
+        "GOLD": 1
+      }
+    },
+    "strategy": "Explore in different directions and keep scouts safe. Unlock naval exploration when the coast limits land discovery, and build Atlas Houses as the map fills in.",
+    "pedia": "Meridian's surveyors record what exists beyond the map's edge. Elian Vey keeps a space on every map for discoveries yet to come.",
+    "cities": [
+      "Bearing Point",
+      "Contour",
+      "North Mark",
+      "Margin"
+    ],
+    "promotion": {
+      "VisibilityChange": 1,
+      "IgnoreTerrainCost": 1
+    },
+    "options": [
+      "EVENTS_TILE_REVEALED",
+      "EVENTS_NEW_ERA"
+    ],
+    "design": "the-cartographers-of-nowhere",
+    "blob": "d09e637d213fc3e4ba069abeba99db81d2cae2df",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Meridian. Tell me, traveller, have you seen anything that isn't on my maps?",
+      "DECLAREWAR": "Your borders are merely lines on parchment. I intend to redraw them.",
+      "DEFEATED": "So many places... still left unseen."
+    }
+  },
+  {
+    "id": 32,
+    "folder": "TheMuiscaConfederation",
+    "name": "The Muisca Confederation",
+    "leader": "Zipa Tisquesusa",
+    "capital": "Bacatá",
+    "adjective": "Muisca",
+    "ability": "The Sacred Exchange",
+    "ability_help": "Working an owned, improved, unpillaged Gold or Silver tile grants +2 Faith and +1 Culture. Owning an actual Lake tile within three hexes grants +1 Gold. Each bonus is binary.",
+    "unit_parent": "SPEARMAN",
+    "unit": "Guecha Warrior",
+    "unit_help": "+1 Sight and +15% defense on Hills. Both unique bonuses persist through upgrades.",
+    "building_parent": "MARKET",
+    "building": "Salt Exchange",
+    "building_help": "+1 Faith. +1 Gold per worked, owned, unpillaged Mine, capped at +2.",
+    "yields": {
+      "FAITH": 1
+    },
+    "controllers": {
+      "METALS": {
+        "FAITH": 2,
+        "CULTURE": 1
+      },
+      "LAKE": {
+        "GOLD": 1
+      },
+      "MINE_1": {
+        "GOLD": 1
+      },
+      "MINE_2": {
+        "GOLD": 1
+      }
+    },
+    "strategy": "Settle near farmable land, mineable resources and sacred lakes. Assign citizens to improved metals and defend hills with Guecha Warriors. Invest resource yields in religion and diplomacy.",
+    "pedia": "Inspired by the Muisca network of highland chiefdoms in present-day Colombia and by its salt trade, metalworking and sacred lakes. The uniques are fictionalized gameplay abstractions.",
+    "cities": [
+      "Hunza",
+      "Suamox",
+      "Guatavita",
+      "Chía"
+    ],
+    "promotion": {
+      "VisibilityChange": 1,
+      "HillsDefense": 15
+    },
+    "design": "the-muisca-confederation",
+    "blob": "0dc3a0f43e4116c9fe25f5d8402b2f462db5e67f",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Bacatá. You may keep your coins. Tell me what your people consider sacred.",
+      "DECLAREWAR": "You count our gold and mistake it for weakness. Our warriors count the paths through these mountains.",
+      "ATTACKED": "Climb, then. The mountains will decide which of us reaches the summit.",
+      "DEFEATED": "The gold will pass from hand to hand. I wonder if you will ever understand what it meant."
+    }
+  },
+  {
+    "id": 33,
+    "folder": "TheGrandDuchyOfFoldingChairs",
+    "name": "The Grand Duchy of Folding Chairs",
+    "leader": "Grand Duke Stackwell IV",
+    "capital": "Seatopolis",
+    "adjective": "Folding Chair",
+    "ability": "The Right to Remain Seated",
+    "ability_help": "A living, unembarked land combat unit garrisoned on its city's center grants +2 Culture and +1 Production. A city can receive the bonus once.",
+    "unit_parent": "SPEARMAN",
+    "unit": "Chair Marshal",
+    "unit_help": "+1 Sight and the installed Community Patch Cover I promotion. Both inherit through normal upgrades.",
+    "building_parent": "WALLS",
+    "building": "Grand Assembly Hall",
+    "building_help": "+1 Culture and +1 Gold when an eligible land garrison is present.",
+    "yields": {
+      "CULTURE": 1
+    },
+    "controllers": {
+      "GARRISON": {
+        "CULTURE": 2,
+        "PRODUCTION": 1
+      },
+      "HALL": {
+        "GOLD": 1
+      }
+    },
+    "strategy": "Garrison priority cities without draining your mobile army. Build Halls in cities that will keep garrisons, and use the steady Culture to accelerate policies.",
+    "pedia": "A carpenter ended a succession dispute by offering every citizen a portable throne. Stackwell IV still asks visiting diplomats to take a seat.",
+    "cities": [
+      "Latchford",
+      "Foldwick",
+      "Hingehall",
+      "Bench End"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "free_promotions": [
+      "PROMOTION_COVER_1"
+    ],
+    "options": [
+      "EVENTS_UNIT_PREKILL"
+    ],
+    "design": "the-grand-duchy-of-folding-chairs",
+    "blob": "07789d49ebbd8808da979903bf10ac1daa70b937",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Seatopolis! Please, take a seat. No, not that one. That is the throne.",
+      "DECLAREWAR": "You have insulted our sovereignty. Prepare to be folded.",
+      "ATTACKED": "They come for our chairs! Form the seating arrangement!",
+      "DEFEATED": "My kingdom... collapsed. Much like an improperly secured hinge.",
+      "TRADE_OFFER": "Our craftsmen have perfected the portable throne. Would you care for twelve thousand?"
+    }
+  },
+  {
+    "id": 34,
+    "folder": "TheChachapoya",
+    "name": "The Chachapoya",
+    "leader": "Guardian Yana",
+    "capital": "Kuélap",
+    "adjective": "Chachapoya",
+    "ability": "Cities Above the Clouds",
+    "ability_help": "+1 Culture in cities founded on Hills. Independently, +1 Science in cities with a Walls-class building.",
+    "unit_parent": "COMPOSITE_BOWMAN",
+    "unit": "Cloud Sentinel",
+    "unit_help": "+1 Sight and +15% defense on Hills. No bonus to ranged attacks. Unique properties persist on upgrades.",
+    "building_parent": "GRANARY",
+    "building": "Cloud Terrace",
+    "building_help": "+1 Food. +1 Production in Hill-founded cities.",
+    "yields": {
+      "FOOD": 1
+    },
+    "controllers": {
+      "HILL": {
+        "CULTURE": 1
+      },
+      "WALL": {
+        "SCIENCE": 1
+      },
+      "TERRACE": {
+        "PRODUCTION": 1
+      }
+    },
+    "strategy": "Found on hills near strong food tiles, build Terraces, and reinforce important hills with Cloud Sentinels. Build walls where the science and protection are both useful.",
+    "pedia": "Inspired by the Chachapoya peoples of the cloud forests in northern Peru and their stone settlements. Guardian Yana is a fictional representative leader of these varied communities.",
+    "cities": [
+      "Gran Pajatén",
+      "Revash",
+      "La Congona",
+      "Purun Llacta"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "extra_promotions": {
+      "DEFEND": {
+        "HillsDefense": 15
+      }
+    },
+    "options": [
+      "EVENTS_BATTLES"
+    ],
+    "design": "the-chachapoya",
+    "blob": "da96e6b8a105273a9b191199460ed61dca4c8d37",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Kuélap. You have climbed far to reach us. I hope your intentions are lighter than your armor.",
+      "DECLAREWAR": "You see a wall. We see a home. Come and learn the difference.",
+      "ATTACKED": "You brought ladders to the clouds? How ambitious.",
+      "DEFEATED": "Our stones may fall. Our mountains will not.",
+      "TRADE_OFFER": "We offer the treasures of the heights. Please do not ask us to deliver them downhill."
+    }
+  },
+  {
+    "id": 35,
+    "folder": "TheCalendarOfUnofficialHolidays",
+    "name": "The Calendar of Unofficial Holidays",
+    "leader": "Minister Pippa Day",
+    "capital": "Longweekend",
+    "adjective": "Calendar",
+    "ability": "A Reason to Celebrate",
+    "ability_help": "+2 Production and +1 Science in a city while its We Love the King Day counter is active. Does not trigger or extend celebrations.",
+    "unit_parent": "PIKEMAN",
+    "unit": "Parade Marshal",
+    "unit_help": "+1 Sight and +15% defense in friendly territory. Both persist through normal upgrades.",
+    "building_parent": "COLOSSEUM",
+    "building": "Holiday Office",
+    "building_help": "+1 Culture and +2 Gold while We Love the King Day is active. Retains the normal Colosseum effects.",
+    "yields": {
+      "CULTURE": 1
+    },
+    "controllers": {
+      "CELEBRATION": {
+        "PRODUCTION": 2,
+        "SCIENCE": 1
+      },
+      "OFFICE": {
+        "GOLD": 2
+      }
+    },
+    "strategy": "Trade for the luxuries your cities request, then use celebrations to finish important projects and research. Build Holiday Offices for steady Culture between celebrations.",
+    "pedia": "Pippa Day's parliament resolves municipal disagreements by declaring commemorative days. Workshops and markets put the celebrations to use.",
+    "cities": [
+      "Halfday",
+      "Bank Holiday",
+      "Observed",
+      "Parade Square"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "extra_promotions": {
+      "DEFEND": {
+        "DefenseMod": 15
+      }
+    },
+    "options": [
+      "EVENTS_BATTLES"
+    ],
+    "design": "the-calendar-of-unofficial-holidays",
+    "blob": "f7719e4a70dc88d2a7e359a5952baa549e5a859a",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Longweekend! You've arrived just in time for National Arriving Just in Time Day.",
+      "DECLAREWAR": "You have interrupted our celebrations. We hereby declare tomorrow National Retaliation Day.",
+      "ATTACKED": "An invasion? But the entire army has already booked annual leave!",
+      "DEFEATED": "We request that our surrender be observed as a public holiday.",
+      "TRADE_OFFER": "Would you exchange your Spices for our finest commemorative calendar? Every page is a holiday."
+    }
   }
 ]

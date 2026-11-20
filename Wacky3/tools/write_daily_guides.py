@@ -26,6 +26,7 @@ BLOCKERS = {
     26: "An outstanding vote grants no active resolution until a player chooses. UI rendering and callback dispatch still require native acceptance.",
     28: "Exact debt-neutral settlement is blocked. Only the active Pikeman/Market replacements, +15% friendly strength and debt-free Exchange yields are enabled.",
     31: "TileRevealed carries explicit unit provenance only. The ability credits verified in-session own-unit discoveries. City-only and pre-context starting reveals cannot be distinguished from external reveals and are excluded.",
+    34: "The Cloud Sentinel's melee-only modifier is scoped around native resolution, so pre-battle previews may omit it.",
     35: "Native production uses the counter before the city countdown step. Treasury and research use the state later in the same turn. One-turn boundary behavior requires native measurement.",
 }
 
@@ -50,7 +51,7 @@ def main():
 - **{s['unit']}** replaces {s['unit_parent'].replace('_',' ').title()}. {s['unit_help']}
 - **{s['building']}** replaces {s['building_parent'].title()}. {s['building_help']}
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 {note}
 
@@ -119,7 +120,7 @@ The pack includes {10+len(ROSTER)} registered civilizations. The original ten ar
         ua='Implemented' if n not in {22,28,31,35} else {22:'Partial',28:'Blocked',31:'Partial',35:'Source implementation, phase boundary unverified'}[n]
         uu='Partial (debt bonus blocked)' if n==28 else 'Implemented'
         ub='Partial (debt branch blocked)' if n==28 else 'Implemented'
-        report.append(f"| {n:03} | [{s['name']}](../{s['folder']}/README.md) | {ua} | {uu} | {ub} | Stock fallbacks | {state} | SQLite / Lua 5.1 | Not tested | {BLOCKERS.get(n,'Native acceptance outstanding.')} |")
+        report.append(f"| {n:03} | [{s['name']}](../{s['folder']}/README.md) | {ua} | {uu} | {ub} | Original emblem and flag / stock portraits and scenes | {state} | SQLite / Lua 5.1 | Not tested | {BLOCKERS.get(n,'Native acceptance outstanding.')} |")
     write(ROOT/'docs/DailyExpansion_021_035_ImplementationReport.md',"""
 # Daily Surprise expansion implementation
 

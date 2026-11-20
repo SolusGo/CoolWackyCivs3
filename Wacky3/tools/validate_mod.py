@@ -20,7 +20,8 @@ from validate_archived import check_database as check_archived_database, check_l
 from archived_fixture import source_checks as archived_source_checks
 from validate_daily_art import check_art as check_daily_art
 
-from validate_daily_expansion import check_database as check_daily_database, check_lua as check_daily_lua
+from validate_daily_expansion import check_database as check_daily_database, check_lua as check_daily_lua, check_art as check_expansion_art
+from daily_source_checks import check_source as check_expansion_source
 
 RESULTS={}
 def sql_checks(mutate=True, clean=False):
@@ -56,6 +57,9 @@ def sql_checks(mutate=True, clean=False):
         db.execute("UPDATE Units SET Moves=Moves+3,Cost=Cost+23,BaseSightRange=BaseSightRange+2 WHERE Type='UNIT_ARCHAEOLOGIST'")
         db.execute("UPDATE Buildings SET Cost=Cost+29,GoldMaintenance=GoldMaintenance+2,GreatWorkCount=GreatWorkCount+1,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_MUSEUM'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_MUSEUM','YIELD_SCIENCE',4),('BUILDING_MUSEUM','YIELD_SCIENCE',3),('BUILDING_MUSEUM','YIELD_CULTURE',2)")
+    if mutate:
+        from validate_daily_expansion import mutate_baselines as mutate_expansion
+        mutate_expansion(db)
     baseline={t:[tuple(r) for r in db.execute('SELECT * FROM '+quote(t))] for t in ['Civilizations','Units','Buildings','Traits','UnitPromotions']}
     native_companions={}
     for prefix,column,parent in [('Unit_','UnitType','UNIT_WORKER'),('Building_','BuildingType','BUILDING_WORKSHOP'),('Unit_','UnitType','UNIT_PIKEMAN'),('Building_','BuildingType','BUILDING_TEMPLE'),('Unit_','UnitType','UNIT_SPEARMAN'),('Unit_','UnitType','UNIT_COMPOSITE_BOWMAN'),('Unit_','UnitType','UNIT_HORSEMAN'),('Building_','BuildingType','BUILDING_CARAVANSARY'),('Building_','BuildingType','BUILDING_LIBRARY'),('Building_','BuildingType','BUILDING_GRANARY')]:
@@ -178,7 +182,7 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
     assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==10+len(DAILY_ROSTER)
-    assert len(ORDER)==len(set(ORDER))==49+4*len(DAILY_ROSTER)
+    assert len(ORDER)==len(set(ORDER))==49+5*len(DAILY_ROSTER)
     for entry,_,_ in ENTRIES[6:]:
         assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
@@ -196,10 +200,10 @@ def package_checks(db):
     assert len(imported)==len(set(imported)),'VFS basename collision'
     art=ROOT/'TheMinistryOfAlmost/Art'
     textures=[]
+    assets_by_name = {Path(path).name: ROOT/path for path in declared if path.endswith('.dds')}
     for atlas,size,name,cols,rows in db.execute("SELECT Atlas,IconSize,Filename,IconsPerRow,IconsPerColumn FROM IconTextureAtlases WHERE Atlas LIKE 'CWC3_%'"):
-        matches=[p for p in files() if p.name==name]
-        assert len(matches)==1,('missing/ambiguous atlas',name)
-        path=matches[0]; assert path.is_file(),name
+        path=assets_by_name.get(name)
+        assert path and path.is_file(),('missing atlas',name)
         im=Image.open(path); im.load(); assert im.size==(size*int(cols),size*int(rows))
         header=struct.unpack('<31I',path.read_bytes()[4:128]); assert header[21]==32 and header[19]==0x41
         assert header[6]==size.bit_length(),('mip count',name,header[6])
@@ -208,7 +212,7 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==333
+    assert len(textures)==333+18*len(DAILY_ROSTER)
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
@@ -224,6 +228,7 @@ def package_checks(db):
     assert declared['TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml'].get('import')=='1'
     RESULTS['paleo_art']=check_paleo_art(db,declared)
     RESULTS['daily_art']=check_daily_art(db,declared)
+    RESULTS['daily_expansion_art']=check_expansion_art(db,declared)
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -242,7 +247,7 @@ def package_checks(db):
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
     texture_count=sum(p.suffix=='.dds' for p in files())
-    assert texture_count==411
+    assert texture_count==411+18*len(DAILY_ROSTER)
     RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, {texture_count} DDS textures, alpha and full icon mip chains'
 
 def main():
@@ -252,6 +257,7 @@ def main():
     RESULTS['source_audit']=audit()
     RESULTS['paleo_source_audit']=paleo_source_checks()
     RESULTS['archived_source_audit']=archived_source_checks()
+    RESULTS['daily_expansion_source_audit']=check_expansion_source()
     RESULTS['schema_audit']=check_regeneration()
     db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
@@ -273,7 +279,7 @@ def main():
     RESULTS['database_runs']=runs
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(db); package_checks(db); db.close()
-    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. Existing saves have NOT been acceptance-tested with this roster; start a new game.'
+    RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

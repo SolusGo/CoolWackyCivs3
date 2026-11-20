@@ -6,7 +6,7 @@ High Claw Thalassar leads this human-only civilization from Red Shoal. Intellige
 - **Shellbreaker** replaces Swordsman. +20% defense on passable coastal land adjacent to water. This ability survives upgrades.
 - **Tidal Bastion** replaces Walls. +1 Production and +1 Gold in coastal cities.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Native combat previews may lag a script-only plot mutation until state is repaired at BattleStarted.
 

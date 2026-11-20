@@ -124,6 +124,11 @@ end)
 
 local battle
 local pending = {}
+local function combatKey(a,au,d,du,x,y)
+    -- City ownership can change during resolution. A city target has no unit ID.
+    if du < 0 then d=-1 end
+    return table.concat({a,au,d,du,x,y}, ':')
+end
 GameEvents.BattleStarted.Add(function(kind, x, y)
     battle = {kind=kind, x=x, y=y}
 end)
@@ -144,7 +149,7 @@ GameEvents.CombatResult.Add(function(a, au, ad, af, am, d, du, dd, df, dm, ip, i
     if not relevant then return end
     local aUnit, dUnit = participant(attacker, au), participant(defender, du)
     local enemy = hostile(attacker, defender) and aUnit and dUnit
-    local signature = table.concat({a,au,ad,af,am,d,du,dd,df,dm,ip,iu,damage,x,y}, ':')
+    local signature = combatKey(a,au,d,du,x,y)
     pending[signature] = {
         lossA=enemy and lifecycle.eligible(attacker) and daily.Major(defender) and af >= am and ad > 0 and damage == 0,
         lossD=enemy and lifecycle.eligible(defender) and daily.Major(attacker) and df >= dm and dd > 0,
@@ -163,7 +168,7 @@ local function loss(player, id, qualifies)
 end
 
 GameEvents.CombatEnded.Add(function(a, au, ad, af, am, d, du, dd, df, dm, ip, iu, damage, x, y)
-    local signature = table.concat({a,au,ad,af,am,d,du,dd,df,dm,ip,iu,damage,x,y}, ':')
+    local signature = combatKey(a,au,d,du,x,y)
     local result = pending[signature]
     if not result then return end
     pending[signature] = nil

@@ -6,7 +6,7 @@ First Warden Mirelle leads this human-only civilization from Greyfen. Greyfen's 
 - **Fen Stalker** replaces Scout. +1 Sight, double Marsh movement and +15% additional defense on Marsh. Unique properties persist through upgrades.
 - **Marsh Conservatory** replaces Library. +1 Science. At least two owned Marsh plots within three hexes give +1 Food; at least four give another +1 Science.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Native timing, combat and save acceptance remain outstanding.
 

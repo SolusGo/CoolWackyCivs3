@@ -6,7 +6,7 @@ Sky-King Aeral leads this human-only civilization from Windspire. Aeral's cities
 - **Windrunner** replaces Horseman. +1 Movement and +10% strength when attacking units on Plains or Grassland.
 - **Kite Pavilion** replaces Amphitheater. +1 Culture and +1 Gold in cities founded on Plains or Grassland.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Native timing, combat and save acceptance remain outstanding.
 

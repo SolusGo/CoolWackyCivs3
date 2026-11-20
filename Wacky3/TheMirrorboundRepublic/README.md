@@ -6,7 +6,7 @@ First Reflector Caelis leads this human-only civilization from Verity. In Verity
 - **Reflection Guard** replaces Swordsman. +1 Sight. After surviving hostile melee combat on defense, gains +15% strength on its next attack, expiring by the end of its next owner-turn.
 - **Chamber of Revision** replaces University. +1 Culture and +1 Science, plus +1 Science with at least 3 stored Lessons.
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
 
 Primary two-unit combat only. Independently attributed interceptor and collateral deaths are not covered. Native dispatch and attack consumption still require acceptance.
 
