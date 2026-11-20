@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="CWC3_D029">
+  <Script file="D029_Gameplay.lua" />
+</Context>

@@ -7,7 +7,7 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 <!-- daily-expansion-start -->
 ## Daily Surprise expansion
 
-The pack includes 15 registered civilizations. The original ten are listed above.
+The pack includes 20 registered civilizations. The original ten are listed above.
 
 | Daily | Civilization | Leader | Capital |
 | --- | --- | --- | --- |
@@ -16,6 +16,11 @@ The pack includes 15 registered civilizations. The original ten are listed above
 | 023 | [Kingdom of a Thousand Kites](KingdomOfAThousandKites/README.md) | Sky-King Aeral | Windspire |
 | 024 | [The Postal Sovereignty](ThePostalSovereignty/README.md) | Postmaster-General Elowen | First Address |
 | 025 | [The Carapace Dominion](TheCarapaceDominion/README.md) | High Claw Thalassar | Red Shoal |
+| 026 | [The Octopus Parliament](TheOctopusParliament/README.md) | Speaker Eightfold | Inkminster |
+| 027 | [The Fogbound Republic](TheFogboundRepublic/README.md) | First Warden Mirelle | Greyfen |
+| 028 | [The Republic of Borrowed Tomorrows](TheRepublicOfBorrowedTomorrows/README.md) | Chancellor Aevra Voss | Tomorrow's End |
+| 029 | [The Lichen Compact](TheLichenCompact/README.md) | Elder Thallia | Symbiosis |
+| 030 | [The Glass Orchard](TheGlassOrchard/README.md) | First Gardener Solenne | Sunspire |
 
 [Implementation report](docs/DailyExpansion_021_035_ImplementationReport.md) · [Native testing index](docs/DailyExpansion_021_035_Testing.md)
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## Daily Surprise expansion — Stage B (#026–#030)
+
+- Add Octopus Parliament, Fogbound Republic, Borrowed Tomorrows, Lichen Compact and Glass Orchard.
+- Add an era voting panel with saved pending and adopted resolutions. Apply feature-specific Marsh defense and movement and capped worked-terrain yields.
+- Keep temporal advances disabled pending exact CP production and research settlement hooks. The Debt Collector's friendly-territory strength and the debt-free Temporal Exchange function independently.
+
 ## Daily Surprise expansion — Stage A (#021–#025)
 
 - Add Ryukyu, Mirrorbound, Thousand Kites, Postal Sovereignty and Carapace Dominion to the standalone CP151 pack.

@@ -2,7 +2,7 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>15 human-only civilizations for Civilization V.</Teaser>
+    <Teaser>20 human-only civilizations for Civilization V.</Teaser>
     <Description>Independent human-only pack for BNW + standalone Community Patch v151.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
@@ -24,7 +24,7 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="52B59C7DE9C8E180057E7FF25A16E212" import="0">CHANGELOG.md</File>
+    <File md5="3AF37D2113C306B4EA6E4D6A43854A7D" import="0">CHANGELOG.md</File>
     <File md5="5F6CBA5DCFFF3271015E58B93CA3D997" import="0">docs/ArchivedArtReport.md</File>
     <File md5="48A5EB647CFE46BAD877C66350D53A50" import="0">docs/ArchivedDailyImplementationReport.md</File>
     <File md5="853476BB03CBAFD8D809EA6503C89A8A" import="0">docs/ArchivedDailyTesting.md</File>
@@ -32,9 +32,9 @@
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
-    <File md5="EA20F6CFD3B335F5995F97D66DC42849" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
-    <File md5="53057E2F60A1D2FFC2CE5A972935F008" import="0">docs/DailyExpansion_021_035_SourceProof.md</File>
-    <File md5="512082FC2B9D073537046051B4EC3917" import="0">docs/DailyExpansion_021_035_Testing.md</File>
+    <File md5="BDB08788BABECE384ECB7AE6E31D591B" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
+    <File md5="F4D49E0DA9EF61DC1E35E4A174A1239C" import="0">docs/DailyExpansion_021_035_SourceProof.md</File>
+    <File md5="50E63DA5090DB9FF5FFA9CD3F04021BB" import="0">docs/DailyExpansion_021_035_Testing.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
@@ -44,12 +44,17 @@
     <File md5="5229951131CE034157671514564D91A5" import="0">docs/strategy/TheCandlekeepersCovenant.md</File>
     <File md5="A6EB634CD52F0C5460EA5AAFD4EBAD56" import="0">docs/strategy/TheCarapaceDominion.md</File>
     <File md5="AED6C4283BDA33FF7066077EEA5581FA" import="0">docs/strategy/TheDepartmentOfLostThings.md</File>
+    <File md5="24272ED16E628B0BCE68CF47C622449A" import="0">docs/strategy/TheFogboundRepublic.md</File>
+    <File md5="AA2642673A3E318BF5B46D4489B3A649" import="0">docs/strategy/TheGlassOrchard.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="6BBCD44392994D7251B7B625BB19EED4" import="0">docs/strategy/TheKingdomOfMakuria.md</File>
+    <File md5="D2EB0824EE34FE76AE5DFE23893A28B2" import="0">docs/strategy/TheLichenCompact.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
     <File md5="1B1AAFC7B87696604867492D48E6E008" import="0">docs/strategy/TheMirrorboundRepublic.md</File>
+    <File md5="EA032733A6EBB5FBFE79CE0EA4182778" import="0">docs/strategy/TheOctopusParliament.md</File>
     <File md5="1E4FE9609CACD9525964BEE33B84ADEA" import="0">docs/strategy/ThePerpetualTimetable.md</File>
     <File md5="207AE9FB90BAFEFCB6B10F58D0035168" import="0">docs/strategy/ThePostalSovereignty.md</File>
+    <File md5="8DE9E1D15CDDA6D28CCD3D6165B2E1C4" import="0">docs/strategy/TheRepublicOfBorrowedTomorrows.md</File>
     <File md5="7363D34F447E50B0980BA1476A8541AE" import="0">docs/strategy/TheSaltRoadCompact.md</File>
     <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
@@ -71,7 +76,7 @@
     <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
     <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
     <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
-    <File md5="D364FFD64C8EB0AAA107D195AAEA109E" import="0">README.md</File>
+    <File md5="A06AF2484E5D5530A9E6BE9FAE549371" import="0">README.md</File>
     <File md5="52EA2FDE8282ADF49A185B53B3EC6314" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="E0DDD751BFFDBAFF8A9ECDD3DAD88AD4" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
@@ -260,6 +265,22 @@
     <File md5="5BB8D25B3982035C1A04BB18798C34CF" import="0">TheDepartmentOfLostThings/SQL/LOST_Text.sql</File>
     <File md5="41A2422847787D9BAB26059C03A93EE3" import="0">TheDepartmentOfLostThings/SQL/LOST_Units.sql</File>
     <File md5="B9DB7FC03D22CDBAF289CB725CE73F6E" import="0">TheDepartmentOfLostThings/TESTING.md</File>
+    <File md5="2B534287CB33EF96EB2953D09CC42BCC" import="1">TheFogboundRepublic/Lua/D027_Gameplay.lua</File>
+    <File md5="FBD38334F1E23FC00F9B8DD0B97BF80E" import="0">TheFogboundRepublic/Lua/D027_Gameplay.xml</File>
+    <File md5="D91053879C4CCA3313AEE1ACB5AA7FC2" import="0">TheFogboundRepublic/README.md</File>
+    <File md5="34D2DBEE6BC674D62C37F317C767512C" import="0">TheFogboundRepublic/SQL/D027_Buildings.sql</File>
+    <File md5="747D86A8FE53A055B03D43932AF05761" import="0">TheFogboundRepublic/SQL/D027_Civilization.sql</File>
+    <File md5="A187D2750C08056577C1B766C45011F4" import="0">TheFogboundRepublic/SQL/D027_Text.sql</File>
+    <File md5="D0DAE684F346E68B425E4EE00A4480B8" import="0">TheFogboundRepublic/SQL/D027_Units.sql</File>
+    <File md5="77A450A6019EE4AE4C6BFEF41DD0BFA8" import="0">TheFogboundRepublic/TESTING.md</File>
+    <File md5="ECDF9C96045B4FE4253C166FECC0338B" import="1">TheGlassOrchard/Lua/D030_Gameplay.lua</File>
+    <File md5="82F99233AC3468C2BDC679678686B661" import="0">TheGlassOrchard/Lua/D030_Gameplay.xml</File>
+    <File md5="73897AE520B355E9C0CA9AAF35E219EF" import="0">TheGlassOrchard/README.md</File>
+    <File md5="1D7452B76BBE6DEA7A13B75A6F699582" import="0">TheGlassOrchard/SQL/D030_Buildings.sql</File>
+    <File md5="9DBC2474C6A1B047A1A1A9FE150EDFAD" import="0">TheGlassOrchard/SQL/D030_Civilization.sql</File>
+    <File md5="3BA328E173D7FBBC30726AF6CB125EDD" import="0">TheGlassOrchard/SQL/D030_Text.sql</File>
+    <File md5="262F8A0FB5CB4402BF6865AEBD59A889" import="0">TheGlassOrchard/SQL/D030_Units.sql</File>
+    <File md5="8B6432511D4873B7D60D297AF55E719B" import="0">TheGlassOrchard/TESTING.md</File>
     <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
@@ -335,6 +356,14 @@
     <File md5="45D87B43A99DF985CE1A2F17956C8B2D" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Text.sql</File>
     <File md5="82D128A6669ADF3C7FFEF140EE2A1DC9" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Units.sql</File>
     <File md5="861F5AFE262334AAF49C11DC566F05D6" import="0">TheKingdomOfMakuria/TESTING.md</File>
+    <File md5="595FF9C3DFCA6A3276ED21D2D59B60E6" import="1">TheLichenCompact/Lua/D029_Gameplay.lua</File>
+    <File md5="1C5D1F21C012723B9EF4572C5CB4D3C5" import="0">TheLichenCompact/Lua/D029_Gameplay.xml</File>
+    <File md5="81343160A3C4C4D9D14114040CCCCC5D" import="0">TheLichenCompact/README.md</File>
+    <File md5="79307B0178FAB4A77651DEB717F80015" import="0">TheLichenCompact/SQL/D029_Buildings.sql</File>
+    <File md5="885DBA3EF5ECE8A2428BF8440BC5BA03" import="0">TheLichenCompact/SQL/D029_Civilization.sql</File>
+    <File md5="30FDB602F9CFC4AA217B0F949DDB9D47" import="0">TheLichenCompact/SQL/D029_Text.sql</File>
+    <File md5="52671D0BCBC550793A5D7FF16B7CF69B" import="0">TheLichenCompact/SQL/D029_Units.sql</File>
+    <File md5="25EFAB3103E65372968F52788B8C4031" import="0">TheLichenCompact/TESTING.md</File>
     <File md5="0F163BE9CECC4F6141764B267819A529" import="1">TheMinistryOfAlmost/Art/CWC3_Academy128.dds</File>
     <File md5="2F928495E9FC4F58830BA6B2CA33BCE6" import="1">TheMinistryOfAlmost/Art/CWC3_Academy16.dds</File>
     <File md5="50805CCEF4FF840FEB1E2FD751DAD07F" import="1">TheMinistryOfAlmost/Art/CWC3_Academy24.dds</File>
@@ -400,6 +429,14 @@
     <File md5="BBF3D890F8F4D673E345F422A2629B8E" import="0">TheMirrorboundRepublic/SQL/D022_Text.sql</File>
     <File md5="C73613E3E47C2314E56282C6245CBD3D" import="0">TheMirrorboundRepublic/SQL/D022_Units.sql</File>
     <File md5="0D5EAD09BFAB8EAB7F684E124CF34B90" import="0">TheMirrorboundRepublic/TESTING.md</File>
+    <File md5="21EAAF9F4EF4169F57D945431804B506" import="1">TheOctopusParliament/Lua/D026_Gameplay.lua</File>
+    <File md5="E92FECB528D744BB60E77A5C4909BB00" import="0">TheOctopusParliament/Lua/D026_Gameplay.xml</File>
+    <File md5="D1380D9D2ACE6979FC631477C224AA24" import="0">TheOctopusParliament/README.md</File>
+    <File md5="6B8B0016C3E909B643B76380778CF730" import="0">TheOctopusParliament/SQL/D026_Buildings.sql</File>
+    <File md5="2D9A4D604FA0A02783CE07EFE6B2FE22" import="0">TheOctopusParliament/SQL/D026_Civilization.sql</File>
+    <File md5="5BEC9EE16B240C1E215EFF49CAC8DE4E" import="0">TheOctopusParliament/SQL/D026_Text.sql</File>
+    <File md5="BB50A44915B80CD7C09FBF414AA8D227" import="0">TheOctopusParliament/SQL/D026_Units.sql</File>
+    <File md5="04ACEE618BCA7184B7424B0655B456C5" import="0">TheOctopusParliament/TESTING.md</File>
     <File md5="908CBD6430FD66685DC337CA054772E3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha128.dds</File>
     <File md5="1FEAF74602414817B920829AE29F356B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha16.dds</File>
     <File md5="D2E9D821A06F0B16064CC2679149D212" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha24.dds</File>
@@ -533,6 +570,14 @@
     <File md5="ED864518AD29B95C8B587A03923DE9A3" import="0">ThePostalSovereignty/SQL/D024_Text.sql</File>
     <File md5="5CD5DA64C252C2DFC845A350F0D823C7" import="0">ThePostalSovereignty/SQL/D024_Units.sql</File>
     <File md5="8995E230A5B50B98213B074B57D134F1" import="0">ThePostalSovereignty/TESTING.md</File>
+    <File md5="C9051D868CAAD6871FD68613E04828BE" import="1">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.lua</File>
+    <File md5="1630AAD703D8B7C41FD6A19419168083" import="0">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.xml</File>
+    <File md5="8FDA0819DAB45C4718E322997B280794" import="0">TheRepublicOfBorrowedTomorrows/README.md</File>
+    <File md5="CFA0BD15FD451A95B31E50D94DCA843B" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Buildings.sql</File>
+    <File md5="95E9F6645686D60CD4A1FE11D846B3B6" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Civilization.sql</File>
+    <File md5="251122BF7BDCB3471A7A4B9114228425" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Text.sql</File>
+    <File md5="510FED115103F1BD7ECD8F5E7CBAA1D0" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Units.sql</File>
+    <File md5="F1295DAF1FABEA36F590BDD6C398EE81" import="0">TheRepublicOfBorrowedTomorrows/TESTING.md</File>
     <File md5="A11AAB2B963F031D9D943D471C9F9913" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha128.dds</File>
     <File md5="97B7A5D88C8051AB63446D2060E392EB" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha16.dds</File>
     <File md5="FB0875618D153B1DED4F5BD554A47C7B" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha24.dds</File>
@@ -682,6 +727,26 @@
       <UpdateDatabase>TheCarapaceDominion/SQL/D025_Units.sql</UpdateDatabase>
       <UpdateDatabase>TheCarapaceDominion/SQL/D025_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheCarapaceDominion/SQL/D025_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheOctopusParliament/SQL/D026_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheOctopusParliament/SQL/D026_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheOctopusParliament/SQL/D026_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheOctopusParliament/SQL/D026_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheFogboundRepublic/SQL/D027_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheFogboundRepublic/SQL/D027_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheFogboundRepublic/SQL/D027_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheFogboundRepublic/SQL/D027_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheRepublicOfBorrowedTomorrows/SQL/D028_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheRepublicOfBorrowedTomorrows/SQL/D028_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheRepublicOfBorrowedTomorrows/SQL/D028_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheRepublicOfBorrowedTomorrows/SQL/D028_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheLichenCompact/SQL/D029_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheLichenCompact/SQL/D029_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheLichenCompact/SQL/D029_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheLichenCompact/SQL/D029_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheGlassOrchard/SQL/D030_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheGlassOrchard/SQL/D030_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheGlassOrchard/SQL/D030_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheGlassOrchard/SQL/D030_Text.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -744,6 +809,26 @@
     <EntryPoint type="InGameUIAddin" file="TheCarapaceDominion/Lua/D025_Gameplay.xml">
       <Name>The Unbroken Shore</Name>
       <Description>The Carapace Dominion</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheOctopusParliament/Lua/D026_Gameplay.xml">
+      <Name>The Eightfold Assembly</Name>
+      <Description>The Octopus Parliament</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheFogboundRepublic/Lua/D027_Gameplay.xml">
+      <Name>The Living Mist</Name>
+      <Description>The Fogbound Republic</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.xml">
+      <Name>The Future Is Collateral</Name>
+      <Description>The Republic of Borrowed Tomorrows</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheLichenCompact/Lua/D029_Gameplay.xml">
+      <Name>The Art of Endurance</Name>
+      <Description>The Lichen Compact</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheGlassOrchard/Lua/D030_Gameplay.xml">
+      <Name>Harvest the Sun</Name>
+      <Description>The Glass Orchard</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

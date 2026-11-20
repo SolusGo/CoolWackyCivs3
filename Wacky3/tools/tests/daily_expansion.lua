@@ -288,7 +288,107 @@ cases[25]=function(c)
     GameEvents.BattleStarted.fire(0,10,0)
     assert(not u:IsHasPromotion(id('PROMOTION','DEFEND')))
 end
--- Batches B and C add scenarios below.
+cases[26]=function(c)
+    local inkguard=unit(0,c.plot,true)
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(26)
+    expect(c,'PROSPERITY',0); expect(c,'ENLIGHTENMENT',0)
+    Controls.Prosperity.click()
+    expect(c,'PROSPERITY',1); expect(c,'CHAMBER_GOLD',1)
+    Controls.Enlightenment.click()
+    expect(c,'ENLIGHTENMENT',0)
+    era=1
+    GameEvents.TeamSetEra.fire(0,era,true)
+    expect(c,'PROSPERITY',0); expect(c,'CHAMBER_GOLD',0)
+    Controls.Enlightenment.click()
+    expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
+    nextTurn()
+    expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
+    era=2
+    GameEvents.TeamSetEra.fire(0,era,true)
+    Controls.Defence.click()
+    assert(inkguard:IsHasPromotion(id('PROMOTION','RESOLUTION')))
+    local civilian=unit(0,c.plot,false)
+    civilian.combat=false
+    GameEvents.UnitCreated.fire(0,civilian.id)
+    assert(not civilian:IsHasPromotion(id('PROMOTION','RESOLUTION')))
+    expect(c,'PROSPERITY',0); expect(c,'ENLIGHTENMENT',0)
+    assert(owner.saved:find('[CWC3_D026_V1:2:3]',1,true))
+end
+cases[27]=function(c)
+    local fen=unit(0,c.plot,true)
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(27)
+    local marsh=GameInfoTypes.FEATURE_MARSH
+    expect(c,'SCIENCE_1',0); expect(c,'MIST',0)
+    for i=1,5 do
+        local offset=directions[i]
+        add(c,plot(c.plot.x+offset[1],offset[2],{feature=marsh,owner=0,purchase=1}),true)
+        changed()
+        expect(c,'RESEARCH',i>=4 and 1 or 0)
+        expect(c,'FOOD',i>=2 and 1 or 0)
+        expect(c,'MIST',i>=2 and 1 or 0)
+        for j=1,4 do expect(c,'SCIENCE_'..j,i>=j and 1 or 0) end
+    end
+    c.plots[2].pillaged=true; c.plots[3].pillaged=true
+    GameEvents.TileImprovementChanged.fire()
+    expect(c,'SCIENCE_3',1); expect(c,'SCIENCE_4',0); expect(c,'RESEARCH',1)
+    assert(fen:IsHasPromotion(id('PROMOTION','MIST')))
+end
+cases[28]=function(c)
+    LoadDaily(28)
+    expect(c,'NO_DEBT',0)
+    c.buildings[id('BUILDING')]=1
+    GameEvents.CityConstructed.fire(0,1,id('BUILDING'))
+    expect(c,'NO_DEBT',1)
+    c.buildings[id('BUILDING')]=0
+    GameEvents.CitySoldBuilding.fire(0,1,id('BUILDING'))
+    expect(c,'NO_DEBT',0)
+end
+cases[29]=function(c)
+    local tundra,snow=GameInfoTypes.TERRAIN_TUNDRA,GameInfoTypes.TERRAIN_SNOW
+    c.plot.terrain=tundra
+    c.plot.hills=true
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(29)
+    expect(c,'COLD',1); expect(c,'FOOD_1',0)
+    for i=1,9 do
+        local x,y=i<=6 and directions[i][1] or i-5,i<=6 and directions[i][2] or -1
+        add(c,plot(c.plot.x+x,y,{terrain=i<=5 and tundra or snow,owner=0,purchase=i<=6 and 1 or 2}),true)
+        changed()
+        expect(c,'GARDEN_SCIENCE',i>=2 and 1 or 0)
+        expect(c,'GARDEN_CULTURE',i>=5 and 1 or 0)
+        expect(c,'FOOD_4',i>=4 and 1 or 0)
+        expect(c,'SCIENCE_3',i>=8 and 1 or 0)
+    end
+    c.work[c.plots[2].index]=false
+    c.work[c.plots[3].index]=false
+    changed()
+    expect(c,'FOOD_4',0); expect(c,'FOOD_3',1); expect(c,'GARDEN_CULTURE',1)
+end
+cases[30]=function(c)
+    local desert=GameInfoTypes.TERRAIN_DESERT
+    c.plot.terrain=desert
+    c.buildings[id('BUILDING')]=1
+    LoadDaily(30)
+    expect(c,'DESERT',1); expect(c,'SOLAR_CULTURE',1)
+    for i=1,5 do
+        add(c,plot(c.plot.x+i,0,{terrain=desert,pillaged=(i==1)}),true)
+        changed()
+        expect(c,'PEACE',0)
+        expect(c,'SOLAR_1',i>=2 and 1 or 0)
+        expect(c,'SOLAR_2',i>=4 and 1 or 0)
+        expect(c,'FOOD_4',i>=5 and 1 or 0)
+    end
+    atWar=false
+    Events.WarStateChanged.fire(0,1,false)
+    expect(c,'PEACE',1)
+    atWar=true
+    Events.WarStateChanged.fire(0,1,true)
+    expect(c,'PEACE',0)
+end
+
+-- Batch C adds scenarios below.
 
 owner.civ=id('CIVILIZATION')
 local capital=city(1)

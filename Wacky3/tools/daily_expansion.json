@@ -248,5 +248,325 @@
     ],
     "design": "the-carapace-dominion",
     "blob": "aff8307be4efcc22c7f8f4cef9aebadeb5481942"
+  },
+  {
+    "id": 26,
+    "folder": "TheOctopusParliament",
+    "name": "The Octopus Parliament",
+    "leader": "Speaker Eightfold",
+    "capital": "Inkminster",
+    "adjective": "Octopus",
+    "ability": "The Eightfold Assembly",
+    "ability_help": "Choose one resolution when beginning play and each time you enter a new technological era. Prosperity grants +1 Gold and +1 Production per city. Enlightenment grants +1 Science and +1 Culture per city. Defence grants military units +10% Combat Strength.",
+    "unit_parent": "PIKEMAN",
+    "unit": "Inkguard",
+    "unit_help": "+15% defensive strength, retained on upgrade.",
+    "building_parent": "LIBRARY",
+    "building": "Deliberation Chamber",
+    "building_help": "+1 Culture. Also +1 Gold under Prosperity or +1 Science under Enlightenment.",
+    "yields": {
+      "CULTURE": 1
+    },
+    "controllers": {
+      "PROSPERITY": {
+        "GOLD": 1,
+        "PRODUCTION": 1
+      },
+      "ENLIGHTENMENT": {
+        "SCIENCE": 1,
+        "CULTURE": 1
+      },
+      "CHAMBER_GOLD": {
+        "GOLD": 1
+      },
+      "CHAMBER_SCIENCE": {
+        "SCIENCE": 1
+      }
+    },
+    "strategy": "Choose Prosperity while expanding, Enlightenment when research and policies matter most, and Defence before a long war. The decision lasts until your next technological era.",
+    "pedia": "Speaker Eightfold presides over an eight-armed parliament that takes its votes, and its procedural rules, very seriously.",
+    "cities": [
+      "Civic Tide",
+      "Quorum Reef",
+      "Eight Bells",
+      "Inkwell"
+    ],
+    "promotion": {
+      "DefenseMod": 15
+    },
+    "extra_promotions": {
+      "RESOLUTION": {
+        "CombatPercent": 10
+      }
+    },
+    "options": [
+      "EVENTS_NEW_ERA"
+    ],
+    "design": "the-octopus-parliament",
+    "blob": "ffc5f9aab53d3a38d6b941b31c076b4a7e38b8ca"
+  },
+  {
+    "id": 27,
+    "folder": "TheFogboundRepublic",
+    "name": "The Fogbound Republic",
+    "leader": "First Warden Mirelle",
+    "capital": "Greyfen",
+    "adjective": "Fogbound",
+    "ability": "The Living Mist",
+    "ability_help": "+1 Science per worked, unpillaged Marsh, capped at +4 per city. +1 Culture with two owned Marsh plots within three hexes. Military units gain +10% defense on Marsh.",
+    "unit_parent": "SCOUT",
+    "unit": "Fen Stalker",
+    "unit_help": "+1 Sight, double Marsh movement and +15% additional defense on Marsh. Unique properties persist through upgrades.",
+    "building_parent": "LIBRARY",
+    "building": "Marsh Conservatory",
+    "building_help": "+1 Science. At least two owned Marsh plots within three hexes give +1 Food; at least four give another +1 Science.",
+    "yields": {
+      "SCIENCE": 1
+    },
+    "controllers": {
+      "SCIENCE_1": {
+        "SCIENCE": 1
+      },
+      "SCIENCE_2": {
+        "SCIENCE": 1
+      },
+      "SCIENCE_3": {
+        "SCIENCE": 1
+      },
+      "SCIENCE_4": {
+        "SCIENCE": 1
+      },
+      "MIST": {
+        "CULTURE": 1
+      },
+      "FOOD": {
+        "FOOD": 1
+      },
+      "RESEARCH": {
+        "SCIENCE": 1
+      }
+    },
+    "strategy": "Settle marshy waterways near good production tiles. Assign citizens to work unpillaged Marsh after building enough food infrastructure. Defend in the wetlands where both military bonuses can apply.",
+    "pedia": "Greyfen's watchtowers and raised paths thread through the mist. Mirelle guards their hidden approaches and studies the wetland ecology.",
+    "cities": [
+      "Reedway",
+      "Sedge Watch",
+      "Fog Crossing",
+      "Siltglass"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "extra_promotions": {
+      "MIST": {}
+    },
+    "features": [
+      [
+        "LINEAGE",
+        "MARSH",
+        15,
+        1
+      ],
+      [
+        "MIST",
+        "MARSH",
+        10,
+        0
+      ]
+    ],
+    "design": "the-fogbound-republic",
+    "blob": "3f6dcf557f78e490e39dc8b061e2cbd9d2da550a",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Greyfen. Stay on the wooden paths. The marsh has a habit of remembering those who wander.",
+      "DECLAREWAR": "You have studied our borders. You have counted our soldiers. But you have forgotten to count the marsh.",
+      "DEFEATED": "The fog lifts... and for the first time, I can see the end."
+    }
+  },
+  {
+    "id": 28,
+    "folder": "TheRepublicOfBorrowedTomorrows",
+    "name": "The Republic of Borrowed Tomorrows",
+    "leader": "Chancellor Aevra Voss",
+    "capital": "Tomorrow's End",
+    "adjective": "Temporal",
+    "ability": "The Future Is Collateral",
+    "ability_help": "Production and research advances are unavailable in this build. The engine has no verified settlement hook that can withhold and reconcile the exact debt after completion and overflow.",
+    "unit_parent": "PIKEMAN",
+    "unit": "Debt Collector",
+    "unit_help": "+15% Combat Strength in friendly territory. The additional +10% during repayment requires the blocked advance mechanic.",
+    "building_parent": "MARKET",
+    "building": "Temporal Exchange",
+    "building_help": "+1 Gold. +1 Science while debt free. The alternate +1 Production requires the blocked advance mechanic.",
+    "yields": {
+      "GOLD": 1
+    },
+    "controllers": {
+      "NO_DEBT": {
+        "SCIENCE": 1
+      }
+    },
+    "strategy": "Build Exchanges to supplement the capital's research and use Debt Collectors to hold friendly territory. With activation blocked, plan normal production and research queues.",
+    "pedia": "The chancellor negotiates with future generations as though they were creditors seated in the room. The Temporal Exchange records every promise.",
+    "cities": [
+      "Next Quarter",
+      "Second Due",
+      "Futurehold",
+      "Collateral Bay"
+    ],
+    "promotion": {
+      "FriendlyLandsModifier": 15
+    },
+    "design": "the-republic-of-borrowed-tomorrows",
+    "blob": "668764b6568bab78273c269a709168efb5ceaf09",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome, stranger. I would offer you tomorrow's hospitality, but I have already sold it.",
+      "DECLAREWAR": "Your defeat is inevitable. We have merely arranged for it to occur ahead of schedule.",
+      "DEFEATED": "The debt... has finally come due."
+    }
+  },
+  {
+    "id": 29,
+    "folder": "TheLichenCompact",
+    "name": "The Lichen Compact",
+    "leader": "Elder Thallia",
+    "capital": "Symbiosis",
+    "adjective": "Lichen",
+    "ability": "The Art of Endurance",
+    "ability_help": "+1 Food per worked Tundra (up to +4) and +1 Science per worked Snow (up to +3) per city. +1 Culture in cities founded on Tundra or Snow.",
+    "unit_parent": "SCOUT",
+    "unit": "Stonewalker",
+    "unit_help": "+1 Sight and double movement on Tundra and Snow. The unique bonuses persist through upgrades.",
+    "building_parent": "GRANARY",
+    "building": "Symbiotic Garden",
+    "building_help": "+1 Food; +1 Science with three owned cold plots within three hexes and +1 Culture with six.",
+    "yields": {
+      "FOOD": 1
+    },
+    "controllers": {
+      "FOOD_1": {
+        "FOOD": 1
+      },
+      "FOOD_2": {
+        "FOOD": 1
+      },
+      "FOOD_3": {
+        "FOOD": 1
+      },
+      "FOOD_4": {
+        "FOOD": 1
+      },
+      "SCIENCE_1": {
+        "SCIENCE": 1
+      },
+      "SCIENCE_2": {
+        "SCIENCE": 1
+      },
+      "SCIENCE_3": {
+        "SCIENCE": 1
+      },
+      "COLD": {
+        "CULTURE": 1
+      },
+      "GARDEN_SCIENCE": {
+        "SCIENCE": 1
+      },
+      "GARDEN_CULTURE": {
+        "CULTURE": 1
+      }
+    },
+    "strategy": "Settle cold rivers where nearby hills can supply Production. Work Tundra for growth and Snow for research, and claim enough cold plots for both Garden thresholds.",
+    "pedia": "Thallia's settlements survive the long cold by treating mutual dependence as a strength. Lichen symbiosis informs their horticulture and civic life.",
+    "cities": [
+      "Coldroot",
+      "Frost Ledge",
+      "North Mycelium",
+      "Pale Moss"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "terrain_move": [
+      "TUNDRA",
+      "SNOW"
+    ],
+    "design": "the-lichen-compact",
+    "blob": "c56534526b4793762091e35f089d13ceb18d0a39",
+    "dialogue": {
+      "FIRST_GREETING": "A lichen is neither one creature nor truly alone. Perhaps your people will understand this wisdom.",
+      "DECLAREWAR": "We have endured winters that swallowed kingdoms. We shall endure you.",
+      "DEFEATED": "Even now... life will find a way to return."
+    }
+  },
+  {
+    "id": 30,
+    "folder": "TheGlassOrchard",
+    "name": "The Glass Orchard",
+    "leader": "First Gardener Solenne",
+    "capital": "Sunspire",
+    "adjective": "Orchard",
+    "ability": "Harvest the Sun",
+    "ability_help": "+1 Food per worked, unpillaged Desert, capped at +4. Desert-founded cities gain +1 Science. While at peace with every living major, working three Desert plots adds +2 Gold.",
+    "unit_parent": "SPEARMAN",
+    "unit": "Glasswarden",
+    "unit_help": "+1 Sight and +15% defense on Desert. Unique bonuses persist through upgrades.",
+    "building_parent": "GARDEN",
+    "building": "Solar Conservatory",
+    "building_help": "+1 Food and +1 Science per two worked Desert tiles, capped at +2 Science. +1 Culture if founded on Desert. No freshwater requirement.",
+    "yields": {
+      "FOOD": 1
+    },
+    "controllers": {
+      "FOOD_1": {
+        "FOOD": 1
+      },
+      "FOOD_2": {
+        "FOOD": 1
+      },
+      "FOOD_3": {
+        "FOOD": 1
+      },
+      "FOOD_4": {
+        "FOOD": 1
+      },
+      "DESERT": {
+        "SCIENCE": 1
+      },
+      "PEACE": {
+        "GOLD": 2
+      },
+      "SOLAR_1": {
+        "SCIENCE": 1
+      },
+      "SOLAR_2": {
+        "SCIENCE": 1
+      },
+      "SOLAR_CULTURE": {
+        "CULTURE": 1
+      }
+    },
+    "strategy": "Seek Desert Hills, rivers and resources. Keep enough Desert citizens working to reach the Gold and Science thresholds, manage diplomatic peace and build Conservatories even at dry sites.",
+    "pedia": "Solenne's glasshouses shade orchards from the desert heat while gathering light. Glasswardens protect the workers and the carefully tended soil.",
+    "cities": [
+      "Mirrorgrove",
+      "Duneglass",
+      "Copper Shade",
+      "Green Furnace"
+    ],
+    "promotion": {
+      "VisibilityChange": 1
+    },
+    "terrain_defense": {
+      "DESERT": 15
+    },
+    "building_fields": {
+      "FreshWater": 0
+    },
+    "design": "the-glass-orchard",
+    "blob": "6d86a8533b3e7c0a256906b1037896708f7f3cd0",
+    "dialogue": {
+      "FIRST_GREETING": "Welcome to Sunspire. You expected sand and stone? Come, let me show you our orchards.",
+      "DECLAREWAR": "You have mistaken our preference for peace as an inability to defend ourselves.",
+      "DEFEATED": "The glass is shattered... but the seeds remain."
+    }
   }
 ]
