@@ -8,8 +8,8 @@ from baseline import ROOT, quote
 from target_schema import installations, LAYERS, row_values
 
 PIN=ROOT/'tools/archived_sources.json'
-PARENTS={'UnitType':{'UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN'},
-         'BuildingType':{'BUILDING_CARAVANSARY','BUILDING_WALLS','BUILDING_UNIVERSITY'},
+PARENTS={'UnitType':{'UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN','UNIT_SCOUT'},
+         'BuildingType':{'BUILDING_CARAVANSARY','BUILDING_WALLS','BUILDING_UNIVERSITY','BUILDING_HARBOR','BUILDING_MARKET','BUILDING_GARDEN','BUILDING_COLOSSEUM'},
          'ImprovementType':{'IMPROVEMENT_FARM'}}
 
 def add_samples(db):

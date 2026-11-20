@@ -1,8 +1,25 @@
 # Cool Wacky Civs 3 — version 1
 
-An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Current roster: **ten civilizations** — **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; **The Perpetual Timetable**, led by Grand Stationmaster Veyl; **The Candlekeeper's Covenant**, led by High Keeper Seraphine; **The Paleontological Directorate**, led by Director Emeritus Othmar; **Department of Lost Things**, led by Chief Registrar Nobody; **Assembly of Scarecrows**, led by Old Man Thistle; **Kingdom of Makuria**, led by Merkurios; and **The Salt Road Compact**, led by First Broker Nahir. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
+An independent, modular civilization pack for **Civilization V: Brave New World + (1) Community Patch v151**, without Vox Populi. Original roster: **ten civilizations** — **The Ministry of Almost**, led by Acting Chancellor Penultimate; **The Hollow Choir**, led by The First Note; **The Seventeenth Summer**, led by Chorus-Mother Ixa; **The Perpetual Timetable**, led by Grand Stationmaster Veyl; **The Candlekeeper's Covenant**, led by High Keeper Seraphine; **The Paleontological Directorate**, led by Director Emeritus Othmar; **Department of Lost Things**, led by Chief Registrar Nobody; **Assembly of Scarecrows**, led by Old Man Thistle; **Kingdom of Makuria**, led by Merkurios; and **The Salt Road Compact**, led by First Broker Nahir. All are human selectable (`Playable=1`), excluded from normal AI selection (`AIPlayable=0`). Windows single-player only.
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
+
+<!-- daily-expansion-start -->
+## Daily Surprise expansion
+
+The pack includes 15 registered civilizations. The original ten are listed above.
+
+| Daily | Civilization | Leader | Capital |
+| --- | --- | --- | --- |
+| 021 | [Kingdom of Ryukyu](KingdomOfRyukyu/README.md) | Shō Shin | Shuri |
+| 022 | [The Mirrorbound Republic](TheMirrorboundRepublic/README.md) | First Reflector Caelis | Verity |
+| 023 | [Kingdom of a Thousand Kites](KingdomOfAThousandKites/README.md) | Sky-King Aeral | Windspire |
+| 024 | [The Postal Sovereignty](ThePostalSovereignty/README.md) | Postmaster-General Elowen | First Address |
+| 025 | [The Carapace Dominion](TheCarapaceDominion/README.md) | High Claw Thalassar | Red Shoal |
+
+[Implementation report](docs/DailyExpansion_021_035_ImplementationReport.md) · [Native testing index](docs/DailyExpansion_021_035_Testing.md)
+
+<!-- daily-expansion-end -->
 
 ## Installation
 

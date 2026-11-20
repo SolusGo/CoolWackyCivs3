@@ -2,6 +2,7 @@
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import hashlib, argparse, zipfile
+import json
 ROOT=Path(__file__).resolve().parents[1]
 NAME='Cool Wacky Civs 3 (v 1).modinfo'
 MOD_ID='70d794f7-4fb2-4196-9709-8193f8ee36a9'
@@ -26,6 +27,14 @@ ENTRIES += [(folder+'/Lua/'+code+'_Gameplay.xml',name,description) for folder,co
     ('TheKingdomOfMakuria','MAKURIA','The Walls of Dongola','Per-city Walls BuildingClass Culture and Faith.'),
     ('TheSaltRoadCompact','SALT','The Price of Passage','Binary outgoing active land-route city yields.')]]
 
+DAILY_ROSTER = json.loads((ROOT/'tools/daily_expansion.json').read_text(encoding='utf-8'))
+for spec in DAILY_ROSTER:
+    stem = f"D{spec['id']:03}"
+    folder = spec['folder']
+    ORDER.extend(f"{folder}/SQL/{stem}_{kind}.sql" for kind in ['Civilization','Units','Buildings','Text'])
+    ENTRIES.append((f"{folder}/Lua/{stem}_Gameplay.xml", spec['ability'], spec['name']))
+
+
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and
                   p.relative_to(ROOT).parts[0] not in ['tools','dist'] and 'Sources' not in p.relative_to(ROOT).parts
@@ -33,8 +42,8 @@ def files():
 
 def build(package=False):
     root=ET.Element('Mod',id=MOD_ID,version='1'); props=ET.SubElement(root,'Properties')
-    values={'Name':'Cool Wacky Civs 3','Teaser':"Ten human-only civilizations, including the Department of Lost Things, Assembly of Scarecrows, Kingdom of Makuria, Salt Road Compact and Paleontological Directorate.",
-      'Description':'Independent ten-civilization human-only pack for BNW + standalone Community Patch v151. Science, Culture, religion, agriculture, caravans and archaeology.',
+    values={'Name':'Cool Wacky Civs 3','Teaser':f"{10 + len(DAILY_ROSTER)} human-only civilizations for Civilization V.",
+      'Description':'Independent human-only pack for BNW + standalone Community Patch v151.',
       'Authors':'SolusGo','Homepage':'https://github.com/SolusGo/CoolWackyCivs3','AffectsSavedGames':'1',
       'MinCompatibleSaveVersion':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0','SupportsMac':'0',
       'ReloadAudioSystem':'0','ReloadLandmarkSystem':'0','ReloadStrategicViewSystem':'0','ReloadUnitSystem':'0'}

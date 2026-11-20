@@ -1,0 +1,13 @@
+# The Carapace Dominion
+
+High Claw Thalassar leads this human-only civilization from Red Shoal. Intelligent crabs build low coastal fortresses on the edge of the sea. Thalassar considers the shore their first and best line of defense.
+
+- **The Unbroken Shore**. Coastal cities gain +1 Production and an additional +1 Science with any Walls-class building.
+- **Shellbreaker** replaces Swordsman. +20% defense on passable coastal land adjacent to water. This ability survives upgrades.
+- **Tidal Bastion** replaces Walls. +1 Production and +1 Gold in coastal cities.
+
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. Presentation uses stock art where an original illustration is outstanding.
+
+Native combat previews may lag a script-only plot mutation until state is repaired at BattleStarted.
+
+[Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/025-the-carapace-dominion.md) · [Strategy](../docs/strategy/TheCarapaceDominion.md) · [Acceptance](TESTING.md)

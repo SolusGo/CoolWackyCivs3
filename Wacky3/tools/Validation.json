@@ -94,11 +94,11 @@
     "regeneration": [
       {
         "input": "clean source-derived schema",
-        "result": "PASS: all thirty-nine SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all 59 SQL outputs byte-identical to checked-in output"
       },
       {
         "input": "artificial third-party building/unit tables",
-        "result": "PASS: all thirty-nine SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all 59 SQL outputs byte-identical to checked-in output"
       }
     ],
     "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
@@ -108,7 +108,7 @@
     "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
     "source_tables": 808,
     "source_civilizations": 2,
-    "synthetic_companion_records": 1152
+    "synthetic_companion_records": 2033
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -123,6 +123,7 @@
   "covenant_database": "PASS: human-only registration, complete active Pikeman/Temple scalar and 172 companion inheritance, exactly +1 Hall Culture including duplicate rows, 18 exclusive 0/1 controllers, native-model inheritance, permanent Sight and defense-only promotion",
   "paleo_database": "PASS: human-only registration, all active Archaeologist/Museum scalar and 172 companion definitions, +1 move/sight, exactly +2 Science/+1 Culture including duplicate inherited yields, bounded dummies, localization and overrides",
   "archived_database": "PASS: ten human-only civilizations; four active parent gameplay scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; original portrait/flag/scene bindings; localization and starting grants",
+  "daily_expansion_database": "PASS 5 Daily identities, intended active scalar and all approved companion deltas, dummies and localization",
   "database_runs": [
     {
       "evidence": {
@@ -130,7 +131,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 1152
+        "synthetic_companion_records": 2033
       },
       "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
@@ -141,7 +142,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 1152
+        "synthetic_companion_records": 2033
       },
       "fixture": "unaltered source definitions",
       "result": "PASS"
@@ -192,54 +193,6 @@
         }
       },
       "fixture": "mutated source definitions",
-      "result": "PASS"
-    },
-    {
-      "evidence": {
-        "database": "cache/Civ5DebugDatabase.db",
-        "installed_cp_version": 151,
-        "mode": "existing CP-schema snapshot (not certified CP-only)",
-        "source_tables": 959,
-        "source_civilizations": 195,
-        "BUILDING_LIBRARY": {
-          "Cost": 75,
-          "GoldMaintenance": 1,
-          "PrereqTech": "TECH_WRITING",
-          "SpecialistType": null,
-          "SpecialistCount": 0
-        },
-        "UNIT_SPEARMAN": {
-          "Combat": 11,
-          "Moves": 2,
-          "Cost": 56,
-          "PrereqTech": "TECH_BRONZE_WORKING"
-        }
-      },
-      "fixture": "unaltered source definitions",
-      "result": "PASS"
-    },
-    {
-      "evidence": {
-        "database": "cache/Civ5DebugDatabase.db",
-        "installed_cp_version": 151,
-        "mode": "existing CP-schema snapshot (not certified CP-only)",
-        "source_tables": 959,
-        "source_civilizations": 195,
-        "BUILDING_LIBRARY": {
-          "Cost": 75,
-          "GoldMaintenance": 1,
-          "PrereqTech": "TECH_WRITING",
-          "SpecialistType": null,
-          "SpecialistCount": 0
-        },
-        "UNIT_SPEARMAN": {
-          "Combat": 11,
-          "Moves": 2,
-          "Cost": 56,
-          "PrereqTech": "TECH_BRONZE_WORKING"
-        }
-      },
-      "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
     }
   ],
@@ -309,10 +262,22 @@
     "PASS archived civilizations: 662 Lua51 assertions; 4 occupied major slots, GAMESPEED_MARATHON, 25+ cities per civ, 100 routes, 1000+ units, reload/ownership/thresholds/combat completion; native gameplay NOT RUN",
     "PASS archived civilizations: 692 Lua51 assertions; 34 occupied major slots, GAMESPEED_MARATHON, 25+ cities per civ, 100 routes, 1000+ units, reload/ownership/thresholds/combat completion; native gameplay NOT RUN"
   ],
-  "lua": "PASS: 24 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "daily_expansion_lua": [
+    "PASS Daily #21 STANDARD production Lua, eligibility and callback replay",
+    "PASS Daily #22 STANDARD production Lua, eligibility and callback replay",
+    "PASS Daily #23 STANDARD production Lua, eligibility and callback replay",
+    "PASS Daily #24 STANDARD production Lua, eligibility and callback replay",
+    "PASS Daily #25 STANDARD production Lua, eligibility and callback replay",
+    "PASS Daily #21 MARATHON production Lua, eligibility and callback replay",
+    "PASS Daily #22 MARATHON production Lua, eligibility and callback replay",
+    "PASS Daily #23 MARATHON production Lua, eligibility and callback replay",
+    "PASS Daily #24 MARATHON production Lua, eligibility and callback replay",
+    "PASS Daily #25 MARATHON production Lua, eligibility and callback replay"
+  ],
+  "lua": "PASS: 31 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "paleo_art": "PASS: 57 legacy DDS files, declared dimensions, BGRA8888 payloads, transparent atlas masks, full icon mips, custom unit flag and static leader scene",
   "daily_art": "PASS: 30 distinct original PNG masters and exact built-in prompts; five unique leaders/glyphs; 285 DDS textures, six complete nine-size atlases per civ, gold-rimmed portraits, monochrome alpha/flags, distinct Dawn/capital scenes, SQL/VFS wiring and deterministic byte regeneration. Native UI rendering NOT RUN.",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 537 manifest files + checksums, correct dependencies/order/context/VFS paths, 411 DDS textures, alpha and full icon mip chains",
+  "package": "PASS: 586 manifest files + checksums, correct dependencies/order/context/VFS paths, 411 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. Existing saves have NOT been acceptance-tested with this roster; start a new game."
 }

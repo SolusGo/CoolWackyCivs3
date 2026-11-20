@@ -2,8 +2,8 @@
 <Mod id="70d794f7-4fb2-4196-9709-8193f8ee36a9" version="1">
   <Properties>
     <Name>Cool Wacky Civs 3</Name>
-    <Teaser>Ten human-only civilizations, including the Department of Lost Things, Assembly of Scarecrows, Kingdom of Makuria, Salt Road Compact and Paleontological Directorate.</Teaser>
-    <Description>Independent ten-civilization human-only pack for BNW + standalone Community Patch v151. Science, Culture, religion, agriculture, caravans and archaeology.</Description>
+    <Teaser>15 human-only civilizations for Civilization V.</Teaser>
+    <Description>Independent human-only pack for BNW + standalone Community Patch v151.</Description>
     <Authors>SolusGo</Authors>
     <Homepage>https://github.com/SolusGo/CoolWackyCivs3</Homepage>
     <AffectsSavedGames>1</AffectsSavedGames>
@@ -24,7 +24,7 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="4E0379EB732F2EE97A9C93EF7BD2BD55" import="0">CHANGELOG.md</File>
+    <File md5="52B59C7DE9C8E180057E7FF25A16E212" import="0">CHANGELOG.md</File>
     <File md5="5F6CBA5DCFFF3271015E58B93CA3D997" import="0">docs/ArchivedArtReport.md</File>
     <File md5="48A5EB647CFE46BAD877C66350D53A50" import="0">docs/ArchivedDailyImplementationReport.md</File>
     <File md5="853476BB03CBAFD8D809EA6503C89A8A" import="0">docs/ArchivedDailyTesting.md</File>
@@ -32,23 +32,48 @@
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
+    <File md5="EA20F6CFD3B335F5995F97D66DC42849" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
+    <File md5="53057E2F60A1D2FFC2CE5A972935F008" import="0">docs/DailyExpansion_021_035_SourceProof.md</File>
+    <File md5="512082FC2B9D073537046051B4EC3917" import="0">docs/DailyExpansion_021_035_Testing.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
     <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
+    <File md5="F8E34E40706D350C1789E4C21EF313DB" import="0">docs/strategy/KingdomOfAThousandKites.md</File>
+    <File md5="EA5645E8CFCD8C2AECD3531C8F011F6D" import="0">docs/strategy/KingdomOfRyukyu.md</File>
     <File md5="B6CA4A6E7AC1B8D37329ED2E3E8CDACA" import="0">docs/strategy/TheAssemblyOfScarecrows.md</File>
     <File md5="5229951131CE034157671514564D91A5" import="0">docs/strategy/TheCandlekeepersCovenant.md</File>
+    <File md5="A6EB634CD52F0C5460EA5AAFD4EBAD56" import="0">docs/strategy/TheCarapaceDominion.md</File>
     <File md5="AED6C4283BDA33FF7066077EEA5581FA" import="0">docs/strategy/TheDepartmentOfLostThings.md</File>
     <File md5="C2FBC5CC3E156A0A0C0AD1471571E1EC" import="0">docs/strategy/TheHollowChoir.md</File>
     <File md5="6BBCD44392994D7251B7B625BB19EED4" import="0">docs/strategy/TheKingdomOfMakuria.md</File>
     <File md5="9505ACE89CC90B746C5BAA6725E68283" import="0">docs/strategy/TheMinistryOfAlmost.md</File>
+    <File md5="1B1AAFC7B87696604867492D48E6E008" import="0">docs/strategy/TheMirrorboundRepublic.md</File>
     <File md5="1E4FE9609CACD9525964BEE33B84ADEA" import="0">docs/strategy/ThePerpetualTimetable.md</File>
+    <File md5="207AE9FB90BAFEFCB6B10F58D0035168" import="0">docs/strategy/ThePostalSovereignty.md</File>
     <File md5="7363D34F447E50B0980BA1476A8541AE" import="0">docs/strategy/TheSaltRoadCompact.md</File>
     <File md5="D8E73A5D9B1B5EBFF9F052E4F49EF3EA" import="0">docs/strategy/TheSeventeenthSummer.md</File>
     <File md5="C54FB387F2C052587E99A92D7B35B2E9" import="0">docs/Testing.md</File>
     <File md5="C32AE5BD8DB02E620A171E7B310B9D95" import="0">docs/TimetableImplementationReport.md</File>
     <File md5="E10174A606E9F1F7F9F01001AE4A5395" import="0">docs/TimetableTesting.md</File>
-    <File md5="EE0C4CB6C7513C19D86889644EF6E0B3" import="0">README.md</File>
+    <File md5="B05AF4D9C780EBF10CCFE5D515F9F9C9" import="1">KingdomOfAThousandKites/Lua/D023_Gameplay.lua</File>
+    <File md5="EAE33B646782B7207EED288F5CB7D031" import="0">KingdomOfAThousandKites/Lua/D023_Gameplay.xml</File>
+    <File md5="2147B7A2ECD30AF8907427E32C396712" import="0">KingdomOfAThousandKites/README.md</File>
+    <File md5="C2B845437E170F7978D12F290AD0EFC7" import="0">KingdomOfAThousandKites/SQL/D023_Buildings.sql</File>
+    <File md5="0D97EF01572B1CF7C0F4F41649E4250B" import="0">KingdomOfAThousandKites/SQL/D023_Civilization.sql</File>
+    <File md5="E648EEB7685F5DA65B4BB3B5FC092E5B" import="0">KingdomOfAThousandKites/SQL/D023_Text.sql</File>
+    <File md5="A35ABD0A8019EB99AB9BB9894A034154" import="0">KingdomOfAThousandKites/SQL/D023_Units.sql</File>
+    <File md5="B72CBDE5D845E299A9FA34870F55BBAD" import="0">KingdomOfAThousandKites/TESTING.md</File>
+    <File md5="76E80903FE532B16B77773B593A59FD4" import="1">KingdomOfRyukyu/Lua/D021_Gameplay.lua</File>
+    <File md5="8BBA5B895C9A3F822B4D8D28BA5F0C9B" import="0">KingdomOfRyukyu/Lua/D021_Gameplay.xml</File>
+    <File md5="2C61E6AF9467FC683C20E5F82515030D" import="0">KingdomOfRyukyu/README.md</File>
+    <File md5="ADC139F31D3A06FD4D19A803FFB9D607" import="0">KingdomOfRyukyu/SQL/D021_Buildings.sql</File>
+    <File md5="5A1728ECB32C748270344E8B309C0091" import="0">KingdomOfRyukyu/SQL/D021_Civilization.sql</File>
+    <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
+    <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
+    <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
+    <File md5="D364FFD64C8EB0AAA107D195AAEA109E" import="0">README.md</File>
     <File md5="52EA2FDE8282ADF49A185B53B3EC6314" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
+    <File md5="E0DDD751BFFDBAFF8A9ECDD3DAD88AD4" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
@@ -159,6 +184,14 @@
     <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
     <File md5="0BF1C473499B2EE8A8EBE4C33600266A" import="0">TheCandlekeepersCovenant/SQL/Covenant_Text.sql</File>
     <File md5="E4EE4E4438ADD5879E42D2F9CDFA770F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Units.sql</File>
+    <File md5="D5430CBDBBA25FCEB844F9B55C654EA1" import="1">TheCarapaceDominion/Lua/D025_Gameplay.lua</File>
+    <File md5="74441BB693985233843F9FCB1DC04C5C" import="0">TheCarapaceDominion/Lua/D025_Gameplay.xml</File>
+    <File md5="A69602934F67B212EA8F5F060CAF2644" import="0">TheCarapaceDominion/README.md</File>
+    <File md5="81B6809A722BD588C8CC6132986DC8DE" import="0">TheCarapaceDominion/SQL/D025_Buildings.sql</File>
+    <File md5="9314E70D2F57C2762E9728DC86B366CE" import="0">TheCarapaceDominion/SQL/D025_Civilization.sql</File>
+    <File md5="6762822CB9159A51483B83C64BA69A5E" import="0">TheCarapaceDominion/SQL/D025_Text.sql</File>
+    <File md5="8D98DE03371276859F4DE4206B58DBE0" import="0">TheCarapaceDominion/SQL/D025_Units.sql</File>
+    <File md5="85C7A4430BFAC460D4976AB23C413367" import="0">TheCarapaceDominion/TESTING.md</File>
     <File md5="9FBF3758B940E18DF6CDA5897E903E0C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha128.dds</File>
     <File md5="1A1F391DE43393FDB56870BF6E413E54" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha16.dds</File>
     <File md5="F2329D37B72C526BFE048D65AF96105F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Alpha24.dds</File>
@@ -359,6 +392,14 @@
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
     <File md5="7FD0CBA30BF1990CEEEC50863A021EA2" import="0">TheMinistryOfAlmost/SQL/Ministry_Text.sql</File>
     <File md5="91EA85686562AC8F86876CD30867A558" import="0">TheMinistryOfAlmost/SQL/Ministry_Units.sql</File>
+    <File md5="F5876BA33ECB054123BF9445FEE4C7B6" import="1">TheMirrorboundRepublic/Lua/D022_Gameplay.lua</File>
+    <File md5="C617BA4ACD2634DCA9E8D8EA35769025" import="0">TheMirrorboundRepublic/Lua/D022_Gameplay.xml</File>
+    <File md5="5604AAC2688603BC223DCEE3712898BE" import="0">TheMirrorboundRepublic/README.md</File>
+    <File md5="6387848FE61F00185453095F0F4F34EC" import="0">TheMirrorboundRepublic/SQL/D022_Buildings.sql</File>
+    <File md5="C61E082A94B2DB8DE38F796BF03751E3" import="0">TheMirrorboundRepublic/SQL/D022_Civilization.sql</File>
+    <File md5="BBF3D890F8F4D673E345F422A2629B8E" import="0">TheMirrorboundRepublic/SQL/D022_Text.sql</File>
+    <File md5="C73613E3E47C2314E56282C6245CBD3D" import="0">TheMirrorboundRepublic/SQL/D022_Units.sql</File>
+    <File md5="0D5EAD09BFAB8EAB7F684E124CF34B90" import="0">TheMirrorboundRepublic/TESTING.md</File>
     <File md5="908CBD6430FD66685DC337CA054772E3" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha128.dds</File>
     <File md5="1FEAF74602414817B920829AE29F356B" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha16.dds</File>
     <File md5="D2E9D821A06F0B16064CC2679149D212" import="1">ThePaleontologicalDirectorate/Art/PALEO_Alpha24.dds</File>
@@ -484,6 +525,14 @@
     <File md5="734A36346218AB1C56159420A2A7A3C0" import="0">ThePerpetualTimetable/SQL/Timetable_Civilization.sql</File>
     <File md5="3D89038773CAF03651D17C34ED024BEB" import="0">ThePerpetualTimetable/SQL/Timetable_Text.sql</File>
     <File md5="1581CC85B73E604452F25A5D47C97915" import="0">ThePerpetualTimetable/SQL/Timetable_Units.sql</File>
+    <File md5="45FE34BDD92128142BEB210EDD6FA3A7" import="1">ThePostalSovereignty/Lua/D024_Gameplay.lua</File>
+    <File md5="361647414E06F92CB85F6831CCA5ED22" import="0">ThePostalSovereignty/Lua/D024_Gameplay.xml</File>
+    <File md5="6DEECA0FAC27AF91449B6FABCC880502" import="0">ThePostalSovereignty/README.md</File>
+    <File md5="EAB57AD52B581F671DF256ED0C1FB190" import="0">ThePostalSovereignty/SQL/D024_Buildings.sql</File>
+    <File md5="0E55F2E62F7E4F894FA784C40715E68E" import="0">ThePostalSovereignty/SQL/D024_Civilization.sql</File>
+    <File md5="ED864518AD29B95C8B587A03923DE9A3" import="0">ThePostalSovereignty/SQL/D024_Text.sql</File>
+    <File md5="5CD5DA64C252C2DFC845A350F0D823C7" import="0">ThePostalSovereignty/SQL/D024_Units.sql</File>
+    <File md5="8995E230A5B50B98213B074B57D134F1" import="0">ThePostalSovereignty/TESTING.md</File>
     <File md5="A11AAB2B963F031D9D943D471C9F9913" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha128.dds</File>
     <File md5="97B7A5D88C8051AB63446D2060E392EB" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha16.dds</File>
     <File md5="FB0875618D153B1DED4F5BD554A47C7B" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Alpha24.dds</File>
@@ -613,6 +662,26 @@
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Text.sql</UpdateDatabase>
       <UpdateDatabase>TheSaltRoadCompact/SQL/SALT_Art.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfRyukyu/SQL/D021_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfRyukyu/SQL/D021_Units.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfRyukyu/SQL/D021_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfRyukyu/SQL/D021_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheMirrorboundRepublic/SQL/D022_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheMirrorboundRepublic/SQL/D022_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheMirrorboundRepublic/SQL/D022_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheMirrorboundRepublic/SQL/D022_Text.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfAThousandKites/SQL/D023_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfAThousandKites/SQL/D023_Units.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfAThousandKites/SQL/D023_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>KingdomOfAThousandKites/SQL/D023_Text.sql</UpdateDatabase>
+      <UpdateDatabase>ThePostalSovereignty/SQL/D024_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>ThePostalSovereignty/SQL/D024_Units.sql</UpdateDatabase>
+      <UpdateDatabase>ThePostalSovereignty/SQL/D024_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>ThePostalSovereignty/SQL/D024_Text.sql</UpdateDatabase>
+      <UpdateDatabase>TheCarapaceDominion/SQL/D025_Civilization.sql</UpdateDatabase>
+      <UpdateDatabase>TheCarapaceDominion/SQL/D025_Units.sql</UpdateDatabase>
+      <UpdateDatabase>TheCarapaceDominion/SQL/D025_Buildings.sql</UpdateDatabase>
+      <UpdateDatabase>TheCarapaceDominion/SQL/D025_Text.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
@@ -655,6 +724,26 @@
     <EntryPoint type="InGameUIAddin" file="TheSaltRoadCompact/Lua/SALT_Gameplay.xml">
       <Name>The Price of Passage</Name>
       <Description>Binary outgoing active land-route city yields.</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="KingdomOfRyukyu/Lua/D021_Gameplay.xml">
+      <Name>The Maritime Kingdom</Name>
+      <Description>Kingdom of Ryukyu</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheMirrorboundRepublic/Lua/D022_Gameplay.xml">
+      <Name>Lessons Written in Glass</Name>
+      <Description>The Mirrorbound Republic</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="KingdomOfAThousandKites/Lua/D023_Gameplay.xml">
+      <Name>Children of the Open Sky</Name>
+      <Description>Kingdom of a Thousand Kites</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="ThePostalSovereignty/Lua/D024_Gameplay.xml">
+      <Name>The Unbroken Correspondence</Name>
+      <Description>The Postal Sovereignty</Description>
+    </EntryPoint>
+    <EntryPoint type="InGameUIAddin" file="TheCarapaceDominion/Lua/D025_Gameplay.xml">
+      <Name>The Unbroken Shore</Name>
+      <Description>The Carapace Dominion</Description>
     </EntryPoint>
   </EntryPoints>
 </Mod>

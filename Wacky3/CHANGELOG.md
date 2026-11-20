@@ -1,5 +1,11 @@
 # Changelog
 
+## Daily Surprise expansion — Stage A (#021–#025)
+
+- Add Ryukyu, Mirrorbound, Thousand Kites, Postal Sovereignty and Carapace Dominion to the standalone CP151 pack.
+- Add active parent cloning, namespaced city controllers, source-ordered combat and Courier movement logic, and a player panel for Lessons.
+- See the expansion report for unsupported combat cases and the native test checklists.
+
 ## 2026-11-12 — Original art for all five archived civilizations
 
 - Add thirty independent original image_gen illustration masters: five memorable leaders, five emblems, five unique unit portraits, five unique building portraits, five Dawn scenes and five capital panoramas. Replace the four native presentation fallbacks and redesign Othmar with a distinct stout, wild-browed fossil-scholar identity.

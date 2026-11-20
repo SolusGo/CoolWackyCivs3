@@ -14,8 +14,8 @@ from target_schema import approved_companions, clean_fixture, verified
 def seed_companions(db):
     """Exercise even normally-empty CP tables with nonzero test-only records."""
     count=0
-    for prefix,column,parents in [('Building_','BuildingType',['BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY','BUILDING_WORKSHOP','BUILDING_TEMPLE','BUILDING_MUSEUM','BUILDING_CARAVANSARY']),
-                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER','UNIT_PIKEMAN','UNIT_ARCHAEOLOGIST','UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN'])]:
+    for prefix,column,parents in [('Building_','BuildingType',['BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY','BUILDING_WORKSHOP','BUILDING_TEMPLE','BUILDING_MUSEUM','BUILDING_CARAVANSARY','BUILDING_HARBOR','BUILDING_MARKET','BUILDING_WALLS','BUILDING_UNIVERSITY','BUILDING_GARDEN','BUILDING_COLOSSEUM']),
+                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER','UNIT_PIKEMAN','UNIT_ARCHAEOLOGIST','UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN','UNIT_SCOUT'])]:
         for table in approved_companions(prefix,column):
             columns=list(db.execute('PRAGMA table_info('+quote(table)+')'))
             for parent in parents:
@@ -35,8 +35,10 @@ def seed_companions(db):
 def audit_generated_inventory():
     inventories={prefix:set(approved_companions(prefix,col)) for prefix,col in [('Building_','BuildingType'),('Unit_','UnitType')]}
     from generate_archived import SPECS
+    from generate_daily_expansion import ROSTER, code
     civs=[('TheHollowChoir','Choir'),('TheMinistryOfAlmost','Ministry'),('TheSeventeenthSummer','Summer'),('ThePerpetualTimetable','Timetable'),('TheCandlekeepersCovenant','Covenant'),('ThePaleontologicalDirectorate','PALEO')]
     civs += [(s['folder'],s['code']) for s in SPECS]
+    civs += [(s['folder'],code(s)) for s in ROSTER]
     for civ,stem in civs:
         for kind,prefix in [('Buildings','Building_'),('Units','Unit_')]:
             sql=(ROOT/civ/'SQL'/f'{stem}_{kind}.sql').read_text()
@@ -46,6 +48,7 @@ def audit_generated_inventory():
 
 
 def check_regeneration():
+    from generate_daily_expansion import ROSTER
     inventory=audit_generated_inventory()
     previous={key:os.environ.get(key) for key in ['CWC3_DATABASE','CWC3_SQL_ROOT']}
     results=[]
@@ -75,17 +78,17 @@ def check_regeneration():
                     disk.close()
                 output=temp/('contaminated' if contaminated else 'clean')
                 os.environ.update(CWC3_DATABASE=str(cache),CWC3_SQL_ROOT=str(output))
-                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py','generate_covenant.py','generate_paleo.py','generate_archived.py']:
+                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py','generate_covenant.py','generate_paleo.py','generate_archived.py','generate_daily_expansion.py']:
                     with contextlib.redirect_stdout(io.StringIO()): runpy.run_path(str(ROOT/'tools'/script),run_name='__main__')
                 paths=list(output.rglob('*.sql'))
-                assert len(paths)==39, 'Every generator output must be compared'
+                assert len(paths)==39+4*len(ROSTER), 'Every generator output must be compared'
                 for generated in paths:
                     relative=generated.relative_to(output)
                     assert generated.read_bytes()==(ROOT/relative).read_bytes(),('Nondeterministic or contaminated regeneration',relative)
-                    assert 'Building_JFD_District' not in generated.read_text()
-                    assert 'Unit_ThirdPartySchemaRegression' not in generated.read_text()
+                    assert 'Building_JFD_District' not in generated.read_text(encoding='utf-8')
+                    assert 'Unit_ThirdPartySchemaRegression' not in generated.read_text(encoding='utf-8')
                 results.append({'input':'artificial third-party building/unit tables' if contaminated else 'clean source-derived schema',
-                                'result':'PASS: all thirty-nine SQL outputs byte-identical to checked-in output'})
+                                'result':f'PASS: all {len(paths)} SQL outputs byte-identical to checked-in output'})
     finally:
         for key,value in previous.items():
             if value is None: os.environ.pop(key,None)

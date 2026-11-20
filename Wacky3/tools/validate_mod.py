@@ -6,7 +6,7 @@ from xml.etree import ElementTree as ET
 from PIL import Image
 from lupa.lua51 import LuaRuntime
 from baseline import ROOT, database, quote, EVIDENCE
-from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, files
+from build_mod import NAME, MOD_ID, ORDER, ENTRY, ENTRIES, DAILY_ROSTER, files
 from audit_cp import audit
 from validate_hollow_choir import check_database as check_choir_database, check_lua as check_choir_lua
 from validate_seventeenth_summer import check_database as check_summer_database, check_lua as check_summer_lua
@@ -19,6 +19,8 @@ from validate_schema import check_regeneration, seed_companions
 from validate_archived import check_database as check_archived_database, check_lua as check_archived_lua, mutate_baselines
 from archived_fixture import source_checks as archived_source_checks
 from validate_daily_art import check_art as check_daily_art
+
+from validate_daily_expansion import check_database as check_daily_database, check_lua as check_daily_lua
 
 RESULTS={}
 def sql_checks(mutate=True, clean=False):
@@ -107,8 +109,9 @@ def sql_checks(mutate=True, clean=False):
     for key in ['CIV5_HEADING_1','CIV5_TEXT_1','PENULTIMATE_NAME','PENULTIMATE_SUBTITLE','PENULTIMATE_LIVED','PENULTIMATE_HEADING_1','PENULTIMATE_TEXT_1']:
         assert 'TXT_KEY_CWC3_'+key in keys,('missing dynamic Civilopedia key',key)
     for path in [ROOT/p for p in ORDER]:
-        for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text()):
+        for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text(encoding='utf-8')):
             if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL','TXT_KEY_CWC3_COVENANT_CIV5','TXT_KEY_CWC3_COVENANT_SERAPHINE'] or any(key=='TXT_KEY_CWC3_'+c+'_'+suffix for c in ['LOST','SCARECROW','MAKURIA','SALT'] for suffix in ['CIV5','LEADERPAGE']): continue # Pedia category prefixes
+            if re.fullmatch(r'TXT_KEY_CWC3_D0[0-9]{2}_(CIV5|LEADERPAGE)', key): continue
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -124,6 +127,7 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['covenant_database']=check_covenant_database(db)
     RESULTS['paleo_database']=check_paleo_database(db)
     RESULTS['archived_database']=check_archived_database(db)
+    RESULTS['daily_expansion_database']=check_daily_database(db)
     return db
 
 def lua_checks(db):
@@ -149,6 +153,7 @@ def lua_checks(db):
     RESULTS['covenant_lua']=check_covenant_lua(db)
     RESULTS['paleo_lua']=check_paleo_lua(db)
     RESULTS['archived_lua']=check_archived_lua(db)
+    RESULTS['daily_expansion_lua']=check_daily_lua(db)
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -172,8 +177,8 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
-    assert len(ENTRIES)==10 and len(set(e[0] for e in ENTRIES))==10
-    assert len(ORDER)==len(set(ORDER))==49
+    assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==10+len(DAILY_ROSTER)
+    assert len(ORDER)==len(set(ORDER))==49+4*len(DAILY_ROSTER)
     for entry,_,_ in ENTRIES[6:]:
         assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
