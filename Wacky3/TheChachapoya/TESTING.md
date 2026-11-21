@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 The Cloud Sentinel's melee-only modifier is scoped around native resolution, so pre-battle previews may omit it.
+
+The Hill effect exists only during incoming melee calculation. Combat completion and the native end-of-update fallback clear it, including after an abort. Preview may omit it. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

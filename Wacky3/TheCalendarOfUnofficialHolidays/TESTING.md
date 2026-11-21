@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 Native production uses the counter before the city countdown step. Treasury and research use the state later in the same turn. One-turn boundary behavior requires native measurement.
+
+CP production runs before the city's countdown. Treasury and research use the later value. Automated tests cover the first and last tick, extension, and simultaneous cities without adding compensation. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

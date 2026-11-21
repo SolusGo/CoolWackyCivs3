@@ -9,4 +9,6 @@
 5. Repeat on Marathon. Record actual stores, save files, combat panels and Database.log/Lua.log. Compare endpoints on both sides of the economic settlement.
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
-Primary two-unit combat only. Independently attributed interceptor and collateral deaths are not covered. Native dispatch and attack consumption still require acceptance.
+Direct combat, verified interceptions and scoped ranged collateral are covered. Native dispatch and attack consumption still require acceptance.
+
+Direct military deaths, lethal air interception/sweeps and verified ranged collateral now earn Lessons once. A committed attack consumes Reflection after strength calculation. Death mechanisms outside those verified paths remain excluded. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

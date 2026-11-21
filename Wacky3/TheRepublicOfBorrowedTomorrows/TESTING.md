@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 Exact debt-neutral settlement is blocked. Only the active Pikeman/Market replacements, +15% friendly strength and debt-free Exchange yields are enabled.
+
+Advance and repayment remain blocked. The hardening report identifies the pre-credit production and research interception required for exact settlement. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

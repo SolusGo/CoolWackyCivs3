@@ -19,3 +19,20 @@
 | 033 | [The Grand Duchy of Folding Chairs](../TheGrandDuchyOfFoldingChairs/TESTING.md) | Use an empty center, then a civilian, aircraft, embarked/naval unit, adjacent Spearman and land garrison. Move, kill, upgrade and replace the actual garrison, then compare all four yields. |
 | 034 | [The Chachapoya](../TheChachapoya/TESTING.md) | Compare flat and Hill founding, then add and remove both native and replacement Walls. Attack at range and defend on Hills. Validate that the fictional leader is identified as such. |
 | 035 | [The Calendar of Unofficial Holidays](../TheCalendarOfUnofficialHolidays/TESTING.md) | Observe the counter and actual production, science and treasury stores separately at 0, 1, renewed and extended WLTKD. Compare two cities in different states and a city without an Office. Test friendly-land attacks and defenses. |
+
+## Hardening acceptance
+
+**NOT TESTED — native acceptance.** The Windows automation tool denied access to the installed DX11 game. The entries below are reproducible scenarios, not observed outcomes.
+
+Use the initial game or a save created with the same build. Keep yield readouts, before/after movement points, and the combat log or animation alongside any preview. Source/static/automated PASS does not imply a native PASS.
+
+| Civ | Native reproduction and expected result |
+| --- | --- |
+| #028 | Confirm the debt-free Market and friendly-territory Pikeman effects. There is no advance control. Debt and repayment are **BLOCKED** in CP151. |
+| #031 | Keep a partially revealed land map. Compare one unit sight expansion, a shared map, and an owned-city border expansion. Save at fewer than ten personal claims. Reload and complete the set. Compare Science/Culture, total Atlas thresholds, and overflow through a tech completion. Unitless border rewards remain **PARTIAL**. |
+| #022 | Lose an aircraft to foreign-major interception and to ground AA on a sweep. Try an adjacent ranged casualty, an ordinary disband, and an enemy city attack. Defend with a Reflection Guard, then launch one nonlethal attack and compare its next attack. Repeat with upgrade and save/load. Move the Capital during Method and record five native tech settlements. |
+| #035 | Use two celebrating cities with different counters and one without an Office. Record actual production progress, Treasury and the current tech at counters 2, 1, 0 and after extension. Verify the old-counter production and new-counter empire payouts. |
+| #024 | Start in friendly land and measure current and maximum movement. Embark, return in the same turn, and compare points. Repeat on foreign land with expiring or canceled Open Borders and with an upgrade before spending the bonus. Save and reload between steps. |
+| #025 | Defend from a land hex adjacent to a coast and to a lake. Compare attack, melee defense and ranged defense, including after an upgrade, embarkation, movement inland or ownership change. Check preview and actual damage separately. |
+| #026 | Start in Ancient, check the pending vote, save/reload, and choose a motion once. Cross an era and choose Defence. Verify the modifier for a newly created military unit and its upgrade, then cross another era and verify cleanup. |
+| #034 | Compare incoming melee on a Hill with incoming ranged, outgoing attacks and flat ground. An abort-capable debug scenario may exercise cancellation if available. Verify the scoped modifier is gone after combat or clean reload. Allow for a preview that omits the scoped pre-resolution effect. |

@@ -80,7 +80,7 @@
   },
   "paleo_source_audit": "PASS: pinned CP151 successful build branch, exact finishing-unit event, human archaeology queue/choice lifetime, native research completion and serialized overflow",
   "archived_source_audit": "PASS: pinned CP151 combat result/end order and 15 arguments; native promotion consumers; land-route origin/domain/circuit lifecycle; post-create Caravan prekill; total class counts and farm/pillage hooks. Native runtime acceptance NOT RUN.",
-  "daily_expansion_source_audit": "PASS: pinned CP151 city and treasury/research order, WLTKD transitions, movement store, reveal source, garrison and Marsh feature contracts",
+  "daily_expansion_source_audit": "PASS: pinned CP151 settlement and completion, science modifier, reveal source, air interception and scoped ranged damage, post-calculation combat, movement stores and callbacks, garrison and terrain change contracts",
   "schema_audit": {
     "result": "PASS",
     "pinned_source_files": 260,
@@ -350,6 +350,6 @@
   "daily_art": "PASS: 30 distinct original PNG masters and exact built-in prompts; five unique leaders/glyphs; 285 DDS textures, six complete nine-size atlases per civ, gold-rimmed portraits, monochrome alpha/flags, distinct Dawn/capital scenes, SQL/VFS wiring and deterministic byte regeneration. Native UI rendering NOT RUN.",
   "daily_expansion_art": "PASS 30 distinct emblem/alpha sources, 270 DDS atlas registrations and VFS imports",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 962 manifest files + checksums, correct dependencies/order/context/VFS paths, 681 DDS textures, alpha and full icon mip chains",
+  "package": "PASS: 963 manifest files + checksums, correct dependencies/order/context/VFS paths, 681 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game."
 }

@@ -31,6 +31,8 @@ The pack includes 25 registered civilizations. The original ten are listed above
 
 <!-- daily-expansion-end -->
 
+The [hardening report](docs/DailyExpansion_HardeningReport.md) documents the CP151 combat, reveal, movement and yield audits, the corrected mechanics, the remaining engine limits, and native acceptance.
+
 ## Installation
 
 1. Install BNW and Community Patch **version 151**. Enable the standalone `(1) Community Patch`, without the Vox Populi balance components. The dependency deliberately rejects newer CP versions until separately audited.

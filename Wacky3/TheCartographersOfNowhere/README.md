@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 TileRevealed carries explicit unit provenance only. The ability credits verified in-session own-unit discoveries. City-only and pre-context starting reveals cannot be distinguished from external reveals and are excluded.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/031-the-cartographers-of-nowhere.md) · [Strategy](../docs/strategy/TheCartographersOfNowhere.md) · [Acceptance](TESTING.md)
+
+A unit claim is saved during its sight callback and paid at a safe settlement boundary. City-only and starting-map provenance remain unavailable. Atlas House independently counts all land reveals. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

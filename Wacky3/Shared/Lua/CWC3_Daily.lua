@@ -67,9 +67,10 @@ function daily.Defend(lifecycle, code, predicate)
     local lineage = assert(GameInfoTypes['PROMOTION_CWC3_' .. code .. '_LINEAGE'])
     local defense = assert(GameInfoTypes['PROMOTION_CWC3_' .. code .. '_DEFEND'])
     local function update(unit)
-        if not daily.Military(unit) then return end
+        if not unit then return end
+        if not unit:IsHasPromotion(lineage) and not unit:IsHasPromotion(defense) then return end
         local plot = unit:Plot()
-        local enabled = unit:IsHasPromotion(lineage) and lifecycle.eligible(Players[unit:GetOwner()])
+        local enabled = daily.Military(unit) and unit:IsHasPromotion(lineage) and lifecycle.eligible(Players[unit:GetOwner()])
             and not unit:IsEmbarked() and plot and predicate(plot, unit) or false
         daily.Promotion(unit, defense, enabled)
     end
@@ -95,6 +96,13 @@ function daily.Defend(lifecycle, code, predicate)
     GameEvents.PlayerDoTurn.Add(units)
     GameEvents.BattleStarted.Add(function(_, x, y) plotUnits(x, y) end)
     GameEvents.TileOwnershipChanged.Add(plotUnits)
+    if predicate == daily.Friendly then
+        -- The native team setter marks Score dirty after changes to Open
+        -- Borders. Refresh the human's preview before the next engagement.
+        Events.SerialEventScoreDirty.Add(function() units(Game.GetActivePlayer()) end)
+    else
+        GameEvents.TileFeatureChanged.Add(plotUnits)
+    end
     for owner = 0, GameDefines.MAX_CIV_PLAYERS - 1 do units(owner) end
 end
 

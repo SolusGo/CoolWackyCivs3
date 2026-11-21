@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 Exact debt-neutral settlement is blocked. Only the active Pikeman/Market replacements, +15% friendly strength and debt-free Exchange yields are enabled.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/028-the-republic-of-borrowed-tomorrows.md) · [Strategy](../docs/strategy/TheRepublicOfBorrowedTomorrows.md) · [Acceptance](TESTING.md)
+
+Advance and repayment remain blocked. The hardening report identifies the pre-credit production and research interception required for exact settlement. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

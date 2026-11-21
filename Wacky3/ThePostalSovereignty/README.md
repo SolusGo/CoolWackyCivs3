@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 Movement is sampled at the post-economy PlayerDoTurn hook, then deducted on leaving friendly land. Native spend order and Open Borders changes need acceptance.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/024-the-postal-sovereignty.md) · [Strategy](../docs/strategy/ThePostalSovereignty.md) · [Acceptance](TESTING.md)
+
+The temporary point is removed from the native movement store on embarkation, exit and conversion. Open Borders changes refresh tracked Couriers. Same-turn reentry does not reissue the point. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

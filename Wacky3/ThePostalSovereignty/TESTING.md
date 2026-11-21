@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 Movement is sampled at the post-economy PlayerDoTurn hook, then deducted on leaving friendly land. Native spend order and Open Borders changes need acceptance.
+
+The temporary point is removed from the native movement store on embarkation, exit and conversion. Open Borders changes refresh tracked Couriers. Same-turn reentry does not reissue the point. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

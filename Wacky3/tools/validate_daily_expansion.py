@@ -27,6 +27,14 @@ def check_database(db):
         civ, leader, trait, unit, building, promotion = [
             f'{kind}_{stem}' for kind in ('CIVILIZATION','LEADER','TRAIT','UNIT','BUILDING','PROMOTION')
         ]
+        for table, columns, parent, replacement in (
+            ('Civilizations', 'DawnOfManImage,MapImage', 'CIVILIZATION_AMERICA', civ),
+            ('Leaders', 'IconAtlas,PortraitIndex,ArtDefineTag', 'LEADER_WASHINGTON', leader),
+        ):
+            query = f'SELECT {columns} FROM {table} WHERE Type=?'
+            native = db.execute(query,(parent,)).fetchone()
+            actual = db.execute(query,(replacement,)).fetchone()
+            assert native is not None and actual is not None and tuple(native)==tuple(actual), (stem, table, columns)
         for option in spec.get('options', []):
             assert db.execute('SELECT Value FROM CustomModOptions WHERE Name=?', (option,)).fetchone()[0] == 1
         assert tuple(db.execute('SELECT Playable,AIPlayable FROM Civilizations WHERE Type=?',(civ,)).fetchone()) == (1,0)
@@ -130,6 +138,18 @@ def check_lua(db):
             env = lua.globals()
             env.GameInfoTypes = lua.table_from(types)
             env.BuildingRows = lua.table_from([lua.table_from(dict(r)) for r in db.execute('SELECT ID,BuildingClass FROM Buildings')])
+            fields = "ID,AttackMod,DefenseMod,HillsDefense,CombatPercent,MovesChange"
+            env.PromotionStats = lua.table_from({r["ID"]:lua.table_from(dict(r)) for r in db.execute(
+                f"SELECT {fields} FROM UnitPromotions WHERE Type LIKE 'PROMOTION_CWC3_D0%'")})
+            for table, attr in (("Building_YieldChanges", "FlatYields"), ("Building_YieldModifiers", "PercentYields")):
+                records = {}
+                for building, kind, amount in db.execute(
+                    f"SELECT Buildings.ID,YieldType,Yield FROM {table} JOIN Buildings ON BuildingType=Buildings.Type "
+                    "WHERE Buildings.Type LIKE 'BUILDING_CWC3_D0%'"
+                ):
+                    yields=records.setdefault(building,{})
+                    yields[kind]=yields.get(kind,0)+amount
+                env[attr] = lua.table_from({k:lua.table_from(v) for k,v in records.items()})
             env.LoadShared = lambda name: lua.execute((ROOT/'Shared/Lua'/f'{name}.lua').read_text(encoding='utf-8'))
             def load_civ(number):
                 spec = next((s for s in ROSTER if s['id'] == number), None)

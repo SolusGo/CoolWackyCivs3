@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 Native combat previews may lag a script-only plot mutation until state is repaired at BattleStarted.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/025-the-carapace-dominion.md) · [Strategy](../docs/strategy/TheCarapaceDominion.md) · [Acceptance](TESTING.md)
+
+The defense-only check refreshes after position, feature and ownership changes, and before native damage calculation. Compare preview separately from resolved combat. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

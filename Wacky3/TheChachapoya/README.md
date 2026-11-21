@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 The Cloud Sentinel's melee-only modifier is scoped around native resolution, so pre-battle previews may omit it.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/034-the-chachapoya.md) · [Strategy](../docs/strategy/TheChachapoya.md) · [Acceptance](TESTING.md)
+
+The Hill effect exists only during incoming melee calculation. Combat completion and the native end-of-update fallback clear it, including after an abort. Preview may omit it. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

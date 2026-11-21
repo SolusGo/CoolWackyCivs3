@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 An outstanding vote grants no active resolution until a player chooses. UI rendering and callback dispatch still require native acceptance.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/026-the-octopus-parliament.md) · [Strategy](../docs/strategy/TheOctopusParliament.md) · [Acceptance](TESTING.md)
+
+A pending vote survives load with no active resolution. Unchanged owner turns do not sweep the military again. Unit creation and conversion reconcile the selected resolution immediately. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

@@ -176,9 +176,9 @@ for _,n in ipairs({0,2,3,5,6,8,9,12}) do
 end
 Fields(3); farms[1].pillaged=true; GameEvents.TileImprovementChanged.Fire(farms[1].x,farms[1].y,1,farm,farm,true)
 eq(dummy(sc,'SCARECROW','FIELDS'),0,'pillaged farm excluded')
-farms[1].pillaged=false; GameEvents.TileImprovementChanged.Fire(); eq(dummy(sc,'SCARECROW','FIELDS'),1,'repair refresh')
+farms[1].pillaged=false; GameEvents.TileImprovementChanged.Fire(farms[1].x,farms[1].y,1,farm,farm,false); eq(dummy(sc,'SCARECROW','FIELDS'),1,'repair refresh')
 farms[1].owner=0; GameEvents.TileOwnershipChanged.Fire(farms[1].x,farms[1].y,0,1); eq(dummy(sc,'SCARECROW','FIELDS'),0,'foreign-owned Farm excluded')
-farms[1].owner=1; GameEvents.TileOwnershipChanged.Fire(); eq(dummy(sc,'SCARECROW','FIELDS'),1,'ownership transfer refresh')
+farms[1].owner=1; GameEvents.TileOwnershipChanged.Fire(farms[1].x,farms[1].y,1,0); eq(dummy(sc,'SCARECROW','FIELDS'),1,'ownership transfer refresh')
 Fields(0)
 local overlap=City(scare,2,21,0)
 for _,xy in ipairs({{20,1},{21,1},{22,0}}) do local p=Map.GetPlot(xy[1],xy[2]); p.owner=1; p.improvement=farm end

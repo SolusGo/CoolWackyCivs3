@@ -20,8 +20,8 @@ ACCEPTANCE = {
     35: "Observe the counter and actual production, science and treasury stores separately at 0, 1, renewed and extended WLTKD. Compare two cities in different states and a city without an Office. Test friendly-land attacks and defenses.",
 }
 BLOCKERS = {
-    22: "Primary two-unit combat only. Independently attributed interceptor and collateral deaths are not covered. Native dispatch and attack consumption still require acceptance.",
-    24: "Movement is sampled at the post-economy PlayerDoTurn hook, then deducted on leaving friendly land. Native spend order and Open Borders changes need acceptance.",
+    22: "Direct combat, verified air interception and sweeps, and scoped ranged collateral are covered. Other unattributed casualty paths remain excluded. Native dispatch and attack consumption still require acceptance.",
+    24: "Movement is granted after the prior reset, and removed on embarkation, conversion or loss of friendly territory. Native spend order and Open Borders changes need acceptance.",
     25: "Native combat previews may lag a script-only plot mutation until state is repaired at BattleStarted.",
     26: "An outstanding vote grants no active resolution until a player chooses. UI rendering and callback dispatch still require native acceptance.",
     28: "Exact debt-neutral settlement is blocked. Only the active Pikeman/Market replacements, +15% friendly strength and debt-free Exchange yields are enabled.",
@@ -94,7 +94,7 @@ The pack includes {10+len(ROSTER)} registered civilizations. The original ten ar
 | --- | --- | --- | --- |
 """+'\n'.join(rows)+"""
 
-[Implementation report](docs/DailyExpansion_021_035_ImplementationReport.md) · [Native testing index](docs/DailyExpansion_021_035_Testing.md)
+[Implementation report](docs/DailyExpansion_021_035_ImplementationReport.md) · [Native testing index](docs/DailyExpansion_021_035_Testing.md) · [Hardening report](docs/DailyExpansion_HardeningReport.md)
 
 <!-- daily-expansion-end -->"""
     if marker in readme:

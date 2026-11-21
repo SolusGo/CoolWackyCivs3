@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 Native combat previews may lag a script-only plot mutation until state is repaired at BattleStarted.
+
+The defense-only check refreshes after position, feature and ownership changes, and before native damage calculation. Compare preview separately from resolved combat. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

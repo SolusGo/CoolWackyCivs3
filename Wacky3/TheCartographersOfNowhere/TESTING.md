@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 TileRevealed carries explicit unit provenance only. The ability credits verified in-session own-unit discoveries. City-only and pre-context starting reveals cannot be distinguished from external reveals and are excluded.
+
+A unit claim is saved during its sight callback and paid at a safe settlement boundary. City-only and starting-map provenance remain unavailable. Atlas House independently counts all land reveals. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

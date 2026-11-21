@@ -11,3 +11,5 @@ The replacements inherit the active standalone Community Patch v151 definitions 
 Native production uses the counter before the city countdown step. Treasury and research use the state later in the same turn. One-turn boundary behavior requires native measurement.
 
 [Canonical design](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/035-the-calendar-of-unofficial-holidays.md) · [Strategy](../docs/strategy/TheCalendarOfUnofficialHolidays.md) · [Acceptance](TESTING.md)
+
+CP production runs before the city's countdown. Treasury and research use the later value. Automated tests cover the first and last tick, extension, and simultaneous cities without adding compensation. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

@@ -10,3 +10,5 @@
 6. Mark any native mismatch **FAIL — observed or reproduced mismatch**. Attach evidence before marking **PASS — native gameplay observed**.
 
 An outstanding vote grants no active resolution until a player chooses. UI rendering and callback dispatch still require native acceptance.
+
+A pending vote survives load with no active resolution. Unchanged owner turns do not sweep the military again. Unit creation and conversion reconcile the selected resolution immediately. [Hardening evidence](../docs/DailyExpansion_HardeningReport.md)

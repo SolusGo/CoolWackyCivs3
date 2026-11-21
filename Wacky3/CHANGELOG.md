@@ -1,5 +1,12 @@
 # Changelog
 
+## Daily Surprise hardening
+
+- Account for lethal air interceptions, sweeps and verified ranged secondary kills in Mirrorbound. Consume a Reflection counter at the committed attack and preserve its existing expiry through upgrades.
+- Persist Cartographer discoveries before a pending claim can be lost on reload. Settle by receiving team after visibility updates. Keep unknown city and starting-map reveals out of personal rewards.
+- Correct Courier embarkation, conversion and Open Borders movement accounting. Reconcile defense after feature changes, avoid redundant Parliament unit scans, and clear Cloud Sentinel's scoped defense on canceled combat.
+- Expand numerical and lifecycle coverage without altering the Borrowed Tomorrows blocker or the natural WLTKD settlement order.
+
 ## Daily Surprise expansion — Stage C (#031–#035)
 
 - Add Cartographers of Nowhere, Muisca Confederation, Folding Chairs, Chachapoya and Unofficial Holidays.

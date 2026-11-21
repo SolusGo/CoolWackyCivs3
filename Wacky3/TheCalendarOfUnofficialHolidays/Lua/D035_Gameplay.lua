@@ -10,6 +10,9 @@ local function transition(owner,x,y)
     local plot=Map.GetPlot(x,y)
     if plot then lifecycle.city(plot:GetPlotCity()) end
 end
+-- These change hooks are synchronous. Native doProduction has already
+-- sampled the old counter on a natural transition; treasury and research
+-- must see the new counter. Leave settlement to those native readers.
 GameEvents.CityBeginsWLTKD.Add(transition)
 GameEvents.CityEndsWLTKD.Add(transition)
 GameEvents.CityExtendsWLTKD.Add(transition)

@@ -19,7 +19,7 @@ GameInfo = {Buildings=function() return GameInfoIterator(BuildingRows) end}
 GameDefines = {MAX_CIV_PLAYERS=34, MAX_MAJOR_CIVS=34, MIN_WATER_SIZE_FOR_OCEAN=10, MOVE_DENOMINATOR=60}
 DomainTypes = {DOMAIN_LAND=0, DOMAIN_SEA=1, DOMAIN_AIR=2}
 Mouse = {eLClick=1}
-ContextPtr = {SetHide=function() end}
+ContextPtr = {SetHide=function(self,value) self.hidden=value end}
 Controls = setmetatable({}, {__index=function(t,k)
     local item = {
         SetText=function(self,text) self.text=text end,
@@ -30,10 +30,13 @@ Controls = setmetatable({}, {__index=function(t,k)
     return item
 end})
 local turn, era, atWar, active = 0, 0, true, 0
+local mapCensuses, unitSweeps = 0, 0
 Game = {GetGameTurn=function() return turn end, GetActivePlayer=function() return active end,
     GetGameSpeedType=function() return GameInfoTypes['GAMESPEED_'..Speed] end}
-Teams = {[0]={IsAtWar=function() return atWar end,GetCurrentEra=function() return era end},
-         [1]={IsAtWar=function() return atWar end}}
+Teams = {}
+for i=0,33 do
+    Teams[i]={IsAtWar=function(_,other) return atWar and other~=i end, GetCurrentEra=function() return era end}
+end
 local playerMethods = {
     GetCivilizationType=function(self) return self.civ end,
     GetID=function(self) return self.id end,
@@ -44,12 +47,12 @@ local playerMethods = {
     IsBarbarian=function() return false end,
     GetTeam=function(self) return self.id end,
     GetCurrentEra=function() return era end,
-    GetCurrentResearch=function() return -1 end,
+    GetCurrentResearch=function(self) return self.research or -1 end,
     ChangeOverflowResearch=function(self,value) self.science=self.science+value end,
     ChangeJONSCulture=function(self,value) self.culture=self.culture+value end,
     GetCapitalCity=function(self) return self.cities[1] end,
     Cities=function(self) return GameInfoIterator(self.cities) end,
-    Units=function(self) return GameInfoIterator(self.units) end,
+    Units=function(self) unitSweeps=unitSweeps+1; return GameInfoIterator(self.units) end,
     GetCityByID=function(self,id) for _,c in ipairs(self.cities) do if c.id==id then return c end end end,
     GetUnitByID=function(self,id) return self.units[id] end,
     GetScriptData=function(self) return self.saved end,
@@ -85,7 +88,11 @@ local plotMethods = {
 }
 local plots, byIndex = {}, {}
 Map = {GetPlot=function(x,y) return plots[x..':'..y] end,
-    GetNumPlots=function() return #byIndex end, GetPlotByIndex=function(i) return byIndex[i+1] end}
+    GetNumPlots=function() mapCensuses=mapCensuses+1; return #byIndex end, GetPlotByIndex=function(i) return byIndex[i+1] end}
+function Map.PlotDistance(x1,y1,x2,y2)
+    local dx,dy=x1-x2,y1-y2
+    return math.max(math.abs(dx),math.abs(dy),math.abs(dx+dy))
+end
 function Map.PlotXYWithRangeCheck(x,y,dx,dy,range)
     if math.max(math.abs(dx),math.abs(dy),math.abs(dx+dy)) <= range then return Map.GetPlot(x+dx,y+dy) end
 end
@@ -108,7 +115,7 @@ local cityMethods = {
     GetID=function(self) return self.id end,
     GetOwner=function(self) return self.owner end,
     Plot=function(self) return self.plot end,
-    IsCapital=function(self) return self.id==1 end,
+    IsCapital=function(self) return self.capital end,
     IsCoastal=function(self, area) assert(area==10); return self.coast end,
     GetNumCityPlots=function(self) return #self.plots end,
     GetCityIndexPlot=function(self,i) return self.plots[i+1] end,
@@ -123,7 +130,7 @@ local cityMethods = {
 }
 local function city(n)
     local center = plot(10*n,0,{owner=0,purchase=n})
-    local c = setmetatable({id=n,owner=0,plot=center,coast=false,celebration=0,
+    local c = setmetatable({id=n,owner=0,plot=center,coast=false,celebration=0,capital=n==1,
         plots={center},work={},buildings={},free={}}, {__index=cityMethods})
     center.city=c
     owner.cities[#owner.cities+1]=c
@@ -138,6 +145,7 @@ local unitMethods = {
     GetY=function(self) return self.plot.y end,
     IsCombatUnit=function(self) return self.combat end,
     IsDead=function(self) return self.dead end,
+    GetCurrHitPoints=function(self) return self.hp or 100 end,
     IsDelayedDeath=function(self) return self.delayed end,
     IsEmbarked=function(self) return self.embarked end,
     IsGarrisoned=function(self) return self.plot.city and self.plot.city.garrison==self end,
@@ -148,7 +156,7 @@ local unitMethods = {
     SetHasPromotion=function(self,p,value) self.promos[p]=value end,
     GetScriptData=function(self) return self.saved end,
     SetScriptData=function(self,value) self.saved=value end,
-    MaxMoves=function(self) return 180+(self.bonus and self.promos[self.bonus] and 60 or 0) end,
+    MaxMoves=function(self) return self.embarked and 120 or 180+(self.bonus and self.promos[self.bonus] and 60 or 0) end,
     GetMoves=function(self) return self.moves end,
     SetMoves=function(self,value) self.moves=value end,
 }
@@ -180,6 +188,35 @@ end
 local function expect(c,suffix,count)
     assert(c:GetNumBuilding(id('BUILDING',suffix))==count, DailyNumber..' '..suffix..' expected '..count)
 end
+-- Model the sourced combat additive fields and city yield ordering. These
+-- formulas use the installed SQL rows; the production callbacks decide when
+-- the rows contribute, and native calculations still need game acceptance.
+local function strength(u, defending)
+    local extra = 0
+    for promo,enabled in pairs(u.promos) do
+        local row=enabled and PromotionStats[promo]
+        if row then
+            extra=extra+row.CombatPercent
+            if defending then
+                extra=extra+row.DefenseMod+(u.plot.hills and row.HillsDefense or 0)
+            else
+                extra=extra+row.AttackMod
+            end
+        end
+    end
+    return 100+extra
+end
+
+local function cityYield(c, kind, base, percent)
+    local key='YIELD_'..kind
+    for building,amount in pairs(c.buildings) do
+        local flat,modifier=FlatYields[building],PercentYields[building]
+        if flat then base=base+(flat[key] or 0)*amount*100 end
+        if modifier then percent=percent+(modifier[key] or 0)*amount end
+    end
+    return math.floor(base*percent/100)
+end
+
 local function changed()
     Events.SerialEventCityInfoDirty.fire()
 end
@@ -211,45 +248,103 @@ end
 cases[22]=function(c)
     local guard=unit(0,c.plot,true)
     local enemy=unit(1,plot(9,0),false)
+    local interceptor=unit(2,plot(8,1),false)
+    local minor=unit(4,plot(8,2),false)
     c.buildings[id('BUILDING')]=1
     LoadDaily(22)
-    local function fight(a,d,kill,kind,complete)
-        GameEvents.BattleStarted.fire(kind,d.plot.x,d.plot.y)
-        local args={a.owner,a.id,12,12,100,d.owner,d.id,20,kill and 100 or 20,100,-1,-1,0,d.plot.x,d.plot.y}
+    local function fight(a,d,kind,v)
+        v=v or {}
+        local x,y=d and d.plot.x or 20,d and d.plot.y or 0
+        GameEvents.BattleStarted.fire(kind,x,y)
+        if v.attack then assert(strength(a,false)==v.attack) end
+        if v.abort then GameEvents.GameCoreUpdateEnd.fire(); return end
+        local i=v.interceptor
+        local args={a.owner,a.id,v.ad or 0,v.af or 0,100,d and d.owner or 1,d and d.id or -1,
+            v.dd or 0,v.df or 0,100,i and i.owner or -1,i and i.id or -1,v.damage or 0,x,y}
         GameEvents.CombatResult.fire(unpack(args))
-        if complete then
-            d.dead=kill
-            GameEvents.CombatEnded.fire(unpack(args))
-            GameEvents.CombatEnded.fire(unpack(args))
-        end
+        if v.removeA then a.dead=true end
+        if v.removeD then d.dead=true end
+        if v.collateral then v.collateral() end
+        GameEvents.CombatEnded.fire(unpack(args))
+        GameEvents.CombatEnded.fire(unpack(args))
     end
-    fight(enemy,guard,false,1,true)
-    assert(not guard:IsHasPromotion(id('PROMOTION','COUNTER')))
-    fight(enemy,guard,false,0,true)
-    assert(guard:IsHasPromotion(id('PROMOTION','COUNTER')))
-    fight(guard,enemy,false,0,true)
-    assert(not guard:IsHasPromotion(id('PROMOTION','COUNTER')))
-    fight(enemy,guard,false,0,true)
-    nextTurn()
-    assert(guard:IsHasPromotion(id('PROMOTION','COUNTER')))
+    fight(enemy,guard,1,{dd=20,df=20})
+    assert(strength(guard,false)==100)
+    fight(enemy,guard,0,{dd=20,df=20})
+    assert(strength(guard,false)==115 and strength(guard,true)==100)
+    fight(guard,enemy,0,{abort=true,attack=115})
+    assert(strength(guard,false)==115)
+    fight(guard,enemy,0,{dd=20,df=20,attack=115})
+    fight(guard,enemy,0,{dd=15,df=35,attack=100})
+    fight(enemy,guard,0,{dd=10,df=30})
+    local upgraded=unit(0,c.plot,true)
+    GameEvents.UnitConverted.fire(0,0,guard.id,upgraded.id,true)
+    assert(strength(guard,false)==100 and strength(upgraded,false)==115)
+    reload()
     GameEvents.PlayerDoneTurn.fire(0)
-    assert(not guard:IsHasPromotion(id('PROMOTION','COUNTER')))
-    for _=1,6 do fight(enemy,unit(0,c.plot,false),true,1,true) end
+    nextTurn()
+    assert(strength(upgraded,false)==115)
+    GameEvents.PlayerDoneTurn.fire(0)
+    reload()
+    assert(strength(upgraded,false)==100)
+
+    local plane=unit(0,c.plot,false)
+    plane.domain=DomainTypes.DOMAIN_AIR
+    plane.hp=72
+    fight(plane,nil,2,{interceptor=interceptor,damage=71})
+    assert(Controls.Lessons.text=='Lessons: 0 / 5')
+    fight(plane,nil,2,{interceptor=interceptor,damage=72,removeA=true})
+    assert(Controls.Lessons.text=='Lessons: 1 / 5')
+    local otherPlane=unit(0,c.plot,false)
+    fight(otherPlane,nil,2,{interceptor=minor,damage=100,removeA=true})
+    local civilian=unit(0,c.plot,false)
+    civilian.combat=false
+    fight(enemy,civilian,1,{dd=100,df=100,removeD=true})
+    local unrelated=unit(0,c.plot,false)
+    fight(enemy,unrelated,1,{dd=30,df=30,removeD=true})
+    assert(Controls.Lessons.text=='Lessons: 1 / 5')
+
+    local sweeper=unit(0,c.plot,false)
+    sweeper.hp=21
+    fight(sweeper,interceptor,3,{ad=21,removeA=true})
+    assert(Controls.Lessons.text=='Lessons: 2 / 5')
+    local victim=unit(0,plot(11,0),false)
+    local otherTarget=unit(3,plot(12,0),false)
+    local disband=unit(0,victim.plot,false)
+    fight(enemy,otherTarget,1,{dd=20,df=20,collateral=function()
+        victim.dead=true
+        GameEvents.UnitPrekill.fire(0,victim.id,victim.kind,11,0,true,1)
+        GameEvents.UnitPrekill.fire(0,victim.id,victim.kind,11,0,true,1)
+        GameEvents.UnitPrekill.fire(0,disband.id,disband.kind,11,0,false,-1)
+        disband.dead=true
+    end})
+    assert(Controls.Lessons.text=='Lessons: 3 / 5')
+    for _=1,5 do fight(enemy,unit(0,c.plot,false),1,{dd=80,df=100,removeD=true}) end
     expect(c,'CHAMBER',1)
     assert(Controls.Lessons.text=='Lessons: 5 / 5')
     Controls.Doctrine.click()
-    assert(guard:IsHasPromotion(id('PROMOTION','DOCTRINE')))
+    assert(strength(upgraded,false)==110 and strength(upgraded,true)==110)
     Controls.Doctrine.click()
     assert(Controls.Lessons.text=='Lessons: 3 / 5')
+    local successor=city(2)
     Controls.Method.click()
     reload()
     assert(Controls.Lessons.text=='Lessons: 0 / 5')
     expect(c,'CHAMBER',0); expect(c,'METHOD',1)
+    -- 10 points are added to the existing 150% native modifier. Exercise
+    -- integer hundredths independently of the Chamber's permanent yields.
+    c.buildings[id('BUILDING')]=0
+    assert(cityYield(c,'SCIENCE',1234,150)==1974)
+    c.capital,successor.capital=false,true
+    changed()
+    expect(c,'METHOD',0); expect(successor,'METHOD',1)
     for i=1,5 do
+        assert(cityYield(successor,'SCIENCE',1234,150)==1974)
         nextTurn()
-        assert(guard:IsHasPromotion(id('PROMOTION','DOCTRINE'))==(i<3))
-        expect(c,'METHOD',i<5 and 1 or 0)
+        assert(strength(upgraded,false)==(i<3 and 110 or 100))
+        expect(successor,'METHOD',i<5 and 1 or 0)
     end
+    assert(cityYield(successor,'SCIENCE',1234,150)==1851)
     assert(owner.saved:find('[Others:17]',1,true))
 end
 cases[23]=function(c)
@@ -280,12 +375,37 @@ cases[24]=function(c)
     for n=8,26 do city(n).buildings[id('BUILDING')]=1 end
     nextTurn()
     assert(u:GetMoves()==240)
+    reload()
     GameEvents.PlayerDoTurn.fire(0)
     assert(u:GetMoves()==240)
-    move(u,plot(8,0))
-    assert(u:GetMoves()==180 and not u:IsHasPromotion(u.bonus))
+    u:SetMoves(95)
+    u.embarked=true -- In CvUnit::move, this happens before UnitSetXY.
+    move(u,plot(8,0,{water=true}))
+    assert(u:MaxMoves()==120 and u:GetMoves()==35 and not u:IsHasPromotion(u.bonus))
+    u.embarked=false
     move(u,c.plot)
+    assert(u:GetMoves()==35)
+    GameEvents.PlayerDoneTurn.fire(0)
+    u:SetMoves(u:MaxMoves()) -- DoUnitReset calls restoreFullMoves next.
+    local foreign=plot(7,0,{owner=1,openBorders=true})
+    move(u,foreign)
+    nextTurn()
+    assert(u:GetMoves()==240)
+    foreign.openBorders=false
+    Events.SerialEventScoreDirty.fire()
+    Events.SerialEventScoreDirty.fire()
     assert(u:GetMoves()==180)
+    foreign.openBorders=true
+    Events.SerialEventScoreDirty.fire()
+    assert(u:GetMoves()==180)
+    nextTurn()
+    assert(u:GetMoves()==240)
+    local upgraded=unit(0,foreign,false)
+    upgraded.kind=-1
+    upgraded.moves=u.moves
+    GameEvents.UnitConverted.fire(0,0,u.id,upgraded.id,true)
+    GameEvents.UnitConverted.fire(0,0,u.id,upgraded.id,true)
+    assert(not upgraded:IsHasPromotion(u.bonus) and upgraded:GetMoves()==180)
 end
 cases[25]=function(c)
     c.coast=true
@@ -293,42 +413,83 @@ cases[25]=function(c)
     local u=unit(0,c.plot,true)
     LoadDaily(25)
     expect(c,'COAST',1); expect(c,'WALL',1); expect(c,'BASTION',1)
-    assert(not u:IsHasPromotion(id('PROMOTION','DEFEND')))
-    plot(11,0,{water=true})
+    assert(strength(u,true)==100)
+    local shore=plot(11,0,{water=true})
+    for kind=0,1 do
+        GameEvents.BattleStarted.fire(kind,10,0)
+        assert(strength(u,true)==120 and strength(u,false)==100)
+    end
+    shore.lake=true
     GameEvents.BattleStarted.fire(1,10,0)
-    assert(u:IsHasPromotion(id('PROMOTION','DEFEND')))
+    assert(strength(u,true)==120)
     c.plot.blocked=true
     GameEvents.BattleStarted.fire(0,10,0)
-    assert(not u:IsHasPromotion(id('PROMOTION','DEFEND')))
+    assert(strength(u,true)==100)
+    c.plot.blocked=false
+    u.embarked=true
+    GameEvents.BattleStarted.fire(0,10,0)
+    assert(strength(u,true)==100)
+    u.embarked=false
+    move(u,plot(7,0))
+    assert(strength(u,true)==100)
+    move(u,c.plot)
+    assert(strength(u,true)==120)
+    local veteran=unit(0,c.plot,true)
+    GameEvents.UnitConverted.fire(0,0,u.id,veteran.id,true)
+    assert(strength(veteran,true)==120 and strength(veteran,false)==100)
+    local foreign=unit(1,c.plot,true)
+    foreign.promos[id('PROMOTION','DEFEND')]=true
+    GameEvents.UnitConverted.fire(0,1,veteran.id,foreign.id,false)
+    assert(strength(foreign,true)==100)
 end
 cases[26]=function(c)
     local inkguard=unit(0,c.plot,true)
+    for i=1,1000 do unit(0,c.plot,false) end
     c.buildings[id('BUILDING')]=1
     LoadDaily(26)
+    assert(not ContextPtr.hidden)
     expect(c,'PROSPERITY',0); expect(c,'ENLIGHTENMENT',0)
+    reload()
+    assert(not ContextPtr.hidden)
     Controls.Prosperity.click()
+    assert(ContextPtr.hidden)
     expect(c,'PROSPERITY',1); expect(c,'CHAMBER_GOLD',1)
     Controls.Enlightenment.click()
     expect(c,'ENLIGHTENMENT',0)
+    local scans=unitSweeps
+    nextTurn()
+    assert(unitSweeps==scans)
     era=1
     GameEvents.TeamSetEra.fire(0,era,true)
     expect(c,'PROSPERITY',0); expect(c,'CHAMBER_GOLD',0)
+    assert(not ContextPtr.hidden)
     Controls.Enlightenment.click()
     expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
     reload()
+    assert(ContextPtr.hidden)
     Controls.Prosperity.click()
     nextTurn()
     expect(c,'ENLIGHTENMENT',1); expect(c,'CHAMBER_SCIENCE',1)
     era=2
     GameEvents.TeamSetEra.fire(0,era,true)
     Controls.Defence.click()
-    assert(inkguard:IsHasPromotion(id('PROMOTION','RESOLUTION')))
+    assert(strength(inkguard,false)==110)
+    scans=unitSweeps
+    GameEvents.TeamSetEra.fire(0,era,true)
+    nextTurn()
+    assert(unitSweeps==scans)
     local civilian=unit(0,c.plot,false)
     civilian.combat=false
     GameEvents.UnitCreated.fire(0,civilian.id)
-    assert(not civilian:IsHasPromotion(id('PROMOTION','RESOLUTION')))
+    assert(strength(civilian,false)==100)
+    local veteran=unit(0,c.plot,true)
+    GameEvents.UnitConverted.fire(0,0,inkguard.id,veteran.id,true)
+    assert(strength(veteran,false)==110)
     expect(c,'PROSPERITY',0); expect(c,'ENLIGHTENMENT',0)
     assert(owner.saved:find('[CWC3_D026_V1:2:3]',1,true))
+    era=3
+    GameEvents.TeamSetEra.fire(0,era,true)
+    assert(strength(veteran,false)==100 and not ContextPtr.hidden)
 end
 cases[27]=function(c)
     local fen=unit(0,c.plot,true)
@@ -346,7 +507,7 @@ cases[27]=function(c)
         for j=1,4 do expect(c,'SCIENCE_'..j,i>=j and 1 or 0) end
     end
     c.plots[2].pillaged=true; c.plots[3].pillaged=true
-    GameEvents.TileImprovementChanged.fire()
+    GameEvents.TileImprovementChanged.fire(11,0,0,-1,-1,true)
     expect(c,'SCIENCE_3',1); expect(c,'SCIENCE_4',0); expect(c,'RESEARCH',1)
     assert(fen:IsHasPromotion(id('PROMOTION','MIST')))
 end
@@ -406,28 +567,37 @@ end
 cases[31]=function(c)
     c.buildings[id('BUILDING')]=1
     local scout=unit(0,c.plot,true)
+    local secondary=Players[1]
+    secondary.civ=owner.civ
     for i=1,89 do plot(100+i,0,{revealed=true}) end
     LoadDaily(31)
-    local function reveal(p, fromTeam, unitOwner, unitID)
+    assert(mapCensuses==2)
+    local function reveal(p, fromTeam, unitOwner, unitID, team)
         p.revealed=true
-        GameEvents.TileRevealed.fire(p.x,p.y,0,fromTeam,false,unitOwner,unitID)
+        GameEvents.TileRevealed.fire(p.x,p.y,team or 0,fromTeam,false,unitOwner,unitID)
     end
     reveal(plot(101,1,{water=true}),-1,0,scout.id)
     for i=1,10 do reveal(plot(101+i,1),1,-1,-1) end
-    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
+    GameEvents.GameCoreUpdateEnd.fire()
     expect(c,'ATLAS_CULTURE',0)
+    reveal(plot(100,2),-1,-1,-1) -- Unitless and therefore Atlas only.
+    active=1
+    GameEvents.GameCoreUpdateEnd.fire()
+    expect(c,'ATLAS_CULTURE',1)
+    assert(owner.science==0 and owner.culture==0)
     local prospect=plot(100,1)
     reveal(prospect,-1,0,scout.id)
     reveal(prospect,-1,0,scout.id)
-    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
-    expect(c,'ATLAS_CULTURE',1)
-    assert(owner.science==0 and owner.culture==0)
+    assert(owner.saved:find('[CWC3_D031_V1:0:1:0:',1,true))
+    reload() -- Save between the sight callback and move completion.
+    reveal(prospect,-1,0,scout.id)
     for i=1,109 do reveal(plot(900+i,1),-1,0,scout.id) end
-    GameEvents.UnitSetXY.fire(0,scout.id,10,0)
+    GameEvents.GameCoreUpdateEnd.fire()
     expect(c,'ATLAS_GOLD',1)
     local rewards={QUICK={10,7},STANDARD={15,10},EPIC={23,15},MARATHON={45,30}}
     local b,culture = unpack(rewards[Speed])
     assert(owner.science==b*10 and owner.culture==culture*10)
+    assert(secondary.science==0 and secondary.culture==0 and mapCensuses==4)
     reload()
     era=1
     GameEvents.TeamSetEra.fire(0,era,true)
@@ -435,7 +605,33 @@ cases[31]=function(c)
     assert(owner.saved:find('[CWC3_D031_V1:1:0:1:',1,true))
     GameEvents.PlayerDoTurn.fire(0)
     assert(owner.science==b*11 and owner.culture==culture*11)
+    local secondScout=unit(1,c.plot,true)
+    for i=1,10 do reveal(plot(1100+i,0),-1,1,secondScout.id,1) end
+    GameEvents.UnitSetXY.fire(1,secondScout.id,c.plot.x,c.plot.y)
+    assert(secondary.science==b and secondary.culture==culture)
+    assert(owner.science==b*11)
+    -- Native awarded beakers can finish the selected tech and advance the
+    -- era while flushing. Model that callback and the resulting overflow.
+    owner.research=7
+    Teams[0].GetTeamTechs=function()
+        return {ChangeResearchProgress=function(_,tech,amount,player)
+            assert(tech==7 and player==0 and amount==b)
+            owner.techProgress=b-2
+            owner.science=owner.science+amount-owner.techProgress
+            owner.research=-1
+            era=2
+            GameEvents.TeamSetEra.fire(0,era,true)
+        end}
+    end
+    for i=1,20 do reveal(plot(1200+i,0),-1,0,scout.id) end
+    GameEvents.GameCoreUpdateEnd.fire()
+    GameEvents.GameCoreUpdateEnd.fire()
+    assert(owner.techProgress==b-2 and owner.science==12*b+2 and owner.culture==13*culture)
+    assert(owner.saved:find('[CWC3_D031_V1:2:0:1:',1,true))
+    active=0
+    secondary.civ=-1
 end
+
 cases[32]=function(c)
     local mine,gold,silver=GameInfoTypes.IMPROVEMENT_MINE,GameInfoTypes.RESOURCE_GOLD,GameInfoTypes.RESOURCE_SILVER
     c.buildings[id('BUILDING')]=1
@@ -452,10 +648,10 @@ cases[32]=function(c)
     changed()
     expect(c,'METALS',1); expect(c,'LAKE',1); expect(c,'MINE_2',1)
     m1.pillaged=true
-    GameEvents.TileImprovementChanged.fire()
+    GameEvents.TileImprovementChanged.fire(11,0,0,-1,-1,true)
     expect(c,'METALS',0); expect(c,'MINE_2',0)
     m3.owner=0
-    GameEvents.TileOwnershipChanged.fire()
+    GameEvents.TileOwnershipChanged.fire(13,0,0,1)
     expect(c,'METALS',1); expect(c,'MINE_2',1)
     assert(m2.improvement==mine)
 end
@@ -490,35 +686,70 @@ cases[34]=function(c)
     local sentinel=unit(0,c.plot,true)
     c.plot.hills=true
     LoadDaily(34)
+    -- No attack or preview state is seeded outside actual battle generation.
+    assert(strength(sentinel,false)==100 and strength(sentinel,true)==100)
     GameEvents.BattleStarted.fire(1,10,0)
-    assert(not sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
+    assert(strength(sentinel,true)==100)
     GameEvents.BattleStarted.fire(0,10,0)
-    assert(sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
-    GameEvents.BattleFinished.fire()
-    assert(not sentinel:IsHasPromotion(id('PROMOTION','DEFEND')))
+    assert(strength(sentinel,true)==115 and strength(sentinel,false)==100)
+    GameEvents.CombatResult.fire(1,1,15,15,100,0,sentinel.id,25,25,100,-1,-1,0,10,0)
+    assert(strength(sentinel,true)==100)
+    GameEvents.BattleStarted.fire(0,10,0)
+    assert(strength(sentinel,true)==115)
+    -- An abort returns through ResolveCombat without Result or Finished.
+    GameEvents.GameCoreUpdateEnd.fire()
+    assert(strength(sentinel,true)==100)
+    GameEvents.BattleStarted.fire(0,10,0)
+    reload()
+    assert(strength(sentinel,true)==100)
     expect(c,'HILL',1); expect(c,'WALL',0); expect(c,'TERRACE',0)
     c.free[id('BUILDING')]=1
     c.free[GameInfoTypes.BUILDING_WALLS]=1
     changed()
     expect(c,'HILL',1); expect(c,'WALL',1); expect(c,'TERRACE',1)
     c.plot.hills=false
+    GameEvents.BattleStarted.fire(0,10,0)
+    assert(strength(sentinel,true)==100)
     changed()
     expect(c,'HILL',0); expect(c,'WALL',1); expect(c,'TERRACE',0)
 end
+
 cases[35]=function(c)
     local second=city(2)
+    local third=city(3)
     c.buildings[id('BUILDING')]=1
-    c.celebration=1
     LoadDaily(35)
-    expect(c,'CELEBRATION',1); expect(c,'OFFICE',1)
-    expect(second,'CELEBRATION',0); expect(second,'OFFICE',0)
-    c.celebration=0
-    GameEvents.CityEndsWLTKD.fire(0,10,0,0)
-    expect(c,'CELEBRATION',0); expect(c,'OFFICE',0)
-    c.celebration=3
-    GameEvents.CityBeginsWLTKD.fire(0,10,0,3)
-    GameEvents.CityExtendsWLTKD.fire(0,10,0,3)
-    expect(c,'CELEBRATION',1); expect(c,'OFFICE',1)
+    local prod=cityYield(c,'PRODUCTION',900,100)
+    local science=cityYield(c,'SCIENCE',1103,100)
+    local gold=cityYield(c,'GOLD',1036,100)
+    local culture=cityYield(c,'CULTURE',0,100)
+    local function event(name,city,counter,delta)
+        city.celebration=counter
+        GameEvents[name].fire(0,city.plot.x,city.plot.y,delta)
+    end
+    event('CityBeginsWLTKD',c,2,2)
+    event('CityBeginsWLTKD',second,1,1)
+    assert(cityYield(c,'PRODUCTION',900,100)==prod+200)
+    assert(cityYield(c,'SCIENCE',1103,100)==science+100)
+    assert(cityYield(c,'GOLD',1036,100)==gold+200)
+    assert(cityYield(second,'PRODUCTION',900,100)==1100)
+    assert(cityYield(second,'GOLD',1036,100)==1036)
+    assert(cityYield(third,'SCIENCE',1103,100)==1103)
+    c.celebration=1 -- Native 2 -> 1 tick changes no eligibility.
+    assert(cityYield(c,'PRODUCTION',900,100)==prod+200)
+    -- Native last production pays at 1. Science and treasury read 0 later.
+    event('CityEndsWLTKD',c,0,0)
+    assert(cityYield(c,'PRODUCTION',900,100)==prod)
+    assert(cityYield(c,'SCIENCE',1103,100)==science)
+    assert(cityYield(c,'GOLD',1036,100)==gold)
+    assert(cityYield(second,'SCIENCE',1103,100)==1203)
+    event('CityBeginsWLTKD',c,3,3)
+    event('CityExtendsWLTKD',c,5,2)
+    event('CityExtendsWLTKD',c,5,2)
+    reload()
+    assert(cityYield(c,'SCIENCE',1103,100)==science+100)
+    assert(cityYield(c,'GOLD',1036,100)==gold+200)
+    assert(cityYield(c,'CULTURE',0,100)==culture)
 end
 
 owner.civ=id('CIVILIZATION')
@@ -534,7 +765,12 @@ assert(capital:GetNumFreeBuilding(id('BUILDING',controller))==0)
 capital.owner=1
 owner.cities={}
 Players[1].cities={capital}
-GameEvents.CityCaptureComplete.fire(0,true,capital.plot.x,capital.plot.y,1)
+GameEvents.CityCaptureComplete.fire(0,true,capital.plot.x,capital.plot.y,1,1,true,0,0)
 expect(capital,controller,0)
+capital.owner=0
+owner.cities={capital}
+Players[1].cities={}
+GameEvents.PlayerLiberated.fire(1,0,capital.id)
+expect(capital,controller,before)
 assert(owner.saved:find('[Others:17]',1,true))
 print('PASS Daily #'..DailyNumber..' '..Speed..' production Lua, eligibility and callback replay')

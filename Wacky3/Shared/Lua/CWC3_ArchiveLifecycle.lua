@@ -1,4 +1,4 @@
--- Lifecycle wiring for the four archived additions only. Existing civs are untouched.
+-- City yield reconciliation shared by the archived and Daily additions.
 include('CWC3_Runtime')
 CWC3Archive = CWC3Archive or {}
 
@@ -45,48 +45,60 @@ function CWC3Archive.Install(config)
         busy = false
         if not ok then error(err) end
     end
-    local function tracked()
-        transaction(function()
-            -- One preparation (e.g. route enumeration) per affected owner.
-            local preparedByOwner = {}
-            for key,coord in pairs(watched) do
-                local plot = Map.GetPlot(coord.x,coord.y)
-                local c = plot and plot:GetPlotCity()
-                if c then
-                    local id=c:GetOwner(); local p=Players[id]
+    local function trackChanges(processed)
+        -- Owners swept in this transaction need no second city pass. A captured
+        -- city still gets cleaned because its current owner is looked up anew.
+        local preparedByOwner = {}
+        for key,coord in pairs(watched) do
+            local plot = Map.GetPlot(coord.x,coord.y)
+            local c = plot and plot:GetPlotCity()
+            if c then
+                local id=c:GetOwner()
+                if not processed or not processed[id] then
+                    local p=Players[id]
                     if not preparedByOwner[id] then
                         preparedByOwner[id]={value=eligible(p) and config.prepare and config.prepare(p)}
                     end
                     city(c,preparedByOwner[id].value)
-                else watched[key] = nil end
+                end
+            else
+                watched[key] = nil
             end
-            if config.cleanup then config.cleanup() end
-        end)
+        end
+        if config.cleanup then config.cleanup() end
+    end
+    local function tracked()
+        transaction(function() trackChanges() end)
     end
     local function all()
         transaction(function()
+            local processed={}
             for id=0,GameDefines.MAX_CIV_PLAYERS-1 do
-                if eligible(Players[id]) then player(id) end
+                if eligible(Players[id]) then player(id); processed[id]=true end
             end
+            trackChanges(processed)
         end)
-        tracked()
     end
-    local function at(x,y)
+    local function at(x,y,capture)
         transaction(function()
+            local key=x..':'..y
             local plot=Map.GetPlot(x,y)
             local c=plot and plot:GetPlotCity()
-            -- Refresh the whole new owner to share a single prepared route set.
-            if c then
-                if eligible(Players[c:GetOwner()]) then player(c:GetOwner()) else city(c) end
+            if c and eligible(Players[c:GetOwner()]) then
+                local owner=c:GetOwner()
+                player(owner)
+                trackChanges({[owner]=true})
+            elseif capture or watched[key] then
+                city(c)
+                trackChanges()
             end
         end)
-        tracked()
     end
     GameEvents.PlayerCityFounded.Add(function(id,x,y)
         if config.founded then config.founded(id,x,y) end
         at(x,y)
     end)
-    GameEvents.CityCaptureComplete.Add(function(_,_,x,y) at(x,y) end)
+    GameEvents.CityCaptureComplete.Add(function(_,_,x,y) at(x,y,true) end)
     GameEvents.PlayerLiberated.Add(function(_,id) transaction(function() player(id) end); tracked() end)
     local function building(id)
         if eligible(Players[id]) then transaction(function() player(id) end) end
@@ -94,8 +106,17 @@ function CWC3Archive.Install(config)
     GameEvents.CityConstructed.Add(building)
     GameEvents.CitySoldBuilding.Add(building)
     if config.farms then
-        GameEvents.TileImprovementChanged.Add(all)
-        GameEvents.TileOwnershipChanged.Add(all)
+        local function plotChanged(_,_,owner)
+            if eligible(Players[owner]) then transaction(function() player(owner) end) end
+        end
+        GameEvents.TileImprovementChanged.Add(plotChanged)
+        GameEvents.TileFeatureChanged.Add(plotChanged)
+        GameEvents.TileOwnershipChanged.Add(function(_,_,owner,oldOwner)
+            transaction(function()
+                if eligible(Players[owner]) then player(owner) end
+                if oldOwner~=owner and eligible(Players[oldOwner]) then player(oldOwner) end
+            end)
+        end)
     end
     Events.SerialEventCityInfoDirty.Add(tracked)
     Events.NewGameTurn.Add(all)
@@ -103,8 +124,10 @@ function CWC3Archive.Install(config)
     GameEvents.PlayerDoTurn.Add(function(id)
         -- Native CP151 economy has already settled: recovery affects NEXT payout.
         if eligible(Players[id]) then
-            transaction(function() player(id) end)
-            tracked()
+            transaction(function()
+                player(id)
+                trackChanges({[id]=true})
+            end)
         end
     end)
     GameEvents.CityCanConstruct.Add(function(_,_,buildingID)
@@ -115,5 +138,12 @@ function CWC3Archive.Install(config)
     transaction(function()
         for id=0,GameDefines.MAX_CIV_PLAYERS-1 do player(id) end
     end)
-    return {city=function(c) transaction(function() city(c) end) end, all=all, tracked=tracked, eligible=eligible}
+    local function single(c)
+        if not c then return end
+        transaction(function()
+            local p=Players[c:GetOwner()]
+            city(c,eligible(p) and config.prepare and config.prepare(p))
+        end)
+    end
+    return {city=single, all=all, tracked=tracked, eligible=eligible}
 end
