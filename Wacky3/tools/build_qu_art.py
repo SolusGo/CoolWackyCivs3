@@ -1,5 +1,5 @@
 """Package the Qu's retained original art into native mipmapped DDS textures."""
-from PIL import Image, ImageChops, ImageDraw, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
 from build_art import ROOT, SIZES, dds
 
@@ -10,13 +10,21 @@ SCENES = {'Dawn': (1024, 768), 'Diplomacy': (1600, 1200), 'Map': (360, 412)}
 RESAMPLE = Image.Resampling.LANCZOS
 
 
-def icon(image):
+def icon(image, inset=0):
     image = ImageOps.fit(image, (1024, 1024), RESAMPLE).convert('RGBA')
+    if inset:
+        size = 1024 - 2 * inset
+        artwork = image.resize((size, size), RESAMPLE)
+        paper = Image.new('RGBA', image.size, image.getpixel((0, 0)))
+        feather = Image.new('L', artwork.size)
+        ImageDraw.Draw(feather).rectangle((12, 12, size - 13, size - 13), fill=255)
+        paper.paste(artwork, (inset, inset), feather.filter(ImageFilter.GaussianBlur(5)))
+        image = paper
     mask = Image.new('L', image.size)
     border = (24, 24, 999, 999)
     ImageDraw.Draw(mask).ellipse(border, fill=255)
     image.putalpha(mask)
-    ImageDraw.Draw(image).ellipse(border, outline=(207, 164, 80, 255), width=21)
+    ImageDraw.Draw(image).ellipse(border, outline=(155, 152, 143, 255), width=21)
     return image
 
 
@@ -34,7 +42,8 @@ def compile_art():
     sources = {name: Image.open(ART / 'Sources' / f'{name}.png')
                for name in (*PORTRAITS, 'Dawn', 'Diplomacy')}
     alpha = heraldry(sources['Civ'])
-    icons = {name: icon(image) for name, image in sources.items() if name in PORTRAITS}
+    insets = {'Civ': 80, 'Leader': 112, 'Harvester': 112}
+    icons = {name: icon(sources[name], inset=insets.get(name, 0)) for name in PORTRAITS}
     icons['Unit'] = icons.pop('Harvester')
     icons['Alpha'] = alpha
     icons['Flag'] = alpha.rotate(-16, Image.Resampling.BICUBIC)

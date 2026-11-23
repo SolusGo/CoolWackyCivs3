@@ -887,66 +887,66 @@
     <File md5="ED864518AD29B95C8B587A03923DE9A3" import="0">ThePostalSovereignty/SQL/D024_Text.sql</File>
     <File md5="5CD5DA64C252C2DFC845A350F0D823C7" import="0">ThePostalSovereignty/SQL/D024_Units.sql</File>
     <File md5="767C2C74CE3989E40C9002204824C86F" import="0">ThePostalSovereignty/TESTING.md</File>
-    <File md5="3355E1228EA1C161BB74FF18B7611C73" import="1">TheQu/Art/CWC3_Qu_Alpha128.dds</File>
-    <File md5="29CABABC97C5E64FF225BA34F47D2F9F" import="1">TheQu/Art/CWC3_Qu_Alpha16.dds</File>
-    <File md5="68A527D9BD401412C4890305EE06DBB7" import="1">TheQu/Art/CWC3_Qu_Alpha24.dds</File>
-    <File md5="2750B44858A77EA3A90364CF7E2E5939" import="1">TheQu/Art/CWC3_Qu_Alpha256.dds</File>
-    <File md5="398A8EDAFC5CB24920E4A9F55EE0E030" import="1">TheQu/Art/CWC3_Qu_Alpha32.dds</File>
-    <File md5="5300CAA544644C6B10F0B0D0487CCB18" import="1">TheQu/Art/CWC3_Qu_Alpha45.dds</File>
-    <File md5="5AD931274214ACB43E0CE8BA37754431" import="1">TheQu/Art/CWC3_Qu_Alpha48.dds</File>
-    <File md5="962F031AD72557312C7A785E57D91367" import="1">TheQu/Art/CWC3_Qu_Alpha64.dds</File>
-    <File md5="0FDF621E4314F6D275EA8EE0DE73D5A4" import="1">TheQu/Art/CWC3_Qu_Alpha80.dds</File>
-    <File md5="6248A980192D27E22BA20DB970685289" import="1">TheQu/Art/CWC3_Qu_Civ128.dds</File>
-    <File md5="D33E43A16992D1B4AC667ACDEE51583D" import="1">TheQu/Art/CWC3_Qu_Civ16.dds</File>
-    <File md5="C88AF75135E7F07F7E053C31BCF9EAD1" import="1">TheQu/Art/CWC3_Qu_Civ24.dds</File>
-    <File md5="AEA23537E4B4063D458671DF20E9776E" import="1">TheQu/Art/CWC3_Qu_Civ256.dds</File>
-    <File md5="1B759241203BA7B21C2AFCC66B23BA64" import="1">TheQu/Art/CWC3_Qu_Civ32.dds</File>
-    <File md5="ACA3E3D8600E8E5290DFFAEB112F71CB" import="1">TheQu/Art/CWC3_Qu_Civ45.dds</File>
-    <File md5="FF580C4D735FCFC8B1CED7D8986FA483" import="1">TheQu/Art/CWC3_Qu_Civ48.dds</File>
-    <File md5="CB845201AAD8B873AA0DF434BC3E4D51" import="1">TheQu/Art/CWC3_Qu_Civ64.dds</File>
-    <File md5="D0923BF9EB31B89F324BF73DDB71D109" import="1">TheQu/Art/CWC3_Qu_Civ80.dds</File>
-    <File md5="456EAB156B20560546E546784213D91B" import="1">TheQu/Art/CWC3_Qu_Dawn.dds</File>
-    <File md5="B467F862B3946ED1FCE8DBDE9083F0D3" import="1">TheQu/Art/CWC3_Qu_Diplomacy.dds</File>
-    <File md5="5A0ED40D091987434219D22D5B8BD472" import="1">TheQu/Art/CWC3_Qu_Flag32.dds</File>
-    <File md5="B7B218678FEE206D174DE5AC902D998D" import="1">TheQu/Art/CWC3_Qu_Foundry128.dds</File>
-    <File md5="195BA1B436F74082B4F442A6B15DA977" import="1">TheQu/Art/CWC3_Qu_Foundry16.dds</File>
-    <File md5="92070A2B599D75AC4A131CF0D0BD93CF" import="1">TheQu/Art/CWC3_Qu_Foundry24.dds</File>
-    <File md5="331EC5B3A4790933B8BF3829DF4EF0EF" import="1">TheQu/Art/CWC3_Qu_Foundry256.dds</File>
-    <File md5="6E1E4FFCAD3DF6BEEF3040349E508486" import="1">TheQu/Art/CWC3_Qu_Foundry32.dds</File>
-    <File md5="39CFBF423327412AC9ED7A96383F0129" import="1">TheQu/Art/CWC3_Qu_Foundry45.dds</File>
-    <File md5="BFE831B2B56A27E1A651A95310E6F4BC" import="1">TheQu/Art/CWC3_Qu_Foundry48.dds</File>
-    <File md5="3ED89200C45D39C458882C71C0E64939" import="1">TheQu/Art/CWC3_Qu_Foundry64.dds</File>
-    <File md5="EAA4F8F5578529224118D6D913FD80CE" import="1">TheQu/Art/CWC3_Qu_Foundry80.dds</File>
-    <File md5="5D29BCDE0F5EF3023862AEF016B4700F" import="1">TheQu/Art/CWC3_Qu_Leader128.dds</File>
-    <File md5="9AC8507BBD06805346CDD2062726EF35" import="1">TheQu/Art/CWC3_Qu_Leader16.dds</File>
-    <File md5="FC702FB0DEC74365EC2C83B2043478A3" import="1">TheQu/Art/CWC3_Qu_Leader24.dds</File>
-    <File md5="F83796EA70E9BE6CF469D2EB183DA41E" import="1">TheQu/Art/CWC3_Qu_Leader256.dds</File>
-    <File md5="122A10D82227123E991E6E22874D4514" import="1">TheQu/Art/CWC3_Qu_Leader32.dds</File>
-    <File md5="D24917DF907F347EF954F8E3B0FB6112" import="1">TheQu/Art/CWC3_Qu_Leader45.dds</File>
-    <File md5="1C4A768CDB2529514A021DFA811DAB65" import="1">TheQu/Art/CWC3_Qu_Leader48.dds</File>
-    <File md5="5926D68D2E662D0CE8B9F57B0CBD7F8E" import="1">TheQu/Art/CWC3_Qu_Leader64.dds</File>
-    <File md5="48E81F7DC0430C1BEAB6E2E73A2E3E62" import="1">TheQu/Art/CWC3_Qu_Leader80.dds</File>
+    <File md5="4281F01BFCA16C39F23F073374B1239D" import="1">TheQu/Art/CWC3_Qu_Alpha128.dds</File>
+    <File md5="D56FB7E2C0B2A623FC15CC9AD328C23F" import="1">TheQu/Art/CWC3_Qu_Alpha16.dds</File>
+    <File md5="CC704B51D8BF851A2737E69DEDC9D145" import="1">TheQu/Art/CWC3_Qu_Alpha24.dds</File>
+    <File md5="8260FB0B5DC2845DB813EF9ED5A5F46A" import="1">TheQu/Art/CWC3_Qu_Alpha256.dds</File>
+    <File md5="860E8828CF0B5E1E1431FA203DA30EE4" import="1">TheQu/Art/CWC3_Qu_Alpha32.dds</File>
+    <File md5="E1D0EF0FB7265B1E6753C8BD70FC9FB0" import="1">TheQu/Art/CWC3_Qu_Alpha45.dds</File>
+    <File md5="CF9A76D65EBBA1F113AA98D4608AB0D7" import="1">TheQu/Art/CWC3_Qu_Alpha48.dds</File>
+    <File md5="DF8D21E32159416F10CE34BB99E7CC71" import="1">TheQu/Art/CWC3_Qu_Alpha64.dds</File>
+    <File md5="155C7D989CA6A8BBB33D94C4AA57CD12" import="1">TheQu/Art/CWC3_Qu_Alpha80.dds</File>
+    <File md5="BAD6334782B9C39CBF93295A3CA0C56E" import="1">TheQu/Art/CWC3_Qu_Civ128.dds</File>
+    <File md5="DB4AC3E15640884EDCECD88E5943B7E6" import="1">TheQu/Art/CWC3_Qu_Civ16.dds</File>
+    <File md5="C2692A636D6FC3B45C927CFFD83C2871" import="1">TheQu/Art/CWC3_Qu_Civ24.dds</File>
+    <File md5="CA89119B6F750EF7AA5414E5A1DE5556" import="1">TheQu/Art/CWC3_Qu_Civ256.dds</File>
+    <File md5="6AB1A3CEE91688562C224608A6810783" import="1">TheQu/Art/CWC3_Qu_Civ32.dds</File>
+    <File md5="C11D7442D9D01403D41AC9F3577CD308" import="1">TheQu/Art/CWC3_Qu_Civ45.dds</File>
+    <File md5="F3D28E7F6BD3F5F83329DBB430B354C7" import="1">TheQu/Art/CWC3_Qu_Civ48.dds</File>
+    <File md5="7079251D422476878B01F0B422B25559" import="1">TheQu/Art/CWC3_Qu_Civ64.dds</File>
+    <File md5="F779F81855DEDAF6F6EA2E59DF53EBCA" import="1">TheQu/Art/CWC3_Qu_Civ80.dds</File>
+    <File md5="F4F553556B426787A52589BAD0919850" import="1">TheQu/Art/CWC3_Qu_Dawn.dds</File>
+    <File md5="6DA1C4B418F3BF349E3A46ED93E18513" import="1">TheQu/Art/CWC3_Qu_Diplomacy.dds</File>
+    <File md5="D448E64903736CE44AF6FDA42F355E14" import="1">TheQu/Art/CWC3_Qu_Flag32.dds</File>
+    <File md5="EA4D997400DE7D3402A1100150C3CE7A" import="1">TheQu/Art/CWC3_Qu_Foundry128.dds</File>
+    <File md5="0C311E857DBD06AD12B71A31B252497B" import="1">TheQu/Art/CWC3_Qu_Foundry16.dds</File>
+    <File md5="DF693D3EBDFF2953E6B3FD3F75D16B9C" import="1">TheQu/Art/CWC3_Qu_Foundry24.dds</File>
+    <File md5="11AE5CB071AA36B935096C71C590BCFE" import="1">TheQu/Art/CWC3_Qu_Foundry256.dds</File>
+    <File md5="14AAADD655D4431B46DB99DE939C0886" import="1">TheQu/Art/CWC3_Qu_Foundry32.dds</File>
+    <File md5="B69A14FB33E148525FD1E486DAFF0BF1" import="1">TheQu/Art/CWC3_Qu_Foundry45.dds</File>
+    <File md5="F957561F92F5CD86191237CBC00D6695" import="1">TheQu/Art/CWC3_Qu_Foundry48.dds</File>
+    <File md5="7F8E22953D61CEF2BC0B9357154D0F8D" import="1">TheQu/Art/CWC3_Qu_Foundry64.dds</File>
+    <File md5="CD4ADE046ECB63EC4DF6A72633938E67" import="1">TheQu/Art/CWC3_Qu_Foundry80.dds</File>
+    <File md5="BBAF13801EAF89663CBEB97AC87030E0" import="1">TheQu/Art/CWC3_Qu_Leader128.dds</File>
+    <File md5="F7FA72194345E4A670F6CE7223151FFA" import="1">TheQu/Art/CWC3_Qu_Leader16.dds</File>
+    <File md5="7EA4E00D2D468950CA7B504A7E2D31AB" import="1">TheQu/Art/CWC3_Qu_Leader24.dds</File>
+    <File md5="F52A6D8CC814435E5CD57B4B75AE395E" import="1">TheQu/Art/CWC3_Qu_Leader256.dds</File>
+    <File md5="73E67292649AFCF2C333BD6DF901F07F" import="1">TheQu/Art/CWC3_Qu_Leader32.dds</File>
+    <File md5="1F43EA3C645599F5AED16DE6B9EF9549" import="1">TheQu/Art/CWC3_Qu_Leader45.dds</File>
+    <File md5="ED4F343A10762F100A2EC9F029BCB0CB" import="1">TheQu/Art/CWC3_Qu_Leader48.dds</File>
+    <File md5="4D4A8C06D5EAF790FF1418B5CA36068C" import="1">TheQu/Art/CWC3_Qu_Leader64.dds</File>
+    <File md5="FAA3157836019230FC0DFEEC502CA5DC" import="1">TheQu/Art/CWC3_Qu_Leader80.dds</File>
     <File md5="9FC599AA700490085466F1ACB176976F" import="1">TheQu/Art/CWC3_Qu_LeaderScene.xml</File>
-    <File md5="6C9C8DC3A6D26F8F4B132F643DC7DB19" import="1">TheQu/Art/CWC3_Qu_Map.dds</File>
-    <File md5="0695DCF1D4C342CF40BE0D6AF2A0AAC4" import="1">TheQu/Art/CWC3_Qu_Unit128.dds</File>
-    <File md5="3254760E88E5E1F8419A0827233BD4AA" import="1">TheQu/Art/CWC3_Qu_Unit16.dds</File>
-    <File md5="AD155C535A4DD0AD5951A17F323D638C" import="1">TheQu/Art/CWC3_Qu_Unit24.dds</File>
-    <File md5="0E3B03BE71B78447172A339D2966E4BF" import="1">TheQu/Art/CWC3_Qu_Unit256.dds</File>
-    <File md5="2C08DF64A10DFA0B6BD2D23A19E55B92" import="1">TheQu/Art/CWC3_Qu_Unit32.dds</File>
-    <File md5="54BE032F75A988A4AA308560916D4CFF" import="1">TheQu/Art/CWC3_Qu_Unit45.dds</File>
-    <File md5="457130E48E9B16329AA0FF150FF9A08F" import="1">TheQu/Art/CWC3_Qu_Unit48.dds</File>
-    <File md5="6B68F5C69B2F9C11B2E88C63263A733A" import="1">TheQu/Art/CWC3_Qu_Unit64.dds</File>
-    <File md5="32EAE9CF5280C261FCB48CC8F5071734" import="1">TheQu/Art/CWC3_Qu_Unit80.dds</File>
+    <File md5="876D4F2A3370D20C5BF65DAE39C58D81" import="1">TheQu/Art/CWC3_Qu_Map.dds</File>
+    <File md5="F2F97E905BDF5D4EB7FE7B28FC206BAD" import="1">TheQu/Art/CWC3_Qu_Unit128.dds</File>
+    <File md5="CA3706AC074B9A3D4C927280B94DC0F4" import="1">TheQu/Art/CWC3_Qu_Unit16.dds</File>
+    <File md5="602AD37396A65CC6C9ABF416D7BF05DA" import="1">TheQu/Art/CWC3_Qu_Unit24.dds</File>
+    <File md5="5E61675DB9AE05DC548F515AEEC12FB2" import="1">TheQu/Art/CWC3_Qu_Unit256.dds</File>
+    <File md5="7E6772BED01BBD352505EC741C67BA58" import="1">TheQu/Art/CWC3_Qu_Unit32.dds</File>
+    <File md5="891D597E6699D49265F98D12AAE0DEB4" import="1">TheQu/Art/CWC3_Qu_Unit45.dds</File>
+    <File md5="2008970D9F734703FE8B91C6B6E3C3E4" import="1">TheQu/Art/CWC3_Qu_Unit48.dds</File>
+    <File md5="19C04EE9714C935F4F0186BDCC4E252E" import="1">TheQu/Art/CWC3_Qu_Unit64.dds</File>
+    <File md5="1CD89288AEAB6533D1405BFE2F7F0C24" import="1">TheQu/Art/CWC3_Qu_Unit80.dds</File>
     <File md5="C2459D0A60BC5CF1F7FD6CDA9390285A" import="1">TheQu/Lua/Qu_Combat.lua</File>
     <File md5="BD274D485AB1FAB4F86C71EFC669333F" import="1">TheQu/Lua/Qu_Gameplay.lua</File>
-    <File md5="703E3A5C63949CD024238B98432349B8" import="0">TheQu/Lua/Qu_Gameplay.xml</File>
-    <File md5="97E55EADDDC469ABC37ACABEC218E53B" import="1">TheQu/Lua/Qu_Panel.lua</File>
+    <File md5="255E7342AC28FDD1F41E661DF09691F0" import="0">TheQu/Lua/Qu_Gameplay.xml</File>
+    <File md5="610480CDE6E90B1F599652765BF8BAB4" import="1">TheQu/Lua/Qu_Panel.lua</File>
     <File md5="654FF9F5FB9EEB25C18B8199816EAEBE" import="1">TheQu/Lua/Qu_State.lua</File>
-    <File md5="154BC689CE6A065AF4C4B06FD6D1376C" import="0">TheQu/README.md</File>
+    <File md5="A52840203ED982050EC3DBD523E0F73A" import="0">TheQu/README.md</File>
     <File md5="EC1BFC0D8FBA4316528855E6C8493D7B" import="0">TheQu/SQL/Qu_Art.sql</File>
     <File md5="D07981BF149AF5E985AB3378946F39FF" import="0">TheQu/SQL/Qu_Buildings.sql</File>
     <File md5="B6CC779AEA4F1A2EFC91CD486C6FA68B" import="0">TheQu/SQL/Qu_Civilization.sql</File>
-    <File md5="56AE1DF98B1381C2A0ED279C90E1E16C" import="0">TheQu/SQL/Qu_Text.sql</File>
+    <File md5="FE70D532C152210729971117D38F24AB" import="0">TheQu/SQL/Qu_Text.sql</File>
     <File md5="74E5DCD3AA6A9934B74B79632CC183F2" import="0">TheQu/SQL/Qu_Units.sql</File>
     <File md5="3C128DA6159C8709205F99B13DF7B34F" import="0">TheQu/TESTING.md</File>
     <File md5="D10F11A1A1B6E2535F69E722A71A1094" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_128.dds</File>

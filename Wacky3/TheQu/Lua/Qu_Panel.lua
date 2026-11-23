@@ -122,6 +122,8 @@ Controls.Next:RegisterCallback(Mouse.eLClick, function() navigate(1) end)
 Controls.Close:RegisterCallback(Mouse.eLClick, close)
 Controls.Cancel:RegisterCallback(Mouse.eLClick, function() confirmation = nil; paint() end)
 Controls.Apply:RegisterCallback(Mouse.eLClick, apply)
+Controls.Launcher:RegisterCallback(Mouse.eLClick, open)
+Controls.Launcher:SetToolTipString(text('OPEN'))
 ContextPtr:SetInputHandler(function(message, key)
     if shown and message == KeyEvents.KeyDown and key == Keys.VK_ESCAPE then
         if confirmation then confirmation = nil; paint() else close() end
@@ -134,6 +136,8 @@ function qu.refresh()
     paint()
     local player = qu.player()
     local balance = player and qu.biomass(player)
+    Controls.Launcher:SetHide(not player)
+    if player then Controls.LauncherBalance:SetText(text('BIOMASS', balance, qu.capacity)) end
     if balance ~= menuBalance then
         menuBalance = balance
         LuaEvents.RequestRefreshAdditionalInformationDropdownEntries()

@@ -198,54 +198,6 @@
       },
       "fixture": "mutated source definitions",
       "result": "PASS"
-    },
-    {
-      "evidence": {
-        "database": "cache/Civ5DebugDatabase.db",
-        "installed_cp_version": 151,
-        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
-        "source_tables": 369,
-        "source_civilizations": 45,
-        "BUILDING_LIBRARY": {
-          "Cost": 75,
-          "GoldMaintenance": 1,
-          "PrereqTech": "TECH_WRITING",
-          "SpecialistType": null,
-          "SpecialistCount": 0
-        },
-        "UNIT_SPEARMAN": {
-          "Combat": 11,
-          "Moves": 2,
-          "Cost": 56,
-          "PrereqTech": "TECH_BRONZE_WORKING"
-        }
-      },
-      "fixture": "unaltered source definitions",
-      "result": "PASS"
-    },
-    {
-      "evidence": {
-        "database": "cache/Civ5DebugDatabase.db",
-        "installed_cp_version": 151,
-        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
-        "source_tables": 369,
-        "source_civilizations": 45,
-        "BUILDING_LIBRARY": {
-          "Cost": 75,
-          "GoldMaintenance": 1,
-          "PrereqTech": "TECH_WRITING",
-          "SpecialistType": null,
-          "SpecialistCount": 0
-        },
-        "UNIT_SPEARMAN": {
-          "Combat": 11,
-          "Moves": 2,
-          "Cost": 56,
-          "PrereqTech": "TECH_BRONZE_WORKING"
-        }
-      },
-      "fixture": "mutated stats and pre-existing Culture",
-      "result": "PASS"
     }
   ],
   "lua_mock_suites": [
@@ -349,13 +301,14 @@
     "PASS Daily #35 MARATHON production Lua, eligibility and callback replay"
   ],
   "qu_lua": "PASS: 3 speed/load/turn runs, native-event mocks, city lifecycle, Foundry thresholds, scoped defense and UI confirmation",
-  "lua": "PASS: 47 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "lua": "PASS: 127 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "modbuddy": "PASS: ModBuddy solution/project, 1030 files, 129 ordered SQL actions, 26 entry points, exact dependencies and VFS flags",
   "paleo_art": "PASS: 57 legacy DDS files, declared dimensions, BGRA8888 payloads, transparent atlas masks, full icon mips, custom unit flag and static leader scene",
   "daily_art": "PASS: 30 distinct original PNG masters and exact built-in prompts; five unique leaders/glyphs; 285 DDS textures, six complete nine-size atlases per civ, gold-rimmed portraits, monochrome alpha/flags, distinct Dawn/capital scenes, SQL/VFS wiring and deterministic byte regeneration. Native UI rendering NOT RUN.",
   "daily_expansion_art": "PASS 30 distinct emblem/alpha sources, 270 DDS atlas registrations and VFS imports",
   "qu_art": "PASS: 46 atlas sizes, Dawn, map and static diplomacy",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 1025 manifest files + checksums, correct dependencies/order/context/VFS paths, 730 DDS textures, alpha and full icon mip chains",
+  "package": "PASS: 1030 manifest files + checksums, correct dependencies/order/context/VFS paths, 730 DDS textures, alpha and full icon mip chains",
   "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game.",
   "qu_in_game": "NOT RUN. Native Qu acceptance checklist: TheQu/TESTING.md."
 }
