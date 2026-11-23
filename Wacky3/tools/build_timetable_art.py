@@ -2,7 +2,7 @@
 from PIL import Image, ImageDraw, ImageOps
 from math import cos, sin, pi
 from baseline import ROOT
-from build_art import dds, SIZES
+from build_art import dds, SIZES, leader_cell
 
 ART = ROOT/'ThePerpetualTimetable/Art'
 
@@ -32,7 +32,7 @@ def compile_art():
     for kind, master in masters.items():
         for size in SIZES:
             name = f'CWC3_Timetable_{kind}{size}.dds'
-            dds(master.resize((size,size), Image.Resampling.LANCZOS), ART/name)
+            dds(leader_cell(master,size) if master is leader else master.resize((size,size), Image.Resampling.LANCZOS), ART/name)
             declarations.append(f" ('CWC3_TIMETABLE_{kind.upper()}_ATLAS',{size},'{name}',1,1)")
     dds(images['Dawn'].resize((1024,768), Image.Resampling.LANCZOS), ART/'CWC3_Timetable_Dawn.dds', False)
     dds(images['Leader'].resize((1600,1200), Image.Resampling.LANCZOS), ART/'CWC3_Timetable_Leader.dds', False)

@@ -1,7 +1,7 @@
 """Package the Qu's retained original art into native mipmapped DDS textures."""
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
-from build_art import ROOT, SIZES, dds
+from build_art import ROOT, SIZES, dds, leader_cell
 
 ART = ROOT / 'TheQu/Art'
 PREFIX = 'CWC3_Qu_'
@@ -51,7 +51,7 @@ def compile_art():
     for name, master in icons.items():
         for size in ((32,) if name == 'Flag' else SIZES):
             filename = f'{PREFIX}{name}{size}.dds'
-            dds(master.resize((size, size), RESAMPLE), ART / filename)
+            dds(leader_cell(master,size) if name=='Leader' else master.resize((size, size), RESAMPLE), ART / filename)
             declarations.append(f" ('CWC3_QU_{name.upper()}_ATLAS',{size},'{filename}',1,1)")
     for name, dimensions in SCENES.items():
         source = sources['Dawn' if name == 'Map' else name]

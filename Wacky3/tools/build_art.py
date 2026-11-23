@@ -22,6 +22,15 @@ def dds(image, path, mipmaps=True):
     header += [0x1000 | (0x400008 if count>1 else 0),0,0,0,0]
     path.write_bytes(b'DDS '+struct.pack('<31I',*header)+b''.join(im.tobytes('raw','BGRA') for im in layers))
 
+def leader_cell(image, size):
+    # Civ V draws the 128px slot inside a 100px row. The visible rim is 96px.
+    bounds = image.getchannel('A').point(lambda alpha: 255 if alpha >= 32 else 0).getbbox()
+    art = ImageOps.contain(image.crop(bounds), (round(size*.75),)*2, Image.Resampling.LANCZOS)
+    cell = Image.new('RGBA', (size,size))
+    cell.paste(art, ((size-art.width)//2,(size-art.height)//2))
+    return cell
+
+
 def portrait(image):
     w,h=image.size
     crop=image.crop((int(w*.30),int(h*.18),int(w*.70),int(h*.71)))
@@ -48,7 +57,11 @@ def compile_art():
                'Academy':'CWC3_ACADEMY_ATLAS','Alpha':'CWC3_ALPHA_ATLAS'}[kind]
         for size in SIZES:
             file=f'CWC3_{kind}{size}.dds'
-            dds(ImageOps.contain(master,(size,size),Image.Resampling.LANCZOS).resize((size,size),Image.Resampling.LANCZOS),ART/file)
+            if kind=='LeaderIcon':
+                tile=leader_cell(master,size)
+            else:
+                tile=ImageOps.contain(master,(size,size),Image.Resampling.LANCZOS).resize((size,size),Image.Resampling.LANCZOS)
+            dds(tile,ART/file)
             declarations.append(f" ('{atlas}',{size},'{file}',1,1)")
     dds(images['Dawn'].resize((1024,768),Image.Resampling.LANCZOS),ART/'CWC3_Dawn.dds',False)
     dds(images['Leader'].resize((1600,1200),Image.Resampling.LANCZOS),ART/'CWC3_Leader.dds',False)

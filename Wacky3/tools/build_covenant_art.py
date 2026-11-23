@@ -2,7 +2,7 @@
 import json
 from PIL import Image, ImageDraw, ImageOps
 from baseline import ROOT
-from build_art import dds, SIZES
+from build_art import dds, SIZES, leader_cell
 
 ART = ROOT/'TheCandlekeepersCovenant/Art'
 def main():
@@ -25,7 +25,7 @@ def main():
     for kind,master in [('Civ',emblem),('Leader',portrait),('Alpha',alpha)]:
         for size in SIZES:
             name=f'CWC3_Covenant_{kind}{size}.dds'
-            dds(master.resize((size,size),Image.Resampling.LANCZOS),ART/name)
+            dds(leader_cell(master,size) if master is portrait else master.resize((size,size),Image.Resampling.LANCZOS),ART/name)
             declarations.append(f" ('CWC3_COVENANT_{kind.upper()}_ATLAS',{size},'{name}',1,1)")
     dds(ImageOps.fit(leader,(1600,1200),Image.Resampling.LANCZOS),ART/'CWC3_Covenant_Leader.dds',False)
     dds(ImageOps.fit(leader,(1024,768),Image.Resampling.LANCZOS),ART/'CWC3_Covenant_Dawn.dds',False)

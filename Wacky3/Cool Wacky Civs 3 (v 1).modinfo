@@ -165,15 +165,15 @@
     <File md5="71B6FBB230D80B385129AC10581043AC" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag64.dds</File>
     <File md5="D2FD17EDEB8DA1428202EA94DE812C36" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Flag80.dds</File>
     <File md5="BE031D125B97E3BAC98EF1CAE7A3D385" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader.dds</File>
-    <File md5="18EF7CE0E22365181EAA5A05C72BB1BA" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader128.dds</File>
-    <File md5="85E395FECA36AB9E6D0EE3CF7177E645" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader16.dds</File>
-    <File md5="AF6CA030F43E30ADD05A9BB998364F44" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader24.dds</File>
-    <File md5="7BECBD39444BA9736404896453562567" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader256.dds</File>
-    <File md5="CD21CB99C1ACE11178F116701EDA3643" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader32.dds</File>
-    <File md5="15B36698BEEE0F6ADA484FB32A2BFFC5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader45.dds</File>
-    <File md5="94A3A6BA40AEB9331C22A77626E99B62" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader48.dds</File>
-    <File md5="DB69CA57798650F50703F1E0522C829B" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader64.dds</File>
-    <File md5="F1133E806EB8F7E1EE5F40480C8AF743" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader80.dds</File>
+    <File md5="ED96B1249059A8E745E0B744F5DA7238" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader128.dds</File>
+    <File md5="26B8C2DD08751400B93011C8CA9F3FD5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader16.dds</File>
+    <File md5="C999B5C2822595112618989B9461011D" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader24.dds</File>
+    <File md5="6EF851844F55FE87916BDCF2B1099C9E" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader256.dds</File>
+    <File md5="4564F59940472294E7D1A3FF5C404FB9" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader32.dds</File>
+    <File md5="FA9E0DB38294D32C7796D802C0ABB293" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader45.dds</File>
+    <File md5="BC032F84FEE0C89ECA85EA7E0FF06A81" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader48.dds</File>
+    <File md5="F399FE513B11BDCDEF632CB4C9B2E7B5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader64.dds</File>
+    <File md5="3FE248F87C13322C1136304302EE964B" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Leader80.dds</File>
     <File md5="1C2617152A7FB46863BCFACF42DD88D5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_LeaderScene.xml</File>
     <File md5="1B4C1495B2BC21A0D71DC5AC2B314FA5" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Map.dds</File>
     <File md5="D8A4F59905BD04DE0F7DEA00075EEA30" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Unit128.dds</File>
@@ -242,15 +242,15 @@
     <File md5="6163BF9DD12C36B6D22262A0787B16C9" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ80.dds</File>
     <File md5="82BAD1715A8BDCBEB52F8CB18891571C" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Dawn.dds</File>
     <File md5="E8530A2B305E4B318EC03CC0C15C9CB3" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader.dds</File>
-    <File md5="BA96C44D5814472D2FD35B4B65D3B8D7" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader128.dds</File>
-    <File md5="1B3A15BF20AE5DA228116B6D3D25317E" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader16.dds</File>
-    <File md5="AE183A15CBDC18B834FCC45A6128DD42" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader24.dds</File>
-    <File md5="D99790668F207D9868D51D15B9F58E88" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader256.dds</File>
-    <File md5="1F91C47DD18169D9FCF09BAB15CB97A1" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader32.dds</File>
-    <File md5="EE128C54CEF1043794C46E018889F1B4" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader45.dds</File>
-    <File md5="EBC2CB100AACA81B90D5F794E931CB22" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader48.dds</File>
-    <File md5="E049B805D069A6FF1103CF921EA47F99" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader64.dds</File>
-    <File md5="D48994938B48F618E9042DB59553E493" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader80.dds</File>
+    <File md5="DFCAE3FDD9F50428D787F1CDF8F122B0" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader128.dds</File>
+    <File md5="49FCA2578F15C4A0E1023D69170F996E" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader16.dds</File>
+    <File md5="D702CA0C90B772EA85C84F8A7EA98713" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader24.dds</File>
+    <File md5="BAE74ADA0B16F53FB24D33EB798DF65A" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader256.dds</File>
+    <File md5="D136440559DDAA6EF48364FBF6E89B90" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader32.dds</File>
+    <File md5="0631014D56E419A8792D66811B305F90" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader45.dds</File>
+    <File md5="56C2044DF1E4B436CDE7B35E7CBC9E9E" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader48.dds</File>
+    <File md5="F6014BE139EC739A02B971692293BF53" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader64.dds</File>
+    <File md5="90BF4878FD9F6D4E01C86AF5E7D8ED67" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader80.dds</File>
     <File md5="BC4EE5C2A49F34971422C6E3E9D42210" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml</File>
     <File md5="E07A16CAEC391F6E3EB29598919A8562" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Map.dds</File>
     <File md5="A8982030C99D0DEDAEEB63721CE3AC02" import="1">TheCandlekeepersCovenant/Lua/CovenantGameplay.lua</File>
@@ -381,15 +381,15 @@
     <File md5="1DAC6E50CA192CFACCC59CA09208D9AD" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag64.dds</File>
     <File md5="41B6940BE7EBFCE837E6E438E62FDF3A" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Flag80.dds</File>
     <File md5="25F1C307626AC388C8542E6AF905DEF0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader.dds</File>
-    <File md5="DD541E79C9B49AE3577FE3D9B0CAF2E2" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader128.dds</File>
-    <File md5="07D855563113A20FC03EA49AD6FF38BE" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader16.dds</File>
-    <File md5="05E53B56D6F44B6CFD7E11A6CE6A398F" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader24.dds</File>
-    <File md5="C87A619545441D18DCF7B81A48AF0F6D" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader256.dds</File>
-    <File md5="3835A767390982BFB5E33B981187F222" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader32.dds</File>
-    <File md5="B5C89A4880E0ABE511277566E03FA3D9" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader45.dds</File>
-    <File md5="11E94708B9F13A5A93CB640540D2A6F1" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader48.dds</File>
-    <File md5="0E1B572F1B4AD5A630A88AC41473FB13" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader64.dds</File>
-    <File md5="6BD1B88523DC5D08E2CD74D7023A82AD" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader80.dds</File>
+    <File md5="502D78BC16A0755F9AFB7E1CA539619B" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader128.dds</File>
+    <File md5="A3D98DBB684F64277703C317A73727BA" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader16.dds</File>
+    <File md5="2279405500618DB1A8E88D8C3C90289D" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader24.dds</File>
+    <File md5="0434D1B6365F6BD6A354B403B7FD9978" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader256.dds</File>
+    <File md5="5698BAE059CDB36576E773CAFBB42801" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader32.dds</File>
+    <File md5="CCA0DB1AC1CFE97BF70134D66A0893BC" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader45.dds</File>
+    <File md5="45B335E40B345DD10AFE6A9E26600F94" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader48.dds</File>
+    <File md5="97C5F8229DC2F6C779E4BF66C62CA517" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader64.dds</File>
+    <File md5="C7BA88EABF82D85AE3B59EBAD27F77F8" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Leader80.dds</File>
     <File md5="A6E693290C7639BEC0DBE4690114F38C" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_LeaderScene.xml</File>
     <File md5="403EE7C573D5C613F344EF01B20B4AB0" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Map.dds</File>
     <File md5="31DC649014AE56B11FF530A92D666959" import="1">TheDepartmentOfLostThings/Art/CWC3_LOST_Unit128.dds</File>
@@ -538,15 +538,15 @@
     <File md5="CBFCCF03C010528A77C78F945A817773" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag64.dds</File>
     <File md5="C92DA1FDE21672991E10D46EC195192C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Flag80.dds</File>
     <File md5="637752839DC77655FEDCD0EA05CB9FF6" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader.dds</File>
-    <File md5="6CD7A7959A972436A4F8F8185ADB1A77" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader128.dds</File>
-    <File md5="99DB7478E313CFAF6895657E9EDC7D2D" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader16.dds</File>
-    <File md5="980B22DE23EB993E0D08B45BBBC03884" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader24.dds</File>
-    <File md5="BC978C92AEAE41A5E2148C269493645E" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader256.dds</File>
-    <File md5="5B2356432FFF1E80C0A4502E8DED6813" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader32.dds</File>
-    <File md5="2DBBADC1948E21456B4A377B534C6AF7" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader45.dds</File>
-    <File md5="DD3A04155B5921E4F26388FFB6698D16" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader48.dds</File>
-    <File md5="3E219EEEFD05FC13CFABD20D7A20B482" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader64.dds</File>
-    <File md5="DF25EAB09681A99BA5D8CE4C1CBC46CC" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader80.dds</File>
+    <File md5="9C11A7A2B703669198038994B1CF5F8C" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader128.dds</File>
+    <File md5="BC8F8FF3338EC52B88D2F51BE8D40703" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader16.dds</File>
+    <File md5="4C4168556F5CD61F60D5C08CF1F12EC5" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader24.dds</File>
+    <File md5="3BBEA2B5EDE38642E685D99364938569" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader256.dds</File>
+    <File md5="B999331861D47434E2BBAA03914E8899" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader32.dds</File>
+    <File md5="56827CDFDC81C75BC054465EB1DF6FDE" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader45.dds</File>
+    <File md5="1505918E734B90DB12B130333B5F44B3" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader48.dds</File>
+    <File md5="495F262B6825F35C874CEBDE5E14EBCC" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader64.dds</File>
+    <File md5="2E0626530BED0C135A688FA8B6C28D4F" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Leader80.dds</File>
     <File md5="0B509B9099FD0A958677B594DAACE682" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_LeaderScene.xml</File>
     <File md5="C63B561FC5EA5F2FF9E839AAE2DD5019" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Map.dds</File>
     <File md5="78F4C15F83A0EE929BCA4236EB2CC5B5" import="1">TheKingdomOfMakuria/Art/CWC3_MAKURIA_Unit128.dds</File>
@@ -624,15 +624,15 @@
     <File md5="F06FA3A42B70A1EE7AE712DDAB9733A2" import="1">TheMinistryOfAlmost/Art/CWC3_Civ80.dds</File>
     <File md5="B54C50F75169426092E42203E95030E2" import="1">TheMinistryOfAlmost/Art/CWC3_Dawn.dds</File>
     <File md5="A0522592F4B6A998D57D2F61C50C1699" import="1">TheMinistryOfAlmost/Art/CWC3_Leader.dds</File>
-    <File md5="1D23B0564E5DC240BBFF2FE53255D145" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon128.dds</File>
-    <File md5="110E3E5633608CCBD58A8D83757371CB" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon16.dds</File>
-    <File md5="49395E3413DA4C0579B691030FA96CF4" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon24.dds</File>
-    <File md5="C46017C742C0ABE23A48356540CA62D3" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon256.dds</File>
-    <File md5="AFEFC115FE8246FF8A3332F16436061B" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon32.dds</File>
-    <File md5="20234AB273FE62BC43068D0D697FD634" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon45.dds</File>
-    <File md5="625B39CABF409D8750FD6C714A1C65F8" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon48.dds</File>
-    <File md5="4DA620FB3C8545C432C4962B9141B5F0" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon64.dds</File>
-    <File md5="7687846BFC778AF3BE579CE59B36A04C" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon80.dds</File>
+    <File md5="35951B3694F441E6327DF0C436C54D72" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon128.dds</File>
+    <File md5="432AEA2E63C3C9CAE0C62B138B98A52D" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon16.dds</File>
+    <File md5="E0CA07444E2E54F0CD4D54763CC2C343" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon24.dds</File>
+    <File md5="5644D453FE0D954043AA5DFE0C5A9390" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon256.dds</File>
+    <File md5="11318EFB03C600FC44DFA39DC1F38359" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon32.dds</File>
+    <File md5="BA0FBB53E6FEA3D044C3CB236220B01A" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon45.dds</File>
+    <File md5="11DCEC840E8D01B4DF3EF9B1068E22C2" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon48.dds</File>
+    <File md5="B22F85CCFD2AA3921E40D2240F7A687A" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon64.dds</File>
+    <File md5="EEC4C4158B0FF2A1D21A5B2E4B61311C" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderIcon80.dds</File>
     <File md5="485B2D23AEBBA7ED7AD88845AC38C19B" import="1">TheMinistryOfAlmost/Art/CWC3_LeaderScene.xml</File>
     <File md5="6DF79BFCDFC74E872874696EEE5653E5" import="1">TheMinistryOfAlmost/Art/CWC3_Map.dds</File>
     <File md5="95BB98F0157FA9F0D27E7B3C716059D6" import="1">TheMinistryOfAlmost/Art/CWC3_Unit128.dds</File>
@@ -763,15 +763,15 @@
     <File md5="3F29A0E09F174A55BFD6813EC9E9C0C9" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag64.dds</File>
     <File md5="5F60F967F86ED22D724EA731E4FBF53E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Flag80.dds</File>
     <File md5="0DC689066695A47AD20AEFE3883EFF17" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader.dds</File>
-    <File md5="7E2F9EF7CAFA0F198954777F22C582B8" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader128.dds</File>
-    <File md5="9F148AA193B1F40CB7B06757932B3839" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader16.dds</File>
-    <File md5="0238A4D6B79580A5A77DD726CCC078F4" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader24.dds</File>
-    <File md5="9E1EF8D4E8EFF642E8BDA4268306A922" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader256.dds</File>
-    <File md5="8D82C8935E09A750C3B60F37DC726C9E" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader32.dds</File>
-    <File md5="E6F8C2019D3D1F6B93A2416A66E9E5EF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader45.dds</File>
-    <File md5="CD29E36924EDD2755114D9C5495D1EFC" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader48.dds</File>
-    <File md5="771D4D5AD6CFE777E2A0775B6CBF98EE" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader64.dds</File>
-    <File md5="397E7EF45BF14212C74C7431C734B888" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader80.dds</File>
+    <File md5="E9E026D68C929B894DE1D43D3770DD76" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader128.dds</File>
+    <File md5="C0A9756449493580711FBA6EEC3D2923" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader16.dds</File>
+    <File md5="D4C9E896DD66089A75AEBCFC6810CF53" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader24.dds</File>
+    <File md5="540EE89D5EAC9D5A3EE1F8F20BAC2DF7" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader256.dds</File>
+    <File md5="EF1A166BB03BB79EE7A5DE0082056A61" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader32.dds</File>
+    <File md5="95C762985DD2769414B1AE10332FF48F" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader45.dds</File>
+    <File md5="922833532B35EC44075A6E51BCF9AB88" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader48.dds</File>
+    <File md5="7990DB561F536CB66E79CD3A31CC42B6" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader64.dds</File>
+    <File md5="6185FD965E4E09403A3721A73874944C" import="1">ThePaleontologicalDirectorate/Art/PALEO_Leader80.dds</File>
     <File md5="0E02C04C1B99C212500F1FACA4FC06FD" import="1">ThePaleontologicalDirectorate/Art/PALEO_LeaderScene.xml</File>
     <File md5="7BE9573AE3D330325C89EEA1816636A0" import="1">ThePaleontologicalDirectorate/Art/PALEO_Map.dds</File>
     <File md5="8BB3BE289529DE68B3F9B63C296FB2DF" import="1">ThePaleontologicalDirectorate/Art/PALEO_Museum128.dds</File>
@@ -822,15 +822,15 @@
     <File md5="528BD766C52E800461F455500587012B" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Civ80.dds</File>
     <File md5="A08BE833EEE06FD87808634791AC9722" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Dawn.dds</File>
     <File md5="8E3E926BC1D566B3A90A08EDF54B8C22" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader.dds</File>
-    <File md5="90988085BD50DA8FBC671BE34AC8018A" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader128.dds</File>
-    <File md5="0B15E4A2A2A1D7CD91E3EEF2A97AA55D" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader16.dds</File>
-    <File md5="894C809EAB9D02E2965EB68947F28AA2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader24.dds</File>
-    <File md5="E638566D814E9CC444A7000E556D5133" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader256.dds</File>
-    <File md5="6EDAE452E6C9F455CB4B9A05FACE7EBB" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader32.dds</File>
-    <File md5="3C7075698CE0851DA750F673752EED59" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader45.dds</File>
-    <File md5="520206105038F4DC671B65EFD1A36157" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader48.dds</File>
-    <File md5="7B74EF7F80F15B6B08F46C5DBF8C8E6F" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader64.dds</File>
-    <File md5="62F6731B5A848D29EF0387F445C00CB8" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader80.dds</File>
+    <File md5="3BE3F3D31A822EB0CBBE67EB98BD4AA6" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader128.dds</File>
+    <File md5="74B9BCD56BF811649E80A2050F737F62" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader16.dds</File>
+    <File md5="681B2E017FFDAE7B91342290C48DE472" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader24.dds</File>
+    <File md5="3BEE22FBF73E0811B1798776592173B7" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader256.dds</File>
+    <File md5="26F12EF5D29E4EE4118214BA682A6D6A" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader32.dds</File>
+    <File md5="1C933F55F4269BA631E7333C0647F99B" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader45.dds</File>
+    <File md5="3CB83B02665CCB41C0853912034CBFD2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader48.dds</File>
+    <File md5="62F71E96F9C61FEA33D8E584257CC659" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader64.dds</File>
+    <File md5="448E9F5F17120DBAC47AA45086806124" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Leader80.dds</File>
     <File md5="A59D392D15DD16EF0D95604EBDAF5F62" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_LeaderScene.xml</File>
     <File md5="3A6C0ED8FF43124A8DB098D4AA943CD2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Map.dds</File>
     <File md5="8AD70F300E6E295D67917174288A735E" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Office128.dds</File>
@@ -917,15 +917,15 @@
     <File md5="F957561F92F5CD86191237CBC00D6695" import="1">TheQu/Art/CWC3_Qu_Foundry48.dds</File>
     <File md5="7F8E22953D61CEF2BC0B9357154D0F8D" import="1">TheQu/Art/CWC3_Qu_Foundry64.dds</File>
     <File md5="CD4ADE046ECB63EC4DF6A72633938E67" import="1">TheQu/Art/CWC3_Qu_Foundry80.dds</File>
-    <File md5="BBAF13801EAF89663CBEB97AC87030E0" import="1">TheQu/Art/CWC3_Qu_Leader128.dds</File>
-    <File md5="F7FA72194345E4A670F6CE7223151FFA" import="1">TheQu/Art/CWC3_Qu_Leader16.dds</File>
-    <File md5="7EA4E00D2D468950CA7B504A7E2D31AB" import="1">TheQu/Art/CWC3_Qu_Leader24.dds</File>
-    <File md5="F52A6D8CC814435E5CD57B4B75AE395E" import="1">TheQu/Art/CWC3_Qu_Leader256.dds</File>
-    <File md5="73E67292649AFCF2C333BD6DF901F07F" import="1">TheQu/Art/CWC3_Qu_Leader32.dds</File>
-    <File md5="1F43EA3C645599F5AED16DE6B9EF9549" import="1">TheQu/Art/CWC3_Qu_Leader45.dds</File>
-    <File md5="ED4F343A10762F100A2EC9F029BCB0CB" import="1">TheQu/Art/CWC3_Qu_Leader48.dds</File>
-    <File md5="4D4A8C06D5EAF790FF1418B5CA36068C" import="1">TheQu/Art/CWC3_Qu_Leader64.dds</File>
-    <File md5="FAA3157836019230FC0DFEEC502CA5DC" import="1">TheQu/Art/CWC3_Qu_Leader80.dds</File>
+    <File md5="F9D269427910CF537D4E8D042ED1A091" import="1">TheQu/Art/CWC3_Qu_Leader128.dds</File>
+    <File md5="0A4551B12312A0DB1EECD4C07D1A68B3" import="1">TheQu/Art/CWC3_Qu_Leader16.dds</File>
+    <File md5="019999299DDA65832952EBEE88ED645B" import="1">TheQu/Art/CWC3_Qu_Leader24.dds</File>
+    <File md5="F44A1127A688085885C46AAE14BE8B7E" import="1">TheQu/Art/CWC3_Qu_Leader256.dds</File>
+    <File md5="E660C0D209939FB726E4761413C31C9E" import="1">TheQu/Art/CWC3_Qu_Leader32.dds</File>
+    <File md5="B282E7F6DDABB94F8E18E4CBB9F3658C" import="1">TheQu/Art/CWC3_Qu_Leader45.dds</File>
+    <File md5="32A2593198D7282343B994771CFE5C2C" import="1">TheQu/Art/CWC3_Qu_Leader48.dds</File>
+    <File md5="B248C2471137AE2DC952285C61B5DCBE" import="1">TheQu/Art/CWC3_Qu_Leader64.dds</File>
+    <File md5="60D207CF57D64F11FBF2699EAE3FEE3A" import="1">TheQu/Art/CWC3_Qu_Leader80.dds</File>
     <File md5="9FC599AA700490085466F1ACB176976F" import="1">TheQu/Art/CWC3_Qu_LeaderScene.xml</File>
     <File md5="876D4F2A3370D20C5BF65DAE39C58D81" import="1">TheQu/Art/CWC3_Qu_Map.dds</File>
     <File md5="F2F97E905BDF5D4EB7FE7B28FC206BAD" import="1">TheQu/Art/CWC3_Qu_Unit128.dds</File>
@@ -1014,15 +1014,15 @@
     <File md5="23F0892B2BA207E5174E89F538FF68FF" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag64.dds</File>
     <File md5="08D92B7072A87E7F4FBD5F776C527A81" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Flag80.dds</File>
     <File md5="67666A9E4E26DA00570AEF8F12224048" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader.dds</File>
-    <File md5="DA5BF8E17913FDFD3CADBC47AAC3937A" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader128.dds</File>
-    <File md5="CF5CBC6292B2C81FDB3AA96879DE794F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader16.dds</File>
-    <File md5="D3437545C0C8AEEE094C7B2A0A33E256" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader24.dds</File>
-    <File md5="557D9E559F86F098B2D25EDC2515235F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader256.dds</File>
-    <File md5="58D3E9BFDB950393486B755BCBA3E5F0" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader32.dds</File>
-    <File md5="B0F76F702699710D217B692813115981" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader45.dds</File>
-    <File md5="10CE6343A65F6B3B4DEA94F4F2949921" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader48.dds</File>
-    <File md5="BC4ADD3F65DE2C8F18AA1E618869F57C" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader64.dds</File>
-    <File md5="E4EBBF42EA4BEE346796AFBD6499F4EA" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader80.dds</File>
+    <File md5="A41F0B4EEAA36FD0DDC60837E9AE5327" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader128.dds</File>
+    <File md5="096DE21671A60BA62347FD200BEFE33C" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader16.dds</File>
+    <File md5="C29DC8F619AF2B1B3F86D6139AF5871E" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader24.dds</File>
+    <File md5="BDD0EAB49696D70B58D56B647917997F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader256.dds</File>
+    <File md5="07DC96D10A18C39E49A339ED253117EA" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader32.dds</File>
+    <File md5="995CF8809B971310C8417726C61582F9" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader45.dds</File>
+    <File md5="9761D971CD9559B1705BEE36E7D9EE66" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader48.dds</File>
+    <File md5="12C3D413543645E86CCA6E5F17AAF653" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader64.dds</File>
+    <File md5="BF01373BBE2A2EECF16F7104B47ADCF3" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Leader80.dds</File>
     <File md5="EC50BCA79305AC1447B3D666ECCCA44F" import="1">TheSaltRoadCompact/Art/CWC3_SALT_LeaderScene.xml</File>
     <File md5="A44C611145EDB9B4205C92F57E4D5576" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Map.dds</File>
     <File md5="9FE70752BB2F3485B2831C3E5F9BD380" import="1">TheSaltRoadCompact/Art/CWC3_SALT_Unit128.dds</File>

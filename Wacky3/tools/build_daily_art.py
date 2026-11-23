@@ -9,7 +9,7 @@ import json
 import math
 from PIL import Image, ImageDraw, ImageOps
 from baseline import ROOT
-from build_art import dds, SIZES
+from build_art import dds, SIZES, leader_cell
 from daily_art import CATALOG
 
 def alpha_glyph(code):
@@ -81,7 +81,7 @@ def compile_art(s, review=True):
     for kind,master in masters.items():
         for size in SIZES:
             name=f'{prefix}_{kind}{size}.dds'
-            dds(master.resize((size,size),Image.Resampling.LANCZOS),art/name)
+            dds(leader_cell(master,size) if kind=='Leader' else master.resize((size,size),Image.Resampling.LANCZOS),art/name)
             declarations.append(f" ('{prefix}_{kind.upper()}_ATLAS',{size},'{name}',1,1)")
     for kind,source,dimensions in [('Leader','Leader',(1600,1200)),('Dawn','Dawn',(1024,768)),('Map','Capital',(360,412))]:
         dds(ImageOps.fit(images[source],dimensions,Image.Resampling.LANCZOS),art/f'{prefix}_{kind}.dds',False)

@@ -16,7 +16,7 @@ DIPLOMACY_SIZE = (1600, 1200)
 WIDESCREEN_DAWNS = set()
 AUXILIARY = {}
 ATLAS_ROW = re.compile(
-    r"'[A-Za-z0-9_]+'\s*,\s*(\d+)\s*,\s*'([A-Za-z0-9_.-]+\.dds)'\s*,\s*(\d+)\s*,\s*(\d+)",
+    r"'([A-Za-z0-9_]+)'\s*,\s*(\d+)\s*,\s*'([A-Za-z0-9_.-]+\.dds)'\s*,\s*(\d+)\s*,\s*(\d+)",
     re.I,
 )
 PAIR = re.compile(r"(\d+)\s*,\s*(\d+)")
@@ -52,6 +52,7 @@ def audit(root=ROOT):
     files = ET.parse(manifest).findall('Files/File')
     paths = [root / entry.text for entry in files]
     textures = {}
+    texture_paths = {}
     for entry, path in zip(files, paths):
         if path.suffix.lower() != '.dds':
             continue
@@ -62,6 +63,7 @@ def audit(root=ROOT):
         try:
             assert md5(data).hexdigest().upper() == entry.get('md5', '').upper(), 'Manifest MD5 differs'
             textures[key] = dds_size(data)
+            texture_paths[key] = path
         except (AssertionError, OSError) as error:
             raise AssertionError(f'{path.relative_to(root)}: {error}') from error
 
@@ -77,8 +79,16 @@ def audit(root=ROOT):
         if path.suffix == '.sql':
             source = path.read_text(encoding='utf-8-sig')
             for statement in re.findall(r'INSERT\s+(?:OR\s+\w+\s+)?INTO\s+IconTextureAtlases\b.*?;', source, re.I | re.S):
-                for size, name, columns, rows in ATLAS_ROW.findall(statement):
+                for atlas, size, name, columns, rows in ATLAS_ROW.findall(statement):
                     require(name.lower(), (int(size)*int(columns), int(size)*int(rows)), 'atlas declaration')
+                    if atlas.upper().endswith('_LEADER_ATLAS'):
+                        with Image.open(texture_paths[name.lower()]) as image:
+                            bounds = image.getchannel('A').point(lambda a: 255 if a >= 32 else 0).getbbox()
+                        assert bounds, ('Empty leader portrait', name)
+                        x0,y0,x1,y1 = bounds
+                        assert max(x1-x0,y1-y0) <= round(int(size)*.75)+2, ('Leader artwork overflows its row', name, bounds)
+                        assert abs(x0+x1-int(size)) <= 2 and abs(y0+y1-int(size)) <= 2, ('Uncentered leader portrait', name)
+                        counts['fitted leader portrait'] += 1
         if path.suffix == '.xml':
             for node in ET.parse(path).iter():
                 fallback = node.get('FallbackImage', '').lower()
