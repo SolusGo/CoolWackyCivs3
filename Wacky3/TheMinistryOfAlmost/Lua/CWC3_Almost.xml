@@ -1,4 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Context Name="CWC3_Almost">
-  <Script file="Ministry_Gameplay.lua" />
-</Context>
+<Context Name="CWC3_Almost" />

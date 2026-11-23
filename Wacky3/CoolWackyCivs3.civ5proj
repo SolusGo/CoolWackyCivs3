@@ -1549,6 +1549,9 @@
     <Content Include="TheCandlekeepersCovenant/Lua/CovenantGameplay.lua">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheCandlekeepersCovenant/Lua/CWC3_Covenant.lua">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -2260,6 +2263,9 @@
     <Content Include="TheGrandDuchyOfFoldingChairs/TESTING.md">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="TheHollowChoir/Lua/CWC3_Choir.lua">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheHollowChoir/Lua/CWC3_Choir.xml">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -2711,6 +2717,9 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMinistryOfAlmost/Art/CWC3_Unit80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMinistryOfAlmost/Lua/CWC3_Almost.lua">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMinistryOfAlmost/Lua/CWC3_Almost.xml">
@@ -3331,6 +3340,9 @@
     <Content Include="ThePerpetualTimetable/Art/CWC3_Timetable_Unit80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="ThePerpetualTimetable/Lua/CWC3_Timetable.lua">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="ThePerpetualTimetable/Lua/CWC3_Timetable.xml">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
@@ -3906,6 +3918,9 @@
     </Content>
     <Content Include="TheSaltRoadCompact/TESTING.md">
       <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Lua/CWC3_Summer.lua">
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheSeventeenthSummer/Lua/CWC3_Summer.xml">
       <ImportIntoVFS>False</ImportIntoVFS>

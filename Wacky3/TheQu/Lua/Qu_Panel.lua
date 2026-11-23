@@ -148,8 +148,14 @@ LuaEvents.AdditionalInformationDropdownGatherEntries.Add(function(entries)
         }
     end
 end)
+local function resetPanel()
+    close()
+    qu.refresh()
+end
+
 Events.ActivePlayerTurnStart.Add(qu.refresh)
 Events.ActivePlayerTurnEnd.Add(close)
+Events.GameplaySetActivePlayer.Add(resetPanel)
+Events.LoadScreenClose.Add(resetPanel)
 Events.SerialEventCityScreenDirty.Add(paint)
-close()
-qu.refresh()
+resetPanel()

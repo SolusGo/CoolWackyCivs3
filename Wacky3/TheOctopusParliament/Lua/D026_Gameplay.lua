@@ -82,6 +82,8 @@ GameEvents.PlayerDoTurn.Add(function(owner)
     if lifecycle.eligible(Players[owner]) then current(Players[owner]) end
 end)
 Events.ActivePlayerTurnStart.Add(paint)
+Events.GameplaySetActivePlayer.Add(paint)
+Events.LoadScreenClose.Add(paint)
 GameEvents.UnitCreated.Add(function(owner,id)
     local player = Players[owner]
     if lifecycle.eligible(player) then

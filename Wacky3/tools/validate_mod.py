@@ -181,17 +181,9 @@ def package_checks(db):
     assert set(declared)=={p.relative_to(ROOT).as_posix() for p in files()}
     assert [e.text for e in root.findall('Actions/OnModActivated/UpdateDatabase')]==ORDER
     assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[entry[0] for entry in ENTRIES]
-    context=ET.parse(ROOT/ENTRY).getroot()
-    assert context.find('Script').get('file')=='Ministry_Gameplay.lua'
-    assert ET.parse(ROOT/ENTRIES[1][0]).getroot().find('Script').get('file')=='HollowChoirGameplay.lua'
-    assert ET.parse(ROOT/ENTRIES[2][0]).getroot().find('Script').get('file')=='SummerGameplay.lua'
-    assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
-    assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
-    assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
+    assert ENTRY==ENTRIES[0][0]
     assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==11+len(DAILY_ROSTER)
     assert len(ORDER)==len(set(ORDER))==54+5*len(DAILY_ROSTER)
-    for entry,_,_ in ENTRIES[6:]:
-        assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name

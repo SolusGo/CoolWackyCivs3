@@ -86,6 +86,8 @@ end
 Controls.Doctrine:RegisterCallback(Mouse.eLClick, function() spend('combat', 2) end)
 Controls.Method:RegisterCallback(Mouse.eLClick, function() spend('science', 3) end)
 Events.ActivePlayerTurnStart.Add(paint)
+Events.GameplaySetActivePlayer.Add(paint)
+Events.LoadScreenClose.Add(paint)
 
 GameEvents.PlayerDoTurn.Add(function(owner)
     local player = Players[owner]

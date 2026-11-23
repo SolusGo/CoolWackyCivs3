@@ -254,7 +254,8 @@
     <File md5="BC4EE5C2A49F34971422C6E3E9D42210" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml</File>
     <File md5="E07A16CAEC391F6E3EB29598919A8562" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Map.dds</File>
     <File md5="A8982030C99D0DEDAEEB63721CE3AC02" import="1">TheCandlekeepersCovenant/Lua/CovenantGameplay.lua</File>
-    <File md5="B8636CCE494FC5ED04EBAB72956987E1" import="0">TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml</File>
+    <File md5="E7F529D73443A622FC38C1E2EFDF6754" import="1">TheCandlekeepersCovenant/Lua/CWC3_Covenant.lua</File>
+    <File md5="20E3DE8DCCCA9A86C7DCF10D00E12B61" import="0">TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml</File>
     <File md5="5792B854B19929BF45B64B8C7606C80D" import="0">TheCandlekeepersCovenant/README.md</File>
     <File md5="A832FE2DEF61CE89D15D7EC23A7E3D1F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Art.sql</File>
     <File md5="1B7C6FB48010CCAD393365732C206D25" import="0">TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</File>
@@ -491,7 +492,8 @@
     <File md5="D80A58948DD9FC15F3E2A6F6F7E5365E" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Text.sql</File>
     <File md5="A51A79B30FEBFA7C5B9EC9B28FCC36D0" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Units.sql</File>
     <File md5="E9476CEA2AE0CEE511836FABD1DDD813" import="0">TheGrandDuchyOfFoldingChairs/TESTING.md</File>
-    <File md5="2E7424916D1E1D62323316365D1A2828" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
+    <File md5="ADDBDA99B3C60FB3303EE3D8CC77D63E" import="1">TheHollowChoir/Lua/CWC3_Choir.lua</File>
+    <File md5="FA0E3A0145EBA03EDFB536E49DEC246D" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
     <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
     <File md5="733C8D3A3433A8C08FA2FA5907B92878" import="0">TheHollowChoir/SQL/Choir_Buildings.sql</File>
@@ -642,7 +644,8 @@
     <File md5="144ABDF698BFD49063EE4C2EECD09543" import="1">TheMinistryOfAlmost/Art/CWC3_Unit48.dds</File>
     <File md5="A52C9D76EF8B530344BFBF01AD9D77D1" import="1">TheMinistryOfAlmost/Art/CWC3_Unit64.dds</File>
     <File md5="695C411D91CB26EDB07A5CD68BCF3352" import="1">TheMinistryOfAlmost/Art/CWC3_Unit80.dds</File>
-    <File md5="81D97D2EE7B1343F3930E7D80D1D4CC6" import="0">TheMinistryOfAlmost/Lua/CWC3_Almost.xml</File>
+    <File md5="892FB0E9A880CAFB14C42E7B68E4ADE7" import="1">TheMinistryOfAlmost/Lua/CWC3_Almost.lua</File>
+    <File md5="B81DE2E7D2483CD322D267FF03007E4A" import="0">TheMinistryOfAlmost/Lua/CWC3_Almost.xml</File>
     <File md5="42E725CB7BEC50BC79DABDF22080A3D9" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
     <File md5="DE4790EC1AB1769E57C75A1584D8DCDA" import="0">TheMinistryOfAlmost/README.md</File>
     <File md5="691ED00F2EB05D58AB566E1F32DBA919" import="0">TheMinistryOfAlmost/SQL/Ministry_Art.sql</File>
@@ -668,7 +671,7 @@
     <File md5="B8566DCCF1DAAD5EE6B43C6B8ECDA97F" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_48.dds</File>
     <File md5="45200F061F98A19AEA05CEC73CC379FC" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_64.dds</File>
     <File md5="1A1154A8EFF5899BA23435084E9D0879" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_80.dds</File>
-    <File md5="2FB6CE0993C0BAE845FB270BF011D863" import="1">TheMirrorboundRepublic/Lua/D022_Gameplay.lua</File>
+    <File md5="2C8251C3ABF0F6AE04A645ABB2EEF5DE" import="1">TheMirrorboundRepublic/Lua/D022_Gameplay.lua</File>
     <File md5="BD7B67784E710A1E3B8A482E2444D406" import="0">TheMirrorboundRepublic/Lua/D022_Gameplay.xml</File>
     <File md5="311EEEBFA2017D292D1B621A2A46AE29" import="0">TheMirrorboundRepublic/README.md</File>
     <File md5="E8B7285316BB92703111C0E29DE7E12D" import="0">TheMirrorboundRepublic/SQL/D022_Art.sql</File>
@@ -722,7 +725,7 @@
     <File md5="A67941CD1447DFC98582722E9128A63A" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_48.dds</File>
     <File md5="6C114A41B587C9578C0E539F4305C55D" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_64.dds</File>
     <File md5="F9BC56EA2CEA06A4CC80BFB2696B02D1" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_80.dds</File>
-    <File md5="D7A74272BDD75B87D05050537D2C66A4" import="1">TheOctopusParliament/Lua/D026_Gameplay.lua</File>
+    <File md5="14F303317ED457D381F49C18C3DBF3AF" import="1">TheOctopusParliament/Lua/D026_Gameplay.lua</File>
     <File md5="CB929C714417FA1C9374B3613F5455C4" import="0">TheOctopusParliament/Lua/D026_Gameplay.xml</File>
     <File md5="2BADAE76D442007100AC39A11078EE6C" import="0">TheOctopusParliament/README.md</File>
     <File md5="98AA5BAB7B1F528BFB3F2279D486BD06" import="0">TheOctopusParliament/SQL/D026_Art.sql</File>
@@ -848,7 +851,8 @@
     <File md5="700EC8C26573071F4076579D5E6F261C" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit48.dds</File>
     <File md5="0A91FAD808322768FB90B4741FC4EAE2" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit64.dds</File>
     <File md5="18E9C1F0A30859211BD4D0220C041404" import="1">ThePerpetualTimetable/Art/CWC3_Timetable_Unit80.dds</File>
-    <File md5="490F5CB0B500AE7B7D101FCC3FEACF61" import="0">ThePerpetualTimetable/Lua/CWC3_Timetable.xml</File>
+    <File md5="D7F58040320EA81AF678DFE2C91BC8F9" import="1">ThePerpetualTimetable/Lua/CWC3_Timetable.lua</File>
+    <File md5="4BAD1A449AFD34DC8366BF632837C848" import="0">ThePerpetualTimetable/Lua/CWC3_Timetable.xml</File>
     <File md5="FEB6F57411EDC57A5B99FB590F3F5E6F" import="1">ThePerpetualTimetable/Lua/TimetableGameplay.lua</File>
     <File md5="61DE19AE7E50945CC02E2A7114DED1A6" import="0">ThePerpetualTimetable/README.md</File>
     <File md5="90868A56E123CE170550DD5CE41AAEB1" import="0">ThePerpetualTimetable/SQL/Timetable_Art.sql</File>
@@ -936,7 +940,7 @@
     <File md5="C2459D0A60BC5CF1F7FD6CDA9390285A" import="1">TheQu/Lua/Qu_Combat.lua</File>
     <File md5="BD274D485AB1FAB4F86C71EFC669333F" import="1">TheQu/Lua/Qu_Gameplay.lua</File>
     <File md5="703E3A5C63949CD024238B98432349B8" import="0">TheQu/Lua/Qu_Gameplay.xml</File>
-    <File md5="F15BCB26E45D7B8B1829C25D5511276C" import="1">TheQu/Lua/Qu_Panel.lua</File>
+    <File md5="97E55EADDDC469ABC37ACABEC218E53B" import="1">TheQu/Lua/Qu_Panel.lua</File>
     <File md5="654FF9F5FB9EEB25C18B8199816EAEBE" import="1">TheQu/Lua/Qu_State.lua</File>
     <File md5="154BC689CE6A065AF4C4B06FD6D1376C" import="0">TheQu/README.md</File>
     <File md5="EC1BFC0D8FBA4316528855E6C8493D7B" import="0">TheQu/SQL/Qu_Art.sql</File>
@@ -1040,7 +1044,8 @@
     <File md5="9060A2DA62FA50E622AD45D46C44A07E" import="0">TheSaltRoadCompact/SQL/SALT_Text.sql</File>
     <File md5="7233BF1E4ABEB427DD98ACA238203E05" import="0">TheSaltRoadCompact/SQL/SALT_Units.sql</File>
     <File md5="1DF549E23C66EC241B2991FB9F4AC4D3" import="0">TheSaltRoadCompact/TESTING.md</File>
-    <File md5="FE635606E481F0A0A359DFAD137B999C" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
+    <File md5="8599C797C503ABE1BD852452A3BCF7A4" import="1">TheSeventeenthSummer/Lua/CWC3_Summer.lua</File>
+    <File md5="858C13C04DDBC1F7B81091B90CEBC51E" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
     <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
     <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>

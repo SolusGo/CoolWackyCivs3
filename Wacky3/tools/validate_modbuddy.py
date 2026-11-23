@@ -1,6 +1,7 @@
 """Check native project wiring and optional actual SDK output against the manifest."""
 import argparse
 import hashlib
+import re
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from build_mod import ROOT, NAME, files, ORDER, ENTRIES
@@ -52,6 +53,15 @@ def validate_project():
         assert content.findtext('m:Type',namespaces=N)=='InGameUIAddin'
         entries.append(tuple(content.findtext('m:'+key,namespaces=N) for key in ['FileName','Name','Description']))
     assert entries==ENTRIES
+    # InGame.lua strips the extension and loads the native context by basename.
+    imported_lua={Path(name).stem for name,flag in actual.items()
+                  if name.endswith('.lua') and flag=='1'}
+    for filename,_,_ in entries:
+        script=Path(filename).with_suffix('.lua').as_posix()
+        assert script in actual,('Missing native context script',script)
+        code=(ROOT/script).read_text(encoding='utf-8')
+        for include in re.findall(r"""include\(['"]([^'"]+)['"]\)""",code):
+            assert include in imported_lua,(script,'unavailable VFS include',include)
     for section,property_name in [('Dependencies','ModDependencies'),('References','ModReferences'),('Blocks','ModBlockers')]:
         expected_associations=[(item.tag,item.get('title'),item.get('id'),item.get('minversion'),item.get('maxversion')) for item in manifest.find(section)]
         actual_associations=[tuple(item.findtext('m:'+key,namespaces=N) for key in ['Type','Name','Id','MinVersion','MaxVersion'])

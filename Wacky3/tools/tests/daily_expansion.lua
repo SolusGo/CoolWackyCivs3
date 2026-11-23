@@ -448,6 +448,12 @@ cases[26]=function(c)
     c.buildings[id('BUILDING')]=1
     LoadDaily(26)
     assert(not ContextPtr.hidden)
+    active=1
+    Events.GameplaySetActivePlayer.fire()
+    assert(ContextPtr.hidden)
+    active=0
+    Events.LoadScreenClose.fire()
+    assert(not ContextPtr.hidden)
     expect(c,'PROSPERITY',0); expect(c,'ENLIGHTENMENT',0)
     reload()
     assert(not ContextPtr.hidden)
