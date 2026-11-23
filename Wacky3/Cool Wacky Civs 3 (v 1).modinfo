@@ -121,7 +121,7 @@
     <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
     <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
     <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
-    <File md5="E253EE992D1F111517387FB707DDB078" import="0">README.md</File>
+    <File md5="9086065296ED71E8E4115D3F3B5ADD3D" import="0">README.md</File>
     <File md5="5335091B6EC173FF095C8922EB3AA502" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="69DA590E113CEAD5B09D2600CFACE14D" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>

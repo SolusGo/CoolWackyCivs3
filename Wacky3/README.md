@@ -37,6 +37,22 @@ The [hardening report](docs/DailyExpansion_HardeningReport.md) documents the CP1
 
 **Capital:** Genesis Spire. **Leader:** The First Architect. **Victory focus:** Domination / Science. This brings the pack to 26 registered civilizations. The Qu collect Biomass from enemy military kills and new eras, then spend it in annexed conquests to install Labor, Cognitive, or Brood Forms. The Qu Harvester replaces the Rifleman and specializes in fighting wounded units. The Gene Foundry replaces the Workshop and adds up to 2 base Science as its city grows. Open **Additional Information → Genetic Reconfiguration** to use the ability. [Civilization guide](TheQu/README.md) · [Testing and compatibility](TheQu/TESTING.md)
 
+## Build in ModBuddy
+
+1. Install **Sid Meier's Civilization V SDK** from Steam's Tools library, then open [CoolWackyCivs3.civ5sln](../CoolWackyCivs3.civ5sln) in ModBuddy. The project is [Wacky3/CoolWackyCivs3.civ5proj](CoolWackyCivs3.civ5proj).
+2. In ModBuddy's Civilization V settings, set the game installation path and the Civilization V user folder containing `MODS`. The user folder normally is `Documents/My Games/Sid Meier's Civilization 5`.
+3. Choose **Default**, then **Build → Build Solution** (F6). The SDK builds the mod, writes `Packages/Cool Wacky Civs 3 (v 1).civ5mod` beside the solution, and deploys it to your configured `MODS` folder. Intermediate files are in `Build/Cool Wacky Civs 3` beside the solution.
+
+The project preserves all 26 gameplay entry points, SQL activation order, VFS flags, the existing mod GUID/version and the exact CP151 dependency. Existing SQL, Lua and DDS files are ready to build; Python is only needed to regenerate content or refresh the project inventory after adding/removing files. From `Wacky3`, run `python tools/build_mod.py`, then reload the project in ModBuddy. The same command still generates the manifest; `--package` also produces the independent install ZIP. Both project files are generated from this builder.
+
+For a command-line SDK package without deploying, run the following from `Wacky3` in Windows PowerShell, replacing the game path with your installation:
+
+```powershell
+& "$env:WINDIR\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" .\CoolWackyCivs3.civ5proj /t:Package /p:Configuration="Package Only" "/p:Civ5Path=G:\SteamLibrary\steamapps\common\Sid Meier's Civilization V"
+```
+
+Run `python tools/validate_modbuddy.py` to check the project against the Python manifest. After an SDK build, add `--built-manifest "../Build/Cool Wacky Civs 3/Cool Wacky Civs 3 (v 1).modinfo"` to verify its output files and registrations too.
+
 ## Installation
 
 1. Install BNW and Community Patch **version 151**. Enable the standalone `(1) Community Patch`, without the Vox Populi balance components. The dependency deliberately rejects newer CP versions until separately audited.

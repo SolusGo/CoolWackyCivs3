@@ -1,8 +1,9 @@
-"""Regenerate the one pack manifest and optionally create an installable folder ZIP."""
+"""Regenerate the manifest and ModBuddy project; optionally create an install ZIP."""
 from pathlib import Path
 from xml.etree import ElementTree as ET
 import hashlib, argparse, zipfile
 import json
+from modbuddy import write_project
 ROOT=Path(__file__).resolve().parents[1]
 NAME='Cool Wacky Civs 3 (v 1).modinfo'
 MOD_ID='70d794f7-4fb2-4196-9709-8193f8ee36a9'
@@ -68,12 +69,13 @@ def build(package=False):
         ET.SubElement(entry,'Description').text=description
     ET.indent(root,space='  ')
     (ROOT/NAME).write_bytes(ET.tostring(root,encoding='utf-8',xml_declaration=True))
+    write_project(root)
     if package:
         dest=ROOT/'dist/Cool Wacky Civs 3 (v 1).zip'; dest.parent.mkdir(exist_ok=True)
         with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as out:
             for p in files()+[ROOT/NAME]: out.write(p,'Cool Wacky Civs 3 (v 1)/'+p.relative_to(ROOT).as_posix())
         print(dest)
-    print(f'Manifest: {len(files())} files, {len(ORDER)} database actions, {len(ENTRIES)} gameplay contexts')
+    print(f'Manifest + ModBuddy project: {len(files())} files, {len(ORDER)} database actions, {len(ENTRIES)} gameplay contexts')
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__); parser.add_argument('--package',action='store_true')
     build(parser.parse_args().package)

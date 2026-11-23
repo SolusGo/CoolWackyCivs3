@@ -166,6 +166,8 @@ def lua_checks(db):
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
+    from validate_modbuddy import validate_project
+    RESULTS['modbuddy']=validate_project()
     root=ET.parse(ROOT/NAME).getroot()
     assert len(list(ROOT.glob('*.modinfo')))==1
     assert root.get('id')==MOD_ID and root.get('version')=='1'

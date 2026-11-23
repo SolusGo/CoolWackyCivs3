@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 Wacky3/tools/reference/
 Wacky3/dist/
+/Build/
+/Packages/
+*.civ5proj.user
+*.suo
