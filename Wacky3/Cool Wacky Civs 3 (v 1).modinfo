@@ -941,10 +941,10 @@
     <File md5="154BC689CE6A065AF4C4B06FD6D1376C" import="0">TheQu/README.md</File>
     <File md5="EC1BFC0D8FBA4316528855E6C8493D7B" import="0">TheQu/SQL/Qu_Art.sql</File>
     <File md5="D07981BF149AF5E985AB3378946F39FF" import="0">TheQu/SQL/Qu_Buildings.sql</File>
-    <File md5="62E1156E3D266F182798B0151EC82714" import="0">TheQu/SQL/Qu_Civilization.sql</File>
+    <File md5="B6CC779AEA4F1A2EFC91CD486C6FA68B" import="0">TheQu/SQL/Qu_Civilization.sql</File>
     <File md5="56AE1DF98B1381C2A0ED279C90E1E16C" import="0">TheQu/SQL/Qu_Text.sql</File>
     <File md5="74E5DCD3AA6A9934B74B79632CC183F2" import="0">TheQu/SQL/Qu_Units.sql</File>
-    <File md5="0E428F7E9C9658974C5C4CFA0DB0124D" import="0">TheQu/TESTING.md</File>
+    <File md5="3C128DA6159C8709205F99B13DF7B34F" import="0">TheQu/TESTING.md</File>
     <File md5="D10F11A1A1B6E2535F69E722A71A1094" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_128.dds</File>
     <File md5="F6E2E3854B455C33E0A6E009E576FF52" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_16.dds</File>
     <File md5="A781D7E6E9EDA289156258DA64723271" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_24.dds</File>

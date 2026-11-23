@@ -265,6 +265,7 @@ def main():
     RESULTS['archived_source_audit']=archived_source_checks()
     RESULTS['daily_expansion_source_audit']=check_expansion_source()
     RESULTS['qu_source_audit']=validate_qu.check_source()
+    RESULTS['qu_event_activation']=validate_qu.check_event_activation()
     RESULTS['schema_audit']=check_regeneration()
     db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]

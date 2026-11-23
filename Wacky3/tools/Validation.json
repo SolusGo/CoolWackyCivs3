@@ -82,6 +82,7 @@
   "archived_source_audit": "PASS: pinned CP151 combat result/end order and 15 arguments; native promotion consumers; land-route origin/domain/circuit lifecycle; post-create Caravan prekill; total class counts and farm/pillage hooks. Native runtime acceptance NOT RUN.",
   "daily_expansion_source_audit": "PASS: pinned CP151 settlement and completion, science modifier, reveal source, air interception and scoped ranged damage, post-calculation combat, movement stores and callbacks, garrison and terrain change contracts",
   "qu_source_audit": "PASS: CP151 attribution, pre-damage roles and defense, ownership, signed fixed-point yields, era/population hooks and add-in menu",
+  "qu_event_activation": "PASS: 20 distinct Lua events audited; all 9 required CP151 options enabled by shared and Qu SQL alone",
   "schema_audit": {
     "result": "PASS",
     "pinned_source_files": 260,

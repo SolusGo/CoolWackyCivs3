@@ -1,16 +1,19 @@
 """Qu-specific database, Lua, artwork and pinned CP151 contracts."""
 from collections import Counter
+from contextlib import closing
 from hashlib import sha256
 import json
+import re
 from xml.etree import ElementTree as ET
 
 from lupa.lua51 import LuaRuntime
 from PIL import Image
 
 from baseline import ROOT, quote
+from build_mod import ORDER
 from build_qu_art import ART, SCENES
 from generate_qu import BUILDING, CASTES, CIV, LEADER, PREFIX, PROMOTION, UNIT
-from target_schema import approved_companions
+from target_schema import approved_companions, clean_fixture
 
 EXTRA_SOURCES = {
     'QuCvGameCoreStructs.cpp': ('CvGameCoreDLL_Expansion2/CvGameCoreStructs.cpp',
@@ -20,6 +23,59 @@ EXTRA_SOURCES = {
     'QuDiploCorner.lua': ('(1)%20Community%20Patch/LUA/DiploCorner.lua',
                           '8c434e52d449b34ebb3b45c1df22156259594caaec41dfed3c30cc7fe17b8f29'),
 }
+
+# CP151 option gates for the event paths used by the Qu. Empty tuples mark
+# unconditional GameEvents and engine UI events with no CustomModOptions gate.
+EVENT_OPTIONS = {
+    'Events.ActivePlayerTurnStart': (),
+    'Events.SequenceGameInitComplete': (),
+    'GameEvents.BattleFinished': ('EVENTS_BATTLES',),
+    'GameEvents.BattleJoined': ('EVENTS_BATTLES',),
+    'GameEvents.BattleStarted': ('EVENTS_BATTLES',),
+    'GameEvents.CityCaptureComplete': (),
+    'GameEvents.CityConstructed': ('EVENTS_CITY',),
+    'GameEvents.CityRazed': (),
+    'GameEvents.CitySoldBuilding': ('EVENTS_CITY',),
+    'GameEvents.CombatEnded': ('EVENTS_RED_COMBAT', 'EVENTS_RED_COMBAT_ENDED'),
+    'GameEvents.CombatResult': ('EVENTS_RED_COMBAT', 'EVENTS_RED_COMBAT_RESULT'),
+    'GameEvents.GameCoreUpdateEnd': (),
+    'GameEvents.PlayerCityFounded': (),
+    'GameEvents.PlayerDoTurn': (),
+    'GameEvents.SetPopulation': (),
+    'GameEvents.TeamSetEra': ('EVENTS_NEW_ERA',),
+    'GameEvents.UnitCaptured': ('EVENTS_UNIT_CAPTURE',),
+    'GameEvents.UnitConverted': ('EVENTS_UNIT_CONVERTS',),
+    'GameEvents.UnitKilledInCombat': (),
+    'GameEvents.UnitPrekill': ('EVENTS_UNIT_PREKILL',),
+}
+
+
+def check_event_options(db):
+    subscriptions = set()
+    for name in ('Qu_State.lua', 'Qu_Combat.lua'):
+        source = (ROOT / 'TheQu/Lua' / name).read_text(encoding='utf-8')
+        subscriptions.update(re.findall(r'^[ \t]*((?:Game)?Events\.\w+)\.Add\s*\(', source, re.M))
+    assert subscriptions == EVENT_OPTIONS.keys(), (
+        'Qu event inventory changed', sorted(subscriptions - EVENT_OPTIONS.keys()),
+        sorted(EVENT_OPTIONS.keys() - subscriptions))
+
+    enabled = dict(db.execute('SELECT Name, Value FROM CustomModOptions'))
+    disabled = {event: [option for option in options if enabled.get(option) != 1]
+                for event, options in EVENT_OPTIONS.items()}
+    disabled = {event: missing for event, missing in disabled.items() if missing}
+    assert not disabled, ('Qu event options missing or disabled', disabled)
+
+
+def check_event_activation():
+    # Use the pack's activation order, omitting all other civilization SQL.
+    # CP151 defaults in the clean fixture leave these option gates disabled.
+    with closing(clean_fixture()) as db:
+        for path in ORDER:
+            if path == 'Shared/SQL/CWC3_Options.sql' or path.startswith('TheQu/SQL/'):
+                db.executescript((ROOT / path).read_text(encoding='utf-8'))
+        check_event_options(db)
+    count = len({option for options in EVENT_OPTIONS.values() for option in options})
+    return f'PASS: {len(EVENT_OPTIONS)} distinct Lua events audited; all {count} required CP151 options enabled by shared and Qu SQL alone'
 
 
 def check_source():
@@ -89,6 +145,8 @@ def fetch_sources():
 
 
 def check_database(db):
+    check_event_options(db)
+
     def row(table, code):
         result = db.execute(f'SELECT * FROM {table} WHERE Type=?', (code,)).fetchone()
         assert result is not None, (table, code)
@@ -177,4 +235,5 @@ if __name__ == '__main__':
     if parser.parse_args().fetch:
         fetch_sources()
     print(check_source())
+    print(check_event_activation())
     print(check_lua())

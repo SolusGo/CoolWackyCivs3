@@ -9,6 +9,8 @@ Run the pack validator from Wacky3 with the usual Python dependencies and BNW/CP
 
 The pack inventory records the automated results in [Validation.json](../tools/Validation.json). SQLite compares the Qu's Rifleman and Workshop clones with their active source rows, including upgrade and companion rows, and checks the five hidden city effects. The Lua 5.1 mock drives the production event handlers and UI with Standard and Marathon settings and an advanced-era start. Source, texture, manifest and ZIP checks are separate from native acceptance.
 
+The event activation check inventories the subscriptions in Qu_State.lua and Qu_Combat.lua. It verifies their CP151 option gates in the full pack and in a clean fixture that runs only the shared options and the Qu registrations. The Qu registration explicitly enables EVENTS_UNIT_PREKILL for the prekill callback used to attribute Biomass.
+
 Both local comparison caches returned a Rifling Rifleman with 34 Combat, 2 Movement, 225 base Production cost and a Great War Infantry upgrade. Both returned a Metal Casting Workshop with 120 base Production cost, 2 maintenance, one Engineer slot and a 10% Production modifier. The generated SQL clones whichever source rows the active game loads. The comparison caches are supplementary and are not certified CP-only native sessions.
 
 ## CP151 contracts
