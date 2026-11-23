@@ -37,6 +37,7 @@ for spec in DAILY_ROSTER:
 
 ORDER.extend(f'TheQu/SQL/Qu_{kind}.sql' for kind in ['Civilization','Units','Buildings','Text','Art'])
 ENTRIES.append(('TheQu/Lua/Qu_Gameplay.xml', 'Divine Reconfiguration', 'The Qu: Biomass and genetic castes.'))
+ORDER.append('Shared/SQL/CWC3_OriginalPresentation.sql')
 
 
 def files():

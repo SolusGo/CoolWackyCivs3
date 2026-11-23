@@ -16,7 +16,8 @@ def check_database(db):
         a=db.execute('SELECT * FROM '+table+' WHERE Type=?',(old,)).fetchone()
         b=db.execute('SELECT * FROM '+table+' WHERE Type=?',(new,)).fetchone()
         for key in a.keys():
-            if key in {'ID','Type','Description','Civilopedia','Help','Strategy'}: continue
+            if key in {'ID','Type','Description','Civilopedia','Help','Strategy',
+                        'IconAtlas','PortraitIndex','UnitFlagAtlas','UnitFlagIconOffset'}: continue
             expected = a[key]+1 if table=='Units' and key=='BaseSightRange' else a[key]
             assert b[key] == expected, (table,key,a[key],b[key])
         for companion in approved_companions(prefix,column):
@@ -56,12 +57,7 @@ def check_database(db):
         cols=[r[1] for r in db.execute('PRAGMA table_info('+table+')') if r[1]!='CivilizationType']
         query='SELECT '+','.join(map(quote,cols))+' FROM '+table+' WHERE CivilizationType=?'
         assert Counter(tuple(r) for r in db.execute(query,(CIV,)))==Counter(tuple(r) for r in db.execute(query,('CIVILIZATION_AMERICA',)))
-    for table,original,unique,fields in [
-        ('Civilizations','CIVILIZATION_AMERICA',CIV,['IconAtlas','AlphaIconAtlas','PortraitIndex','ArtDefineTag','DawnOfManImage','MapImage']),
-        ('Leaders','LEADER_WASHINGTON',LEADER,['IconAtlas','PortraitIndex','ArtDefineTag'])]:
-        a=db.execute('SELECT * FROM '+table+' WHERE Type=?',(original,)).fetchone()
-        b=db.execute('SELECT * FROM '+table+' WHERE Type=?',(unique,)).fetchone()
-        for field in fields: assert b[field]==a[field],('native fallback art changed',table,field)
+    assert civ['ArtDefineTag']==db.execute("SELECT ArtDefineTag FROM Civilizations WHERE Type='CIVILIZATION_AMERICA'").fetchone()[0]
     return 'PASS: human-only registration, active Spearman/Granary scalars and all companions, Sight/Faith deltas, four controllers, promotions, overrides, starts and localization'
 
 

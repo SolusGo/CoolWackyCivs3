@@ -2,7 +2,7 @@
 
 **Leader:** Chorus-Mother Ixa. **Capital:** First Emergence. **Motto:** “We Were Never Gone.” **Victory focus:** Science / Culture. Human-only, sequential single-player, BNW + standalone Community Patch **151**. No DLL changes. Start a new game with this pack enabled; the existing pack GUID is preserved.
 
-Intelligent cicada-like people alternate between patient underground growth and synchronized emergence. Ixa's translucent golden wings bear tree-ring markings above an amber-and-root throne. Native America/Washington/Spearman/Granary art, scene and model references are valid temporary fallbacks; this release does not depict custom cicada artwork or provide recorded speech.
+Intelligent cicada-like people alternate between patient underground growth and synchronized emergence. Ixa's translucent golden wings bear tree-ring markings above an amber-and-root throne. Original illustrations depict Ixa, the Shellguard, the Brood Nursery and First Emergence. The Spearman and Granary world models are inherited.
 
 ## The Great Emergence
 

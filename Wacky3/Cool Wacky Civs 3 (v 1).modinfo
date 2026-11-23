@@ -32,7 +32,7 @@
     <File md5="06128FD3D92C5CEBAC1754D267E8BD5C" import="0">docs/CovenantImplementationReport.md</File>
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
-    <File md5="B77E6C1E89E6BC33F423DE1B77931D33" import="0">docs/DailyExpansion_021_035_Art.md</File>
+    <File md5="6C0B2652E93EF64F24D7D42673B3FD46" import="0">docs/DailyExpansion_021_035_Art.md</File>
     <File md5="C8FCF696012948FEEF7AA5550C09B8B1" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
     <File md5="7DA4C8D0D64DC863798768EE6D0B07AA" import="0">docs/DailyExpansion_021_035_SourceProof.md</File>
     <File md5="31D0E971DD2DD49536E1013E15543008" import="0">docs/DailyExpansion_021_035_Testing.md</File>
@@ -76,6 +76,15 @@
     <File md5="6D439B1406BD73D1311C840D19EEF8E5" import="1">KingdomOfAThousandKites/Art/CWC3_D023_ALPHA_48.dds</File>
     <File md5="4ECF4E36B6D8EE2D0F30CFFB74C8B5C5" import="1">KingdomOfAThousandKites/Art/CWC3_D023_ALPHA_64.dds</File>
     <File md5="829F90F1642891240B5C3021860F34A0" import="1">KingdomOfAThousandKites/Art/CWC3_D023_ALPHA_80.dds</File>
+    <File md5="F9B211DF272723D17C29E9EDE6AC5647" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_128.dds</File>
+    <File md5="F7C212C486712C7DB46D92B09C65DAE5" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_16.dds</File>
+    <File md5="308BFDFF9B365D22FE8B6607EBAC8A5A" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_24.dds</File>
+    <File md5="6ED7219F8F50226244DBFD8FEB7044FC" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_256.dds</File>
+    <File md5="C7B5FD5071DF3A5710023789DC64A2CB" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_32.dds</File>
+    <File md5="B1C14A8D4EDD718945BE94B9E683B742" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_45.dds</File>
+    <File md5="CFF0BABD01F659DD77791E7F4D8A9251" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_48.dds</File>
+    <File md5="37A25CF8208E098A3D23F78C9B7CCC3B" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_64.dds</File>
+    <File md5="E15B5B4911C9B1E52565336C863C0BC0" import="1">KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_80.dds</File>
     <File md5="2A10E0D63B5309EB679D80DE5672137D" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_128.dds</File>
     <File md5="D136B755A24949DCA876B5E280352380" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_16.dds</File>
     <File md5="AC31BF67C76C6D09085CCA0D8A10BE26" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_24.dds</File>
@@ -85,6 +94,28 @@
     <File md5="837989622BC68BEA98046B9CA5842B95" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_48.dds</File>
     <File md5="17BEA9B65C9DFA204EC4957BE8B58C43" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_64.dds</File>
     <File md5="4E1BAFA7C630FB425D746444AE4525FA" import="1">KingdomOfAThousandKites/Art/CWC3_D023_CIV_80.dds</File>
+    <File md5="657A9C2FBDB30823A3C793D878906930" import="1">KingdomOfAThousandKites/Art/CWC3_D023_Dawn.dds</File>
+    <File md5="CC96ECD183822C453C0826A5B1DAA668" import="1">KingdomOfAThousandKites/Art/CWC3_D023_Diplomacy.dds</File>
+    <File md5="4EC8E1F2676C10B32D89843E0903CFA5" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_128.dds</File>
+    <File md5="5E9DA8B09D50D90ED72451E5D0BADB4E" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_16.dds</File>
+    <File md5="0689F314D80196F1ED5731C939AB5E61" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_24.dds</File>
+    <File md5="99D9D83632DF2C3221B72D3512A97C4E" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_256.dds</File>
+    <File md5="5A9269D18E5C8E92FB9D7375C11A9164" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_32.dds</File>
+    <File md5="2C3299267B76F5E4CAAE6E4A27AE680D" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_45.dds</File>
+    <File md5="5A01A67EC256169BAE1E0A44966C666C" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_48.dds</File>
+    <File md5="50AB9834F432070C617DA6ECFC82B5A1" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_64.dds</File>
+    <File md5="6AA6B85D6626D806821D2B7BF2D20F61" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LEADER_80.dds</File>
+    <File md5="6B5473D90B167116246F903A8442EB84" import="1">KingdomOfAThousandKites/Art/CWC3_D023_LeaderScene.xml</File>
+    <File md5="D9BF12FB12F48285C9D3542E779A02B8" import="1">KingdomOfAThousandKites/Art/CWC3_D023_Map.dds</File>
+    <File md5="2EE5AD17F6005DA2BB53B5F5A8B43D5C" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_128.dds</File>
+    <File md5="AA6E97BA62F56BBCBD382BCAD2A5D036" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_16.dds</File>
+    <File md5="EFD97D3179406B0A5C8537C05ED77A95" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_24.dds</File>
+    <File md5="F569EEFA7726A4901B0C41475A328E4F" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_256.dds</File>
+    <File md5="20327CD3BDEF96F0EB8683D71787AFAC" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_32.dds</File>
+    <File md5="4A97253D95B8841A57EA926A481CB730" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_45.dds</File>
+    <File md5="418813673E5505A659ECFEEF2E833F2C" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_48.dds</File>
+    <File md5="8759B853A2E29590622DF450E7F52ED4" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_64.dds</File>
+    <File md5="CF50F4C86B9A29B1A90A7A5553AEF0C8" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_80.dds</File>
     <File md5="B05AF4D9C780EBF10CCFE5D515F9F9C9" import="1">KingdomOfAThousandKites/Lua/D023_Gameplay.lua</File>
     <File md5="EAE33B646782B7207EED288F5CB7D031" import="0">KingdomOfAThousandKites/Lua/D023_Gameplay.xml</File>
     <File md5="3567E857880DEEDA1EC70D76CB07AE24" import="0">KingdomOfAThousandKites/README.md</File>
@@ -103,6 +134,15 @@
     <File md5="EB9899811AAB008543F6DAE3CA30B590" import="1">KingdomOfRyukyu/Art/CWC3_D021_ALPHA_48.dds</File>
     <File md5="04667C474C6FACC67194C76866DED3C8" import="1">KingdomOfRyukyu/Art/CWC3_D021_ALPHA_64.dds</File>
     <File md5="96402F2822C8D7360CEBF9F12E8E8F23" import="1">KingdomOfRyukyu/Art/CWC3_D021_ALPHA_80.dds</File>
+    <File md5="DEA55AC14CAC57882252B25FCF3F7B21" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_128.dds</File>
+    <File md5="AC39F778B024D3E74F9DFCC357718B91" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_16.dds</File>
+    <File md5="813D10315DC67404B9B36A820B33C8B8" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_24.dds</File>
+    <File md5="E626311F4339780BA2EC18BD2086C73B" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_256.dds</File>
+    <File md5="781CAD96295ADE62DA733DD34EC41E94" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_32.dds</File>
+    <File md5="B1BB5724F62E9C6A023DC5C9EB88DF95" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_45.dds</File>
+    <File md5="05E24A3B88C876E72B07E0F9D85D8078" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_48.dds</File>
+    <File md5="4BD983F346156F3CFEC9083F6BFABD7B" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_64.dds</File>
+    <File md5="A6BB153D2F6DC158FA1D8847913B3F16" import="1">KingdomOfRyukyu/Art/CWC3_D021_BUILDING_80.dds</File>
     <File md5="615B2940004BFD1085CF37AF47118918" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_128.dds</File>
     <File md5="D5F40F364E39E6A40A57FB39AF1C7FB3" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_16.dds</File>
     <File md5="B40C09E0AE6C328BF458BE7E47854528" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_24.dds</File>
@@ -112,6 +152,28 @@
     <File md5="1F0919FE03AC0A7041D9DD16E0CC0457" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_48.dds</File>
     <File md5="90F74917D5A76746CABCE2EF60018E13" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_64.dds</File>
     <File md5="3059100C4B11FB237D86D92C0A2D9A2F" import="1">KingdomOfRyukyu/Art/CWC3_D021_CIV_80.dds</File>
+    <File md5="D5C8832C44BFE117A326932514DCCE70" import="1">KingdomOfRyukyu/Art/CWC3_D021_Dawn.dds</File>
+    <File md5="47F9DBEA971A43EEA0B4659367B2C349" import="1">KingdomOfRyukyu/Art/CWC3_D021_Diplomacy.dds</File>
+    <File md5="C19B339AF046FFE71A91523687C2CEF4" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_128.dds</File>
+    <File md5="0A5C4EED3A445653A715E6A7A9D4C0A7" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_16.dds</File>
+    <File md5="382E87465CCEE51F378455681DAF275C" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_24.dds</File>
+    <File md5="1B35910AB2580A96A784E0CF071C3291" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_256.dds</File>
+    <File md5="41967808F4289283756A1A823AD7CD2D" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_32.dds</File>
+    <File md5="EB4FA9047A16ECAA713E75F5B26CD19D" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_45.dds</File>
+    <File md5="467A5B2F827830009A4573CA6C88F5F8" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_48.dds</File>
+    <File md5="445894A39F5DC99743312E4ABB0F9922" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_64.dds</File>
+    <File md5="091ABA870BC5253E9681D6415BFD87A1" import="1">KingdomOfRyukyu/Art/CWC3_D021_LEADER_80.dds</File>
+    <File md5="5C7D3F239D34E7CE00E06A2BBB9AA445" import="1">KingdomOfRyukyu/Art/CWC3_D021_LeaderScene.xml</File>
+    <File md5="90F571003DF80610CB5C3B72A57DCB28" import="1">KingdomOfRyukyu/Art/CWC3_D021_Map.dds</File>
+    <File md5="54055F1D80483FC30C185D3D34DF983A" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_128.dds</File>
+    <File md5="4BC7646B4E54DEA7231389174E9D1F12" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_16.dds</File>
+    <File md5="E0832E6FBC61944F1B13BC067B8C2AC2" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_24.dds</File>
+    <File md5="BB37122A4E82BF37081844C6187B3850" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_256.dds</File>
+    <File md5="95ABC32C23E870CC5FCF0EE5641E6831" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_32.dds</File>
+    <File md5="0D8A3FCEA0001732A6AA6AB07E7DB400" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_45.dds</File>
+    <File md5="CB48507FEFAB99F2F0DF3A1A8BE9987A" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_48.dds</File>
+    <File md5="8992AF235562E9135C8C4C428391BA88" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_64.dds</File>
+    <File md5="1A5B36F3F04F9D52D541A03C4B5C1BB3" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_80.dds</File>
     <File md5="76E80903FE532B16B77773B593A59FD4" import="1">KingdomOfRyukyu/Lua/D021_Gameplay.lua</File>
     <File md5="8BBA5B895C9A3F822B4D8D28BA5F0C9B" import="0">KingdomOfRyukyu/Lua/D021_Gameplay.xml</File>
     <File md5="A1C65EAFADDDF62576682A4C2CE420A9" import="0">KingdomOfRyukyu/README.md</File>
@@ -121,12 +183,13 @@
     <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
     <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
     <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
-    <File md5="9086065296ED71E8E4115D3F3B5ADD3D" import="0">README.md</File>
+    <File md5="A5685069F9397180EC52A090DAAD0976" import="0">README.md</File>
     <File md5="5335091B6EC173FF095C8922EB3AA502" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="69DA590E113CEAD5B09D2600CFACE14D" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
     <File md5="E93D59B3F660E0E52C5D2994DEEA300F" import="1">Shared/Lua/CWC3_Runtime.lua</File>
     <File md5="2DC630929078F31118B730A4C87EDF4E" import="0">Shared/SQL/CWC3_Options.sql</File>
+    <File md5="4E150D80ACC6C60947C87B9D7ECB1A13" import="0">Shared/SQL/CWC3_OriginalPresentation.sql</File>
     <File md5="1FA3CF951780861A7DF129C7510C4C01" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha128.dds</File>
     <File md5="5ABA3F2A2D36D130098B89466F64DB8D" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha16.dds</File>
     <File md5="414D12FE5E6C424B95FECEC4D8763F03" import="1">TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha24.dds</File>
@@ -204,6 +267,15 @@
     <File md5="55972D301C2441D6A6B6BDA09E4183DC" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_ALPHA_48.dds</File>
     <File md5="2EABD612918E3305B6072DED3BE46A9F" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_ALPHA_64.dds</File>
     <File md5="5D7A2952E4BD7F5C302E464760BD473D" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_ALPHA_80.dds</File>
+    <File md5="DD63D38F786E5969A1A18A3EA11C00D1" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_128.dds</File>
+    <File md5="FCE34F38081289FEF2DA65DCE53D8D54" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_16.dds</File>
+    <File md5="57D4A2C2C67A944A2591EF655738CDDC" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_24.dds</File>
+    <File md5="392928F153F3F367D8AF8E449C7F3CCA" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_256.dds</File>
+    <File md5="3D8819554719EB84FD6ED2AC8413B345" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_32.dds</File>
+    <File md5="D87BB2EAF9F8956CA6B0B6EEA8B995FA" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_45.dds</File>
+    <File md5="C5AD8DAF6ABA304FCD302B5A888E2407" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_48.dds</File>
+    <File md5="C91B5FEDAE6DFDEBFA8034F996495318" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_64.dds</File>
+    <File md5="20C5DC3EE5111A13621E5867CA21C5E2" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_80.dds</File>
     <File md5="B1C1030123107A53D1BFBCC4F7F77008" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_128.dds</File>
     <File md5="DD6C8817A2879689C5B3683230368D73" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_16.dds</File>
     <File md5="EB51F3E63D42768E503D1E1D5B49122F" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_24.dds</File>
@@ -213,6 +285,28 @@
     <File md5="8A6B24E3406A4B0C533F5CEC78E84524" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_48.dds</File>
     <File md5="CA60BD202DB8AFD6CAC39493F132D97C" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_64.dds</File>
     <File md5="DC7FD0F0AF24EB63C059D1D0F14BF0C8" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_80.dds</File>
+    <File md5="ED0E68714092BFF3CE60829BC912EA33" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Dawn.dds</File>
+    <File md5="1F8098768377D5ABBAEE0DE52F6DE592" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Diplomacy.dds</File>
+    <File md5="980C43CFDFAD79CEFEE7BCBE12FA697A" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_128.dds</File>
+    <File md5="CD119A87A03E4F2FE0CA8BAB658250FD" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_16.dds</File>
+    <File md5="EB41CCFD85DB77D98631A39E69F190EC" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_24.dds</File>
+    <File md5="769FA8BE09E15A12D0E4F6FF874C0D10" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_256.dds</File>
+    <File md5="BA8824414F5D7D8127373561B43D7D67" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_32.dds</File>
+    <File md5="AF7F7D2CE122E9F0F9A0485669F72726" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_45.dds</File>
+    <File md5="346F22E979ADA20C864549D8625ED85E" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_48.dds</File>
+    <File md5="DBB8D305EE98A05C1A3E2CE36536F01E" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_64.dds</File>
+    <File md5="4D245F2BB119CE8E22212884C2D19AFE" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_80.dds</File>
+    <File md5="670A8DE72BE14FC8D25BC2DB26F25695" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LeaderScene.xml</File>
+    <File md5="D16B177E39EAFE1C044EC31CDA1281E5" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Map.dds</File>
+    <File md5="D5A6BB6588280509CA7EE1CEE604DA29" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_128.dds</File>
+    <File md5="FB57767E891D27C52D932B4817B23A12" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_16.dds</File>
+    <File md5="72F1842C233107DD110A9B646C74BBBC" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_24.dds</File>
+    <File md5="4097BD61F97B0EA288707EE1B8633B47" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_256.dds</File>
+    <File md5="1689953625783F3DAF24F8444F959E30" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_32.dds</File>
+    <File md5="8C548C575DC1C5D957176C76B8B79491" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_45.dds</File>
+    <File md5="4DB8251A0E2B4A3411C48F30C96CCFE9" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_48.dds</File>
+    <File md5="09236E7F6C59896FB06315969F25FC16" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_64.dds</File>
+    <File md5="A0ADB2D93EF5949424772339FEE3F4C8" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_80.dds</File>
     <File md5="1D9B1294CC6AB715ACCFEC14A0CEE359" import="1">TheCalendarOfUnofficialHolidays/Lua/D035_Gameplay.lua</File>
     <File md5="A8C9FBCCB20F22F2B1A8D0A0BCE996C5" import="0">TheCalendarOfUnofficialHolidays/Lua/D035_Gameplay.xml</File>
     <File md5="451553E0F90BE17ACDBEE86E5D76D7A2" import="0">TheCalendarOfUnofficialHolidays/README.md</File>
@@ -231,6 +325,15 @@
     <File md5="E05CC5FE7E91F9E189AABED80B725323" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha48.dds</File>
     <File md5="FC49ED6186CA61661283369ADF183C43" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha64.dds</File>
     <File md5="776129B34487B8D6FF080720D5CA1115" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha80.dds</File>
+    <File md5="6F714CA8EEF6A990855AF385B1DA060B" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_128.dds</File>
+    <File md5="00C4F41A2C850D1DF5D32D41F1DA01D4" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_16.dds</File>
+    <File md5="FCA36F217FB324A02A1A8CCA0C6AC279" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_24.dds</File>
+    <File md5="4EDE5CA52679EF5D1FC2D0F57BBAD447" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_256.dds</File>
+    <File md5="2276D08CC6B384BC82CEDF3390FF932D" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_32.dds</File>
+    <File md5="8A4249104F77B04F8805ADF2A96BD0A1" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_45.dds</File>
+    <File md5="7F1AB16891B04AA6C3B3A45902AE1214" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_48.dds</File>
+    <File md5="6755A02E71010982A798BD14A9CC4C5E" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_64.dds</File>
+    <File md5="7C15E433DE7B02C045CCCBF6B2791554" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_80.dds</File>
     <File md5="055A10EB13EF74C34550AF5DE70DFE44" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ128.dds</File>
     <File md5="44B7F8544C98C080871E28BE9AE3381F" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ16.dds</File>
     <File md5="4C75D7985CE7838FA7D6A48155B3DDB1" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ24.dds</File>
@@ -253,10 +356,19 @@
     <File md5="90BF4878FD9F6D4E01C86AF5E7D8ED67" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Leader80.dds</File>
     <File md5="BC4EE5C2A49F34971422C6E3E9D42210" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_LeaderScene.xml</File>
     <File md5="E07A16CAEC391F6E3EB29598919A8562" import="1">TheCandlekeepersCovenant/Art/CWC3_Covenant_Map.dds</File>
+    <File md5="701AA2F126546AFD555F669C59F844C3" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_128.dds</File>
+    <File md5="BF2B2ADCEE30629BB472A441E816A803" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_16.dds</File>
+    <File md5="7838A78DC168B7BA12C101CF0485320C" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_24.dds</File>
+    <File md5="65BEA7175817C58AF432A15C799CEB8F" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_256.dds</File>
+    <File md5="B4D39F0D6AC48CA040DAD8F50193596B" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_32.dds</File>
+    <File md5="7E5F2C1701ACB6104A8E3A1366185776" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_45.dds</File>
+    <File md5="C158F22DCC251F176DA6AE8C5475FFD2" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_48.dds</File>
+    <File md5="E130EC36CF3200F4EF7E1EE31C600AA8" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_64.dds</File>
+    <File md5="CDBD15259AF5F2A32497C0D65786A5B0" import="1">TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_80.dds</File>
     <File md5="A8982030C99D0DEDAEEB63721CE3AC02" import="1">TheCandlekeepersCovenant/Lua/CovenantGameplay.lua</File>
     <File md5="E7F529D73443A622FC38C1E2EFDF6754" import="1">TheCandlekeepersCovenant/Lua/CWC3_Covenant.lua</File>
     <File md5="20E3DE8DCCCA9A86C7DCF10D00E12B61" import="0">TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml</File>
-    <File md5="5792B854B19929BF45B64B8C7606C80D" import="0">TheCandlekeepersCovenant/README.md</File>
+    <File md5="73E41E243D9DD44B9DA156CB381D8E0E" import="0">TheCandlekeepersCovenant/README.md</File>
     <File md5="A832FE2DEF61CE89D15D7EC23A7E3D1F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Art.sql</File>
     <File md5="1B7C6FB48010CCAD393365732C206D25" import="0">TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</File>
     <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
@@ -271,6 +383,15 @@
     <File md5="5FA4D71E831B34145FFE16EF5C4C199E" import="1">TheCarapaceDominion/Art/CWC3_D025_ALPHA_48.dds</File>
     <File md5="F6F3C517D82D04B03BAD3123BE306FFA" import="1">TheCarapaceDominion/Art/CWC3_D025_ALPHA_64.dds</File>
     <File md5="175C9156C599BEBAE4763AFC8EB28EE3" import="1">TheCarapaceDominion/Art/CWC3_D025_ALPHA_80.dds</File>
+    <File md5="317B6CB51D4A48211A789593CCE3423C" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_128.dds</File>
+    <File md5="EE012E50EE21D9FB9AFE0C7F016598BB" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_16.dds</File>
+    <File md5="BF067118AA62C7389157E965C98267DE" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_24.dds</File>
+    <File md5="2589BFC22D254215D9080C11A0A23E72" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_256.dds</File>
+    <File md5="F81A216303AE028FCA0420B8A12BC4A8" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_32.dds</File>
+    <File md5="219DC18E4D26B694F340835804ECAB93" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_45.dds</File>
+    <File md5="9BA6B1DC500AC2DFB974D60C5E56A429" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_48.dds</File>
+    <File md5="147AA25C74DC5F2A0D9DC310A1AC910F" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_64.dds</File>
+    <File md5="42B7F238F556F43812D0220E530277C1" import="1">TheCarapaceDominion/Art/CWC3_D025_BUILDING_80.dds</File>
     <File md5="19DD7CCA83E8517656662C7C10DE47DB" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_128.dds</File>
     <File md5="EE15B1FB3773E588961231889A5F5C5B" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_16.dds</File>
     <File md5="FE218FA5179AFC40C8E4B6C1D8E4E653" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_24.dds</File>
@@ -280,6 +401,28 @@
     <File md5="1B19FCA2AFC088CC9EBFBE179B62B1CA" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_48.dds</File>
     <File md5="AE67D417AC6DE9234DF8D1C4A21D0F30" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_64.dds</File>
     <File md5="55E7FA0409D07475E3EAEFB973CFED4A" import="1">TheCarapaceDominion/Art/CWC3_D025_CIV_80.dds</File>
+    <File md5="60FD8CEAA9CFFDF451AC2CEC64E48DFB" import="1">TheCarapaceDominion/Art/CWC3_D025_Dawn.dds</File>
+    <File md5="B7C44432E6E1E719F1AC92D4EF72D6AD" import="1">TheCarapaceDominion/Art/CWC3_D025_Diplomacy.dds</File>
+    <File md5="FD1C18072EC731863DED46FDB53A0277" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_128.dds</File>
+    <File md5="BFAB24B80C8381F82FF9B61363F91DE3" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_16.dds</File>
+    <File md5="35F161AAA4309830904727A6EB0A428C" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_24.dds</File>
+    <File md5="9164954DA4615E4797508875072C4A16" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_256.dds</File>
+    <File md5="F6C61EE051D440FDFF38BF5C30F04F62" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_32.dds</File>
+    <File md5="FA2834125590A39B39D5490089DB15D8" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_45.dds</File>
+    <File md5="EC6B778952D6D0DFF6EEA141AAF9230D" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_48.dds</File>
+    <File md5="D720C5367F24B3B39ED18E76F063C215" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_64.dds</File>
+    <File md5="A5FBA40258C35CA08B516D5F7C804789" import="1">TheCarapaceDominion/Art/CWC3_D025_LEADER_80.dds</File>
+    <File md5="C49FA41E25051872A7E51F8202767677" import="1">TheCarapaceDominion/Art/CWC3_D025_LeaderScene.xml</File>
+    <File md5="4E3438E5309E03028D2C54F65EA60EE4" import="1">TheCarapaceDominion/Art/CWC3_D025_Map.dds</File>
+    <File md5="B890C5FBE6D8631ABE7435537060BF53" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_128.dds</File>
+    <File md5="93C16F0F4E765A89B4115B1E675CD13E" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_16.dds</File>
+    <File md5="64213DCEB8B254B1B93121798F2F4CA9" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_24.dds</File>
+    <File md5="AD60777D97D19D266B682E3729F4325C" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_256.dds</File>
+    <File md5="21D27E79381DCD77A2AA8A270415B294" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_32.dds</File>
+    <File md5="CC49229385159D836BBBF8CC542CF2F3" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_45.dds</File>
+    <File md5="C1EAD69366F0D54E676F44ECCC82D131" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_48.dds</File>
+    <File md5="D0AEC66E6D4A481EE52CF068ACBB4483" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_64.dds</File>
+    <File md5="E84E4B75E479F44D4B5A87F78564200A" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_80.dds</File>
     <File md5="D5430CBDBBA25FCEB844F9B55C654EA1" import="1">TheCarapaceDominion/Lua/D025_Gameplay.lua</File>
     <File md5="74441BB693985233843F9FCB1DC04C5C" import="0">TheCarapaceDominion/Lua/D025_Gameplay.xml</File>
     <File md5="29C7EC74032E86AD5CBEFEF61F16630C" import="0">TheCarapaceDominion/README.md</File>
@@ -298,6 +441,15 @@
     <File md5="3FEC2FC436BDB2E23771A903AA661EE1" import="1">TheCartographersOfNowhere/Art/CWC3_D031_ALPHA_48.dds</File>
     <File md5="9D17D28F0785911B47A5E325A6326CCC" import="1">TheCartographersOfNowhere/Art/CWC3_D031_ALPHA_64.dds</File>
     <File md5="BDFF697308FFAFBD91E21E342C0B4F4C" import="1">TheCartographersOfNowhere/Art/CWC3_D031_ALPHA_80.dds</File>
+    <File md5="506AC23447A86138223F5431C995F174" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_128.dds</File>
+    <File md5="A8C48D8F2790ECCB80FFDDF1EAFF280E" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_16.dds</File>
+    <File md5="2E1597019280B2D21B81762610DF4456" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_24.dds</File>
+    <File md5="731A7E9A59820BBE8C7ECBA7C484EE92" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_256.dds</File>
+    <File md5="F2E670548360F2ED817C15D2ACBC859A" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_32.dds</File>
+    <File md5="6E9C15D1B6DD9E77C5203123FC86BDDE" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_45.dds</File>
+    <File md5="B4C6DB3388DD3053EA95D354809556BF" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_48.dds</File>
+    <File md5="995B0F47C6AE3F0F6E37D0279276F17D" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_64.dds</File>
+    <File md5="E8165C61C71EBF53BD73A33448A4DB18" import="1">TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_80.dds</File>
     <File md5="BAD05199DBEBC99CBB1F506B3F0FF1F1" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_128.dds</File>
     <File md5="F6F2796FB67AFCFD1258E64C428E8F5F" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_16.dds</File>
     <File md5="2CAA9B918AA07EA390D1B31C5FC9050B" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_24.dds</File>
@@ -307,6 +459,28 @@
     <File md5="12EC0EDE1F22B4006DE944EB34837385" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_48.dds</File>
     <File md5="9905A4719856EF370DA295C2550AF830" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_64.dds</File>
     <File md5="E1468A2845BB73722CC230BFAC81D3E4" import="1">TheCartographersOfNowhere/Art/CWC3_D031_CIV_80.dds</File>
+    <File md5="073F8D2AC22C28ED3E35705BA4B73A77" import="1">TheCartographersOfNowhere/Art/CWC3_D031_Dawn.dds</File>
+    <File md5="0202D710E5B9C626276DE054B00E44AD" import="1">TheCartographersOfNowhere/Art/CWC3_D031_Diplomacy.dds</File>
+    <File md5="71F7C17D8314E56B36DD53E0F044D3D5" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_128.dds</File>
+    <File md5="AF306A740619B5F172CD7386D711FBB5" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_16.dds</File>
+    <File md5="62B0CFAED609810C07CD3C9A4C366CAF" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_24.dds</File>
+    <File md5="47207BD9423955345A20C74B8BB38A98" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_256.dds</File>
+    <File md5="15B7F696995EBC38EAA99873FD7E37A0" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_32.dds</File>
+    <File md5="7555ACF64E0CB606638E5429CCCCE118" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_45.dds</File>
+    <File md5="132E7C444407C15FD77FF708D1EFA5B2" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_48.dds</File>
+    <File md5="FEDD1710DBE3F1FE0B44DDDBBB8DC0C2" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_64.dds</File>
+    <File md5="4510C537BC0B5C0D0B7BE85CE92F3E8B" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LEADER_80.dds</File>
+    <File md5="FA44ECB7751D499E60BEB0B843FFC2C0" import="1">TheCartographersOfNowhere/Art/CWC3_D031_LeaderScene.xml</File>
+    <File md5="03B804F065BE73A273731319CF9B8E15" import="1">TheCartographersOfNowhere/Art/CWC3_D031_Map.dds</File>
+    <File md5="4E3F95B80A8DA36722BB54F7B9A05080" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_128.dds</File>
+    <File md5="E1944EEC0AC14CACD21D2351E0524020" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_16.dds</File>
+    <File md5="0B14C5A4F6F03301029A8674D8BC4AF9" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_24.dds</File>
+    <File md5="0D0C25CF9F1737128483963EC50EF786" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_256.dds</File>
+    <File md5="98446E27E7AFFD96A57AB67D7A32A332" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_32.dds</File>
+    <File md5="65AB2D2A7913F4A9C067C4ACEB489F23" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_45.dds</File>
+    <File md5="4E695F1E03B6BB319566997CA23358BB" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_48.dds</File>
+    <File md5="D44C0847F699D63898F5A6187C7AC3D3" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_64.dds</File>
+    <File md5="B15E676AEC9AFBA2B691B1009F0EC074" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_80.dds</File>
     <File md5="3239B39E860CE31F2FC872D4E87D4A1D" import="1">TheCartographersOfNowhere/Lua/D031_Gameplay.lua</File>
     <File md5="FBF8C4147B6E18A43ED6364324F77E85" import="0">TheCartographersOfNowhere/Lua/D031_Gameplay.xml</File>
     <File md5="E62BB2FD1865E5432FA735B11F251C20" import="0">TheCartographersOfNowhere/README.md</File>
@@ -325,6 +499,15 @@
     <File md5="4A5DE37A53E653FD3D1F6CFDC04FE1CA" import="1">TheChachapoya/Art/CWC3_D034_ALPHA_48.dds</File>
     <File md5="AC36A3344C7D120147393CEA4E2EE157" import="1">TheChachapoya/Art/CWC3_D034_ALPHA_64.dds</File>
     <File md5="12F70E46E20137CEE97E019A3A48637B" import="1">TheChachapoya/Art/CWC3_D034_ALPHA_80.dds</File>
+    <File md5="C427BA82354A628E9D03095EE5E6495F" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_128.dds</File>
+    <File md5="CD3F514FAE1E4AF3644847F35E743A4A" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_16.dds</File>
+    <File md5="9188DE9F198A5D571FC3092C1DEBF427" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_24.dds</File>
+    <File md5="5652B06A2B01188C6193ECE717D9CF91" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_256.dds</File>
+    <File md5="4108A2321E372096E6DA6656F115B7B1" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_32.dds</File>
+    <File md5="B5B3D69D8A6668CACB593A3DC0A9C871" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_45.dds</File>
+    <File md5="438797CE423D8CB60BF114F7C00B177E" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_48.dds</File>
+    <File md5="164B5982AFE834360FABEA1185D8BE3C" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_64.dds</File>
+    <File md5="9B1C0E45786C45706A5BE74B5F707479" import="1">TheChachapoya/Art/CWC3_D034_BUILDING_80.dds</File>
     <File md5="51B712B66B530D9456118E9BE27E3C70" import="1">TheChachapoya/Art/CWC3_D034_CIV_128.dds</File>
     <File md5="DCF9C08D9CDF04222DB6102B2AE6FBB6" import="1">TheChachapoya/Art/CWC3_D034_CIV_16.dds</File>
     <File md5="1E9B8BEF131C01D52DB8A99426283F2C" import="1">TheChachapoya/Art/CWC3_D034_CIV_24.dds</File>
@@ -334,6 +517,28 @@
     <File md5="818C4A705877CA0828F09598FADD1807" import="1">TheChachapoya/Art/CWC3_D034_CIV_48.dds</File>
     <File md5="49622DFF52A68B5B9E710DFBD4F92990" import="1">TheChachapoya/Art/CWC3_D034_CIV_64.dds</File>
     <File md5="94495CE00163EE9C2E20C625A1C8B7C2" import="1">TheChachapoya/Art/CWC3_D034_CIV_80.dds</File>
+    <File md5="EECD902862100E00FF650BC92BCFF4F1" import="1">TheChachapoya/Art/CWC3_D034_Dawn.dds</File>
+    <File md5="D7B34ACDA47AD453E7D40FAA6B546F68" import="1">TheChachapoya/Art/CWC3_D034_Diplomacy.dds</File>
+    <File md5="61E1AEEA5B228B55A1AB5981B12DCF7F" import="1">TheChachapoya/Art/CWC3_D034_LEADER_128.dds</File>
+    <File md5="C7825EF41379B5B3FCB625B1867435C8" import="1">TheChachapoya/Art/CWC3_D034_LEADER_16.dds</File>
+    <File md5="06F0BDF4588A69D876FD809185BEFD33" import="1">TheChachapoya/Art/CWC3_D034_LEADER_24.dds</File>
+    <File md5="EEDB865E053D53517B23D71B19BBE47B" import="1">TheChachapoya/Art/CWC3_D034_LEADER_256.dds</File>
+    <File md5="A9E9A2235A2EECC9C62F9007D7B5FE59" import="1">TheChachapoya/Art/CWC3_D034_LEADER_32.dds</File>
+    <File md5="50F89F7334E61DAFEB406922E0B8383F" import="1">TheChachapoya/Art/CWC3_D034_LEADER_45.dds</File>
+    <File md5="CDDA1C9D26836752CEF5B1A2CA3C73D3" import="1">TheChachapoya/Art/CWC3_D034_LEADER_48.dds</File>
+    <File md5="9077C70B169BE613C6C3E451498F0C27" import="1">TheChachapoya/Art/CWC3_D034_LEADER_64.dds</File>
+    <File md5="7180E5AAE1F411A21A7FE769216DD94E" import="1">TheChachapoya/Art/CWC3_D034_LEADER_80.dds</File>
+    <File md5="1D7362F693FCA26916EFCE6F4B31B067" import="1">TheChachapoya/Art/CWC3_D034_LeaderScene.xml</File>
+    <File md5="ED0CDEAED145960DBF9DE25F6F6ED381" import="1">TheChachapoya/Art/CWC3_D034_Map.dds</File>
+    <File md5="23D7865327A25EBCC9AE4248255FACB2" import="1">TheChachapoya/Art/CWC3_D034_UNIT_128.dds</File>
+    <File md5="401FB343ED7355BA10460AB81F4D7089" import="1">TheChachapoya/Art/CWC3_D034_UNIT_16.dds</File>
+    <File md5="C162F1C24A65BC3A581B4DB7B92D2B6E" import="1">TheChachapoya/Art/CWC3_D034_UNIT_24.dds</File>
+    <File md5="18E24A05B0D04C46A38E2C11C6D3BD9A" import="1">TheChachapoya/Art/CWC3_D034_UNIT_256.dds</File>
+    <File md5="09723CDC8177FB0337F49197078C637B" import="1">TheChachapoya/Art/CWC3_D034_UNIT_32.dds</File>
+    <File md5="3A855B6D90E99825B49C5F9494A49805" import="1">TheChachapoya/Art/CWC3_D034_UNIT_45.dds</File>
+    <File md5="6AA48A4D774BB203E0A1041D1B7F99A0" import="1">TheChachapoya/Art/CWC3_D034_UNIT_48.dds</File>
+    <File md5="46DBE3335BDE408DEB62C7BE77E30EBB" import="1">TheChachapoya/Art/CWC3_D034_UNIT_64.dds</File>
+    <File md5="704E363DCF661F67D5FCC7D0D4684F21" import="1">TheChachapoya/Art/CWC3_D034_UNIT_80.dds</File>
     <File md5="A04792253EAD4EC4853CA4E4E6473C7D" import="1">TheChachapoya/Lua/D034_Gameplay.lua</File>
     <File md5="BD8EDA978B0E30A606123F0FBE117BD7" import="0">TheChachapoya/Lua/D034_Gameplay.xml</File>
     <File md5="1E3BDF2589131A3DA10264E7A61CA4F4" import="0">TheChachapoya/README.md</File>
@@ -420,6 +625,15 @@
     <File md5="7F11DB3A340028475BD26A82782B2D06" import="1">TheFogboundRepublic/Art/CWC3_D027_ALPHA_48.dds</File>
     <File md5="1ADF160F866F0E4A30404C557CA62928" import="1">TheFogboundRepublic/Art/CWC3_D027_ALPHA_64.dds</File>
     <File md5="9A8D9ECD99B2F0BBD637BB48FB4A1091" import="1">TheFogboundRepublic/Art/CWC3_D027_ALPHA_80.dds</File>
+    <File md5="9238075921DE2A935598E918869B67B4" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_128.dds</File>
+    <File md5="DF05B91692544D36F50BAB2A50D63B25" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_16.dds</File>
+    <File md5="86E9CA7FA90594C5BA358ECEF67354B6" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_24.dds</File>
+    <File md5="56EFB9FDB2FC37CCC145793C87BBE004" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_256.dds</File>
+    <File md5="6A10D0ECAF9395B770B69AD134769F7B" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_32.dds</File>
+    <File md5="2E57A7EC8096A89897E5D0B872641F92" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_45.dds</File>
+    <File md5="C5FCB7CAF756537D414756AF50EF8E4E" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_48.dds</File>
+    <File md5="584C064FA81565715F4E5CFA4515ADDD" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_64.dds</File>
+    <File md5="6AB5A5088A8F088411113B6CE3BD93F6" import="1">TheFogboundRepublic/Art/CWC3_D027_BUILDING_80.dds</File>
     <File md5="47148778C53A2E28E790AA31964DB3C1" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_128.dds</File>
     <File md5="1D48FE0D6F7F34D4C0C1EDD2D3D26C96" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_16.dds</File>
     <File md5="887FE96FDCAB2171BA9DCD7D261FEB8E" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_24.dds</File>
@@ -429,6 +643,28 @@
     <File md5="619291664ABFC77DF1F8E528275CECA3" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_48.dds</File>
     <File md5="5A14950D7FAB8D753F25C3A000472E38" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_64.dds</File>
     <File md5="0A7B711B262B184216577B740F0FF787" import="1">TheFogboundRepublic/Art/CWC3_D027_CIV_80.dds</File>
+    <File md5="483FFB255E64D5BD0ED65BF2FA48560F" import="1">TheFogboundRepublic/Art/CWC3_D027_Dawn.dds</File>
+    <File md5="5DE1003A85B24A1A775DCFC7A9DA6D81" import="1">TheFogboundRepublic/Art/CWC3_D027_Diplomacy.dds</File>
+    <File md5="C08B6678A195B069754A52C51494C7A9" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_128.dds</File>
+    <File md5="FEC40E4578761A19A8E479CD6CF33BC0" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_16.dds</File>
+    <File md5="61557E3B561B67F307CAB93FD42DE20B" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_24.dds</File>
+    <File md5="A10D3CC494E27F67B8F51DE9ECC69221" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_256.dds</File>
+    <File md5="8A53C7CEED916F048391FDF0D2207183" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_32.dds</File>
+    <File md5="FBFC52B9295044DECED6618776C34FE0" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_45.dds</File>
+    <File md5="819042A6A8BF82B1C1A29E797CB4E586" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_48.dds</File>
+    <File md5="5AECB62C5C8DF595288FE64FD3456BE0" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_64.dds</File>
+    <File md5="3B9674227197B5D2E4C2CD9E87E5F550" import="1">TheFogboundRepublic/Art/CWC3_D027_LEADER_80.dds</File>
+    <File md5="076D7988132A0EE009D276216407BE12" import="1">TheFogboundRepublic/Art/CWC3_D027_LeaderScene.xml</File>
+    <File md5="5E77B0E3C57CA9B9593163C9D4D59577" import="1">TheFogboundRepublic/Art/CWC3_D027_Map.dds</File>
+    <File md5="4B64B7D8B07D9394E3AB89333F48C184" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_128.dds</File>
+    <File md5="F1B9EF9C686E20510FF412D94DF9E9FC" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_16.dds</File>
+    <File md5="3A2F59D7ACF742F4E59A488F5BB3B8DC" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_24.dds</File>
+    <File md5="C2A7B7F5B30E7E908443EEC803C6080E" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_256.dds</File>
+    <File md5="1C4D1421497FC4677890CA3DE90B6FB9" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_32.dds</File>
+    <File md5="FB617B6058CF33CD92C8647ED073FA0F" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_45.dds</File>
+    <File md5="5FE496CAB01DCDC6068626FB1D5F5E59" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_48.dds</File>
+    <File md5="0750D86B372376BF8CEE8E0D29AF3013" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_64.dds</File>
+    <File md5="9E8953CFDF5733E20233EFE5BEF8571D" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_80.dds</File>
     <File md5="2B534287CB33EF96EB2953D09CC42BCC" import="1">TheFogboundRepublic/Lua/D027_Gameplay.lua</File>
     <File md5="FBD38334F1E23FC00F9B8DD0B97BF80E" import="0">TheFogboundRepublic/Lua/D027_Gameplay.xml</File>
     <File md5="729585B731FD97AAF3270683CE9CBCC9" import="0">TheFogboundRepublic/README.md</File>
@@ -447,6 +683,15 @@
     <File md5="86E6AE7FD7A85DDE692C0B3CBC883C0D" import="1">TheGlassOrchard/Art/CWC3_D030_ALPHA_48.dds</File>
     <File md5="67BAAD8B95956AE0256FF97E05AB845E" import="1">TheGlassOrchard/Art/CWC3_D030_ALPHA_64.dds</File>
     <File md5="C5A355A0931817FEE997A4695C401321" import="1">TheGlassOrchard/Art/CWC3_D030_ALPHA_80.dds</File>
+    <File md5="0B1E05E83E5A00858EDAD907A03F1A87" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_128.dds</File>
+    <File md5="5A9CC0D8547AAA24C95407070D7CEA94" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_16.dds</File>
+    <File md5="96FD4066BC03A2E1BF163BDFC406F102" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_24.dds</File>
+    <File md5="F80CF3C66FA6243E42FA48B87E093131" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_256.dds</File>
+    <File md5="2007F3CC75BCF823E137C663DC97B4ED" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_32.dds</File>
+    <File md5="F2C0A6C7302B75E5BD36DCD67CEE7B14" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_45.dds</File>
+    <File md5="C2D40917B1815FAE5A3355010A794E96" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_48.dds</File>
+    <File md5="316FA697EC781B689FE9118149881F06" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_64.dds</File>
+    <File md5="377B4BBB48C26F2DDF8985AF42828367" import="1">TheGlassOrchard/Art/CWC3_D030_BUILDING_80.dds</File>
     <File md5="774DBAAAF512D86DFF6C0C3862226C21" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_128.dds</File>
     <File md5="1EFC879438EE919E1435D947364037F1" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_16.dds</File>
     <File md5="312C421807C6917C4BA437506EDF93E8" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_24.dds</File>
@@ -456,6 +701,28 @@
     <File md5="675ABB634F8FEE0118C8DBABBC496454" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_48.dds</File>
     <File md5="C2F74EE8240215EF85B1778E3FC9FF0A" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_64.dds</File>
     <File md5="B33E74D0BD0DAB376CA344C505A3E1EA" import="1">TheGlassOrchard/Art/CWC3_D030_CIV_80.dds</File>
+    <File md5="5963F853D23322535338C9306929BDAB" import="1">TheGlassOrchard/Art/CWC3_D030_Dawn.dds</File>
+    <File md5="37C0EE2113C91E66ABBF1E5E111D9A22" import="1">TheGlassOrchard/Art/CWC3_D030_Diplomacy.dds</File>
+    <File md5="981AA470D189FD34272E382BF317772B" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_128.dds</File>
+    <File md5="B8B777BD36CFD61ADA82FBCE41F40778" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_16.dds</File>
+    <File md5="3BD952DDB32A158B4372AB27C1E5EACA" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_24.dds</File>
+    <File md5="4D290DA90F3ECCA5F9CF310F997D23C8" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_256.dds</File>
+    <File md5="4089A688BE99427B0EBC09751ECA091D" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_32.dds</File>
+    <File md5="E771487689FA6227F0043EFFE51955F5" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_45.dds</File>
+    <File md5="7F6D58B3B6F4921ADE443CEA933B1936" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_48.dds</File>
+    <File md5="E09537519FF457823B55A49AE49981C8" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_64.dds</File>
+    <File md5="85023A304EF79A1982E84A5E4D0EC50A" import="1">TheGlassOrchard/Art/CWC3_D030_LEADER_80.dds</File>
+    <File md5="07B17D4886100E4A6C98F7B65DDC0BCA" import="1">TheGlassOrchard/Art/CWC3_D030_LeaderScene.xml</File>
+    <File md5="5F64B3D3D9C447DC6E764EDDC87C01CF" import="1">TheGlassOrchard/Art/CWC3_D030_Map.dds</File>
+    <File md5="5B184F9A14702583BDE904368EAC9B2C" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_128.dds</File>
+    <File md5="10C1EADB90C0C559B1FD3DFF0C73C39B" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_16.dds</File>
+    <File md5="14B08B4E5B6FCDB36B8C66D045737122" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_24.dds</File>
+    <File md5="B5B1FFA552347A2CA84EEF96772D4517" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_256.dds</File>
+    <File md5="F3F33E9C674EF7EFC89BCB1FBDC5A77B" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_32.dds</File>
+    <File md5="E017CB0F8593901C2EF3476BEEFADBEE" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_45.dds</File>
+    <File md5="F895CAAF51990CC953D7C99BF1374E14" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_48.dds</File>
+    <File md5="0BF5969941671ABB7A368FFD04C16445" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_64.dds</File>
+    <File md5="9373D544B73F6EC144975C2FD60D4F7A" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_80.dds</File>
     <File md5="ECDF9C96045B4FE4253C166FECC0338B" import="1">TheGlassOrchard/Lua/D030_Gameplay.lua</File>
     <File md5="82F99233AC3468C2BDC679678686B661" import="0">TheGlassOrchard/Lua/D030_Gameplay.xml</File>
     <File md5="C9517948DB63AAD02104EA2ED1C0F466" import="0">TheGlassOrchard/README.md</File>
@@ -474,6 +741,15 @@
     <File md5="66F7716BD85881A5BED4425ACDA1CCF8" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_ALPHA_48.dds</File>
     <File md5="C6EAD915F9421006227F8B547F0DCC45" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_ALPHA_64.dds</File>
     <File md5="5FC370B5E024B8325B9384E9869F97A3" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_ALPHA_80.dds</File>
+    <File md5="BC803389327B8C0474CF82E9539703A3" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_128.dds</File>
+    <File md5="95E0ED8C41A2E2CC7C83A804ED4E9879" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_16.dds</File>
+    <File md5="8FEE3A1989776BCC8944D66AD525E408" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_24.dds</File>
+    <File md5="8909ED629EB8E713D0BBA905AA7F4360" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_256.dds</File>
+    <File md5="507A8E0FAB4630507180972E572059B1" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_32.dds</File>
+    <File md5="D392B7AA68ED722CC4626DAC1FCE1141" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_45.dds</File>
+    <File md5="8724B277E45383E58B541E3ED8A4D67D" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_48.dds</File>
+    <File md5="1BCD576860BA0DD46DEF8696DDA86C2B" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_64.dds</File>
+    <File md5="3A70A0BAAA01655CCC3FCF1982006810" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_80.dds</File>
     <File md5="5395AE0E5E935E2EBC449FC769871558" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_128.dds</File>
     <File md5="D1914BCCE66E0991C3438EB4AEFDC059" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_16.dds</File>
     <File md5="F4EF1085B1FBE4772A0C1BCD84FEB1BA" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_24.dds</File>
@@ -483,6 +759,28 @@
     <File md5="18A0596736AD3CDA00001ABB57FF76CA" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_48.dds</File>
     <File md5="7B8E0293CFED846070175363A3189F56" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_64.dds</File>
     <File md5="0C7DFF885E544D3624B73A973C98A0FF" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_80.dds</File>
+    <File md5="A957ACF67BEFF18DB73C3FDF04A07B99" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Dawn.dds</File>
+    <File md5="10E5F6C4214E94789D903BA8A42B16F2" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Diplomacy.dds</File>
+    <File md5="57CBDF5BCC7F4A79D4654C8B2DE240A4" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_128.dds</File>
+    <File md5="4707014DCAC61D1F749C1817F8F48818" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_16.dds</File>
+    <File md5="C6181C33C64C249443EF5AAFA94D36D2" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_24.dds</File>
+    <File md5="137F8584BEC474F03E246BFE05A00FF4" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_256.dds</File>
+    <File md5="B0C28B1C9281A3AE2C6C70006A65C56A" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_32.dds</File>
+    <File md5="F827F2085A5B34EFA5F6EC2E95548FCE" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_45.dds</File>
+    <File md5="D9125AC3074C7360AF194E8CC22F1297" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_48.dds</File>
+    <File md5="7D588878AE4D00F85D7C4B89E6BCCE13" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_64.dds</File>
+    <File md5="AC97ECD4FB4045CCEFEF9F1E056DEE20" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_80.dds</File>
+    <File md5="BB9E8CCFC245B709D37B8329ACFED33A" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LeaderScene.xml</File>
+    <File md5="A5C2834416D97703F61E0CD1B9492C1E" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Map.dds</File>
+    <File md5="2F7B99B145F82E1AA68728344F2CEC21" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_128.dds</File>
+    <File md5="DEB0737A1682108E37AF74C30F376F8F" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_16.dds</File>
+    <File md5="E180D78F71FFCFC694F416B40982DC7F" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_24.dds</File>
+    <File md5="9636E8E9B26099A80F030F3B77D39152" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_256.dds</File>
+    <File md5="B44300A2C0F348FB0F0B2B73D0724BD1" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_32.dds</File>
+    <File md5="EBE236EF533704519B67C8417EEAD7FE" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_45.dds</File>
+    <File md5="1405B26848127BE2CDF4036AA96EC05D" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_48.dds</File>
+    <File md5="9CA07E611D2057D203C33153B9BA6B8A" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_64.dds</File>
+    <File md5="ABAA2572FAF2F08F8E8114F42A508197" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_80.dds</File>
     <File md5="4650B2632EA31E190938003573F4EC63" import="1">TheGrandDuchyOfFoldingChairs/Lua/D033_Gameplay.lua</File>
     <File md5="05E5C8F09C744265D44170B6711F5649" import="0">TheGrandDuchyOfFoldingChairs/Lua/D033_Gameplay.xml</File>
     <File md5="B2F8B9E2998057B2106986587399B3D4" import="0">TheGrandDuchyOfFoldingChairs/README.md</File>
@@ -492,6 +790,55 @@
     <File md5="D80A58948DD9FC15F3E2A6F6F7E5365E" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Text.sql</File>
     <File md5="A51A79B30FEBFA7C5B9EC9B28FCC36D0" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Units.sql</File>
     <File md5="E9476CEA2AE0CEE511836FABD1DDD813" import="0">TheGrandDuchyOfFoldingChairs/TESTING.md</File>
+    <File md5="F3CEC47367AD5CFD84EF9EC9887B29E4" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_128.dds</File>
+    <File md5="6A63E6F33F5CCB2B15ADD988B44D5E63" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_16.dds</File>
+    <File md5="C4A9F1B1226DB698A2C1AFD979E1B85D" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_24.dds</File>
+    <File md5="DCFB39C7573C6988EEFC339D34D796CA" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_256.dds</File>
+    <File md5="8A78EA415AB30FD506F18FF8FBF5CE52" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_32.dds</File>
+    <File md5="8DB0097F614337F55A77379201E80DF3" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_45.dds</File>
+    <File md5="0829AEDF69397712641E709B3146EF2C" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_48.dds</File>
+    <File md5="A3F202ED144EFE6CBFE6B6FC48C8892F" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_64.dds</File>
+    <File md5="3E54DDFE583F859337EAF70675DF1551" import="1">TheHollowChoir/Art/CWC3_CHOIR_ALPHA_80.dds</File>
+    <File md5="EF816B028B1C34347758D20E824203E6" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_128.dds</File>
+    <File md5="34EC377D96A4BA3F81B8122476EAAC6A" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_16.dds</File>
+    <File md5="A8D2D35DA23ABF2C878976F61B04E279" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_24.dds</File>
+    <File md5="1C026CBFEE8BDA1C96B29FC9D032D41C" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_256.dds</File>
+    <File md5="6AB4036336D123C2F05632906AC8C65A" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_32.dds</File>
+    <File md5="00B4F5A6FDDF664F2A775A49317696C8" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_45.dds</File>
+    <File md5="74E25EF78EE34D3AD4B4C5C6AA532D46" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_48.dds</File>
+    <File md5="BACD8300CB399574D269FA97697DBA0E" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_64.dds</File>
+    <File md5="570A83B11DFF1B71ACA6777B684B8A37" import="1">TheHollowChoir/Art/CWC3_CHOIR_BUILDING_80.dds</File>
+    <File md5="229166FD6FA59F53096CD55B4B333AED" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_128.dds</File>
+    <File md5="49A272E8E238A3434481C84F57ABE50F" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_16.dds</File>
+    <File md5="5930B6CCFD63C56A14BE19920F6ED16D" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_24.dds</File>
+    <File md5="BE8E818E21643DB3D72D5A993605BE35" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_256.dds</File>
+    <File md5="5BA50083D9DA44529F5809EE44666271" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_32.dds</File>
+    <File md5="9C23DEB23089B54437BB3AB7EBB788C5" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_45.dds</File>
+    <File md5="6CE06B1C7EE95DD6202670AB1C6ECA0C" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_48.dds</File>
+    <File md5="D8A502C719DA6D36CADFB3F95A79B285" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_64.dds</File>
+    <File md5="F74401EFF442CEC5E02751B7FA339881" import="1">TheHollowChoir/Art/CWC3_CHOIR_CIV_80.dds</File>
+    <File md5="12C9A32928B6D1E4D65B41ED2CE29D1B" import="1">TheHollowChoir/Art/CWC3_CHOIR_Dawn.dds</File>
+    <File md5="DED4EB64739FADA7784921A9C3A5FCB7" import="1">TheHollowChoir/Art/CWC3_CHOIR_Diplomacy.dds</File>
+    <File md5="5A9A132B3E0988D68CA55305D1433E2E" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_128.dds</File>
+    <File md5="C7952444DF2EC2F3BD66BA1FE0D93CA9" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_16.dds</File>
+    <File md5="69FFABAC377B7BE6DB0E247497E022D2" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_24.dds</File>
+    <File md5="3CE589CD3AB058A4C56998C1C77A1B71" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_256.dds</File>
+    <File md5="30232CFE8E02BCC91F7FA039773669B7" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_32.dds</File>
+    <File md5="3764D3890E440F4980118AD01A40203B" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_45.dds</File>
+    <File md5="E3DB528758864FBA785D2D4FA4F17D0C" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_48.dds</File>
+    <File md5="45ACE382CC8A0CD5CAF9AA233B01E5D4" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_64.dds</File>
+    <File md5="3F55556750AE13813FE017F70934DC2B" import="1">TheHollowChoir/Art/CWC3_CHOIR_LEADER_80.dds</File>
+    <File md5="C4F84B1D2F025F9AAE5DECE4A87ABEFD" import="1">TheHollowChoir/Art/CWC3_CHOIR_LeaderScene.xml</File>
+    <File md5="7F5BC04DC7335794200FCEBBA4A7F5E1" import="1">TheHollowChoir/Art/CWC3_CHOIR_Map.dds</File>
+    <File md5="AB993EE3BE0DA31F82000D865EAA1E05" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_128.dds</File>
+    <File md5="FC6818D19A2165124A9CB9C5610A135E" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_16.dds</File>
+    <File md5="11CE30D4089D83DA5596686D587A0FFA" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_24.dds</File>
+    <File md5="0C98427BFFAE4B818C9E1232AFEF88F5" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_256.dds</File>
+    <File md5="F30F8B7B9F0185507EA8F4C3754C351A" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_32.dds</File>
+    <File md5="8559ADA74AC98423F6F3618A0B03F06F" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_45.dds</File>
+    <File md5="8AB75581D2C8DFA31D297880B534BCDC" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_48.dds</File>
+    <File md5="894C4B0E85340596CF5654701F3FD8E9" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_64.dds</File>
+    <File md5="9860FB3B85C585A06787585269F0072F" import="1">TheHollowChoir/Art/CWC3_CHOIR_UNIT_80.dds</File>
     <File md5="ADDBDA99B3C60FB3303EE3D8CC77D63E" import="1">TheHollowChoir/Lua/CWC3_Choir.lua</File>
     <File md5="FA0E3A0145EBA03EDFB536E49DEC246D" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
@@ -577,6 +924,15 @@
     <File md5="691D8C1672C2D309DF4D585E8C174AA4" import="1">TheLichenCompact/Art/CWC3_D029_ALPHA_48.dds</File>
     <File md5="A5EDA459AFDF575E213BA03BA068FF24" import="1">TheLichenCompact/Art/CWC3_D029_ALPHA_64.dds</File>
     <File md5="1D5A5BA31EFC059553969C4266C9F555" import="1">TheLichenCompact/Art/CWC3_D029_ALPHA_80.dds</File>
+    <File md5="75F7133D5BEC592C22790AEF5C6D47BD" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_128.dds</File>
+    <File md5="49DFB256480BA6FC7FB44ECA231F0BBE" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_16.dds</File>
+    <File md5="00D1FBB723D0D55EF63B7E0D4F8A259E" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_24.dds</File>
+    <File md5="B36C19E302017DCF650BDE8AB214FD08" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_256.dds</File>
+    <File md5="1191EF2892783F03A5E7F3D1AA69931D" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_32.dds</File>
+    <File md5="005CC9C88D61B02097F00E096FC8BF62" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_45.dds</File>
+    <File md5="07E32BBC250AAE5371CA21A188E5FA85" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_48.dds</File>
+    <File md5="BD6979FDA5DDC6602E04BAE10640C163" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_64.dds</File>
+    <File md5="CFAA6E91F342407B398861881491DB8D" import="1">TheLichenCompact/Art/CWC3_D029_BUILDING_80.dds</File>
     <File md5="844F98AA5410BF1E2D7E9735CA7CD373" import="1">TheLichenCompact/Art/CWC3_D029_CIV_128.dds</File>
     <File md5="E3A6F8B0926862F0B3730439553AA956" import="1">TheLichenCompact/Art/CWC3_D029_CIV_16.dds</File>
     <File md5="FCD47A4E90D57892085FDC921CB6538D" import="1">TheLichenCompact/Art/CWC3_D029_CIV_24.dds</File>
@@ -586,6 +942,28 @@
     <File md5="D8B92E1F3A6BA7B320C2BFDEB51E280F" import="1">TheLichenCompact/Art/CWC3_D029_CIV_48.dds</File>
     <File md5="03A502F89648812F07F9D4E6499C30FA" import="1">TheLichenCompact/Art/CWC3_D029_CIV_64.dds</File>
     <File md5="C584F8458591CD7E63932C8EC6C5C2D1" import="1">TheLichenCompact/Art/CWC3_D029_CIV_80.dds</File>
+    <File md5="77657B64FF106E55A106EF92BD50B4C1" import="1">TheLichenCompact/Art/CWC3_D029_Dawn.dds</File>
+    <File md5="2273F8329D393E0E5670A358A77B300E" import="1">TheLichenCompact/Art/CWC3_D029_Diplomacy.dds</File>
+    <File md5="D8C89EFB4FEB2EA409FC34ABE7240590" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_128.dds</File>
+    <File md5="94E461E09C1E239BE0FF95667E4021D6" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_16.dds</File>
+    <File md5="C00C148374D6496D78B880148FC6E50C" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_24.dds</File>
+    <File md5="6C24EB02ABBE098FFEE0FCCA88823170" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_256.dds</File>
+    <File md5="799A5676278762AD13F938049FF0DB71" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_32.dds</File>
+    <File md5="FF678B0E2E225D9380AAF4A91A87D1F1" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_45.dds</File>
+    <File md5="652CC0353925FDD6F78D9E6E5A3A8D3A" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_48.dds</File>
+    <File md5="54814F8E7A820EF28E198A66001CF700" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_64.dds</File>
+    <File md5="827B6CEEE40DAB57209360D92A53E24D" import="1">TheLichenCompact/Art/CWC3_D029_LEADER_80.dds</File>
+    <File md5="A1649F69CDA5E8F427E183B4083FDD24" import="1">TheLichenCompact/Art/CWC3_D029_LeaderScene.xml</File>
+    <File md5="F48513204ACA283DF51E70D2011A244F" import="1">TheLichenCompact/Art/CWC3_D029_Map.dds</File>
+    <File md5="B8B5C52350F6A12B3027CD708F762172" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_128.dds</File>
+    <File md5="1BC25CC5BBBBF1116FA1BE1D1249D8CF" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_16.dds</File>
+    <File md5="9F38BA86C5C3DC280E3ED818A74B1602" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_24.dds</File>
+    <File md5="ED35F737783FA9674B6DAA047069B209" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_256.dds</File>
+    <File md5="00F3049321EF9EC248F29E484C302DA1" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_32.dds</File>
+    <File md5="85E1A4C1B696CAB262810588EC347205" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_45.dds</File>
+    <File md5="0B9692FD62A3C76F7B70D643789BB26F" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_48.dds</File>
+    <File md5="DA8C7BBAE221C686EF7136ECFC9F75FC" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_64.dds</File>
+    <File md5="2BC6BAA0C19E833FB5C0ED6C0C980E8F" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_80.dds</File>
     <File md5="595FF9C3DFCA6A3276ED21D2D59B60E6" import="1">TheLichenCompact/Lua/D029_Gameplay.lua</File>
     <File md5="1C5D1F21C012723B9EF4572C5CB4D3C5" import="0">TheLichenCompact/Lua/D029_Gameplay.xml</File>
     <File md5="F90ACE4855FDA30811F0CC76CF768C29" import="0">TheLichenCompact/README.md</File>
@@ -662,6 +1040,15 @@
     <File md5="25053F6EBC3672F041BAD6B076A8E7D5" import="1">TheMirrorboundRepublic/Art/CWC3_D022_ALPHA_48.dds</File>
     <File md5="F4B982B27195C4469834687B79007B49" import="1">TheMirrorboundRepublic/Art/CWC3_D022_ALPHA_64.dds</File>
     <File md5="20B9EB61965D294C1B22E92E98EC5E61" import="1">TheMirrorboundRepublic/Art/CWC3_D022_ALPHA_80.dds</File>
+    <File md5="12D7E3714CDFAFB3F545BF3A21AE35FA" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_128.dds</File>
+    <File md5="3992FFC93D0E49CB3E1569760562DFDB" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_16.dds</File>
+    <File md5="3B488FFF1B3D0F6BC02AB25EC3D0CBA5" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_24.dds</File>
+    <File md5="531AF4B93CC5CA2AC868E14FE5D2E41F" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_256.dds</File>
+    <File md5="F2613058AA5A110676D12AB5FB08349C" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_32.dds</File>
+    <File md5="CECF3B22E1C8803232ABAA70CED925F0" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_45.dds</File>
+    <File md5="27193CC327D30D4AD6E6D1AD1D49FC93" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_48.dds</File>
+    <File md5="F50946C5C08DF397ACC8950D4B886320" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_64.dds</File>
+    <File md5="CADF4D98B0AFFDD48BD8EEB7266BC908" import="1">TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_80.dds</File>
     <File md5="EAE3FB2BF23B385BEFE50377A1260C91" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_128.dds</File>
     <File md5="6D364D2C984A4E58E55391D0F91EAD57" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_16.dds</File>
     <File md5="4BAA9FB8788FB77974D85A50C6BCFA99" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_24.dds</File>
@@ -671,6 +1058,28 @@
     <File md5="B8566DCCF1DAAD5EE6B43C6B8ECDA97F" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_48.dds</File>
     <File md5="45200F061F98A19AEA05CEC73CC379FC" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_64.dds</File>
     <File md5="1A1154A8EFF5899BA23435084E9D0879" import="1">TheMirrorboundRepublic/Art/CWC3_D022_CIV_80.dds</File>
+    <File md5="5D73ECF1B5BC06F9CEA2FA35ABDBE17E" import="1">TheMirrorboundRepublic/Art/CWC3_D022_Dawn.dds</File>
+    <File md5="5807B2101F8FCBEE9F0309C01D7DE61D" import="1">TheMirrorboundRepublic/Art/CWC3_D022_Diplomacy.dds</File>
+    <File md5="74C8DD20B12907006AD8A50C71DFE028" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_128.dds</File>
+    <File md5="C9173B7BDD65329441B5EAEA34AE4863" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_16.dds</File>
+    <File md5="B183F5ACC775D5B010B81AFFC4AD4AAE" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_24.dds</File>
+    <File md5="1675FCD8C360249E28888C7EF7F67A3B" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_256.dds</File>
+    <File md5="AB3869ED30BB82EE36FB1CB41B95CC1C" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_32.dds</File>
+    <File md5="0A2191907BF438B3E592D5D68D491F01" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_45.dds</File>
+    <File md5="8F2B9A187357976E8DC263D36871C718" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_48.dds</File>
+    <File md5="2D36CE2F9ADD92243D1FE75CE1930961" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_64.dds</File>
+    <File md5="83C549760F4C25FA0723F602EB6BAB31" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LEADER_80.dds</File>
+    <File md5="44ACA51DC98C8C218D1C2BA0E4EC6F48" import="1">TheMirrorboundRepublic/Art/CWC3_D022_LeaderScene.xml</File>
+    <File md5="B5754A0E2B0E672573C1D721E9767688" import="1">TheMirrorboundRepublic/Art/CWC3_D022_Map.dds</File>
+    <File md5="DBD7C616137ADB9CB551D9D98FDCFA81" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_128.dds</File>
+    <File md5="CE7CCB815405E33D1763B078280F8AB8" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_16.dds</File>
+    <File md5="69D2C39028B7AB65740B7D853DF6415E" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_24.dds</File>
+    <File md5="C8CC9C61D91F4973BBE237E8917CE83A" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_256.dds</File>
+    <File md5="1A1875F74D38E5F21255130E7C3D6823" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_32.dds</File>
+    <File md5="57FF100CBA61604E3DC8F3FFC82A16FA" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_45.dds</File>
+    <File md5="AD1721ED02C8C368FE0F6098ABBE7FEB" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_48.dds</File>
+    <File md5="229AFB229287F385594A2C7A0027C07E" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_64.dds</File>
+    <File md5="50F041A10E3661C3B40CF28626E6C590" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_80.dds</File>
     <File md5="2C8251C3ABF0F6AE04A645ABB2EEF5DE" import="1">TheMirrorboundRepublic/Lua/D022_Gameplay.lua</File>
     <File md5="BD7B67784E710A1E3B8A482E2444D406" import="0">TheMirrorboundRepublic/Lua/D022_Gameplay.xml</File>
     <File md5="311EEEBFA2017D292D1B621A2A46AE29" import="0">TheMirrorboundRepublic/README.md</File>
@@ -689,6 +1098,15 @@
     <File md5="862341627A360217C94526F28079CEBC" import="1">TheMuiscaConfederation/Art/CWC3_D032_ALPHA_48.dds</File>
     <File md5="52B6500E0211AD0A8592F1B275D4E533" import="1">TheMuiscaConfederation/Art/CWC3_D032_ALPHA_64.dds</File>
     <File md5="618F5A325D78EC0C4D9BFBE1CC050E1F" import="1">TheMuiscaConfederation/Art/CWC3_D032_ALPHA_80.dds</File>
+    <File md5="5D854A86984C90872F35955C2F49AB95" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_128.dds</File>
+    <File md5="2697C404B406AE7DE25882644BCCA64A" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_16.dds</File>
+    <File md5="E95C9B787DDBC64A1D68C14F7F717B76" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_24.dds</File>
+    <File md5="5DE82338B702DDF0BAF20A33B3DA769E" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_256.dds</File>
+    <File md5="F2FA50D541EE74FA57C297B9759E0485" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_32.dds</File>
+    <File md5="57B21210DF53AA881CCC7B8C07A32212" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_45.dds</File>
+    <File md5="B7E9ADFC82ED5D073CE40F4376682899" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_48.dds</File>
+    <File md5="B03078F4C55F19C4E511F30463A2D49D" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_64.dds</File>
+    <File md5="D30B2D0C58F57A49A10576C43CC2E148" import="1">TheMuiscaConfederation/Art/CWC3_D032_BUILDING_80.dds</File>
     <File md5="4762A0451E5A6CD02CA9D4C422E46105" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_128.dds</File>
     <File md5="CAD9CBE35F314616B21846CAC781520C" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_16.dds</File>
     <File md5="6A0336F1F35BFF1FE063A1B45ADAC50B" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_24.dds</File>
@@ -698,6 +1116,28 @@
     <File md5="D47FA36404ED9416F4FB17B6B8CB1953" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_48.dds</File>
     <File md5="7F2CF45CF88C2CE88084299B048EFE86" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_64.dds</File>
     <File md5="A24ECDB13F542BD6157890E1FF694FAB" import="1">TheMuiscaConfederation/Art/CWC3_D032_CIV_80.dds</File>
+    <File md5="A38EAF6D3C61589F0C2DCE6E7FEB8727" import="1">TheMuiscaConfederation/Art/CWC3_D032_Dawn.dds</File>
+    <File md5="61FBFEE857FD27361AC6D1A5223AF9F3" import="1">TheMuiscaConfederation/Art/CWC3_D032_Diplomacy.dds</File>
+    <File md5="9E6052E24386C47282C82CBF196AF4FB" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_128.dds</File>
+    <File md5="E10D5ABC9BE3132A7D4ACA5A64024103" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_16.dds</File>
+    <File md5="78E0B0DEBD54B208FCA7EF2059F5F9B4" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_24.dds</File>
+    <File md5="0BCCFE2421BEFFEE0F0EDBB84BABFB09" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_256.dds</File>
+    <File md5="41EFBA97AFEA67CA1D7FA5BE3C636153" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_32.dds</File>
+    <File md5="9F6084620DD9D5B0580B19EDF910B17E" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_45.dds</File>
+    <File md5="50224AC57BDF64E1A35BD70795180A69" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_48.dds</File>
+    <File md5="CB8A160662022307D0901C9EF2BB3DE7" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_64.dds</File>
+    <File md5="35D203FC2845638AAB656099C3BF94A7" import="1">TheMuiscaConfederation/Art/CWC3_D032_LEADER_80.dds</File>
+    <File md5="E2F048186690A4149DA8CDAA1292C160" import="1">TheMuiscaConfederation/Art/CWC3_D032_LeaderScene.xml</File>
+    <File md5="3E74E09342F952A64657A5BCD7449B8A" import="1">TheMuiscaConfederation/Art/CWC3_D032_Map.dds</File>
+    <File md5="97B38E5131ACE9CB4EA753CCD848D84E" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_128.dds</File>
+    <File md5="689DF4EC2C8CBD420A08E642993377F2" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_16.dds</File>
+    <File md5="CE559DBC2FCA8319D65CECDABC498ACF" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_24.dds</File>
+    <File md5="2D8F0195ABDCA80B47B7F844601D9307" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_256.dds</File>
+    <File md5="AA88A362A41A13F1C3B7456CA97EC8CC" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_32.dds</File>
+    <File md5="2685C7E9A239164541BC36951DEC5ED9" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_45.dds</File>
+    <File md5="9114127D681DCCA189FB6AFB35220666" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_48.dds</File>
+    <File md5="116B3FC5DC8748A76BAC5B030297E443" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_64.dds</File>
+    <File md5="ECBDF18CF10696FEA692E8106CE349C4" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_80.dds</File>
     <File md5="3D7B51871099C53C9761E0411ED91F00" import="1">TheMuiscaConfederation/Lua/D032_Gameplay.lua</File>
     <File md5="CCDECDA99DC7B92D304308B48C5E1F56" import="0">TheMuiscaConfederation/Lua/D032_Gameplay.xml</File>
     <File md5="1B79FE7C3907A5C5821809A92D2B670B" import="0">TheMuiscaConfederation/README.md</File>
@@ -716,6 +1156,15 @@
     <File md5="D5F17F9C9396C304332BC3D2EAB8230C" import="1">TheOctopusParliament/Art/CWC3_D026_ALPHA_48.dds</File>
     <File md5="F95634A946560E4231A41E9992F8DC43" import="1">TheOctopusParliament/Art/CWC3_D026_ALPHA_64.dds</File>
     <File md5="8C0139E20CA7F5EF83CBEDADE87C8788" import="1">TheOctopusParliament/Art/CWC3_D026_ALPHA_80.dds</File>
+    <File md5="E517FCEFC55E6B4CF106C741A3BF06CE" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_128.dds</File>
+    <File md5="D085F6A37EE334FED27A2621B5CCC77A" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_16.dds</File>
+    <File md5="B4179922B99E0A640E5E0A8BCE6658A6" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_24.dds</File>
+    <File md5="755C6517E02FB3D04119749129806308" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_256.dds</File>
+    <File md5="468710E5EECB01877B0DCE34856C22D4" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_32.dds</File>
+    <File md5="0D3E531CAE2441A4768263614F1C0EDE" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_45.dds</File>
+    <File md5="160C3907BFB32E2B32A215E864D292C8" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_48.dds</File>
+    <File md5="E93B0A91ABC965AB18E00284A727D72F" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_64.dds</File>
+    <File md5="C1358F444603EB3EE33B561580AEC43F" import="1">TheOctopusParliament/Art/CWC3_D026_BUILDING_80.dds</File>
     <File md5="65D9147290E38AADA6DA0E52E3BD7A45" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_128.dds</File>
     <File md5="BAFA17E13CD9C865E1B13ACBA831CB6C" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_16.dds</File>
     <File md5="3581C55B6DCFB65EAB0A23DDA2D2F69E" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_24.dds</File>
@@ -725,6 +1174,28 @@
     <File md5="A67941CD1447DFC98582722E9128A63A" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_48.dds</File>
     <File md5="6C114A41B587C9578C0E539F4305C55D" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_64.dds</File>
     <File md5="F9BC56EA2CEA06A4CC80BFB2696B02D1" import="1">TheOctopusParliament/Art/CWC3_D026_CIV_80.dds</File>
+    <File md5="94BE5ADB28B744C1BDDAEFDC27F399F4" import="1">TheOctopusParliament/Art/CWC3_D026_Dawn.dds</File>
+    <File md5="B1A279906C5C57E15CD14433D43CC689" import="1">TheOctopusParliament/Art/CWC3_D026_Diplomacy.dds</File>
+    <File md5="2B01790F778186F1B6AFC7D26B5CDF26" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_128.dds</File>
+    <File md5="0B043AEA84BBE157289ADF0632CF4388" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_16.dds</File>
+    <File md5="AA013F07E34552A8C9EA4600FA6D19F4" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_24.dds</File>
+    <File md5="E74E4C937A8750EB53EA82648F3ED730" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_256.dds</File>
+    <File md5="26EA722BEDCEB5FAAB1CA29B81B30CE8" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_32.dds</File>
+    <File md5="5EB3D994DC68FBB8799F567A8631CB3A" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_45.dds</File>
+    <File md5="D29823026398F1F31D56ECAC6E70B8BD" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_48.dds</File>
+    <File md5="A3C926DD1C6B2DAA173D920879CE89F7" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_64.dds</File>
+    <File md5="6B517630257F1E027D11FA80D5E92D7F" import="1">TheOctopusParliament/Art/CWC3_D026_LEADER_80.dds</File>
+    <File md5="79C43713A670520E00D7050FBFB5361D" import="1">TheOctopusParliament/Art/CWC3_D026_LeaderScene.xml</File>
+    <File md5="7BE7B1DDE5D1E689B9EDCC719CFC6FD5" import="1">TheOctopusParliament/Art/CWC3_D026_Map.dds</File>
+    <File md5="40E13D7739D2A2132A4F6C0CC70201E0" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_128.dds</File>
+    <File md5="3B5B7A54DB5D5440E83788C0C846215B" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_16.dds</File>
+    <File md5="A3B069DC8A9514F57140200C974CAD55" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_24.dds</File>
+    <File md5="BD4E298E13B6211BAED3D6F923603EA5" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_256.dds</File>
+    <File md5="A523BB7B862D5D43B6B1776E80061A59" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_32.dds</File>
+    <File md5="0D61C3A6CEEBF4B82B88E99C515E6C25" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_45.dds</File>
+    <File md5="5B92475684C48D3E9F8B538E0E61DB62" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_48.dds</File>
+    <File md5="62B3D8EFED4B404C43F9C4264B4C894B" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_64.dds</File>
+    <File md5="6C653FB33DCF2020C116EB70970FD0D3" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_80.dds</File>
     <File md5="14F303317ED457D381F49C18C3DBF3AF" import="1">TheOctopusParliament/Lua/D026_Gameplay.lua</File>
     <File md5="CB929C714417FA1C9374B3613F5455C4" import="0">TheOctopusParliament/Lua/D026_Gameplay.xml</File>
     <File md5="2BADAE76D442007100AC39A11078EE6C" import="0">TheOctopusParliament/README.md</File>
@@ -869,6 +1340,15 @@
     <File md5="F64520A44ACAC28A9A5B08395A09E903" import="1">ThePostalSovereignty/Art/CWC3_D024_ALPHA_48.dds</File>
     <File md5="1FF5364A81AFD46E21308EE7FF3EE35F" import="1">ThePostalSovereignty/Art/CWC3_D024_ALPHA_64.dds</File>
     <File md5="C135F5C6A704CD33D9FA7313BF31E64F" import="1">ThePostalSovereignty/Art/CWC3_D024_ALPHA_80.dds</File>
+    <File md5="E154CD810B820327AB07D9C120DA844F" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_128.dds</File>
+    <File md5="C5464E73F24B268FF58EBBCB43262A33" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_16.dds</File>
+    <File md5="5F55AF9BB321EF4072128E77FFD3B5C4" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_24.dds</File>
+    <File md5="84AF46119C447862A27AE35E9554ED49" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_256.dds</File>
+    <File md5="00835C5B2C8EF98B80264A40BD0323DF" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_32.dds</File>
+    <File md5="62B30CEF75D0702FE0A6805BC083705A" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_45.dds</File>
+    <File md5="4D41315E8D936164DD5A29146032A9AF" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_48.dds</File>
+    <File md5="1143B08ED9BBDEAD5689A05765524741" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_64.dds</File>
+    <File md5="C460859253A4090584DEE441E97B161D" import="1">ThePostalSovereignty/Art/CWC3_D024_BUILDING_80.dds</File>
     <File md5="ECAC41436B1B9A4C4A41EC33804B98B4" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_128.dds</File>
     <File md5="26B9C7C822C284F0900E86D812AF8E3F" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_16.dds</File>
     <File md5="923DCF4B311F95142C00F90AB6551167" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_24.dds</File>
@@ -878,6 +1358,28 @@
     <File md5="1EA0B1322F876051F30A16BF950DD15C" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_48.dds</File>
     <File md5="5BC4CF3F95C719ECFABFB66C3B8D5D10" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_64.dds</File>
     <File md5="570EB69C328512BDE0BE667A1F80DC35" import="1">ThePostalSovereignty/Art/CWC3_D024_CIV_80.dds</File>
+    <File md5="2584BFE3140F9A8151504F6859E2B487" import="1">ThePostalSovereignty/Art/CWC3_D024_Dawn.dds</File>
+    <File md5="768A044F0D6F290A081FB73BF2187356" import="1">ThePostalSovereignty/Art/CWC3_D024_Diplomacy.dds</File>
+    <File md5="5469BFF046F5056CF0E0A996B0FB9511" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_128.dds</File>
+    <File md5="FE7A405A97FB22AF3949FED0728002EF" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_16.dds</File>
+    <File md5="10B6D3A65801D34FD1B13AA3C3D35632" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_24.dds</File>
+    <File md5="C4DF158D9DFA80322B2B6BF3EC435F25" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_256.dds</File>
+    <File md5="0B5DE082E48AC798FC223F563B8C91D2" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_32.dds</File>
+    <File md5="3C18F7274B1AA7C289B624581881A45D" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_45.dds</File>
+    <File md5="7AC37B2AE2E730902E09C3AB89168F78" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_48.dds</File>
+    <File md5="C257ADC83F634C23BB10BBC09BF14DAF" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_64.dds</File>
+    <File md5="AB7FBBA4F1B43499906B89FA591AF2F9" import="1">ThePostalSovereignty/Art/CWC3_D024_LEADER_80.dds</File>
+    <File md5="8B31B60A9621AC2B4D3E23BAC71EC02A" import="1">ThePostalSovereignty/Art/CWC3_D024_LeaderScene.xml</File>
+    <File md5="E6E16A156BD0E3AB161753B493B7C5D5" import="1">ThePostalSovereignty/Art/CWC3_D024_Map.dds</File>
+    <File md5="1BDAED84A0A1951D82330CBC0D88B929" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_128.dds</File>
+    <File md5="8CAEB180024262D9D270CCE9312A7183" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_16.dds</File>
+    <File md5="BB4CBD5090697B797EDAB2A5CBA26B63" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_24.dds</File>
+    <File md5="DC4964AC0389FE0AAE354BCC549E0401" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_256.dds</File>
+    <File md5="D4C2FAACC3E1F0B523C1386637367396" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_32.dds</File>
+    <File md5="78F376962B16E936DD5F2699D7754C74" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_45.dds</File>
+    <File md5="5E5352F9B73BCF141660530A08F4CE0D" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_48.dds</File>
+    <File md5="8319AC32917E68B15724004DAD782BF5" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_64.dds</File>
+    <File md5="9BF36EE629D2310CA615482170576DFF" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_80.dds</File>
     <File md5="D9F477989DC8D25009776D43EAD9DAF2" import="1">ThePostalSovereignty/Lua/D024_Gameplay.lua</File>
     <File md5="361647414E06F92CB85F6831CCA5ED22" import="0">ThePostalSovereignty/Lua/D024_Gameplay.xml</File>
     <File md5="AA92062EC6BD51774C6E4296614910D2" import="0">ThePostalSovereignty/README.md</File>
@@ -958,6 +1460,15 @@
     <File md5="AC9F571421C98F77665DF6E3F149B6DD" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_48.dds</File>
     <File md5="CDF9D9B65932C7E78B2AE2CAE6CC4010" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_64.dds</File>
     <File md5="3AB68261EF7A9C9866BF42058C5CFA63" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_80.dds</File>
+    <File md5="52E366A71EE0DB29875D60E980BF6037" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_128.dds</File>
+    <File md5="0FAD755F6CEDCA0437BF21114975C56D" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_16.dds</File>
+    <File md5="44DBF327BB2642AB7E8A65A8437415F7" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_24.dds</File>
+    <File md5="B924E5209A9FD1091C292EB2D6D5127A" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_256.dds</File>
+    <File md5="06CFAD90296B0BC722E66D70D5148A78" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_32.dds</File>
+    <File md5="A994C7D24DEFD26FFCB575650E51D1E3" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_45.dds</File>
+    <File md5="A1209675949726CBF08BD6782B438D5F" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_48.dds</File>
+    <File md5="8629F4C253DC9DFEC50700F025B10149" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_64.dds</File>
+    <File md5="0AADCFF137067C5A9A4B311B70997C0D" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_80.dds</File>
     <File md5="E2479E13116A91D68A2354542CFD1373" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_128.dds</File>
     <File md5="84795A8B522C138FD20A1797615D1418" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_16.dds</File>
     <File md5="6093A414BEC4C73C0A2815AB0B341176" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_24.dds</File>
@@ -967,6 +1478,28 @@
     <File md5="579B1930D63E21109E6164404375F7F5" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_48.dds</File>
     <File md5="F00A11A329917863EEDE0716AFB1D12B" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_64.dds</File>
     <File md5="EE90AF922BB499BF75376F5701F57695" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_80.dds</File>
+    <File md5="FAC9A319C6C86D6BEFAA1BEAA219EE0A" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Dawn.dds</File>
+    <File md5="1E99FCE3076118382441AE7BD50182C2" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Diplomacy.dds</File>
+    <File md5="7835297C3433B63A1140466FD5DAC9D3" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_128.dds</File>
+    <File md5="635D82D70990290D47B34D7D492585B0" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_16.dds</File>
+    <File md5="0B9B2AFDCA40AAA4836667FF289E7652" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_24.dds</File>
+    <File md5="3289A1D832C91C7F4BFFD03798007FB3" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_256.dds</File>
+    <File md5="C0814AD523D9F9F7E14B35427FD48D69" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_32.dds</File>
+    <File md5="36E317792BB7A7C8786732F14F9F964B" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_45.dds</File>
+    <File md5="BFF62265368EA27322E5A7FE1CDDBBD1" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_48.dds</File>
+    <File md5="79AEE5E646E39E28AD5F39D1AC30E331" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_64.dds</File>
+    <File md5="42D36B8F1D2D57AB6B204195EAEF4B0D" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_80.dds</File>
+    <File md5="C2EE100A51F92A21CC5693AFC3C4D832" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LeaderScene.xml</File>
+    <File md5="D778C22D0B2DD91116D70D22855A13BD" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Map.dds</File>
+    <File md5="6347E841CED9F2352BBF53E9EE18DAED" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_128.dds</File>
+    <File md5="D9FD31818BBD8095DE44E829A554EBCB" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_16.dds</File>
+    <File md5="B65416EE190BF5AA6AD55C24081D42D7" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_24.dds</File>
+    <File md5="B9B4EBD70DB1C1EE5B9FD36AA2563093" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_256.dds</File>
+    <File md5="6B0A78E661196600149D1A1EF2EF1AD1" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_32.dds</File>
+    <File md5="7EDBDDF7A8BF7524A5AFC7AA9DC3236D" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_45.dds</File>
+    <File md5="519A216B416CDDE47095A76BE68C03ED" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_48.dds</File>
+    <File md5="2E88E5B1293DB51E6CEA04BFB20BB514" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_64.dds</File>
+    <File md5="FBA24C7A7D19330166C54CDB97040CC6" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_80.dds</File>
     <File md5="C9051D868CAAD6871FD68613E04828BE" import="1">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.lua</File>
     <File md5="1630AAD703D8B7C41FD6A19419168083" import="0">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.xml</File>
     <File md5="2ED0F7DC0ACE0F804DCE56D13FBE921E" import="0">TheRepublicOfBorrowedTomorrows/README.md</File>
@@ -1044,10 +1577,59 @@
     <File md5="9060A2DA62FA50E622AD45D46C44A07E" import="0">TheSaltRoadCompact/SQL/SALT_Text.sql</File>
     <File md5="7233BF1E4ABEB427DD98ACA238203E05" import="0">TheSaltRoadCompact/SQL/SALT_Units.sql</File>
     <File md5="1DF549E23C66EC241B2991FB9F4AC4D3" import="0">TheSaltRoadCompact/TESTING.md</File>
+    <File md5="2BE3041CD9305F4317BD48A5C3A9B4CA" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_128.dds</File>
+    <File md5="1423B9DE737EF44FE7CFF67CDE833234" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_16.dds</File>
+    <File md5="6A892E947CD58FA00484B50BEEDAE4C5" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_24.dds</File>
+    <File md5="6EFAB88D09C5DAD94BC6439DE0B9AD29" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_256.dds</File>
+    <File md5="A40EBEE2951B624000C82EA9A7C0C085" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_32.dds</File>
+    <File md5="ABC093DB3E92296778AE3692D9D58884" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_45.dds</File>
+    <File md5="C6B6AB5623F359AAF134F807FC6BB01A" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_48.dds</File>
+    <File md5="33E0EFD698D3F862965198234AF312DD" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_64.dds</File>
+    <File md5="28742DC720F4DE22902076CB6F829B3C" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_80.dds</File>
+    <File md5="E37234975C8BCF22FA94D5F55BDD96B4" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_128.dds</File>
+    <File md5="132CC0BB36EF6044A99AD0E44DCDC78B" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_16.dds</File>
+    <File md5="4D62EB549FCBF6785CDB66876DBFA8AE" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_24.dds</File>
+    <File md5="8F2CFE1244C130867DA27DF0A9F0C288" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_256.dds</File>
+    <File md5="A855499BC8DBE472F0E5955EA93B0DDB" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_32.dds</File>
+    <File md5="AB5810C97B6B16771C870DF8BC31D570" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_45.dds</File>
+    <File md5="79C6558EDEE941FDE522E46CEB9F1DD3" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_48.dds</File>
+    <File md5="EFFB318C907604ACEDF1BD0A304B2997" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_64.dds</File>
+    <File md5="B71B61ECF2D31CAAAD1E7DCB276B1065" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_80.dds</File>
+    <File md5="A312B303008601906E7D51BF85B78FE1" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_128.dds</File>
+    <File md5="C87E9C6387F1E60E4E74052140BE7DE5" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_16.dds</File>
+    <File md5="419D6FD96DAB1CF92EFDB6495859DCF1" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_24.dds</File>
+    <File md5="D72A23ACC15DF42EFAE46BEB3A3B67BD" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_256.dds</File>
+    <File md5="2CA8540E9DCAE61AF9F32477F411FFF7" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_32.dds</File>
+    <File md5="116B27CC9EDA0706E54AC47BEAA8B755" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_45.dds</File>
+    <File md5="4923DC8557B1A2E6ECB4943E4E44E83C" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_48.dds</File>
+    <File md5="1DE7BE810A09DF8DFF269FB7C2B53CB7" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_64.dds</File>
+    <File md5="BC6EDCB309600BC028439E906CE07186" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_80.dds</File>
+    <File md5="601EB440C0A995ED36174C2AEB5ECF28" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_Dawn.dds</File>
+    <File md5="B2F13AEC6E5A63B39CA45DE370D81376" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_Diplomacy.dds</File>
+    <File md5="C102CE5DB4777F20C17464192DE23A38" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_128.dds</File>
+    <File md5="659E771BD7912983D1E836D024C3BCED" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_16.dds</File>
+    <File md5="D653D7A1394B74C0FC57795541D63938" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_24.dds</File>
+    <File md5="3CCDBF2620C8613B14DC058C5CAACFDD" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_256.dds</File>
+    <File md5="F1D5CDA4EA6B1929AC27264DCB16D5B1" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_32.dds</File>
+    <File md5="8448D7F144A25BB228D3F6E0CD1C20AD" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_45.dds</File>
+    <File md5="E894F403B618573A2CA425F80C1D28C1" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_48.dds</File>
+    <File md5="F52A3CFF5270DAD9293C69C5AAE64D9A" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_64.dds</File>
+    <File md5="2B9EA67D1082BBF9861B43D927B38611" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_80.dds</File>
+    <File md5="B7434294F02C64D3FAC6D1627B5D0DBF" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_LeaderScene.xml</File>
+    <File md5="A9ED028DFC0EEC5B3DC810BB8312DD99" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_Map.dds</File>
+    <File md5="E5D8F34C32BA6FCD7290A0243059111E" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_128.dds</File>
+    <File md5="23377DC81A73DD10B66D7323C405A899" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_16.dds</File>
+    <File md5="CB9911CA573B3D2181E4808CF714A7C6" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_24.dds</File>
+    <File md5="2928C3BE79230B28FDEA9E8670577822" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_256.dds</File>
+    <File md5="3640AFE7A179C5C18B739CDDF1E56692" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_32.dds</File>
+    <File md5="981C8B6E1FCFFE9A9678915DFFE58934" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_45.dds</File>
+    <File md5="67025D8F03F759E4ACC21F72878DA739" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_48.dds</File>
+    <File md5="8AE8DE534B1BA7896BDD80C7503B00AA" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_64.dds</File>
+    <File md5="24D116044DF6F861F869B5C9C5BB4B23" import="1">TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_80.dds</File>
     <File md5="8599C797C503ABE1BD852452A3BCF7A4" import="1">TheSeventeenthSummer/Lua/CWC3_Summer.lua</File>
     <File md5="858C13C04DDBC1F7B81091B90CEBC51E" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
-    <File md5="39DADFB3BF358EBCEE79BB100F758157" import="0">TheSeventeenthSummer/README.md</File>
+    <File md5="6F2AD3B9D67F68CF6516F9E7E8FBC62B" import="0">TheSeventeenthSummer/README.md</File>
     <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>
     <File md5="831F4A8C3C9A9360A64E9CBF1F619958" import="0">TheSeventeenthSummer/SQL/Summer_Civilization.sql</File>
     <File md5="6F7DD387F01466F7F775D82A35170B4C" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>
@@ -1186,6 +1768,7 @@
       <UpdateDatabase>TheQu/SQL/Qu_Buildings.sql</UpdateDatabase>
       <UpdateDatabase>TheQu/SQL/Qu_Text.sql</UpdateDatabase>
       <UpdateDatabase>TheQu/SQL/Qu_Art.sql</UpdateDatabase>
+      <UpdateDatabase>Shared/SQL/CWC3_OriginalPresentation.sql</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>

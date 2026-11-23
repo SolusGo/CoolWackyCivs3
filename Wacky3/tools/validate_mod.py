@@ -167,6 +167,8 @@ def lua_checks(db):
 
 def package_checks(db):
     from validate_art_dimensions import audit
+    from build_original_presentation import ATLAS_COUNT, SCENE_COUNT
+    from validate_original_presentation import validate_presentation
     audit()
     from validate_modbuddy import validate_project
     RESULTS['modbuddy']=validate_project()
@@ -185,7 +187,7 @@ def package_checks(db):
     assert [e.get('file') for e in root.findall('EntryPoints/EntryPoint')]==[entry[0] for entry in ENTRIES]
     assert ENTRY==ENTRIES[0][0]
     assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==11+len(DAILY_ROSTER)
-    assert len(ORDER)==len(set(ORDER))==54+5*len(DAILY_ROSTER)
+    assert len(ORDER)==len(set(ORDER))==55+5*len(DAILY_ROSTER)
     imported=[]
     for name,entry in declared.items():
         path=ROOT/name
@@ -213,7 +215,7 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==379+18*len(DAILY_ROSTER)
+    assert len(textures)==379+18*len(DAILY_ROSTER)+ATLAS_COUNT
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
@@ -231,6 +233,7 @@ def package_checks(db):
     RESULTS['daily_art']=check_daily_art(db,declared)
     RESULTS['daily_expansion_art']=check_expansion_art(db,declared)
     RESULTS['qu_art']=validate_qu.check_art(db,declared)
+    RESULTS['original_presentation']=validate_presentation(db,declared)
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -249,7 +252,7 @@ def package_checks(db):
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
     texture_count=sum(p.suffix=='.dds' for p in files())
-    assert texture_count==460+18*len(DAILY_ROSTER)
+    assert texture_count==460+18*len(DAILY_ROSTER)+ATLAS_COUNT+SCENE_COUNT
     RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, {texture_count} DDS textures, alpha and full icon mip chains'
 
 def main():

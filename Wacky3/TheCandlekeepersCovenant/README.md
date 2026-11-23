@@ -45,7 +45,7 @@ Direct lifecycle hooks repair immediately. Missed scripted Hall removal, acquisi
 
 ## Vigil Keeper and Eternal Vigil
 
-Replaces the **active CP Pikeman**. All base scalars and 27 approved unit companions are cloned, preserving technology/resources/cost/maintenance/movement/strength/combat AI/obsolescence/upgrade requirements, native portrait, model and animations. The permanent, unchoosable **Eternal Vigil** promotion grants native **+1 Sight**, `LostWithUpgrade=0`.
+Replaces the **active CP Pikeman**. All base scalars and 27 approved unit companions are cloned, preserving technology/resources/cost/maintenance/movement/strength/combat AI/obsolescence/upgrade requirements, native model and animations. The permanent, unchoosable **Eternal Vigil** promotion grants native **+1 Sight**, `LostWithUpgrade=0`.
 
 A separate transient promotion has **DefenseMod=15**, **AttackMod=0**, **CombatPercent=0**, **FriendlyLandsModifier=0**. Lua toggles it using `Plot:IsFriendlyTerritory(unitOwner)`: own/team territory and native qualifying major/minor Open Borders qualify; neutral and enemy land do not. This is the engine's friendly rule, not the Ministry's stricter home-territory rule.
 
@@ -59,4 +59,4 @@ This is snapshot detection, not a claim of perfect destruction history. A city f
 
 Run `python tools/validate_covenant.py` and the complete `python tools/validate_mod.py` from Wacky3. The tests execute production SQL and Lua 5.1 with mocked engine objects; they do not execute the DLL or demonstrate native save serialization/economic timing. See [native checklist](../docs/CovenantTesting.md), [implementation report](../docs/CovenantImplementationReport.md) and [strategy](../docs/strategy/TheCandlekeepersCovenant.md).
 
-Original Seraphine and candle medallion PNG masters, built-in generation prompts and a visual review are retained in `Art/Sources/`. `tools/build_covenant_art.py` reproducibly creates 30 real DDS assets, including full mip chains, alpha flag, portraits, Dawn, fictional emblem map panel and static leader scene. Native Pikeman/Temple portraits and world art are intentionally retained. There is no animated custom leader or voice recording. Supplied Dawn and four diplomacy lines are registered without truncation.
+Original Seraphine and candle medallion PNG masters, built-in generation prompts and a visual review are retained in `Art/Sources/`. `tools/build_covenant_art.py` reproducibly creates 30 real DDS assets, including full mip chains, alpha flag, portraits, Dawn, fictional emblem map panel and static leader scene. The Vigil Keeper and Hall of Remembrance use original gold-rimmed portraits compiled by `tools/build_original_presentation.py`. Their world models are inherited. There is no animated custom leader or voice recording. Supplied Dawn and four diplomacy lines are registered without truncation.

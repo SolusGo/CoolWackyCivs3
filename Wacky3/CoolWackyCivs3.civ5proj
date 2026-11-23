@@ -671,6 +671,11 @@
         <Type>UpdateDatabase</Type>
         <FileName>TheQu/SQL/Qu_Art.sql</FileName>
       </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Shared/SQL/CWC3_OriginalPresentation.sql</FileName>
+      </Action>
     </ModActions>
     <ModContent>
       <Content>
@@ -1015,6 +1020,33 @@
     <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1040,6 +1072,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfAThousandKites/Art/CWC3_D023_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="KingdomOfAThousandKites/Lua/D023_Gameplay.lua">
@@ -1096,6 +1194,33 @@
     <Content Include="KingdomOfRyukyu/Art/CWC3_D021_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="KingdomOfRyukyu/Art/CWC3_D021_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1121,6 +1246,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="KingdomOfRyukyu/Art/CWC3_D021_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="KingdomOfRyukyu/Art/CWC3_D021_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="KingdomOfRyukyu/Lua/D021_Gameplay.lua">
@@ -1166,6 +1357,9 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Shared/SQL/CWC3_Options.sql">
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Shared/SQL/CWC3_OriginalPresentation.sql">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="TheAssemblyOfScarecrows/Art/CWC3_SCARECROW_Alpha128.dds">
@@ -1399,6 +1593,33 @@
     <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1424,6 +1645,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCalendarOfUnofficialHolidays/Lua/D035_Gameplay.lua">
@@ -1478,6 +1765,33 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCandlekeepersCovenant/Art/CWC3_Covenant_Alpha80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_BUILDING_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCandlekeepersCovenant/Art/CWC3_Covenant_Civ128.dds">
@@ -1546,6 +1860,33 @@
     <Content Include="TheCandlekeepersCovenant/Art/CWC3_Covenant_Map.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCandlekeepersCovenant/Art/CWC3_COVENANT_UNIT_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheCandlekeepersCovenant/Lua/CovenantGameplay.lua">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1600,6 +1941,33 @@
     <Content Include="TheCarapaceDominion/Art/CWC3_D025_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheCarapaceDominion/Art/CWC3_D025_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1625,6 +1993,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCarapaceDominion/Art/CWC3_D025_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCarapaceDominion/Art/CWC3_D025_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCarapaceDominion/Lua/D025_Gameplay.lua">
@@ -1681,6 +2115,33 @@
     <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1706,6 +2167,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheCartographersOfNowhere/Art/CWC3_D031_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheCartographersOfNowhere/Lua/D031_Gameplay.lua">
@@ -1762,6 +2289,33 @@
     <Content Include="TheChachapoya/Art/CWC3_D034_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheChachapoya/Art/CWC3_D034_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -1787,6 +2341,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheChachapoya/Art/CWC3_D034_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheChachapoya/Art/CWC3_D034_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheChachapoya/Lua/D034_Gameplay.lua">
@@ -2047,6 +2667,33 @@
     <Content Include="TheFogboundRepublic/Art/CWC3_D027_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheFogboundRepublic/Art/CWC3_D027_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2072,6 +2719,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheFogboundRepublic/Art/CWC3_D027_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheFogboundRepublic/Art/CWC3_D027_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheFogboundRepublic/Lua/D027_Gameplay.lua">
@@ -2128,6 +2841,33 @@
     <Content Include="TheGlassOrchard/Art/CWC3_D030_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheGlassOrchard/Art/CWC3_D030_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2153,6 +2893,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheGlassOrchard/Art/CWC3_D030_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGlassOrchard/Art/CWC3_D030_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheGlassOrchard/Lua/D030_Gameplay.lua">
@@ -2209,6 +3015,33 @@
     <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2234,6 +3067,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheGrandDuchyOfFoldingChairs/Lua/D033_Gameplay.lua">
@@ -2262,6 +3161,153 @@
     </Content>
     <Content Include="TheGrandDuchyOfFoldingChairs/TESTING.md">
       <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_ALPHA_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheHollowChoir/Art/CWC3_CHOIR_UNIT_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheHollowChoir/Lua/CWC3_Choir.lua">
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -2518,6 +3564,33 @@
     <Content Include="TheLichenCompact/Art/CWC3_D029_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheLichenCompact/Art/CWC3_D029_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2543,6 +3616,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheLichenCompact/Art/CWC3_D029_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheLichenCompact/Art/CWC3_D029_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheLichenCompact/Lua/D029_Gameplay.lua">
@@ -2773,6 +3912,33 @@
     <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2798,6 +3964,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMirrorboundRepublic/Art/CWC3_D022_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMirrorboundRepublic/Lua/D022_Gameplay.lua">
@@ -2854,6 +4086,33 @@
     <Content Include="TheMuiscaConfederation/Art/CWC3_D032_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheMuiscaConfederation/Art/CWC3_D032_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2879,6 +4138,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMuiscaConfederation/Art/CWC3_D032_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheMuiscaConfederation/Art/CWC3_D032_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheMuiscaConfederation/Lua/D032_Gameplay.lua">
@@ -2935,6 +4260,33 @@
     <Content Include="TheOctopusParliament/Art/CWC3_D026_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheOctopusParliament/Art/CWC3_D026_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -2960,6 +4312,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheOctopusParliament/Art/CWC3_D026_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheOctopusParliament/Art/CWC3_D026_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheOctopusParliament/Lua/D026_Gameplay.lua">
@@ -3394,6 +4812,33 @@
     <Content Include="ThePostalSovereignty/Art/CWC3_D024_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="ThePostalSovereignty/Art/CWC3_D024_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3419,6 +4864,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="ThePostalSovereignty/Art/CWC3_D024_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="ThePostalSovereignty/Art/CWC3_D024_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="ThePostalSovereignty/Lua/D024_Gameplay.lua">
@@ -3661,6 +5172,33 @@
     <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_ALPHA_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_128.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -3686,6 +5224,72 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_80.dds">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.lua">
@@ -3919,6 +5523,153 @@
     <Content Include="TheSaltRoadCompact/TESTING.md">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_ALPHA_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_BUILDING_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_CIV_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_Dawn.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_Diplomacy.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LEADER_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_LeaderScene.xml">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_Map.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_128.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_16.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_24.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_256.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_32.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_45.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_48.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_64.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="TheSeventeenthSummer/Art/CWC3_SUMMER_UNIT_80.dds">
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="TheSeventeenthSummer/Lua/CWC3_Summer.lua">
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -4005,6 +5756,7 @@
     <Folder Include="TheGrandDuchyOfFoldingChairs\Lua\" />
     <Folder Include="TheGrandDuchyOfFoldingChairs\SQL\" />
     <Folder Include="TheHollowChoir\" />
+    <Folder Include="TheHollowChoir\Art\" />
     <Folder Include="TheHollowChoir\Lua\" />
     <Folder Include="TheHollowChoir\SQL\" />
     <Folder Include="TheKingdomOfMakuria\" />
@@ -4056,6 +5808,7 @@
     <Folder Include="TheSaltRoadCompact\Lua\" />
     <Folder Include="TheSaltRoadCompact\SQL\" />
     <Folder Include="TheSeventeenthSummer\" />
+    <Folder Include="TheSeventeenthSummer\Art\" />
     <Folder Include="TheSeventeenthSummer\Lua\" />
     <Folder Include="TheSeventeenthSummer\SQL\" />
     <Folder Include="TheSeventeenthSummer\UI\" />

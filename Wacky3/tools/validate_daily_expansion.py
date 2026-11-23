@@ -27,14 +27,6 @@ def check_database(db):
         civ, leader, trait, unit, building, promotion = [
             f'{kind}_{stem}' for kind in ('CIVILIZATION','LEADER','TRAIT','UNIT','BUILDING','PROMOTION')
         ]
-        for table, columns, parent, replacement in (
-            ('Civilizations', 'DawnOfManImage,MapImage', 'CIVILIZATION_AMERICA', civ),
-            ('Leaders', 'IconAtlas,PortraitIndex,ArtDefineTag', 'LEADER_WASHINGTON', leader),
-        ):
-            query = f'SELECT {columns} FROM {table} WHERE Type=?'
-            native = db.execute(query,(parent,)).fetchone()
-            actual = db.execute(query,(replacement,)).fetchone()
-            assert native is not None and actual is not None and tuple(native)==tuple(actual), (stem, table, columns)
         for option in spec.get('options', []):
             assert db.execute('SELECT Value FROM CustomModOptions WHERE Name=?', (option,)).fetchone()[0] == 1
         assert tuple(db.execute('SELECT Playable,AIPlayable FROM Civilizations WHERE Type=?',(civ,)).fetchone()) == (1,0)
@@ -47,7 +39,8 @@ def check_database(db):
             original = db.execute(f'SELECT * FROM {table} WHERE Type=?',(parent,)).fetchone()
             replacement = db.execute(f'SELECT * FROM {table} WHERE Type=?',(child,)).fetchone()
             assert original and replacement, (stem, parent, child)
-            identity = {'ID','Type','Description','Civilopedia','Help','Strategy','UnitFlagAtlas','UnitFlagIconOffset'}
+            identity = {'ID','Type','Description','Civilopedia','Help','Strategy',
+                        'IconAtlas','PortraitIndex','UnitFlagAtlas','UnitFlagIconOffset'}
             changes = spec.get('building_fields', {}) if table == 'Buildings' else {
                 col: original[col]+delta for col,delta in spec.get('unit_fields', {}).items()
             }

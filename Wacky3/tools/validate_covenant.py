@@ -14,7 +14,9 @@ def check_database(db):
         old=db.execute('SELECT * FROM '+table+' WHERE Type=?',(parent,)).fetchone()
         new=db.execute('SELECT * FROM '+table+' WHERE Type=?',(child,)).fetchone()
         for k in old.keys():
-            if k not in {'ID','Type','Description','Civilopedia','Help','Strategy'}: assert old[k]==new[k],(table,k,old[k],new[k])
+            if k not in {'ID','Type','Description','Civilopedia','Help','Strategy',
+                         'IconAtlas','PortraitIndex','UnitFlagAtlas','UnitFlagIconOffset'}:
+                assert old[k]==new[k],(table,k,old[k],new[k])
         for companion in approved_companions(prefix,column):
             fields=[r[1] for r in db.execute('PRAGMA table_info('+quote(companion)+')') if r[1] not in [column,'ID']]
             query='SELECT '+','.join(map(quote,fields))+' FROM '+quote(companion)+' WHERE '+quote(column)+'=? ORDER BY rowid'

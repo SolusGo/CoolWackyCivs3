@@ -12,7 +12,8 @@ def check_database(db):
     assert tuple(db.execute('SELECT LeaderheadType FROM Civilization_Leaders WHERE CivilizationType=?', (CIV,)).fetchone()) == (LEADER,)
     assert db.execute('SELECT UnitType FROM Civilization_UnitClassOverrides WHERE CivilizationType=? AND UnitClassType=?', (CIV, 'UNITCLASS_SWORDSMAN')).fetchone()[0] == UNIT
     assert db.execute('SELECT BuildingType FROM Civilization_BuildingClassOverrides WHERE CivilizationType=? AND BuildingClassType=?', (CIV, 'BUILDINGCLASS_AMPHITHEATER')).fetchone()[0] == HALL
-    excluded = {'ID','Type','Description','Civilopedia','Help','Strategy'}
+    excluded = {'ID','Type','Description','Civilopedia','Help','Strategy',
+                'IconAtlas','PortraitIndex','UnitFlagAtlas','UnitFlagIconOffset'}
     companions = 0
     for table, old, new, prefix, column in [('Units','UNIT_SWORDSMAN',UNIT,'Unit_','UnitType'),
                                             ('Buildings','BUILDING_AMPHITHEATER',HALL,'Building_','BuildingType')]:
@@ -58,8 +59,7 @@ def check_database(db):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag=?',(PREFIX+ending,)).fetchone()
     for (response,) in db.execute('SELECT Response FROM Diplomacy_Responses WHERE LeaderType=?',(LEADER,)):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(response,)).fetchone(),response
-    # All temporary native art references are exact inherited values, checked above.
-    return f'PASS: human-only registration, exact Swordsman/Amphitheater scalars and {companions} companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion, localization and native art inheritance'
+    return f'PASS: human-only registration, exact Swordsman/Amphitheater mechanics and {companions} companion tables, +1 Culture, five bounded yield definitions, native hill-defense promotion and localization'
 
 
 def check_lua():

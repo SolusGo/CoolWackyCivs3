@@ -102,13 +102,13 @@ Owner-turn reconciliation is **post-economy** and governs the next payout after 
 
 **Daily Civ V Surprise #17. Capital:** First Emergence. **Motto:** “We Were Never Gone.” **Victory focus:** Science / Culture. Every city alternates between Dormancy (+1 Food) and Emergence (+2 Production, +1 Culture). Dormancy/Emergence durations: Quick 9/3, Standard 13/4, Epic 20/6, Marathon 39/12. The Spearman-replacing **Shellguard** adds +1 Sight and permanent upgrade lineage; brood veterans gain +20% attack/defense during Emergence. The Granary-replacing **Brood Nursery** adds permanent +1 Faith and conditional +1 Production during Emergence, preserving all inherited effects.
 
-The cycle advances once per post-economy owner-turn, changing combat immediately and scheduling city bonuses for the **next payout**. It persists through saves and reconciles cities, upgrades and transfers. See the [Summer guide](TheSeventeenthSummer/README.md), [strategy](docs/strategy/TheSeventeenthSummer.md) and [source/acceptance report](docs/SeventeenthSummerTesting.md). Native art is a valid temporary fallback. Two narrowly modified CP151 panel overrides hide the internal lineage icon; alternate UI mods require a merge. Automated checks pass; **native in-game acceptance remains outstanding**.
+The cycle advances once per post-economy owner-turn, changing combat immediately and scheduling city bonuses for the **next payout**. It persists through saves and reconciles cities, upgrades and transfers. See the [Summer guide](TheSeventeenthSummer/README.md), [strategy](docs/strategy/TheSeventeenthSummer.md) and [source/acceptance report](docs/SeventeenthSummerTesting.md). The custom portraits and First Emergence scenes are covered in the [art guide](docs/DailyExpansion_021_035_Art.md). Two narrowly modified CP151 panel overrides hide the internal lineage icon; alternate UI mods require a merge. Automated checks pass; **native in-game acceptance remains outstanding**.
 
 ## The Hollow Choir
 
 **Capital:** Resonance. **Victory focus:** Culture / Science. Hill city centers gain +1 Production; independently, each adjacent Mountain supplies +1 Faith, capped at +2, regardless of ownership. The **Chorus Sentinel** inherits the active Swordsman and adds a persistent +1 Sight / +20% defense on Hills promotion. The **Resonance Hall** inherits the active Amphitheater, adds +1 Culture, and supplies +1 Science per two owned Mountains within three hexes, capped at +2. Shared Mountains count for every qualifying Hall. Five zero/one yield controllers reconcile map/building changes and reload without a saved ledger.
 
-See the [Choir guide](TheHollowChoir/README.md), [strategy](docs/strategy/TheHollowChoir.md) and [implementation/testing report](docs/HollowChoirTesting.md). Custom crystal artwork is not yet supplied; valid native America/Washington/Swordsman/Amphitheater assets are temporary fallbacks. Automated coverage includes active-row inheritance and terrain/lifecycle Lua51 mocks; **no in-game test pass is claimed**.
+See the [Choir guide](TheHollowChoir/README.md), [strategy](docs/strategy/TheHollowChoir.md) and [implementation/testing report](docs/HollowChoirTesting.md). The Hollow Choir ships original crystal portraits, a civilization emblem, and illustrations of Resonance. Automated coverage includes active-row inheritance and terrain/lifecycle Lua51 mocks; **no in-game test pass is claimed**.
 
 ## The Ministry of Almost
 
@@ -157,6 +157,7 @@ python tools/generate_qu.py
 python tools/build_qu_art.py
 python tools/validate_qu.py --fetch
 python tools/build_daily_expansion_art.py
+python tools/build_original_presentation.py
 python tools/write_daily_guides.py
 python tools/generate_summer_ui.py
 python tools/build_art.py
@@ -175,7 +176,7 @@ python tools/validate_mod.py
 python tools/validate_mod.py --compare-database "$env:USERPROFILE\Documents\My Games\Sid Meier's Civilization 5\cache\Civ5DebugDatabase.db"
 ```
 
-Validation reads game files **read-only** and works in memory. Set `CWC3_GAME_DIR` to the installed Civilization V directory if Steam-library discovery cannot find BNW. Set `CWC3_CP_DIR` for a nonstandard `(1) Community Patch` location. `tools/target_schema.py` verifies installed source hashes and builds the authoritative clean target schema. `CWC3_DATABASE` selects only the supplementary BNW cache **without Wacky3**, defaulting to `cache_backup/Civ5DebugDatabase.db`; it cannot influence SQL generation. The existing CP-schema comparison cache is tested without manufacturing missing schema/options. Neither cache is certified CP-only. Art does not need regeneration for this repair; the Choir uses native temporary art.
+Validation reads game files **read-only** and works in memory. Set `CWC3_GAME_DIR` to the installed Civilization V directory if Steam-library discovery cannot find BNW. Set `CWC3_CP_DIR` for a nonstandard `(1) Community Patch` location. `tools/target_schema.py` verifies installed source hashes and builds the authoritative clean target schema. `CWC3_DATABASE` selects only the supplementary BNW cache **without Wacky3**, defaulting to `cache_backup/Civ5DebugDatabase.db`; it cannot influence SQL generation. The existing CP-schema comparison cache is tested without manufacturing missing schema/options. Neither cache is certified CP-only.
 
 The checked-in SQL uses `SELECT *` temporary clones, so gameplay inherits active definitions at load time. All SQL generators enumerate companions exclusively from pinned native/CP declarations, never arbitrary cache prefixes. `tools/cp151_schema_sources.json` records all 172 approved tables and their columns. Normal generation fails on changed sources/inventory; `python tools/target_schema.py --pin` deliberately updates pins only after an audit. Timetable preserves this pin; its two additional native data-only fixture hashes live separately in `tools/timetable_fixture.py`. Unsupported JFD district/construction-audio extensions are not required or optionally cloned. Re-run the generators after audited schema changes. No build tool imports or needs Wacky2.
 
