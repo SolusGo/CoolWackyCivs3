@@ -81,6 +81,7 @@
   "paleo_source_audit": "PASS: pinned CP151 successful build branch, exact finishing-unit event, human archaeology queue/choice lifetime, native research completion and serialized overflow",
   "archived_source_audit": "PASS: pinned CP151 combat result/end order and 15 arguments; native promotion consumers; land-route origin/domain/circuit lifecycle; post-create Caravan prekill; total class counts and farm/pillage hooks. Native runtime acceptance NOT RUN.",
   "daily_expansion_source_audit": "PASS: pinned CP151 settlement and completion, science modifier, reveal source, air interception and scoped ranged damage, post-calculation combat, movement stores and callbacks, garrison and terrain change contracts",
+  "qu_source_audit": "PASS: CP151 attribution, pre-damage roles and defense, ownership, signed fixed-point yields, era/population hooks and add-in menu",
   "schema_audit": {
     "result": "PASS",
     "pinned_source_files": 260,
@@ -95,11 +96,11 @@
     "regeneration": [
       {
         "input": "clean source-derived schema",
-        "result": "PASS: all 99 SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all 103 SQL outputs byte-identical to checked-in output"
       },
       {
         "input": "artificial third-party building/unit tables",
-        "result": "PASS: all 99 SQL outputs byte-identical to checked-in output"
+        "result": "PASS: all 103 SQL outputs byte-identical to checked-in output"
       }
     ],
     "fixture_limit": "Clean target schema with native XML samples and synthetic companion sentinels; not native final CP gameplay data or in-game acceptance"
@@ -109,7 +110,7 @@
     "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
     "source_tables": 808,
     "source_civilizations": 2,
-    "synthetic_companion_records": 2033
+    "synthetic_companion_records": 2056
   },
   "inherited_selection_sound": {
     "UnitType": "UNIT_CWC3_SECOND_WIND_GUARD",
@@ -125,6 +126,7 @@
   "paleo_database": "PASS: human-only registration, all active Archaeologist/Museum scalar and 172 companion definitions, +1 move/sight, exactly +2 Science/+1 Culture including duplicate inherited yields, bounded dummies, localization and overrides",
   "archived_database": "PASS: ten human-only civilizations; four active parent gameplay scalar/172 companion clones; mutated and duplicate yields; unique promotions; exact controllers; original portrait/flag/scene bindings; localization and starting grants",
   "daily_expansion_database": "PASS 15 Daily identities, intended active scalar and all approved companion deltas, dummies and localization",
+  "qu_database": "PASS: active Rifleman/Workshop clones, upgrade path, promotion roles, signed local modifiers and hidden Foundry tiers",
   "database_runs": [
     {
       "evidence": {
@@ -132,7 +134,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 2033
+        "synthetic_companion_records": 2056
       },
       "fixture": "mutated stats and pre-existing Culture",
       "result": "PASS"
@@ -143,7 +145,7 @@
         "mode": "pinned native declarations; native XML sample rows; NOT a native final CP gameplay cache",
         "source_tables": 808,
         "source_civilizations": 2,
-        "synthetic_companion_records": 2033
+        "synthetic_companion_records": 2056
       },
       "fixture": "unaltered source definitions",
       "result": "PASS"
@@ -200,9 +202,9 @@
       "evidence": {
         "database": "cache/Civ5DebugDatabase.db",
         "installed_cp_version": 151,
-        "mode": "existing CP-schema snapshot (not certified CP-only)",
-        "source_tables": 959,
-        "source_civilizations": 195,
+        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+        "source_tables": 369,
+        "source_civilizations": 45,
         "BUILDING_LIBRARY": {
           "Cost": 75,
           "GoldMaintenance": 1,
@@ -224,9 +226,9 @@
       "evidence": {
         "database": "cache/Civ5DebugDatabase.db",
         "installed_cp_version": 151,
-        "mode": "existing CP-schema snapshot (not certified CP-only)",
-        "source_tables": 959,
-        "source_civilizations": 195,
+        "mode": "BNW snapshot with CP151 schema overlay (not active CP data)",
+        "source_tables": 369,
+        "source_civilizations": 45,
         "BUILDING_LIBRARY": {
           "Cost": 75,
           "GoldMaintenance": 1,
@@ -345,11 +347,14 @@
     "PASS Daily #34 MARATHON production Lua, eligibility and callback replay",
     "PASS Daily #35 MARATHON production Lua, eligibility and callback replay"
   ],
-  "lua": "PASS: 41 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
+  "qu_lua": "PASS: 3 speed/load/turn runs, native-event mocks, city lifecycle, Foundry thresholds, scoped defense and UI confirmation",
+  "lua": "PASS: 47 files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)",
   "paleo_art": "PASS: 57 legacy DDS files, declared dimensions, BGRA8888 payloads, transparent atlas masks, full icon mips, custom unit flag and static leader scene",
   "daily_art": "PASS: 30 distinct original PNG masters and exact built-in prompts; five unique leaders/glyphs; 285 DDS textures, six complete nine-size atlases per civ, gold-rimmed portraits, monochrome alpha/flags, distinct Dawn/capital scenes, SQL/VFS wiring and deterministic byte regeneration. Native UI rendering NOT RUN.",
   "daily_expansion_art": "PASS 30 distinct emblem/alpha sources, 270 DDS atlas registrations and VFS imports",
+  "qu_art": "PASS: 46 atlas sizes, Dawn, map and static diplomacy",
   "distributable": "PASS: every ZIP entry matches the current manifest/source bytes",
-  "package": "PASS: 963 manifest files + checksums, correct dependencies/order/context/VFS paths, 681 DDS textures, alpha and full icon mip chains",
-  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game."
+  "package": "PASS: 1025 manifest files + checksums, correct dependencies/order/context/VFS paths, 730 DDS textures, alpha and full icon mip chains",
+  "in_game": "NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game.",
+  "qu_in_game": "NOT RUN. Native Qu acceptance checklist: TheQu/TESTING.md."
 }

@@ -7,7 +7,7 @@ Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua co
 <!-- daily-expansion-start -->
 ## Daily Surprise expansion
 
-The pack includes 25 registered civilizations. The original ten are listed above.
+The Daily Surprise expansion brings the original roster to 25 civilizations.
 
 | Daily | Civilization | Leader | Capital |
 | --- | --- | --- | --- |
@@ -32,6 +32,10 @@ The pack includes 25 registered civilizations. The original ten are listed above
 <!-- daily-expansion-end -->
 
 The [hardening report](docs/DailyExpansion_HardeningReport.md) documents the CP151 combat, reveal, movement and yield audits, the corrected mechanics, the remaining engine limits, and native acceptance.
+
+## The Qu — Architects of Flesh
+
+**Capital:** Genesis Spire. **Leader:** The First Architect. **Victory focus:** Domination / Science. This brings the pack to 26 registered civilizations. The Qu collect Biomass from enemy military kills and new eras, then spend it in annexed conquests to install Labor, Cognitive, or Brood Forms. The Qu Harvester replaces the Rifleman and specializes in fighting wounded units. The Gene Foundry replaces the Workshop and adds up to 2 base Science as its city grows. Open **Additional Information → Genetic Reconfiguration** to use the ability. [Civilization guide](TheQu/README.md) · [Testing and compatibility](TheQu/TESTING.md)
 
 ## Installation
 
@@ -133,6 +137,9 @@ python tools/generate_covenant.py
 python tools/generate_paleo.py
 python tools/generate_archived.py
 python tools/generate_daily_expansion.py
+python tools/generate_qu.py
+python tools/build_qu_art.py
+python tools/validate_qu.py --fetch
 python tools/build_daily_expansion_art.py
 python tools/write_daily_guides.py
 python tools/generate_summer_ui.py

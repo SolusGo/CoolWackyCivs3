@@ -34,6 +34,9 @@ for spec in DAILY_ROSTER:
     ORDER.extend(f"{folder}/SQL/{stem}_{kind}.sql" for kind in ['Civilization','Units','Buildings','Text','Art'])
     ENTRIES.append((f"{folder}/Lua/{stem}_Gameplay.xml", spec['ability'], spec['name']))
 
+ORDER.extend(f'TheQu/SQL/Qu_{kind}.sql' for kind in ['Civilization','Units','Buildings','Text','Art'])
+ENTRIES.append(('TheQu/Lua/Qu_Gameplay.xml', 'Divine Reconfiguration', 'The Qu: Biomass and genetic castes.'))
+
 
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and
@@ -42,7 +45,7 @@ def files():
 
 def build(package=False):
     root=ET.Element('Mod',id=MOD_ID,version='1'); props=ET.SubElement(root,'Properties')
-    values={'Name':'Cool Wacky Civs 3','Teaser':f"{10 + len(DAILY_ROSTER)} human-only civilizations for Civilization V.",
+    values={'Name':'Cool Wacky Civs 3','Teaser':f"{len(ENTRIES)} human-only civilizations for Civilization V.",
       'Description':'Independent human-only pack for BNW + standalone Community Patch v151.',
       'Authors':'SolusGo','Homepage':'https://github.com/SolusGo/CoolWackyCivs3','AffectsSavedGames':'1',
       'MinCompatibleSaveVersion':'1','SupportsSinglePlayer':'1','SupportsMultiplayer':'0','SupportsHotSeat':'0','SupportsMac':'0',

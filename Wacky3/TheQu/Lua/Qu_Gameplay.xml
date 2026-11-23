@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="CWC3_Qu">
+  <Script file="Qu_Gameplay.lua" />
+  <Grid ID="Panel" Anchor="C,C" Size="502,506" Style="Grid9DetailFive140" ConsumeMouse="1" Hidden="1">
+    <Label ID="Title" Anchor="C,T" Offset="0,16" Font="TwCenMT24" ColorSet="Beige_Black_Alpha" />
+    <Label ID="Biomass" Anchor="C,T" Offset="0,49" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" />
+    <Label ID="Cost" Anchor="C,T" Offset="0,78" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" />
+    <Label ID="City" Anchor="C,T" Offset="0,112" Font="TwCenMT22" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Prev" Anchor="L,T" Offset="20,140" Size="124,30" Style="BaseButton" Font="TwCenMT16" String="TXT_KEY_CWC3_QU_PREVIOUS" />
+    <Label ID="CityCount" Anchor="C,T" Offset="0,145" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Next" Anchor="R,T" Offset="20,140" Size="124,30" Style="BaseButton" Font="TwCenMT16" String="TXT_KEY_CWC3_QU_NEXT" />
+    <Label ID="Status" Anchor="C,T" Offset="0,182" WrapWidth="455" Font="TwCenMT18" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Labor" Anchor="C,T" Offset="0,225" Size="448,35" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_LABOR" />
+    <Label ID="LaborDetails" Anchor="C,T" Offset="0,265" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Cognitive" Anchor="C,T" Offset="0,297" Size="448,35" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_COGNITIVE" />
+    <Label ID="CognitiveDetails" Anchor="C,T" Offset="0,337" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Brood" Anchor="C,T" Offset="0,369" Size="448,35" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_BROOD" />
+    <Label ID="BroodDetails" Anchor="C,T" Offset="0,409" Font="TwCenMT16" ColorSet="Beige_Black_Alpha" />
+    <GridButton ID="Close" Anchor="C,B" Offset="0,18" Size="142,34" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_CLOSE" />
+    <Grid ID="Confirm" Anchor="C,C" Size="462,182" Style="Grid9DetailFive140" ConsumeMouse="1" Hidden="1">
+      <Label ID="ConfirmText" Anchor="C,T" Offset="0,32" WrapWidth="402" Font="TwCenMT20" ColorSet="Beige_Black_Alpha" />
+      <GridButton ID="Apply" Anchor="L,B" Offset="25,19" Size="183,36" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_APPLY" />
+      <GridButton ID="Cancel" Anchor="R,B" Offset="25,19" Size="183,36" Style="BaseButton" Font="TwCenMT18" String="TXT_KEY_CWC3_QU_CANCEL" />
+    </Grid>
+  </Grid>
+</Context>

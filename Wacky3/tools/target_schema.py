@@ -222,6 +222,7 @@ def clean_fixture():
     from timetable_fixture import add_samples
     add_samples(db)
     add_samples(db, {'UnitType':'UNIT_PIKEMAN', 'BuildingType':'BUILDING_TEMPLE'})
+    add_samples(db, {'UnitType':'UNIT_RIFLEMAN'})
     from paleo_fixture import add_samples as add_paleo_samples
     add_paleo_samples(db)
     from archived_fixture import add_samples as add_archived_samples

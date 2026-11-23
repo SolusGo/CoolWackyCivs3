@@ -22,6 +22,7 @@ from validate_daily_art import check_art as check_daily_art
 
 from validate_daily_expansion import check_database as check_daily_database, check_lua as check_daily_lua, check_art as check_expansion_art
 from daily_source_checks import check_source as check_expansion_source
+import validate_qu
 
 RESULTS={}
 def sql_checks(mutate=True, clean=False):
@@ -46,6 +47,7 @@ def sql_checks(mutate=True, clean=False):
         db.execute("UPDATE Buildings SET Cost=Cost+19,GoldMaintenance=GoldMaintenance+2 WHERE Type='BUILDING_GRANARY'")
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_GRANARY','YIELD_FAITH',3)")
         db.execute("UPDATE Units SET Moves=Moves+2,Cost=Cost+11,WorkRate=85 WHERE Type='UNIT_WORKER'")
+        db.execute("UPDATE Units SET Combat=Combat+2,Moves=Moves+1,Cost=Cost+29 WHERE Type='UNIT_RIFLEMAN'")
         db.execute("UPDATE Buildings SET Cost=Cost+23,GoldMaintenance=GoldMaintenance+3,SpecialistCount=SpecialistCount+1 WHERE Type='BUILDING_WORKSHOP'")
         # Two inherited Gold rows exercise the exactly-one-additional-Gold path.
         db.execute("INSERT INTO Building_YieldChanges(BuildingType,YieldType,Yield) VALUES('BUILDING_WORKSHOP','YIELD_GOLD',3)")
@@ -116,6 +118,7 @@ def sql_checks(mutate=True, clean=False):
         for key in re.findall(r"'(TXT_KEY_CWC3_[A-Z0-9_]+)'",path.read_text(encoding='utf-8')):
             if key in ['TXT_KEY_CWC3_CIV5','TXT_KEY_CWC3_PENULTIMATE','TXT_KEY_CWC3_CHOIR_CIV5','TXT_KEY_CWC3_CHOIR_FIRST_NOTE','TXT_KEY_CWC3_SUMMER_CIV5','TXT_KEY_CWC3_SUMMER_IXA','TXT_KEY_CWC3_TIMETABLE_CIV5','TXT_KEY_CWC3_TIMETABLE_VEYL','TXT_KEY_CWC3_COVENANT_CIV5','TXT_KEY_CWC3_COVENANT_SERAPHINE'] or any(key=='TXT_KEY_CWC3_'+c+'_'+suffix for c in ['LOST','SCARECROW','MAKURIA','SALT'] for suffix in ['CIV5','LEADERPAGE']): continue # Pedia category prefixes
             if re.fullmatch(r'TXT_KEY_CWC3_D0[0-9]{2}_(CIV5|LEADERPAGE)', key): continue
+            if key in ('TXT_KEY_CWC3_QU_CIV5','TXT_KEY_CWC3_QU_LEADERPAGE'): continue
             assert key in keys,('missing localization',key)
     for row in db.execute("SELECT Response FROM Diplomacy_Responses WHERE LeaderType='LEADER_CWC3_PENULTIMATE' AND Response LIKE 'TXT_KEY_CWC3_%'"):
         assert db.execute('SELECT 1 FROM Language_en_US WHERE Tag LIKE ?',(row[0],)).fetchone(),row[0]
@@ -132,6 +135,7 @@ def sql_checks(mutate=True, clean=False):
     RESULTS['paleo_database']=check_paleo_database(db)
     RESULTS['archived_database']=check_archived_database(db)
     RESULTS['daily_expansion_database']=check_daily_database(db)
+    RESULTS['qu_database']=validate_qu.check_database(db)
     return db
 
 def lua_checks(db):
@@ -158,6 +162,7 @@ def lua_checks(db):
     RESULTS['paleo_lua']=check_paleo_lua(db)
     RESULTS['archived_lua']=check_archived_lua(db)
     RESULTS['daily_expansion_lua']=check_daily_lua(db)
+    RESULTS['qu_lua']=validate_qu.check_lua()
     RESULTS['lua']=f'PASS: {len(paths)} files parse under Lua 5.1; production gameplay in isolated 25/34-slot mock suites (not in-game timing verification)'
 
 def package_checks(db):
@@ -181,8 +186,8 @@ def package_checks(db):
     assert ET.parse(ROOT/ENTRIES[3][0]).getroot().find('Script').get('file')=='TimetableGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[4][0]).getroot().find('Script').get('file')=='CovenantGameplay.lua'
     assert ET.parse(ROOT/ENTRIES[5][0]).getroot().find('Script').get('file')=='PALEO_Gameplay.lua'
-    assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==10+len(DAILY_ROSTER)
-    assert len(ORDER)==len(set(ORDER))==49+5*len(DAILY_ROSTER)
+    assert len(ENTRIES)==len(set(e[0] for e in ENTRIES))==11+len(DAILY_ROSTER)
+    assert len(ORDER)==len(set(ORDER))==54+5*len(DAILY_ROSTER)
     for entry,_,_ in ENTRIES[6:]:
         assert ET.parse(ROOT/entry).getroot().find('Script').get('file')==Path(entry).stem+'.lua'
     imported=[]
@@ -212,7 +217,7 @@ def package_checks(db):
         assert path.stat().st_size==expected,('DDS payload',name)
         assert im.getchannel('A').getextrema()[0]==0,('missing transparency',name)
         textures.append(name)
-    assert len(textures)==333+18*len(DAILY_ROSTER)
+    assert len(textures)==379+18*len(DAILY_ROSTER)
     for name,dimensions in [('CWC3_Dawn.dds',(1024,768)),('CWC3_Leader.dds',(1600,1200)),('CWC3_Map.dds',(360,412))]:
         assert Image.open(art/name).size==dimensions
     assert ET.parse(art/'CWC3_LeaderScene.xml').getroot().get('FallbackImage')=='CWC3_Leader.dds'
@@ -229,6 +234,7 @@ def package_checks(db):
     RESULTS['paleo_art']=check_paleo_art(db,declared)
     RESULTS['daily_art']=check_daily_art(db,declared)
     RESULTS['daily_expansion_art']=check_expansion_art(db,declared)
+    RESULTS['qu_art']=validate_qu.check_art(db,declared)
     for table,typ in [('Civilizations','CIVILIZATION_CWC3_COVENANT'),('Leaders','LEADER_CWC3_COVENANT_SERAPHINE')]:
         row=db.execute('SELECT IconAtlas,PortraitIndex FROM '+table+' WHERE Type=?',(typ,)).fetchone()
         assert db.execute('SELECT 1 FROM IconTextureAtlases WHERE Atlas=? AND IconSize=256 AND IconsPerRow*IconsPerColumn>?',tuple(row)).fetchone()
@@ -247,7 +253,7 @@ def package_checks(db):
         RESULTS['distributable']='PASS: every ZIP entry matches the current manifest/source bytes'
     else: RESULTS['distributable']='NOT BUILT; run tools/build_mod.py --package'
     texture_count=sum(p.suffix=='.dds' for p in files())
-    assert texture_count==411+18*len(DAILY_ROSTER)
+    assert texture_count==460+18*len(DAILY_ROSTER)
     RESULTS['package']=f'PASS: {len(declared)} manifest files + checksums, correct dependencies/order/context/VFS paths, {texture_count} DDS textures, alpha and full icon mip chains'
 
 def main():
@@ -258,6 +264,7 @@ def main():
     RESULTS['paleo_source_audit']=paleo_source_checks()
     RESULTS['archived_source_audit']=archived_source_checks()
     RESULTS['daily_expansion_source_audit']=check_expansion_source()
+    RESULTS['qu_source_audit']=validate_qu.check_source()
     RESULTS['schema_audit']=check_regeneration()
     db=sql_checks(clean=True)
     runs=[{'evidence':dict(EVIDENCE),'fixture':'mutated stats and pre-existing Culture','result':'PASS'}]
@@ -280,6 +287,7 @@ def main():
     RESULTS['database_evidence']=runs[0]['evidence']
     lua_checks(db); package_checks(db); db.close()
     RESULTS['in_game']='NOT RUN. Native yield settlement, combat previews, engine save persistence, archaeology choice dispatch and art/UI presentation require docs/ArchivedDailyTesting.md and the existing civilization acceptance guides. The new archive controllers, Covenant, Summer and Timetable use explicit post-economy next-payout reconciliation; Ministry UI dispatch synchrony remains unverified. New expansion native acceptance is indexed in docs/DailyExpansion_021_035_Testing.md. Existing saves have NOT been acceptance-tested with this roster; start a new game.'
+    RESULTS['qu_in_game']='NOT RUN. Native Qu acceptance checklist: TheQu/TESTING.md.'
     # Report stays outside the manifest to avoid a checksum self-reference.
     out=ROOT/'tools/Validation.json'; out.write_text(json.dumps(RESULTS,indent=2)+'\n',encoding='utf-8',newline='\n')
     for k,v in RESULTS.items():

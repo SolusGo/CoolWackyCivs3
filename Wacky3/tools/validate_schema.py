@@ -15,7 +15,7 @@ def seed_companions(db):
     """Exercise even normally-empty CP tables with nonzero test-only records."""
     count=0
     for prefix,column,parents in [('Building_','BuildingType',['BUILDING_LIBRARY','BUILDING_AMPHITHEATER','BUILDING_GRANARY','BUILDING_WORKSHOP','BUILDING_TEMPLE','BUILDING_MUSEUM','BUILDING_CARAVANSARY','BUILDING_HARBOR','BUILDING_MARKET','BUILDING_WALLS','BUILDING_UNIVERSITY','BUILDING_GARDEN','BUILDING_COLOSSEUM']),
-                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER','UNIT_PIKEMAN','UNIT_ARCHAEOLOGIST','UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN','UNIT_SCOUT'])]:
+                                   ('Unit_','UnitType',['UNIT_SPEARMAN','UNIT_SWORDSMAN','UNIT_WORKER','UNIT_PIKEMAN','UNIT_ARCHAEOLOGIST','UNIT_COMPOSITE_BOWMAN','UNIT_HORSEMAN','UNIT_SCOUT','UNIT_RIFLEMAN'])]:
         for table in approved_companions(prefix,column):
             columns=list(db.execute('PRAGMA table_info('+quote(table)+')'))
             for parent in parents:
@@ -39,10 +39,13 @@ def audit_generated_inventory():
     civs=[('TheHollowChoir','Choir'),('TheMinistryOfAlmost','Ministry'),('TheSeventeenthSummer','Summer'),('ThePerpetualTimetable','Timetable'),('TheCandlekeepersCovenant','Covenant'),('ThePaleontologicalDirectorate','PALEO')]
     civs += [(s['folder'],s['code']) for s in SPECS]
     civs += [(s['folder'],code(s)) for s in ROSTER]
+    civs.append(('TheQu','Qu'))
     for civ,stem in civs:
         for kind,prefix in [('Buildings','Building_'),('Units','Unit_')]:
             sql=(ROOT/civ/'SQL'/f'{stem}_{kind}.sql').read_text()
-            referenced=set(re.findall(r'Companion AS SELECT \* FROM "([^"]+)"',sql))
+            referenced=set(re.findall(r'(?:Companion|CWC3_QuCopy) AS SELECT \* FROM "([^"]+)"',sql))
+            if civ == 'TheQu':
+                referenced.discard(kind)
             assert referenced==inventories[prefix],(civ,kind,'missing',inventories[prefix]-referenced,'extra',referenced-inventories[prefix])
     return {prefix:len(tables) for prefix,tables in inventories.items()}
 
@@ -78,10 +81,10 @@ def check_regeneration():
                     disk.close()
                 output=temp/('contaminated' if contaminated else 'clean')
                 os.environ.update(CWC3_DATABASE=str(cache),CWC3_SQL_ROOT=str(output))
-                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py','generate_covenant.py','generate_paleo.py','generate_archived.py','generate_daily_expansion.py']:
+                for script in ['generate_sql.py','generate_hollow_choir.py','generate_seventeenth_summer.py','generate_timetable.py','generate_covenant.py','generate_paleo.py','generate_archived.py','generate_daily_expansion.py','generate_qu.py']:
                     with contextlib.redirect_stdout(io.StringIO()): runpy.run_path(str(ROOT/'tools'/script),run_name='__main__')
                 paths=list(output.rglob('*.sql'))
-                assert len(paths)==39+4*len(ROSTER), 'Every generator output must be compared'
+                assert len(paths)==43+4*len(ROSTER), 'Every generator output must be compared'
                 for generated in paths:
                     relative=generated.relative_to(output)
                     assert generated.read_bytes()==(ROOT/relative).read_bytes(),('Nondeterministic or contaminated regeneration',relative)

@@ -1,5 +1,11 @@
 # Changelog
 
+## The Qu — Architects of Flesh
+
+- Add a human-only civilization with save-backed Biomass and permanent city-local genetic castes for qualifying annexed conquests.
+- Add the Rifleman-replacing Qu Harvester, Workshop-replacing Gene Foundry, a reconfiguration panel, and original book-inspired art.
+- Extend pack validation with Qu-specific CP151 source checks, inheritance and yield checks, and Lua 5.1 lifecycle and interface tests.
+
 ## Daily Surprise hardening
 
 - Account for lethal air interceptions, sweeps and verified ranged secondary kills in Mirrorbound. Consume a Reflection counter at the committed attack and preserve its existing expiry through upgrades.
