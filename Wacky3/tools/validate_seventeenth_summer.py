@@ -4,7 +4,6 @@ from lupa.lua51 import LuaRuntime
 from baseline import ROOT, quote
 from target_schema import approved_companions
 from generate_seventeenth_summer import CIV, LEADER, UNIT, NURSERY, LINEAGE, AWAKENED, PREFIX, DUMMIES
-from generate_summer_ui import generated, SOURCES
 
 
 def check_database(db):
@@ -74,46 +73,7 @@ def check_lua():
         lua.execute((ROOT/'tools/tests/seventeenth_summer.lua').read_text(encoding='utf-8'))
         for line in logs: print(line)
         results.extend(logs)
-    for name,expected in generated().items():
-        actual=(ROOT/'TheSeventeenthSummer/UI'/name).read_text(encoding='utf-8')
-        assert actual==expected,('Only the pinned ancestry filter may differ from CP151 UI',name)
-        # Compare native and patched rendering for every ownership combination,
-        # trade units and the enemy panel's empty selection. No cross-context
-        # override is assumed: CP owns its private InstanceManager and controls.
-        start=actual.index('function UpdateUnitPromotions(')
-        end=actual.index('\nend',start)+4
-        code=actual[start:end]
-        if name=='UnitPanel.lua': code=code.replace('g_EarnedPromotionIM','MockManager')
-        old,new=next((old,new) for path,_,old,new in SOURCES if path.endswith('/'+name))
-        native=code.replace(new,old)
-        assert native!=code
-        for mask in range(16):
-            for trade in [False,True]:
-                outputs=[]
-                for script in [native,code]:
-                    lua=LuaRuntime()
-                    lua.globals().Mask=mask; lua.globals().Trade=trade
-                    lua.execute("""
-        local promotions={{ID=1,Type='PROMOTION_SUMMER_BROOD_LINEAGE',PortraitIndex=1},
-          {ID=2,Type='PROMOTION_SUMMER_AWAKENED',PortraitIndex=2},
-          {ID=3,Type='PROMOTION_ORDINARY',PortraitIndex=3}, {ID=4,Type='PROMOTION_OTHER',PortraitIndex=4}}
-        GameInfo={UnitPromotions=function() local i=0; return function() i=i+1; return promotions[i] end end}
-        Icons={}; IconHookup=function(index,size,atlas,control) Icons[#Icons+1]=index end
-        Locale={ConvertTextKey=function() return '' end}
-        MockManager={ResetInstances=function() end,GetInstance=function() return {UnitPromotionImage={SetToolTipString=function() end}} end}
-        Controls={}
-        for i=1,4 do
-          local c={hidden=true}; function c:SetHide(v) self.hidden=v end; function c:IsHidden() return self.hidden end
-          Controls['UnitPromotion'..i]=c
-        end
-        MockUnit={IsHasPromotion=function(self,id) return math.floor(Mask/2^(id-1))%2==1 end,
-                  IsTrade=function() return Trade end}
-        """)
-                    lua.execute(script)
-                    lua.execute('UpdateUnitPromotions(MockUnit)')
-                    outputs.append(list(lua.globals().Icons.values()))
-                    if name=='EnemyUnitPanel.lua':
-                        lua.execute('UpdateUnitPromotions(nil); for _,c in pairs(Controls) do assert(c:IsHidden()) end')
-                assert outputs[1]==[icon for icon in outputs[0] if icon!=1],(name,mask,trade,outputs)
-    results.append('PASS: both pinned CP151 panels match native rendering except hidden lineage, across all 16 promotion sets and trade/empty selections; Awakened and unrelated promotions retained')
+    from build_mod import files
+    assert not any(path.name.casefold() in {'unitpanel.lua', 'enemyunitpanel.lua'} for path in files())
+    results.append('PASS: the pack leaves the stock and third-party unit promotion panels to their owners')
     return results

@@ -46,7 +46,6 @@ From `Wacky3`, after installing `requirements-dev.txt`:
 
 ```powershell
 python tools/generate_seventeenth_summer.py
-python tools/generate_summer_ui.py
 python tools/build_mod.py --package
 python tools/validate_mod.py
 ```

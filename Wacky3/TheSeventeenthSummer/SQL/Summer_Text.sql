@@ -16,7 +16,7 @@ INSERT INTO Language_en_US(Tag,Text) VALUES
  ('TXT_KEY_CWC3_SUMMER_NURSERY_HELP','Replaces the active Granary and preserves its normal effects. Adds +1 [ICON_PEACE] Faith permanently, plus +1 [ICON_PRODUCTION] Production during Emergence under eligible Summer ownership. With the UA, unique bonuses total +1 Food and +1 Faith in Dormancy, or +3 Production, +1 Culture and +1 Faith in Emergence. Phase yields apply to the next payout.'),
  ('TXT_KEY_CWC3_SUMMER_NURSERY_PEDIA','Under branching roots, the next generation grows in chambers warm with amber light. When the chorus sounds, quiet care becomes a burst of shared labor.'),
  ('TXT_KEY_CWC3_SUMMER_LINEAGE','Brood Lineage'),
- ('TXT_KEY_CWC3_SUMMER_LINEAGE_HELP','Internal permanent Shellguard ancestry marker. Cannot be selected; survives upgrades. No independent yield or combat effect.'),
+ ('TXT_KEY_CWC3_SUMMER_LINEAGE_HELP','This unit descends from a Shellguard and retains Brood Lineage after upgrading. Under Seventeenth Summer ownership, the unit can gain Awakened during Emergence.'),
  ('TXT_KEY_CWC3_SUMMER_AWAKENED','Awakened'),
  ('TXT_KEY_CWC3_SUMMER_AWAKENED_HELP','+20% Combat Strength attacking and defending during Emergence. Requires Shellguard lineage and eligible Summer ownership.'),
  ('TXT_KEY_CWC3_SUMMER_DUMMY','Summer Cycle'),

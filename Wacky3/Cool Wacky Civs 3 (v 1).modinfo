@@ -39,7 +39,7 @@
     <File md5="83B1334B0B383E78D3594AF3A5AF876C" import="0">docs/DailyExpansion_HardeningReport.md</File>
     <File md5="74FACEB226C6FEB8B7B48285691207BB" import="0">docs/HollowChoirTesting.md</File>
     <File md5="80EF31D4D692A567B63F85041A58571C" import="0">docs/ImplementationReport.md</File>
-    <File md5="E7F997A7F5339A6E6FC56B3CAF918C8B" import="0">docs/SeventeenthSummerTesting.md</File>
+    <File md5="AFE92CA910D374BF9148CAB8D6555E66" import="0">docs/SeventeenthSummerTesting.md</File>
     <File md5="F8E34E40706D350C1789E4C21EF313DB" import="0">docs/strategy/KingdomOfAThousandKites.md</File>
     <File md5="EA5645E8CFCD8C2AECD3531C8F011F6D" import="0">docs/strategy/KingdomOfRyukyu.md</File>
     <File md5="B6CA4A6E7AC1B8D37329ED2E3E8CDACA" import="0">docs/strategy/TheAssemblyOfScarecrows.md</File>
@@ -183,7 +183,7 @@
     <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
     <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
     <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
-    <File md5="1EF8FD4DB018613ECBBB47C618BD9495" import="0">README.md</File>
+    <File md5="79A5D7D28993643217777F7C3D45A511" import="0">README.md</File>
     <File md5="5335091B6EC173FF095C8922EB3AA502" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="69DA590E113CEAD5B09D2600CFACE14D" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
@@ -1629,13 +1629,11 @@
     <File md5="8599C797C503ABE1BD852452A3BCF7A4" import="1">TheSeventeenthSummer/Lua/CWC3_Summer.lua</File>
     <File md5="858C13C04DDBC1F7B81091B90CEBC51E" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
-    <File md5="1BCD89DA47D54310C9DF672F99F9D4AB" import="0">TheSeventeenthSummer/README.md</File>
+    <File md5="0CD0909549BBDF0897167B842F2F65B1" import="0">TheSeventeenthSummer/README.md</File>
     <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>
     <File md5="831F4A8C3C9A9360A64E9CBF1F619958" import="0">TheSeventeenthSummer/SQL/Summer_Civilization.sql</File>
-    <File md5="6F7DD387F01466F7F775D82A35170B4C" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>
+    <File md5="A30C3933FE856432A0DF570C7D26E6DE" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>
     <File md5="C19A53AC30640B904BA2F3DE0807143A" import="0">TheSeventeenthSummer/SQL/Summer_Units.sql</File>
-    <File md5="63BF53F456DBF413EB9820FC834AC1C6" import="1">TheSeventeenthSummer/UI/EnemyUnitPanel.lua</File>
-    <File md5="01DEE08942E8AD9032193D8B8C7577EA" import="1">TheSeventeenthSummer/UI/UnitPanel.lua</File>
   </Files>
   <Actions>
     <OnModActivated>

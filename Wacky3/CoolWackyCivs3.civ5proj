@@ -5694,12 +5694,6 @@
     <Content Include="TheSeventeenthSummer/SQL/Summer_Units.sql">
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="TheSeventeenthSummer/UI/EnemyUnitPanel.lua">
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="TheSeventeenthSummer/UI/UnitPanel.lua">
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="docs\" />
@@ -5811,7 +5805,6 @@
     <Folder Include="TheSeventeenthSummer\Art\" />
     <Folder Include="TheSeventeenthSummer\Lua\" />
     <Folder Include="TheSeventeenthSummer\SQL\" />
-    <Folder Include="TheSeventeenthSummer\UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
 </Project>
