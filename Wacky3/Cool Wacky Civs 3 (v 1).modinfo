@@ -33,7 +33,7 @@
     <File md5="C3957C16E4D35E79A989688AFD57CD53" import="0">docs/CovenantTesting.md</File>
     <File md5="41DCECFA48B98CACE723479B3E5C69B8" import="0">docs/CP151SchemaRepair.md</File>
     <File md5="6C0B2652E93EF64F24D7D42673B3FD46" import="0">docs/DailyExpansion_021_035_Art.md</File>
-    <File md5="C8FCF696012948FEEF7AA5550C09B8B1" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
+    <File md5="5F7901528FC40A9EC9C0BED46F15B46C" import="0">docs/DailyExpansion_021_035_ImplementationReport.md</File>
     <File md5="7DA4C8D0D64DC863798768EE6D0B07AA" import="0">docs/DailyExpansion_021_035_SourceProof.md</File>
     <File md5="31D0E971DD2DD49536E1013E15543008" import="0">docs/DailyExpansion_021_035_Testing.md</File>
     <File md5="83B1334B0B383E78D3594AF3A5AF876C" import="0">docs/DailyExpansion_HardeningReport.md</File>
@@ -118,7 +118,7 @@
     <File md5="CF50F4C86B9A29B1A90A7A5553AEF0C8" import="1">KingdomOfAThousandKites/Art/CWC3_D023_UNIT_80.dds</File>
     <File md5="B05AF4D9C780EBF10CCFE5D515F9F9C9" import="1">KingdomOfAThousandKites/Lua/D023_Gameplay.lua</File>
     <File md5="EAE33B646782B7207EED288F5CB7D031" import="0">KingdomOfAThousandKites/Lua/D023_Gameplay.xml</File>
-    <File md5="3567E857880DEEDA1EC70D76CB07AE24" import="0">KingdomOfAThousandKites/README.md</File>
+    <File md5="95B777481CFCABE66F7348B08EC181DC" import="0">KingdomOfAThousandKites/README.md</File>
     <File md5="1BC58136DB6BC312AA7422A786D2463A" import="0">KingdomOfAThousandKites/SQL/D023_Art.sql</File>
     <File md5="C2B845437E170F7978D12F290AD0EFC7" import="0">KingdomOfAThousandKites/SQL/D023_Buildings.sql</File>
     <File md5="0D97EF01572B1CF7C0F4F41649E4250B" import="0">KingdomOfAThousandKites/SQL/D023_Civilization.sql</File>
@@ -176,14 +176,14 @@
     <File md5="1A5B36F3F04F9D52D541A03C4B5C1BB3" import="1">KingdomOfRyukyu/Art/CWC3_D021_UNIT_80.dds</File>
     <File md5="76E80903FE532B16B77773B593A59FD4" import="1">KingdomOfRyukyu/Lua/D021_Gameplay.lua</File>
     <File md5="8BBA5B895C9A3F822B4D8D28BA5F0C9B" import="0">KingdomOfRyukyu/Lua/D021_Gameplay.xml</File>
-    <File md5="A1C65EAFADDDF62576682A4C2CE420A9" import="0">KingdomOfRyukyu/README.md</File>
+    <File md5="567835EAA47C6F6CCD9A7CACC5C4325E" import="0">KingdomOfRyukyu/README.md</File>
     <File md5="89124C293C5A925093F73120781514E7" import="0">KingdomOfRyukyu/SQL/D021_Art.sql</File>
     <File md5="ADC139F31D3A06FD4D19A803FFB9D607" import="0">KingdomOfRyukyu/SQL/D021_Buildings.sql</File>
     <File md5="5A1728ECB32C748270344E8B309C0091" import="0">KingdomOfRyukyu/SQL/D021_Civilization.sql</File>
     <File md5="E898A773B855DE021ABAF24FD420D4D6" import="0">KingdomOfRyukyu/SQL/D021_Text.sql</File>
     <File md5="CE3B102BB34F9D5DC4F9216F117A6755" import="0">KingdomOfRyukyu/SQL/D021_Units.sql</File>
     <File md5="3AA5BF6EAA46DB251BDCB48F4F1E29CF" import="0">KingdomOfRyukyu/TESTING.md</File>
-    <File md5="A5685069F9397180EC52A090DAAD0976" import="0">README.md</File>
+    <File md5="1EF8FD4DB018613ECBBB47C618BD9495" import="0">README.md</File>
     <File md5="5335091B6EC173FF095C8922EB3AA502" import="1">Shared/Lua/CWC3_ArchiveLifecycle.lua</File>
     <File md5="69DA590E113CEAD5B09D2600CFACE14D" import="1">Shared/Lua/CWC3_Daily.lua</File>
     <File md5="22FCEF52B403DA0DEA254F7F61E9D55E" import="1">Shared/Lua/CWC3_Diagnostics.lua</File>
@@ -251,7 +251,7 @@
     <File md5="47AFDD372352FFA82F98198605810119" import="0">TheAssemblyOfScarecrows/Art/README.md</File>
     <File md5="67B00BF89A4A583214DD22362BC01631" import="1">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.lua</File>
     <File md5="61DE31DAF3665796E81A3418C4C8C209" import="0">TheAssemblyOfScarecrows/Lua/SCARECROW_Gameplay.xml</File>
-    <File md5="3040DF9D6504F0E6FAA41AFAFB37A616" import="0">TheAssemblyOfScarecrows/README.md</File>
+    <File md5="7C8DBF60D486F6FE5BED58E4E361B502" import="0">TheAssemblyOfScarecrows/README.md</File>
     <File md5="4AA8E46B39E2F3710C1886AE4262C8C9" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Art.sql</File>
     <File md5="6821DFBB542CB46997527BE390078E61" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Buildings.sql</File>
     <File md5="2C67B0BD5FD58A0362E86898E23F6BEA" import="0">TheAssemblyOfScarecrows/SQL/SCARECROW_Civilization.sql</File>
@@ -309,7 +309,7 @@
     <File md5="A0ADB2D93EF5949424772339FEE3F4C8" import="1">TheCalendarOfUnofficialHolidays/Art/CWC3_D035_UNIT_80.dds</File>
     <File md5="1D9B1294CC6AB715ACCFEC14A0CEE359" import="1">TheCalendarOfUnofficialHolidays/Lua/D035_Gameplay.lua</File>
     <File md5="A8C9FBCCB20F22F2B1A8D0A0BCE996C5" import="0">TheCalendarOfUnofficialHolidays/Lua/D035_Gameplay.xml</File>
-    <File md5="451553E0F90BE17ACDBEE86E5D76D7A2" import="0">TheCalendarOfUnofficialHolidays/README.md</File>
+    <File md5="9825668CF6490BD8611334E9F5D8B6B6" import="0">TheCalendarOfUnofficialHolidays/README.md</File>
     <File md5="353B1D3CBEFC8D6DC51374A7EFC49765" import="0">TheCalendarOfUnofficialHolidays/SQL/D035_Art.sql</File>
     <File md5="A2BD204CD1BADB2A01FB828E86FC5AE6" import="0">TheCalendarOfUnofficialHolidays/SQL/D035_Buildings.sql</File>
     <File md5="B21C03A7F27779A37059DF5118557961" import="0">TheCalendarOfUnofficialHolidays/SQL/D035_Civilization.sql</File>
@@ -368,7 +368,7 @@
     <File md5="A8982030C99D0DEDAEEB63721CE3AC02" import="1">TheCandlekeepersCovenant/Lua/CovenantGameplay.lua</File>
     <File md5="E7F529D73443A622FC38C1E2EFDF6754" import="1">TheCandlekeepersCovenant/Lua/CWC3_Covenant.lua</File>
     <File md5="20E3DE8DCCCA9A86C7DCF10D00E12B61" import="0">TheCandlekeepersCovenant/Lua/CWC3_Covenant.xml</File>
-    <File md5="73E41E243D9DD44B9DA156CB381D8E0E" import="0">TheCandlekeepersCovenant/README.md</File>
+    <File md5="155BE9766ED3066A7F095FA5DCC13C47" import="0">TheCandlekeepersCovenant/README.md</File>
     <File md5="A832FE2DEF61CE89D15D7EC23A7E3D1F" import="0">TheCandlekeepersCovenant/SQL/Covenant_Art.sql</File>
     <File md5="1B7C6FB48010CCAD393365732C206D25" import="0">TheCandlekeepersCovenant/SQL/Covenant_Buildings.sql</File>
     <File md5="4517DB46296940F21E28D2A200A4A76C" import="0">TheCandlekeepersCovenant/SQL/Covenant_Civilization.sql</File>
@@ -425,7 +425,7 @@
     <File md5="E84E4B75E479F44D4B5A87F78564200A" import="1">TheCarapaceDominion/Art/CWC3_D025_UNIT_80.dds</File>
     <File md5="D5430CBDBBA25FCEB844F9B55C654EA1" import="1">TheCarapaceDominion/Lua/D025_Gameplay.lua</File>
     <File md5="74441BB693985233843F9FCB1DC04C5C" import="0">TheCarapaceDominion/Lua/D025_Gameplay.xml</File>
-    <File md5="29C7EC74032E86AD5CBEFEF61F16630C" import="0">TheCarapaceDominion/README.md</File>
+    <File md5="EA6E7A9992D9D9F9B8A7179321CAFCC5" import="0">TheCarapaceDominion/README.md</File>
     <File md5="05BF3F0E7C4FC7934C389EA2B5555018" import="0">TheCarapaceDominion/SQL/D025_Art.sql</File>
     <File md5="81B6809A722BD588C8CC6132986DC8DE" import="0">TheCarapaceDominion/SQL/D025_Buildings.sql</File>
     <File md5="9314E70D2F57C2762E9728DC86B366CE" import="0">TheCarapaceDominion/SQL/D025_Civilization.sql</File>
@@ -483,7 +483,7 @@
     <File md5="B15E676AEC9AFBA2B691B1009F0EC074" import="1">TheCartographersOfNowhere/Art/CWC3_D031_UNIT_80.dds</File>
     <File md5="3239B39E860CE31F2FC872D4E87D4A1D" import="1">TheCartographersOfNowhere/Lua/D031_Gameplay.lua</File>
     <File md5="FBF8C4147B6E18A43ED6364324F77E85" import="0">TheCartographersOfNowhere/Lua/D031_Gameplay.xml</File>
-    <File md5="E62BB2FD1865E5432FA735B11F251C20" import="0">TheCartographersOfNowhere/README.md</File>
+    <File md5="A1DF4F811B10C6BFF2F21074C60BB73A" import="0">TheCartographersOfNowhere/README.md</File>
     <File md5="3C8A7B801BF5D4E5FA7CE3D7B1427C6D" import="0">TheCartographersOfNowhere/SQL/D031_Art.sql</File>
     <File md5="DA9DD141CE0D968892AED0BDCDE8EB40" import="0">TheCartographersOfNowhere/SQL/D031_Buildings.sql</File>
     <File md5="29BE89497279B1B129F689B7A9E1A104" import="0">TheCartographersOfNowhere/SQL/D031_Civilization.sql</File>
@@ -541,7 +541,7 @@
     <File md5="704E363DCF661F67D5FCC7D0D4684F21" import="1">TheChachapoya/Art/CWC3_D034_UNIT_80.dds</File>
     <File md5="A04792253EAD4EC4853CA4E4E6473C7D" import="1">TheChachapoya/Lua/D034_Gameplay.lua</File>
     <File md5="BD8EDA978B0E30A606123F0FBE117BD7" import="0">TheChachapoya/Lua/D034_Gameplay.xml</File>
-    <File md5="1E3BDF2589131A3DA10264E7A61CA4F4" import="0">TheChachapoya/README.md</File>
+    <File md5="C8879BFAC5E929B0800E9A3A69416B11" import="0">TheChachapoya/README.md</File>
     <File md5="227544E0CD725133268A8DE547D1B63D" import="0">TheChachapoya/SQL/D034_Art.sql</File>
     <File md5="DE3B1FFDCA027AC99A7B22AAA4723D1A" import="0">TheChachapoya/SQL/D034_Buildings.sql</File>
     <File md5="4526BDFC8AC1907FE5D5017F75C03885" import="0">TheChachapoya/SQL/D034_Civilization.sql</File>
@@ -609,7 +609,7 @@
     <File md5="51FDCBE6664D27793E8A9606EA7E3FF3" import="0">TheDepartmentOfLostThings/Art/README.md</File>
     <File md5="D37FE12FEF4F0C91CA154B8464574EA3" import="1">TheDepartmentOfLostThings/Lua/LOST_Gameplay.lua</File>
     <File md5="344CF632023887763195E0AA6B983077" import="0">TheDepartmentOfLostThings/Lua/LOST_Gameplay.xml</File>
-    <File md5="13FF64429BC694E587B970D509FEB639" import="0">TheDepartmentOfLostThings/README.md</File>
+    <File md5="DA9CD8A329B56B46A1E58DA41C70BA1C" import="0">TheDepartmentOfLostThings/README.md</File>
     <File md5="90F5B9BDF71F65D9A7ACC30DA24B9137" import="0">TheDepartmentOfLostThings/SQL/LOST_Art.sql</File>
     <File md5="B94C52DC0E34F53A696B47E295B6F867" import="0">TheDepartmentOfLostThings/SQL/LOST_Buildings.sql</File>
     <File md5="310A6153C9FF28C8C62429F2E00792C7" import="0">TheDepartmentOfLostThings/SQL/LOST_Civilization.sql</File>
@@ -667,7 +667,7 @@
     <File md5="9E8953CFDF5733E20233EFE5BEF8571D" import="1">TheFogboundRepublic/Art/CWC3_D027_UNIT_80.dds</File>
     <File md5="2B534287CB33EF96EB2953D09CC42BCC" import="1">TheFogboundRepublic/Lua/D027_Gameplay.lua</File>
     <File md5="FBD38334F1E23FC00F9B8DD0B97BF80E" import="0">TheFogboundRepublic/Lua/D027_Gameplay.xml</File>
-    <File md5="729585B731FD97AAF3270683CE9CBCC9" import="0">TheFogboundRepublic/README.md</File>
+    <File md5="5BB100C80DAC0C47C60ABA4C8C934538" import="0">TheFogboundRepublic/README.md</File>
     <File md5="A976C7383F6E3CF3F7B38805B75929D0" import="0">TheFogboundRepublic/SQL/D027_Art.sql</File>
     <File md5="34D2DBEE6BC674D62C37F317C767512C" import="0">TheFogboundRepublic/SQL/D027_Buildings.sql</File>
     <File md5="747D86A8FE53A055B03D43932AF05761" import="0">TheFogboundRepublic/SQL/D027_Civilization.sql</File>
@@ -725,7 +725,7 @@
     <File md5="9373D544B73F6EC144975C2FD60D4F7A" import="1">TheGlassOrchard/Art/CWC3_D030_UNIT_80.dds</File>
     <File md5="ECDF9C96045B4FE4253C166FECC0338B" import="1">TheGlassOrchard/Lua/D030_Gameplay.lua</File>
     <File md5="82F99233AC3468C2BDC679678686B661" import="0">TheGlassOrchard/Lua/D030_Gameplay.xml</File>
-    <File md5="C9517948DB63AAD02104EA2ED1C0F466" import="0">TheGlassOrchard/README.md</File>
+    <File md5="5B1936297CFB28B5B168683CFF812D37" import="0">TheGlassOrchard/README.md</File>
     <File md5="4B72C304271DEC8E5F96A749D0E911B2" import="0">TheGlassOrchard/SQL/D030_Art.sql</File>
     <File md5="1D7452B76BBE6DEA7A13B75A6F699582" import="0">TheGlassOrchard/SQL/D030_Buildings.sql</File>
     <File md5="9DBC2474C6A1B047A1A1A9FE150EDFAD" import="0">TheGlassOrchard/SQL/D030_Civilization.sql</File>
@@ -783,7 +783,7 @@
     <File md5="ABAA2572FAF2F08F8E8114F42A508197" import="1">TheGrandDuchyOfFoldingChairs/Art/CWC3_D033_UNIT_80.dds</File>
     <File md5="4650B2632EA31E190938003573F4EC63" import="1">TheGrandDuchyOfFoldingChairs/Lua/D033_Gameplay.lua</File>
     <File md5="05E5C8F09C744265D44170B6711F5649" import="0">TheGrandDuchyOfFoldingChairs/Lua/D033_Gameplay.xml</File>
-    <File md5="B2F8B9E2998057B2106986587399B3D4" import="0">TheGrandDuchyOfFoldingChairs/README.md</File>
+    <File md5="27A3DB491461DEFB30ACD73467F5917E" import="0">TheGrandDuchyOfFoldingChairs/README.md</File>
     <File md5="686C4D01443A2674868299BA05BDD515" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Art.sql</File>
     <File md5="EF2C83781586C75304EDF668784B9D11" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Buildings.sql</File>
     <File md5="080C6F56264080364CBFF1BA0E9AAD9C" import="0">TheGrandDuchyOfFoldingChairs/SQL/D033_Civilization.sql</File>
@@ -842,7 +842,7 @@
     <File md5="ADDBDA99B3C60FB3303EE3D8CC77D63E" import="1">TheHollowChoir/Lua/CWC3_Choir.lua</File>
     <File md5="FA0E3A0145EBA03EDFB536E49DEC246D" import="0">TheHollowChoir/Lua/CWC3_Choir.xml</File>
     <File md5="5E0BF8CEFB5FD424E111466E21E8B43C" import="1">TheHollowChoir/Lua/HollowChoirGameplay.lua</File>
-    <File md5="27B7D865D0DF474A2503E75B6A4E0EA4" import="0">TheHollowChoir/README.md</File>
+    <File md5="E5DD35D138185CFBEAF2F36BFC5A095D" import="0">TheHollowChoir/README.md</File>
     <File md5="733C8D3A3433A8C08FA2FA5907B92878" import="0">TheHollowChoir/SQL/Choir_Buildings.sql</File>
     <File md5="0973E6C8D98469D2B5B896937864A3DF" import="0">TheHollowChoir/SQL/Choir_Civilization.sql</File>
     <File md5="86709CF10495B6CA15EF422E6C7B1BBD" import="0">TheHollowChoir/SQL/Choir_Text.sql</File>
@@ -908,7 +908,7 @@
     <File md5="57DAB562C359F3256DA59E309F3A8B46" import="0">TheKingdomOfMakuria/Art/README.md</File>
     <File md5="AAA322AF970495CE3B3122E100AF9503" import="1">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.lua</File>
     <File md5="A6BE208D963A5E973101AE30B0422150" import="0">TheKingdomOfMakuria/Lua/MAKURIA_Gameplay.xml</File>
-    <File md5="DB9DB2E059F590911C401761FBB74850" import="0">TheKingdomOfMakuria/README.md</File>
+    <File md5="C083D62DBD8157861AF6F47D9F74205C" import="0">TheKingdomOfMakuria/README.md</File>
     <File md5="853150496B850B4BDE684D6E8AD0AFFF" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Art.sql</File>
     <File md5="5AF102C519C31507DAE28846D6B3EFEB" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Buildings.sql</File>
     <File md5="F030E420EFC7DCE0DA14E8E2B6527166" import="0">TheKingdomOfMakuria/SQL/MAKURIA_Civilization.sql</File>
@@ -966,7 +966,7 @@
     <File md5="2BC6BAA0C19E833FB5C0ED6C0C980E8F" import="1">TheLichenCompact/Art/CWC3_D029_UNIT_80.dds</File>
     <File md5="595FF9C3DFCA6A3276ED21D2D59B60E6" import="1">TheLichenCompact/Lua/D029_Gameplay.lua</File>
     <File md5="1C5D1F21C012723B9EF4572C5CB4D3C5" import="0">TheLichenCompact/Lua/D029_Gameplay.xml</File>
-    <File md5="F90ACE4855FDA30811F0CC76CF768C29" import="0">TheLichenCompact/README.md</File>
+    <File md5="CDB85BF89B9BFB687679AE217C0AD95A" import="0">TheLichenCompact/README.md</File>
     <File md5="E95A4818D107A993D784F5E6EEA4A44E" import="0">TheLichenCompact/SQL/D029_Art.sql</File>
     <File md5="79307B0178FAB4A77651DEB717F80015" import="0">TheLichenCompact/SQL/D029_Buildings.sql</File>
     <File md5="885DBA3EF5ECE8A2428BF8440BC5BA03" import="0">TheLichenCompact/SQL/D029_Civilization.sql</File>
@@ -1025,7 +1025,7 @@
     <File md5="892FB0E9A880CAFB14C42E7B68E4ADE7" import="1">TheMinistryOfAlmost/Lua/CWC3_Almost.lua</File>
     <File md5="B81DE2E7D2483CD322D267FF03007E4A" import="0">TheMinistryOfAlmost/Lua/CWC3_Almost.xml</File>
     <File md5="42E725CB7BEC50BC79DABDF22080A3D9" import="1">TheMinistryOfAlmost/Lua/Ministry_Gameplay.lua</File>
-    <File md5="DE4790EC1AB1769E57C75A1584D8DCDA" import="0">TheMinistryOfAlmost/README.md</File>
+    <File md5="870B6AE0CC80D26BDFF38C10783F98BD" import="0">TheMinistryOfAlmost/README.md</File>
     <File md5="691ED00F2EB05D58AB566E1F32DBA919" import="0">TheMinistryOfAlmost/SQL/Ministry_Art.sql</File>
     <File md5="A8F5D03208540C73D3F170E20DC29729" import="0">TheMinistryOfAlmost/SQL/Ministry_Buildings.sql</File>
     <File md5="7B2F018804CE4BC457B000A5A476CF27" import="0">TheMinistryOfAlmost/SQL/Ministry_Civilization.sql</File>
@@ -1082,7 +1082,7 @@
     <File md5="50F041A10E3661C3B40CF28626E6C590" import="1">TheMirrorboundRepublic/Art/CWC3_D022_UNIT_80.dds</File>
     <File md5="2C8251C3ABF0F6AE04A645ABB2EEF5DE" import="1">TheMirrorboundRepublic/Lua/D022_Gameplay.lua</File>
     <File md5="BD7B67784E710A1E3B8A482E2444D406" import="0">TheMirrorboundRepublic/Lua/D022_Gameplay.xml</File>
-    <File md5="311EEEBFA2017D292D1B621A2A46AE29" import="0">TheMirrorboundRepublic/README.md</File>
+    <File md5="F865235C279AFF03DF76D2046AD6CE15" import="0">TheMirrorboundRepublic/README.md</File>
     <File md5="E8B7285316BB92703111C0E29DE7E12D" import="0">TheMirrorboundRepublic/SQL/D022_Art.sql</File>
     <File md5="6387848FE61F00185453095F0F4F34EC" import="0">TheMirrorboundRepublic/SQL/D022_Buildings.sql</File>
     <File md5="C61E082A94B2DB8DE38F796BF03751E3" import="0">TheMirrorboundRepublic/SQL/D022_Civilization.sql</File>
@@ -1140,7 +1140,7 @@
     <File md5="ECBDF18CF10696FEA692E8106CE349C4" import="1">TheMuiscaConfederation/Art/CWC3_D032_UNIT_80.dds</File>
     <File md5="3D7B51871099C53C9761E0411ED91F00" import="1">TheMuiscaConfederation/Lua/D032_Gameplay.lua</File>
     <File md5="CCDECDA99DC7B92D304308B48C5E1F56" import="0">TheMuiscaConfederation/Lua/D032_Gameplay.xml</File>
-    <File md5="1B79FE7C3907A5C5821809A92D2B670B" import="0">TheMuiscaConfederation/README.md</File>
+    <File md5="D5DBD665CE0443BBCA09912502AAFB3B" import="0">TheMuiscaConfederation/README.md</File>
     <File md5="28A340DCBAECE4AF29BEF9D6642ECB15" import="0">TheMuiscaConfederation/SQL/D032_Art.sql</File>
     <File md5="DAE27A60CBE264C2627E1F803147119A" import="0">TheMuiscaConfederation/SQL/D032_Buildings.sql</File>
     <File md5="35F905F37CA07524E331B11CAF8D1492" import="0">TheMuiscaConfederation/SQL/D032_Civilization.sql</File>
@@ -1198,7 +1198,7 @@
     <File md5="6C653FB33DCF2020C116EB70970FD0D3" import="1">TheOctopusParliament/Art/CWC3_D026_UNIT_80.dds</File>
     <File md5="14F303317ED457D381F49C18C3DBF3AF" import="1">TheOctopusParliament/Lua/D026_Gameplay.lua</File>
     <File md5="CB929C714417FA1C9374B3613F5455C4" import="0">TheOctopusParliament/Lua/D026_Gameplay.xml</File>
-    <File md5="2BADAE76D442007100AC39A11078EE6C" import="0">TheOctopusParliament/README.md</File>
+    <File md5="54FFBD1D9BBBD9FF1B1874AA76738EEE" import="0">TheOctopusParliament/README.md</File>
     <File md5="98AA5BAB7B1F528BFB3F2279D486BD06" import="0">TheOctopusParliament/SQL/D026_Art.sql</File>
     <File md5="6B8B0016C3E909B643B76380778CF730" import="0">TheOctopusParliament/SQL/D026_Buildings.sql</File>
     <File md5="2D9A4D604FA0A02783CE07EFE6B2FE22" import="0">TheOctopusParliament/SQL/D026_Civilization.sql</File>
@@ -1266,7 +1266,7 @@
     <File md5="D609E0FC35076C4ECB9CACA60BFC3E13" import="0">ThePaleontologicalDirectorate/Art/README.md</File>
     <File md5="D814671F008755BC50C781A5EF149CB1" import="1">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.lua</File>
     <File md5="CFB24ADC6292AFEDE8C11EF603285CC3" import="0">ThePaleontologicalDirectorate/Lua/PALEO_Gameplay.xml</File>
-    <File md5="AFB52DCEA2758992B080FDE3C0EAC0A1" import="0">ThePaleontologicalDirectorate/README.md</File>
+    <File md5="2D548DE9FF4FC07935B3C7A193F56B37" import="0">ThePaleontologicalDirectorate/README.md</File>
     <File md5="D0E1361A40D9076431C48532AF444EDF" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Art.sql</File>
     <File md5="3CE95AF879393061B050ADE229CDF13C" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Buildings.sql</File>
     <File md5="E0C519665B0AD4F0C1A92F8B32CC852F" import="0">ThePaleontologicalDirectorate/SQL/PALEO_Civilization.sql</File>
@@ -1325,7 +1325,7 @@
     <File md5="D7F58040320EA81AF678DFE2C91BC8F9" import="1">ThePerpetualTimetable/Lua/CWC3_Timetable.lua</File>
     <File md5="4BAD1A449AFD34DC8366BF632837C848" import="0">ThePerpetualTimetable/Lua/CWC3_Timetable.xml</File>
     <File md5="FEB6F57411EDC57A5B99FB590F3F5E6F" import="1">ThePerpetualTimetable/Lua/TimetableGameplay.lua</File>
-    <File md5="61DE19AE7E50945CC02E2A7114DED1A6" import="0">ThePerpetualTimetable/README.md</File>
+    <File md5="A2D1F24B5FD3FA5A2642428B906F307D" import="0">ThePerpetualTimetable/README.md</File>
     <File md5="90868A56E123CE170550DD5CE41AAEB1" import="0">ThePerpetualTimetable/SQL/Timetable_Art.sql</File>
     <File md5="9EBD1BCF467F40991E7FFA762BCDDEC8" import="0">ThePerpetualTimetable/SQL/Timetable_Buildings.sql</File>
     <File md5="734A36346218AB1C56159420A2A7A3C0" import="0">ThePerpetualTimetable/SQL/Timetable_Civilization.sql</File>
@@ -1382,7 +1382,7 @@
     <File md5="9BF36EE629D2310CA615482170576DFF" import="1">ThePostalSovereignty/Art/CWC3_D024_UNIT_80.dds</File>
     <File md5="D9F477989DC8D25009776D43EAD9DAF2" import="1">ThePostalSovereignty/Lua/D024_Gameplay.lua</File>
     <File md5="361647414E06F92CB85F6831CCA5ED22" import="0">ThePostalSovereignty/Lua/D024_Gameplay.xml</File>
-    <File md5="AA92062EC6BD51774C6E4296614910D2" import="0">ThePostalSovereignty/README.md</File>
+    <File md5="8952E28D852271C841F0C51C56E091DC" import="0">ThePostalSovereignty/README.md</File>
     <File md5="B4F4739A99787E8F490549F9EA6426EC" import="0">ThePostalSovereignty/SQL/D024_Art.sql</File>
     <File md5="EAB57AD52B581F671DF256ED0C1FB190" import="0">ThePostalSovereignty/SQL/D024_Buildings.sql</File>
     <File md5="0E55F2E62F7E4F894FA784C40715E68E" import="0">ThePostalSovereignty/SQL/D024_Civilization.sql</File>
@@ -1444,7 +1444,7 @@
     <File md5="255E7342AC28FDD1F41E661DF09691F0" import="0">TheQu/Lua/Qu_Gameplay.xml</File>
     <File md5="610480CDE6E90B1F599652765BF8BAB4" import="1">TheQu/Lua/Qu_Panel.lua</File>
     <File md5="654FF9F5FB9EEB25C18B8199816EAEBE" import="1">TheQu/Lua/Qu_State.lua</File>
-    <File md5="A52840203ED982050EC3DBD523E0F73A" import="0">TheQu/README.md</File>
+    <File md5="3174CC64814418237E11D0D312E60969" import="0">TheQu/README.md</File>
     <File md5="EC1BFC0D8FBA4316528855E6C8493D7B" import="0">TheQu/SQL/Qu_Art.sql</File>
     <File md5="D07981BF149AF5E985AB3378946F39FF" import="0">TheQu/SQL/Qu_Buildings.sql</File>
     <File md5="B6CC779AEA4F1A2EFC91CD486C6FA68B" import="0">TheQu/SQL/Qu_Civilization.sql</File>
@@ -1502,7 +1502,7 @@
     <File md5="FBA24C7A7D19330166C54CDB97040CC6" import="1">TheRepublicOfBorrowedTomorrows/Art/CWC3_D028_UNIT_80.dds</File>
     <File md5="C9051D868CAAD6871FD68613E04828BE" import="1">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.lua</File>
     <File md5="1630AAD703D8B7C41FD6A19419168083" import="0">TheRepublicOfBorrowedTomorrows/Lua/D028_Gameplay.xml</File>
-    <File md5="2ED0F7DC0ACE0F804DCE56D13FBE921E" import="0">TheRepublicOfBorrowedTomorrows/README.md</File>
+    <File md5="4BDF5DA81D6B4B1E3A1728D8DD1E707A" import="0">TheRepublicOfBorrowedTomorrows/README.md</File>
     <File md5="761040D9FDCB399ED9C3601BCA6A1215" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Art.sql</File>
     <File md5="CFA0BD15FD451A95B31E50D94DCA843B" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Buildings.sql</File>
     <File md5="95E9F6645686D60CD4A1FE11D846B3B6" import="0">TheRepublicOfBorrowedTomorrows/SQL/D028_Civilization.sql</File>
@@ -1570,7 +1570,7 @@
     <File md5="B3D21F60978700AA7E6DB64658CA6699" import="0">TheSaltRoadCompact/Art/README.md</File>
     <File md5="992877414EFFB300A5DBBA92E15C3BED" import="1">TheSaltRoadCompact/Lua/SALT_Gameplay.lua</File>
     <File md5="B965C1646C9D271C743B856334ED7436" import="0">TheSaltRoadCompact/Lua/SALT_Gameplay.xml</File>
-    <File md5="02F2E03D825ABAD4130DFF3946EAE58A" import="0">TheSaltRoadCompact/README.md</File>
+    <File md5="C970086AD91170DEBAC2E566A85EA967" import="0">TheSaltRoadCompact/README.md</File>
     <File md5="872CD444CD5885E1FAF2F927EC951322" import="0">TheSaltRoadCompact/SQL/SALT_Art.sql</File>
     <File md5="69547ED082A6897B2976E1CFB77EC270" import="0">TheSaltRoadCompact/SQL/SALT_Buildings.sql</File>
     <File md5="8E5921FC8A755A913FFB9D4A361FC6F2" import="0">TheSaltRoadCompact/SQL/SALT_Civilization.sql</File>
@@ -1629,7 +1629,7 @@
     <File md5="8599C797C503ABE1BD852452A3BCF7A4" import="1">TheSeventeenthSummer/Lua/CWC3_Summer.lua</File>
     <File md5="858C13C04DDBC1F7B81091B90CEBC51E" import="0">TheSeventeenthSummer/Lua/CWC3_Summer.xml</File>
     <File md5="06D122463E69C1E98B847D0B95FACFFE" import="1">TheSeventeenthSummer/Lua/SummerGameplay.lua</File>
-    <File md5="6F2AD3B9D67F68CF6516F9E7E8FBC62B" import="0">TheSeventeenthSummer/README.md</File>
+    <File md5="1BCD89DA47D54310C9DF672F99F9D4AB" import="0">TheSeventeenthSummer/README.md</File>
     <File md5="669466E542C61BDDFBC1A7D6191FB242" import="0">TheSeventeenthSummer/SQL/Summer_Buildings.sql</File>
     <File md5="831F4A8C3C9A9360A64E9CBF1F619958" import="0">TheSeventeenthSummer/SQL/Summer_Civilization.sql</File>
     <File md5="6F7DD387F01466F7F775D82A35170B4C" import="0">TheSeventeenthSummer/SQL/Summer_Text.sql</File>

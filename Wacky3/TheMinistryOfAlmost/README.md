@@ -1,5 +1,9 @@
 # The Ministry of Almost
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Acting Chancellor Penultimate in the diplomacy scene](../../docs/artwork/leaders/TheMinistryOfAlmost.jpg)
+
 *Second Place Is Just First Place in Disguise.*
 
 A fictional bureaucratic republic of silver medals, narrow defeats and improbable administrative competence. Acting Chancellor Penultimate has served for forty-seven years: she loses every election by one vote, then the winner resigns. The capital is **Runner-Up**. Human-only; Science / Culture; defensive secondary strength; complexity 3/5.

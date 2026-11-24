@@ -1,5 +1,9 @@
 # The Hollow Choir
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![A humanoid interpretation of The First Note wearing a violet crystal collar](../../docs/artwork/leaders/TheHollowChoir.jpg)
+
 Led by **The First Note**, an ancient sentient crystal suspended among orbiting crystals in an underground cathedral. Capital: **Resonance**. Human selectable only (`Playable=1`, `AIPlayable=0`). Culture / Science, with defensive warfare as a secondary strength. Requires BNW and standalone Community Patch **v151**, without VP components.
 
 ## Songs Beneath Stone

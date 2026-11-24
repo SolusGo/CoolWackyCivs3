@@ -1,5 +1,9 @@
 # The Salt Road Compact
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![First Broker Nahir in the diplomacy scene](../../docs/artwork/leaders/TheSaltRoadCompact.jpg)
+
 **Leader:** First Broker Nahir. **Capital:** White Mile. **Focus:** Science / Diplomacy.
 Canonical [Daily Surprise #016](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/016-the-salt-road-compact.md), archive blob `305486be68f471c292f585f52823d1ac41289444`.
 

@@ -42,8 +42,14 @@ def main():
         design = f"https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/{code(s)[1:]}-{s['design']}.md"
         rows.append(f"| {number:03} | [{s['name']}]({folder}/README.md) | {s['leader']} | {s['capital']} |")
         tests.append(f"| {number:03} | [{s['name']}](../{folder}/TESTING.md) | {ACCEPTANCE[number]} |")
+        gallery = "[Civilization gallery](../../docs/Civilizations.md)"
+        preview = f"docs/artwork/leaders/{folder}.jpg"
+        if (ROOT.parent / preview).is_file():
+            gallery += f"\n\n![{s['leader']} in the diplomacy scene](../../{preview})"
         write(ROOT/folder/'README.md',f"""
 # {s['name']}
+
+{gallery}
 
 {s['leader']} leads this human-only civilization from {s['capital']}. {s['pedia']}
 
@@ -51,7 +57,7 @@ def main():
 - **{s['unit']}** replaces {s['unit_parent'].replace('_',' ').title()}. {s['unit_help']}
 - **{s['building']}** replaces {s['building_parent'].title()}. {s['building_help']}
 
-The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The civilization emblem and flag are original geometric artwork. Leader, Dawn, map, diplomacy and replacement portraits use stock fallback art.
+The replacements inherit the active standalone Community Patch v151 definitions and approved companion effects. The pack includes original emblems, flags, portraits, diplomacy scenes, Dawn illustrations and setup maps. The replacement units and buildings inherit their in-world models. [Art and compilation notes](../docs/DailyExpansion_021_035_Art.md)
 
 {note}
 
@@ -120,7 +126,7 @@ The pack includes {10+len(ROSTER)} registered civilizations. The original ten ar
         ua='Implemented' if n not in {22,28,31,35} else {22:'Partial',28:'Blocked',31:'Partial',35:'Source implementation, phase boundary unverified'}[n]
         uu='Partial (debt bonus blocked)' if n==28 else 'Implemented'
         ub='Partial (debt branch blocked)' if n==28 else 'Implemented'
-        report.append(f"| {n:03} | [{s['name']}](../{s['folder']}/README.md) | {ua} | {uu} | {ub} | Original emblem and flag / stock portraits and scenes | {state} | SQLite / Lua 5.1 | Not tested | {BLOCKERS.get(n,'Native acceptance outstanding.')} |")
+        report.append(f"| {n:03} | [{s['name']}](../{s['folder']}/README.md) | {ua} | {uu} | {ub} | Original emblems, flags, portraits and scenes | {state} | SQLite / Lua 5.1 | Not tested | {BLOCKERS.get(n,'Native acceptance outstanding.')} |")
     write(ROOT/'docs/DailyExpansion_021_035_ImplementationReport.md',"""
 # Daily Surprise expansion implementation
 

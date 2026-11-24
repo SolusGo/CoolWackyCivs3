@@ -4,6 +4,8 @@ An independent, modular civilization pack for **Civilization V: Brave New World 
 
 Wacky3 has its own mod GUID, database prefix, save namespace, artwork and Lua context. It has no dependency on CoolWackyCivs or CoolWackyCivs2. Those projects can evolve separately. Nothing in their checkouts is changed by this pack.
 
+[Civilization gallery](../docs/Civilizations.md) · [Installation](#installation) · [Build in ModBuddy](#build-in-modbuddy)
+
 <!-- daily-expansion-start -->
 ## Daily Surprise expansion
 

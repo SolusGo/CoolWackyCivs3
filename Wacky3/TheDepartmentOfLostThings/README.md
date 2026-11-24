@@ -1,5 +1,9 @@
 # Department of Lost Things
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Chief Registrar Nobody in the diplomacy scene](../../docs/artwork/leaders/TheDepartmentOfLostThings.jpg)
+
 **Leader:** Chief Registrar Nobody. **Capital:** Unclaimed. **Focus:** Culture / Science.
 Canonical [Daily Surprise #002](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/002-department-of-lost-things.md), archive blob `c1424144495ea132c5f0b4bde41896f82a73446e`.
 

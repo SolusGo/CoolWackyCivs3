@@ -1,5 +1,9 @@
 # The Qu — Architects of Flesh
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![The First Architect in the diplomacy scene](../../docs/artwork/leaders/TheQu.jpg)
+
 In C. M. Kösemen’s *All Tomorrows*, the Qu are ancient galactic nomads who use genetics and nanotechnology to reshape themselves and the worlds they visit. They come to believe that only they have the right to direct the future of life. They conquer the human Star People and leave behind altered descendants whose evolution continues long after the Qu depart. [All Tomorrows, “Qu” and “Man Extinguished”](https://marsh.speedrunwiki.com/Text/alltomorrows.pdf#page=15)
 
 The mod imagines a Qu expedition led by **The First Architect** from **Genesis Spire**. Its three castes turn the book’s premise into a city mechanic. Domination is the strongest victory route, with Science as the alternative. The Qu are human-selectable in a new sequential single-player game of Brave New World with standalone Community Patch v151.

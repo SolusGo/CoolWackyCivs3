@@ -1,5 +1,9 @@
 # Assembly of Scarecrows
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Old Man Thistle in the diplomacy scene](../../docs/artwork/leaders/TheAssemblyOfScarecrows.jpg)
+
 **Leader:** Old Man Thistle. **Capital:** First Harvest. **Focus:** Culture / Growth.
 Canonical [Daily Surprise #007](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/007-assembly-of-scarecrows.md), archive blob `b9b35f27561316ec1d9852c0a766c33fd256bc01`.
 

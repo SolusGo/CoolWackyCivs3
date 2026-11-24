@@ -1,5 +1,9 @@
 # The Paleontological Directorate
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Director Emeritus Othmar in the diplomacy scene](../../docs/artwork/leaders/ThePaleontologicalDirectorate.jpg)
+
 **Leader:** Director Emeritus Othmar. **Capital:** Stratum Prime. **Victory focus:** Science / Culture. Human selectable only (`Playable=1`, `AIPlayable=0`). Requires Brave New World and standalone **Community Patch v151**, using the pack's existing exact-version dependency. No Vox Populi, new DLL, ModBuddy project or additional mod dependency.
 
 Implemented in this directory with five ordered SQL actions, one hidden Lua context and 57 valid DDS textures. **Automated checks pass; native in-game acceptance has not been run.** The reproducible A–T checklist is in [TESTING.md](TESTING.md).

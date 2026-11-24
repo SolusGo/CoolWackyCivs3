@@ -1,5 +1,9 @@
 # The Candlekeeper's Covenant
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![High Keeper Seraphine in the diplomacy scene](../../docs/artwork/leaders/TheCandlekeepersCovenant.jpg)
+
 **High Keeper Seraphine · Last Light · Culture / Science · Defensive warfare · Complexity 4/5**
 
 *No Flame Shall Be Forgotten.* Human selectable only. Requires Civilization V: Brave New World and standalone Community Patch **v151**, without Vox Populi, custom DLLs or ModBuddy. Included in the existing Wacky3 package and GUID. New sequential Windows single-player games only; any human player slot is supported. Native in-game acceptance is still outstanding.

@@ -1,5 +1,9 @@
 # The Perpetual Timetable
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Grand Stationmaster Veyl in the diplomacy scene](../../docs/artwork/leaders/ThePerpetualTimetable.jpg)
+
 **Grand Stationmaster Veyl · Capital: Terminus Prime · Science / Culture · Complexity: 3/5**
 
 *The World Shall Run on Time.* A human-only civilization for Windows single-player, Brave New World and standalone Community Patch v151. It loads within the existing Cool Wacky Civs 3 pack and needs no Vox Populi or ModBuddy project.

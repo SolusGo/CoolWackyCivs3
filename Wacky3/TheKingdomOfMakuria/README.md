@@ -1,5 +1,9 @@
 # Kingdom of Makuria
 
+[Civilization gallery](../../docs/Civilizations.md)
+
+![Merkurios in the diplomacy scene](../../docs/artwork/leaders/TheKingdomOfMakuria.jpg)
+
 **Leader:** Merkurios. **Capital:** Old Dongola. **Focus:** Culture / Religion.
 Canonical [Daily Surprise #013](https://github.com/SolusGo/Weekly-civs/blob/main/Civilizations/013-kingdom-of-makuria.md), archive blob `c49a73aa75bfa0d674b76b29812f47da51b00872`.
 
